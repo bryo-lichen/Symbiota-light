@@ -2,13 +2,16 @@
 	</tr>
 	<tr>
 		<td id="footer"  colspan="3">
-			<div style="padding-top:50px;text-align:center;margin-left:auto;margin-right:auto">
-                                <a href="https://www.nsf.gov" target="_blank"><img src="<?php echo $CLIENT_ROOT; ?>/images/layout/logo_nsf.gif" style="height:75px;margin-right:200px" title="National Science Foundation" /></a>
- 				<a href="https://www.idigbio.org" target="_blank"><img src="<?php echo $CLIENT_ROOT; ?>/images/layout/logo_idig.png" style="width:175px" /></a>
-                        </div>
-			<div style="padding:20px;text-align:center;margin-left:auto;margin-right:auto">
-				This project made possible by National Science Foundation Award: 
-				<a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1115116" target="_blank">#1115116</a>
+			<p style="margin:20px 250px 20px 250px">
+				<a href="https://biokic.asu.edu" target="_blank" title="Biodiversity Knowledge Integration Center"><img src="<?php echo $CLIENT_ROOT; ?>/images/layout/logo-asu-biokic.png" style="width:180px" /></a>
+				<a href="http://idigbio.org" target="_blank" title="iDigBio"><img src="<?php echo $CLIENT_ROOT; ?>/images/layout/logo_idig.png" style="width:150px" /></a>
+				<a href="https://www.nsf.gov" target="_blank"><img src="<?php echo $CLIENT_ROOT; ?>/images/layout/logo_nsf.gif" style="width:70px" /></a>
+			</p>
+			<div style="text-align:center;margin-bottom:15px">
+				This project made possible by National Science Foundation Awards:
+				<a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1115116" target="_blank">#1115116</a>,
+				<a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2001500" target="_blank">#2001500</a>,
+				<a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2001394" target="_blank">#2001394</a>
 			</div>
 		</td>
 	</tr>

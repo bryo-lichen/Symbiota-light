@@ -1,18 +1,29 @@
-<SCRIPT LANGUAGE=JAVASCRIPT>
-<!--
-if (top.frames.length!=0)
-  top.location=self.document.location;
-// -->
-</SCRIPT>
+<?php
+include_once($SERVER_ROOT.'/content/lang/header.'.$LANG_TAG.'.php');
+?>
+<link href="https://fonts.googleapis.com/css?family=EB+Garamond|Playfair+Display+SC" rel="stylesheet" />
+<style>
+	.header1 { font-family: 'EB Garamond', serif; font-size: 30px; font-style: italic; font-weight: bold; margin: 15px 10px 0px 70px; }
+	.header2 { font-family: 'Playfair Display SC', serif; font-size: 18px; font-weight: bold; margin: 0px 10px 3px 30px; }
+	.header3 { font-family: 'EB Garamond', serif; font-size: 15px; font-style: italic; margin: 0px 10px 10px 30px; }
+</style>
+<script type="text/javascript">
+	//Uncomment following line to support toggling of database content containing DIVs with lang classes in form of: <div class="lang en">Content in English</div><div class="lang es">Content in Spanish</div>
+	$(document).ready(function() {
+		setLanguageDiv();
+	});
+</script>
 <table id="maintable" cellspacing="0">
 	<tr style="" >
 		<td id="header" colspan="3">
-			<div style="clear:both;height:115px;border-bottom:1px solid #333333;">
-				<div style="float:left;">
-					<img style="" src="<?php echo $CLIENT_ROOT; ?>/images/layout/logo.png" />
-				</div>
+			<div style="height:110px;">
 				<div style="float:right;">
-					<img style="" src="<?php echo $CLIENT_ROOT; ?>/images/layout/header1.gif" />
+					<img src="<?php echo $CLIENT_ROOT; ?>/images/layout/header_right.jpg" />
+				</div>
+				<div style="float:left;">
+					<div class="header1">Consortium of</div>
+					<div class="header2">North American Bryophyte Herbaria</div>
+					<div class="header3">- building a Global Consortium of Bryophytes and Lichens as keystones of cryptobiotic communities -</div>
 				</div>
 			</div>
 			<div id="top_navbar">
@@ -228,4 +239,3 @@ if (top.frames.length!=0)
 	</tr>
     <tr>
 		<td id='middlecenter'  colspan="3">
-
