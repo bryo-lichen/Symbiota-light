@@ -1,6 +1,4 @@
 <?php
-//error_reporting(E_ALL);
-//ini_set('display_errors', '1');
 include_once("config/symbini.php");
 header("Content-Type: text/html; charset=ISO-8859-1");
 ?>
@@ -58,14 +56,17 @@ header("Content-Type: text/html; charset=ISO-8859-1");
 			</div>
  		</div>
 		<div style="margin:30px;font-size:130%">
-                        <?php
-                        if($LANG_TAG=='en'){
+			<?php
+			if($LANG_TAG=='en'){
 				//Text in this block is English
-                                ?>
+				?>
 				<div>
-					<p style="margin-bottom: 2rem"><b>NEW:</b> In collaboration with the <a href="https://www.iucnredlist.org/" target ="_blank">IUCN</a>, the <b><font color='red'>IUCN Global Red-List</b></font><a href="https://lichenportal.org/cnalh/checklists/checklist.php?clid=1430&pid=0" target ="_blank"> is now featured on CNALH</a>.
-                	<br>For all species included in the global red-list, the taxon profiles now also include red-listing information, e.g., checkout the profile of <a href="https://lichenportal.org/cnalh/taxa/index.php?taxon=Mobergia%20calculiformis&formsubmit=Search%20Terms" target ="_blank"><i>Mobergia calculiformis</i></a>.</p>
-                	<div style="">
+					<p style="margin-bottom: 2rem">
+						<b>NEW:</b> In collaboration with the <a href="https://www.iucnredlist.org/" target ="_blank">IUCN</a>, the <span style="color:red;font-weight:bold">IUCN Global Red-List</span>
+						<a href="https://lichenportal.org/cnalh/checklists/checklist.php?clid=1430&pid=0" target ="_blank"> is now featured on CNALH</a>.
+						<br>For all species included in the global red-list, the taxon profiles now also include red-listing information, e.g., checkout the profile of <a href="https://lichenportal.org/cnalh/taxa/index.php?taxon=Mobergia%20calculiformis&formsubmit=Search%20Terms" target ="_blank"><i>Mobergia calculiformis</i></a>.
+					</p>
+					<div style="">
 						The <b>Consortium of North American Lichen Herbaria</b> (CNALH) serves as a gateway to biodiversity data of lichenized fungi
 						throughout North America. It provides access to an array of different resources: specimen records, field observations,
 						dynamic and static checklists, images, interactive keys, and a taxonomic thesaurus.
@@ -81,32 +82,24 @@ header("Content-Type: text/html; charset=ISO-8859-1");
 					<div style="font-weight:bold;font-size:110%;">
 						News and Events
 					</div>
-					<ul style="">
-		                    <li>
+					<ul>
+						<li>
 							<b>January 2021</b> - Welcome our new portal manager Katie Pearson.
-				            <p>
-							</p>
-				            </li>
-				            <li>
-                        	<b>September 2020</b> - ASU and collaborators were recently awarded a new <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2001394" target="_blank">NSF Grant</a> to Build a <a href="https://www.idigbio.org/wiki/index.php/Building_a_global_consortium_of_bryophytes_and_lichens:_keystones_of_cryptobiotic_communities" target="_blank"><b>Global Consortium of Bryophytes and Lichens</b></a>.
-                        	<p>
-							</p>
-        	                </li>
-        	                <li>
-                        	<b>July 2019</b> - We now launched <a href="http:\\help-resources.lichenportal.org" target="_blank"><B> CNALH Help & Resources</b></a>, a site with tutorials how to join and participate, and some useful programs that can be downloaded.
-                            </li>
-                            <p>
-	                        </p>
-        	                <li>
+						</li>
+						<li>
+							<b>September 2020</b> - ASU and collaborators were recently awarded a new <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2001394" target="_blank">NSF Grant</a> to Build a <a href="https://www.idigbio.org/wiki/index.php/Building_a_global_consortium_of_bryophytes_and_lichens:_keystones_of_cryptobiotic_communities" target="_blank"><b>Global Consortium of Bryophytes and Lichens</b></a>.
+						</li>
+						<li>
+							<b>July 2019</b> - We now launched <a href="http:\\help-resources.lichenportal.org" target="_blank"><B> CNALH Help &amp; Resources</b></a>, a site with tutorials how to join and participate, and some useful programs that can be downloaded.
+						</li>
+						<li>
 							<b>February 2019</b> - The new design of the Consortium of North American Lichen Herbaria (CNALH) has just been
 							launched. If you manage your collection as a live data set, you can now upload the data directly into GBIF!
-						    </li>
-						<p>
-	                                        </p>
-        	                                <li>
+						</li>
+						<li>
 							<b>August  2018</b> - ASU receives a  multimillion dollar grant from NSF to create the new
 							<a href="https://biorepo.neonscience.org/"><b>NEON biorepository</b></a>;
-						these funds will substantially strengthen the Symbiota software platform and add new functionality from which CNALH will benefit significantly as well.
+							these funds will substantially strengthen the Symbiota software platform and add new functionality from which CNALH will benefit significantly as well.
 						</li>
 					</ul>
 				</div>
@@ -115,43 +108,44 @@ header("Content-Type: text/html; charset=ISO-8859-1");
 			else{
 				//Text in this block is Spanish
 				?>
-                                <div>
-                                        <p style="margin-bottom: 2rem"><b>Good News:</b><br> ASU and collaborators were recently awarded a new <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2001394" target="_blank">NSF Grant</a> to Build a <a href="https://www.idigbio.org/wiki/index.php/Building_a_global_consortium_of_bryophytes_and_lichens:_keystones_of_cryptobiotic_communities" target="_blank"><b>Global Consortium of Bryophytes and Lichens</b></a>.</p>
-                                        <div style="">
-                                                The Consortium of North American Lichen Herbaria (CNALH) serves as a gateway to biodiversity data of lichenized fungi
-                                                throughout North America. It provides access to an array of different resources: specimen records, field observations,
-                                                dynamic and static checklists, images, interactive keys, and a taxonomic thesaurus.
-                                        </div>
-                                        <div style="margin-top:10px;">
-                                                As a regular visitor, we invite you to join. Create your own <a href="profile/newprofile.php">account</a> today!
-                                                If you need access to specific resources, want to contribute occurrence records or images, report errors or simply provide
-                                                feedback please do not hesitate to contact us at
-                                                <a class="bodylink" href="mailto:CNALH.help@gmail.com">CNALH.help@gmail.com</a>
-                                        </div>
-                                </div>
-                                <div style="width:450px;margin-top:30px;">
-                                        <div style="font-weight:bold;font-size:110%;">
-                                                News and Events
-                                        </div>
-                                        <ul style="">
-                                                <li>
-                                                        <b>July 2019</b> - We now launched <a href="http:\\help-resources.lichenportal.org" target="_blank"><B> CNALH Help & Resources</b></a>, a site with tutorials how to join and participate, and some useful programs that can be downloaded.
-                                                </li>
-                                                <p>
-                                                </p>
-                                                <li>
-                                                        <b>February 2019</b> - The new design of the Consortium of North American Lichen Herbaria (CNALH) has just been
-                                                        launched. If you manage your collection as a live data set, you can now upload the data directly into GBIF!
-                                                </li>
-                                                <p>
-                                                </p>
-                                                <li>
-                                                        <b>August  2018</b> - ASU receives a  multimillion dollar grant from NSF to create the new
-                                                        <a href="https://biorepo.neonscience.org/"><b>NEON biorepository</b></a>;
-                                                these funds will substantially strengthen the Symbiota software platform and add new functionality from which CNALH will benefit significantly as well.
-                                                </li>
-                                        </ul>
-                                </div>
+				<div>
+					<p style="margin-bottom: 2rem">
+						<b>Good News:</b><br> ASU and collaborators were recently awarded a new
+						<a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2001394" target="_blank">NSF Grant</a>
+						to Build a <a href="https://www.idigbio.org/wiki/index.php/Building_a_global_consortium_of_bryophytes_and_lichens:_keystones_of_cryptobiotic_communities" target="_blank"><b>Global Consortium of Bryophytes and Lichens</b></a>.
+					</p>
+					<div>
+						The Consortium of North American Lichen Herbaria (CNALH) serves as a gateway to biodiversity data of lichenized fungi
+						throughout North America. It provides access to an array of different resources: specimen records, field observations,
+						dynamic and static checklists, images, interactive keys, and a taxonomic thesaurus.
+					</div>
+					<div style="margin-top:10px;">
+						As a regular visitor, we invite you to join. Create your own <a href="profile/newprofile.php">account</a> today!
+						If you need access to specific resources, want to contribute occurrence records or images, report errors or simply provide
+						feedback please do not hesitate to contact us at
+						<a class="bodylink" href="mailto:CNALH.help@gmail.com">CNALH.help@gmail.com</a>
+					</div>
+				</div>
+				<div style="width:450px;margin-top:30px;">
+					<div style="font-weight:bold;font-size:110%;">
+						News and Events
+					</div>
+					<ul>
+						<li>
+							<b>July 2019</b> - We now launched
+							<a href="http:\\help-resources.lichenportal.org" target="_blank"><b> CNALH Help &amp; Resources</b></a>, a site with tutorials how to join and participate, and some useful programs that can be downloaded.
+						</li>
+						<li>
+							<b>February 2019</b> - The new design of the Consortium of North American Lichen Herbaria (CNALH) has just been
+							launched. If you manage your collection as a live data set, you can now upload the data directly into GBIF!
+						</li>
+						<li>
+							<b>August  2018</b> - ASU receives a  multimillion dollar grant from NSF to create the new
+							<a href="https://biorepo.neonscience.org/"><b>NEON biorepository</b></a>;
+							these funds will substantially strengthen the Symbiota software platform and add new functionality from which CNALH will benefit significantly as well.
+						</li>
+					</ul>
+				</div>
 				<?php
 			}
 			?>
