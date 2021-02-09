@@ -23,7 +23,8 @@ class OccurrenceIndividual extends Manager{
 
 	private function loadMetadata(){
 		if($this->collid){
-			$sql = 'SELECT institutioncode, collectioncode, collectionname, colltype, homepage, individualurl, contact, email, icon, publicedits, rights, rightsholder, accessrights, guidtarget '.
+			$sql = 'SELECT institutioncode, collectioncode, collectionname, homepage, individualurl, contact, email, icon, '.
+				'publicedits, rights, rightsholder, accessrights, guidtarget '.
 				'FROM omcollections WHERE collid = '.$this->collid;
 			$rs = $this->conn->query($sql);
 			if($rs){
@@ -614,7 +615,7 @@ class OccurrenceIndividual extends Manager{
 		return $status;
 	}
 
-	//Data and general support functions
+	//Dataset Management
 	public function getDatasetArr(){
 		$retArr = array();
 		$roleArr = array();
@@ -773,18 +774,6 @@ class OccurrenceIndividual extends Manager{
 			}
 		}
 		return $isEditor;
-	}
-
-	public function activateOrcidID($inStr){
-		$retStr = $inStr;
-		$m = array();
-		if(preg_match('#ORCID[\s:]+((https://orcid.org/)?\d{4}-\d{4}-\d{4}-\d{4})#', $inStr,$m)){
-			$orcidAnchor = $m[1];
-			if(substr($orcidAnchor,5) != 'https') $orcidAnchor = 'https://orcid.org/'.$orcidAnchor;
-			$orcidAnchor = '<a href="'.$orcidAnchor.'" target="_blank">'.$m[1].'</a>';
-			$retStr = str_replace($m[1], $orcidAnchor, $retStr);
-		}
-		return $retStr;
 	}
 
 	// Setters and getters
