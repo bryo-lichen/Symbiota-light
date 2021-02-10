@@ -214,6 +214,7 @@ class ExsiccatiManager {
 		header ('Content-Type: text/csv');
 		header ('Content-Disposition: attachment; filename="'.$fileName.'"');
 		$sqlInsert = '';
+		$sqlWhere = '';
 		$fieldArr = array('titleID'=>'et.ometid', 'exsiccatiTitle'=>'et.title', 'abbreviation'=>'et.abbreviation', 'editors'=>'et.editor', 'range'=>'et.exsrange',
 				'startDate'=>'et.startdate', 'endDate'=>'et.enddate', 'source'=>'et.source', 'sourceIdentifier'=>'et.sourceIdentifier', 'titleNotes'=>'et.notes AS titleNotes');
 		if(!$titleOnly){
@@ -222,7 +223,7 @@ class ExsiccatiManager {
 			if($collId || $specimenOnly){
 				$sqlInsert .= 'INNER JOIN omexsiccatiocclink ol ON en.omenid = ol.omenid INNER JOIN omoccurrences o ON ol.occid = o.occid ';
 				if($imagesOnly) $sqlInsert .= 'INNER JOIN images i ON o.occid = i.occid ';
-				if($collId) $sqlInsert .= 'WHERE o.collid = '.$collId.' ';
+				if($collId) $sqlWhere .= 'AND o.collid = '.$collId.' ';
 				$fieldArr['occid'] = 'o.occid';
 				$fieldArr['catalogNumber'] = 'o.catalognumber';
 				$fieldArr['otherCatalogNumbers'] = 'o.othercatalognumbers';
@@ -239,9 +240,11 @@ class ExsiccatiManager {
 			}
 		}
 		if($searchTerm){
-			$sqlInsert .= ($sqlInsert?'AND ':'WHERE ').'et.title LIKE "%'.$searchTerm.'%" OR et.abbreviation LIKE "%'.$searchTerm.'%" OR et.editor LIKE "%'.$searchTerm.'%" ';
+			$sqlWhere .= 'AND (et.title LIKE "%'.$searchTerm.'%" OR et.abbreviation LIKE "%'.$searchTerm.'%" OR et.editor LIKE "%'.$searchTerm.'%") ';
 		}
-		$sql = 'SELECT '.implode(',',$fieldArr).' FROM omexsiccatititles et '.$sqlInsert.'ORDER BY et.title';
+		$sql = 'SELECT '.implode(',',$fieldArr).' FROM omexsiccatititles et '.$sqlInsert;
+		if($sqlWhere) $sql .= 'WHERE '.substr($sqlWhere,3);
+		$sql .= 'ORDER BY et.title';
 		if(!$titleOnly) $sql .= ', en.exsnumber+0';
 		$rs = $this->conn->query($sql);
 		if($rs->num_rows){
