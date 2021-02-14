@@ -13,8 +13,8 @@ class OccurrenceIndividual extends Manager{
 	private $displayFormat = 'html';
 	private $relationshipArr;
 
-	public function __construct() {
-		parent::__construct();
+	public function __construct($type='readonly') {
+		parent::__construct($type);
 	}
 
 	public function __destruct(){
@@ -23,8 +23,7 @@ class OccurrenceIndividual extends Manager{
 
 	private function loadMetadata(){
 		if($this->collid){
-			$sql = 'SELECT institutioncode, collectioncode, collectionname, homepage, individualurl, contact, email, icon, '.
-				'publicedits, rights, rightsholder, accessrights, guidtarget '.
+			$sql = 'SELECT institutioncode, collectioncode, collectionname, colltype, homepage, individualurl, contact, email, icon, publicedits, rights, rightsholder, accessrights, guidtarget '.
 				'FROM omcollections WHERE collid = '.$this->collid;
 			$rs = $this->conn->query($sql);
 			if($rs){
@@ -217,18 +216,18 @@ class OccurrenceIndividual extends Manager{
 	}
 
 	private function setAdditionalIdentifiers(){
-		$idStr = '';
-		$sql = 'SELECT idomoccuridentifiers, occid, identifiervalue, identifiername '.
-			'FROM omoccuridentifiers '.
-			'WHERE occid = '.$this->occid;
+		$retArr = array();
+		$sql = 'SELECT idomoccuridentifiers, occid, identifiervalue, identifiername FROM omoccuridentifiers WHERE occid = '.$this->occid;
 		$rs = $this->conn->query($sql);
 		if($rs){
 			while($r = $rs->fetch_object()){
-				$idStr .= '; '.($r->identifiername?$r->identifiername.': ':'').$r->identifiervalue;
+				$identifierTag = $r->identifiername;
+				if(!$identifierTag) $identifierTag = 0;
+				$retArr[$identifierTag][] = $r->identifiervalue;
 			}
 			$rs->free();
 		}
-		if($idStr) $this->occArr['othercatalognumbers'] = trim($idStr,'; ');
+		if($retArr) $this->occArr['othercatalognumbers'] = json_encode($retArr);
 	}
 
 	private function setPaleo(){
@@ -615,81 +614,53 @@ class OccurrenceIndividual extends Manager{
 		return $status;
 	}
 
-	//Dataset Management
-	public function getDatasetArr($uid){
+	//Data and general support functions
+	public function getDatasetArr(){
 		$retArr = array();
-		if(is_numeric($uid)){
-			//Get datasets for current user
-			$datasetIdStr = '';
-			$sql1 = 'SELECT tablepk FROM userroles WHERE (tablename = "omoccurdatasets") AND (uid = '.$uid.') ';
+		$roleArr = array();
+		if($GLOBALS['SYMB_UID']){
+			$sql1 = 'SELECT tablepk, role FROM userroles WHERE (tablename = "omoccurdatasets") AND (uid = '.$GLOBALS['SYMB_UID'].') ';
 			$rs1 = $this->conn->query($sql1);
 			while($r1 = $rs1->fetch_object()){
-				$datasetIdStr .= ','.$r1->tablepk;
+				$roleArr[$r1->tablepk] = $r1->role;
 			}
 			$rs1->free();
-
-			//Get all datasets for user
-			$sql2 = 'SELECT datasetid, name FROM omoccurdatasets WHERE uid = '.$uid;
-			if($datasetIdStr){
-				$sql2 .= ' OR datasetid IN('.trim($datasetIdStr,',').')';
-			}
-			$sql2 .= ' ORDER BY name';
-			//echo $sql2;
-			$rs2 = $this->conn->query($sql2);
-			if($rs2){
-				while($r2 = $rs2->fetch_object()){
-					$retArr[$r2->datasetid]['name'] = $r2->name;
-				}
-				$rs2->free();
-			}
-			else{
-				trigger_error('Unable to get datasets for user; '.$this->conn->error,E_USER_WARNING);
-			}
-
-			//Get datasets linked to this specimen
-			$sql3 = 'SELECT datasetid, notes  FROM omoccurdatasetlink WHERE occid = '.$this->occid;
-			//echo $sql2;
-			$rs3 = $this->conn->query($sql3);
-			if($rs3){
-				while($r3 = $rs3->fetch_object()){
-					$retArr[$r3->datasetid]['linked'] = ($r3->notes?' ('.$r3->notes.')':'');
-				}
-				$rs3->free();
-			}
-			else{
-				trigger_error('Unable to get related datasets; '.$this->conn->error,E_USER_WARNING);
-			}
 		}
+
+		$sql2 = 'SELECT datasetid, name, uid FROM omoccurdatasets ';
+		if(!$GLOBALS['IS_ADMIN']){
+			//Only get datasets for current user. Once we have appied isPublic tag, we can extend display to all public datasets
+			$sql2 .= 'WHERE (uid = '.$GLOBALS['SYMB_UID'].') ';
+			if($roleArr) $sql2 .= 'OR (datasetid IN('.implode(',',array_keys($roleArr)).')) ';
+		}
+		$sql2 .= 'ORDER BY name';
+		$rs2 = $this->conn->query($sql2);
+		if($rs2){
+			while($r2 = $rs2->fetch_object()){
+				$retArr[$r2->datasetid]['name'] = $r2->name;
+				$roleStr = '';
+				if(isset($GLOBALS['SYMB_UID']) && $GLOBALS['SYMB_UID'] == $r2->uid) $roleStr = 'owner';
+				elseif(isset($roleArr[$r2->datasetid]) && $roleArr[$r2->datasetid])  $roleStr = $roleArr[$r2->datasetid];
+				if($roleStr) $retArr[$r2->datasetid]['role'] = $roleStr;
+			}
+			$rs2->free();
+		}
+		else $this->errorMessage = 'ERROR: Unable to set datasets for user: '.$this->conn->error;
+
+		$sql3 = 'SELECT datasetid, notes FROM omoccurdatasetlink WHERE occid = '.$this->occid;
+		$rs3 = $this->conn->query($sql3);
+		if($rs3){
+			while($r3 = $rs3->fetch_object()){
+				if(isset($retArr[$r3->datasetid])){
+					//Only display datasets linked to current user, at least for now. Once isPublic option is activated, we'll open this up further.
+					$retArr[$r3->datasetid]['linked'] = 1;
+					if($r3->notes) $retArr[$r3->datasetid]['notes'] = $r3->notes;
+				}
+			}
+			$rs3->free();
+		}
+		else $this->errorMessage = 'Unable to get related datasets: '.$this->conn->error;
 		return $retArr;
-	}
-
-	public function linkToDataset($dsid,$dsName,$notes,$SYMB_UID){
-		$status = true;
-		if(!$this->occid) return false;
-		if($dsid && !is_numeric($dsid)) return false;
-		if(!$dsid && !$dsName) return false;
-		$con = MySQLiConnectionFactory::getCon("write");
-		if(!$dsid && $dsName){
-			//Create new dataset
-			if(strlen($dsName) > 100) $dsName = substr($dsName,0,100);
-			$sql1 = 'INSERT INTO omoccurdatasets(name,uid,collid) VALUES("'.$this->cleanInStr($dsName).'",'.$SYMB_UID.','.$this->collid.')';
-			if($con->query($sql1)){
-				$dsid = $con->insert_id;
-			}
-			else{
-				$this->errorMessage = 'ERROR creating new dataset, err msg: '.$con->error;
-				$status = false;
-			}
-		}
-		if($dsid){
-			$sql2 = 'INSERT INTO omoccurdatasetlink(datasetid,occid,notes) VALUES('.$dsid.','.$this->occid.',"'.$this->cleanInStr($notes).'")';
-			if(!$con->query($sql2)){
-				$this->errorMessage = 'ERROR linking to dataset, err msg: '.$con->error;
-				$status = false;
-			}
-		}
-		$con->close();
-		return $status;
 	}
 
 	public function getChecklists($clidExcludeArr){
@@ -802,6 +773,18 @@ class OccurrenceIndividual extends Manager{
 			}
 		}
 		return $isEditor;
+	}
+
+	public function activateOrcidID($inStr){
+		$retStr = $inStr;
+		$m = array();
+		if(preg_match('#ORCID[\s:]+((https://orcid.org/)?\d{4}-\d{4}-\d{4}-\d{4})#', $inStr,$m)){
+			$orcidAnchor = $m[1];
+			if(substr($orcidAnchor,5) != 'https') $orcidAnchor = 'https://orcid.org/'.$orcidAnchor;
+			$orcidAnchor = '<a href="'.$orcidAnchor.'" target="_blank">'.$m[1].'</a>';
+			$retStr = str_replace($m[1], $orcidAnchor, $retStr);
+		}
+		return $retStr;
 	}
 
 	// Setters and getters
