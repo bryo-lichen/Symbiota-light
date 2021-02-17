@@ -74,7 +74,7 @@ include_once($SERVER_ROOT.'/content/lang/header.'.$LANG_TAG.'.php');
 								<a href="<?php echo $CLIENT_ROOT; ?>/collections/map/index.php" target="_blank">Map Search</a>
 							</li>
 							<li>
-								<a href="<?php echo $CLIENT_ROOT; ?>/collections/exsiccati/index.php" >Exsiccati</a>
+								<a href="<?php echo $CLIENT_ROOT; ?>/collections/exsiccati/index.php" >Exsiccatae</a>
 							</li>
 							<li>
 								<a href="<?php echo $CLIENT_ROOT; ?>/checklists/dynamicmap.php?interface=checklist" >Dynamic Species List</a>
