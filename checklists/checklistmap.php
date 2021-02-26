@@ -27,8 +27,10 @@ $coordArr = $clManager->getVoucherCoordinates();
       echo '<link href="'.$CLIENT_ROOT.'/css/base.css?ver=1" type="text/css" rel="stylesheet" />';
       echo '<link href="'.$CLIENT_ROOT.'/css/main.css?ver=1" type="text/css" rel="stylesheet" />';
     }
-    include_once($SERVER_ROOT.'/includes/googleanalytics.php');
-    ?>
+	?>
+	<script type="text/javascript">
+		<?php include_once($SERVER_ROOT.'/includes/googleanalytics.php'); ?>
+	</script>
 	<script src="//maps.googleapis.com/maps/api/js?v=3.exp&libraries=drawing<?php echo (isset($GOOGLE_MAP_KEY) && $GOOGLE_MAP_KEY?'&key='.$GOOGLE_MAP_KEY:''); ?>"></script>
 	<script type="text/javascript">
 		var map;

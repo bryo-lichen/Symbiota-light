@@ -494,7 +494,7 @@ class OccurrenceLabel{
 		$labelArr['labelFooter']['textValue'] = $postArr['fTextValue'];
 		$labelArr['labelFooter']['className'] = $postArr['fClassName'];
 		$labelArr['labelFooter']['style'] = $postArr['fStyle'];
-		$labelArr['customStyles'] = $postArr['customStyles'];
+		$labelArr['defaultStyles'] = $postArr['defaultStyles'];
 		$labelArr['defaultCss'] = $postArr['defaultCss'];
 		$labelArr['customCss'] = $postArr['customCss'];
 		$labelArr['customJS'] = $postArr['customJS'];
