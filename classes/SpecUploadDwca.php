@@ -209,10 +209,10 @@ class SpecUploadDwca extends SpecUploadBase{
 				$coreId = '';
 				//Get core (occurrences) file name
 				if($coreElements = $metaDoc->getElementsByTagName('core')){
-					//There may be more than one core elements, thus look for occurrence element
+					//There many be more than one core elements, thus look for occurrence element
 					foreach($coreElements as $coreElement){
 						$rowType = $coreElement->getAttribute('rowType');
-						if(stripos($rowType,'occurrence') || $coreElement->getElementsByTagName('id')->length){
+						if(stripos($rowType,'occurrence')){
 							//Get index id
 							if($idElement = $coreElement->getElementsByTagName('id')){
 								$coreId = $idElement->item(0)->getAttribute('index');
