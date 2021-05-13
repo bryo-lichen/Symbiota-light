@@ -215,8 +215,12 @@ include_once($SERVER_ROOT.'/content/lang/header.'.$LANG_TAG.'.php');
 						<a href="#" >More Information</a>
 						<ul>
 							<li>
+								<a href="<?php echo $CLIENT_ROOT; ?>/includes/usagepolicy.php"><?php echo (isset($LANG['H_DATA_POLICY'])?$LANG['H_DATA_POLICY']:'Data Usage Policy'); ?></a>
+							</li>
+							<li>
 								<a href="<?php echo $CLIENT_ROOT; ?>/collections/misc/collprofiles.php/">Partners</a>
 							</li>
+
 						</ul>
 					</li>
 					<li>
