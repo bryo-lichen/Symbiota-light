@@ -11,16 +11,20 @@
 	?>
 	<head>
 		<title><?php echo $defaultTitle; ?> Data Usage Guidelines</title>
-		<link href="../css/base.css?ver=<?php echo $CSS_VERSION; ?>" type="text/css" rel="stylesheet" />
-		<link href="../css/main.css<?php echo (isset($CSS_VERSION_LOCAL)?'?ver='.$CSS_VERSION_LOCAL:''); ?>" type="text/css" rel="stylesheet" />
+		<?php
+		$activateJQuery = false;
+		include_once($SERVER_ROOT.'/includes/head.php');
+		?>
 	</head>
 	<?php
 	} else {
 	?>
 	<head>
-	<title><?php echo $defaultTitle; ?> Política de Uso de Datos</title>
-	<link href="../css/base.css?ver=<?php echo $CSS_VERSION; ?>" type="text/css" rel="stylesheet" />
-	<link href="../css/main.css<?php echo (isset($CSS_VERSION_LOCAL)?'?ver='.$CSS_VERSION_LOCAL:''); ?>" type="text/css" rel="stylesheet" />
+		<title><?php echo $defaultTitle; ?> Política de Uso de Datos</title>
+		<?php
+		$activateJQuery = false;
+		include_once($SERVER_ROOT.'/includes/head.php');
+		?>
 	</head>
 	<?php
 	}
@@ -28,7 +32,7 @@
 	<body>
 		<?php
 		$displayLeftMenu = true;
-		include($serverRoot.'/header.php');
+		include($SERVER_ROOT.'/includes/header.php');
 		?>
 		<!-- This is inner text! -->
 		<?php
