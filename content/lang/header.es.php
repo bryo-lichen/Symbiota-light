@@ -1,7 +1,7 @@
 <?php
 /*
 ------------------
-Language: Espa�ol (Spanish)
+Language: Español (Spanish)
 ------------------
 */
 
@@ -18,9 +18,11 @@ $LANG['H_IMAGE_BROWSER'] = 'Navegador de Im&aacute;genes';
 $LANG['H_IMAGE_SEARCH'] = 'B&uacute;squeda de Im&aacute;genes';
 
 $LANG['H_INVENTORIES'] = 'Biota de L&iacute;quenes';
-$LANG['H_CENTRAL_AMER'] = 'América Central';
+$LANG['H_CENTRAL_AMER'] = 'AmÃ©rica Central';
 $LANG['H_ECUADOR'] = 'Ecuador';
-$LANG['H_SUBPOLAR'] = 'Región Subpolar del Sur';
+$LANG['H_SUBPOLAR'] = 'RegiÃ³n Subpolar del Sur';
+
+$LANG['H_ASSOC_PROJECTS'] = 'Proyectos Asociados';
 
 $LANG['H_MORE_INFO'] = 'M&aacute;s Informaci&oacute;n';
 $LANG['H_SYMBIOTA'] = 'Symbiota';
