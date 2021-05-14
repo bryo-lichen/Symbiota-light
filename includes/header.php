@@ -120,6 +120,23 @@ include_once($SERVER_ROOT.'/content/lang/header.'.$LANG_TAG.'.php');
 						</ul>
 					</li>
 					<li>
+						<a href="#"><?php echo (isset($LANG['H_ASSOC_PROJECTS'])?$LANG['H_ASSOC_PROJECTS']:'Associated Projects'); ?></a>
+						<ul>
+							<li>
+								<a href="/arctic" target="_blank"><?php echo (isset($LANG['ARCTIC_PORTAL'])?$LANG['ARCTIC_PORTAL']:'Arctic Lichens'); ?></a>
+							</li>
+							<li>
+								<a href="http://bryophyteportal.org" target="_blank"><?php echo (isset($LANG['BYRO_PORTAL'])?$LANG['BRYO_PORTAL']:'Bryophyte Portal (CNABH)'); ?></a>
+							</li>
+							<li>
+								<a href="/cnalh" target="_blank">Consortium of North American Lichen Herbaria (CNALH)</a>
+							</li>
+							<li>
+								<a href="http://mycoportal.org" target="_blank">MyCoPortal</a>
+							</li>
+						</ul>
+					</li>
+					<li>
 						<a href="#" ><?php echo (isset($LANG['H_MORE_INFO'])?$LANG['H_MORE_INFO']:'More Information'); ?></a>
 						<ul>
 							<li>
