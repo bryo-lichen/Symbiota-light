@@ -69,6 +69,9 @@ header("Content-Type: text/html; charset=<?php echo $CHARSET; ?>");
 				</div>
 				<ul style="">
 					<li>
+						<b>April 2021</b> - The GLOBAL Bryophytes and Lichens Network, funded by the recent NSF Grant, launched a <a href="https://globaltcn.utk.edu/" target="_blank">new project website</a>, which includes a description of the project, digitization resources, and education and outreach material.
+					</li>
+					<li>
 						<b>January 2021</b> - Welcome our new portal manager Katie Pearson.
 					</li>
 					<li>
