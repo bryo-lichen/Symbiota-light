@@ -277,21 +277,24 @@ include_once($SERVER_ROOT.'/content/lang/header.'.$LANG_TAG.'.php');
 						<a href="https://lichenportal.org/cnalh/collections/specprocessor/crowdsource/index.php"><?php echo (isset($LANG['H_CROWDSOURCING'])?$LANG['H_CROWDSOURCING']:'Crowdsourcing'); ?></a>
 					</li>
 					<li>
-						<a href="#"><?php echo (isset($LANG['H_ASSOC_PROJECTS'])?$LANG['H_ASSOC_PROJECTS']:'Associated Projects'); ?></a>
-						<ul>
-                            <li>
-                                    <a href="/arctic" target="_blank"><?php echo (isset($LANG['ARCTIC_PORTAL'])?$LANG['ARCTIC_PORTAL']:'Arctic Lichens'); ?></a>
-                            </li>
-                            <li>
-                                    <a href="http://bryophyteportal.org" target="_blank"><?php echo (isset($LANG['BYRO_PORTAL'])?$LANG['BRYO_PORTAL']:'Bryophyte Portal (CNABH)'); ?></a>
-                            </li>
-							<li>
-								<a href="/chlal" target="_blank">L&iacute;quenes en Am&eacute;rica Latina (CHLAL)</a>
-							</li>
-                            <li>
-                                    <a href="http://mycoportal.org" target="_blank">MyCoPortal</a>
-                            </li>
-						</ul>
+		<a href="#"><?php echo (isset($LANG['H_ASSOC_PROJECTS'])?$LANG['H_ASSOC_PROJECTS']:'Associated Projects'); ?></a>
+			<ul>
+				<li>
+					<a href="/arctic" target="_blank"><?php echo (isset($LANG['ARCTIC_PORTAL'])?$LANG['ARCTIC_PORTAL']:'Arctic Lichens'); ?></a>
+				</li>
+				<li>
+					<a href="http://bryophyteportal.org" target="_blank"><?php echo (isset($LANG['BYRO_PORTAL'])?$LANG['BRYO_PORTAL']:'Bryophyte Portal (CNABH)'); ?></a>
+				</li>
+				<li>
+					<a href="/chlal" target="_blank">L&iacute;quenes en Am&eacute;rica Latina (CHLAL)</a>
+				</li>
+				<li>
+					<a href="https://globaltcn.utk.edu/">GLOBAL Bryophytes and Lichens Network</a>
+				</li>
+				<li>
+					<a href="http://mycoportal.org" target="_blank">MyCoPortal</a>
+				</li>
+			</ul>
 					</li>
 					<li>
 					<a href="#" ><?php echo (isset($LANG['H_MORE_INFO'])?$LANG['H_MORE_INFO']:'More Information'); ?></a>
