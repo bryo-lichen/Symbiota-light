@@ -197,15 +197,17 @@ include_once($SERVER_ROOT.'/content/lang/header.'.$LANG_TAG.'.php');
 						<a href="#" >Associated Projects</a>
 						<ul>
 							<li>
-								<a href="https://bryophyteportal.org/frullania/">Frullania Portal (CNABH)</a>
-							</li>
-							<li>
 								<a href="https://lichenportal.org/cnalh/">Consortium of North American Lichen Herbaria (CNALH)</a>
 							</li>
 							<li>
 								<a href="https://lichenportal.org/chlal/">Consorcio de Herbarios de L&iacutequenes en Am&eacuterica Latina (CHLAL)</a>
 							</li>
 							<li>
+								<a href="https://bryophyteportal.org/frullania/">Frullania Portal (CNABH)</a>
+							</li>
+							<li>
+								<a href="https://globaltcn.utk.edu/">GLOBAL Bryophytes and Lichens Network</a>
+							</li>
 							<li>
 								<a href="https://mycoportal.org/portal/">MyCoPortal</a>
 							</li>
