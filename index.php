@@ -84,13 +84,16 @@ header("Content-Type: text/html; charset=ISO-8859-1");
 					</div>
 					<ul>
 						<li>
+							<b>April 2021</b> - The network funded by the recent NSF Grant, the GLOBAL TCN, launched a <a href="https://globaltcn.utk.edu/" target="_blank">new project website</a>, which includes a description of the project, digitization resources, and education and outreach material.
+						</li>
+						<li>
 							<b>January 2021</b> - Welcome our new portal manager Katie Pearson.
 						</li>
 						<li>
 							<b>September 2020</b> - ASU and collaborators were recently awarded a new <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2001394" target="_blank">NSF Grant</a> to Build a <a href="https://www.idigbio.org/wiki/index.php/Building_a_global_consortium_of_bryophytes_and_lichens:_keystones_of_cryptobiotic_communities" target="_blank"><b>Global Consortium of Bryophytes and Lichens</b></a>.
 						</li>
 						<li>
-							<b>July 2019</b> - We now launched <a href="http:\\help-resources.lichenportal.org" target="_blank"><B> CNALH Help &amp; Resources</b></a>, a site with tutorials how to join and participate, and some useful programs that can be downloaded.
+							<b>July 2019</b> - We now launched <a href="http://help-resources.lichenportal.org" target="_blank"><B> CNALH Help &amp; Resources</b></a>, a site with tutorials how to join and participate, and some useful programs that can be downloaded.
 						</li>
 						<li>
 							<b>February 2019</b> - The new design of the Consortium of North American Lichen Herbaria (CNALH) has just been
