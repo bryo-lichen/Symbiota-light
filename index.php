@@ -84,7 +84,7 @@ header("Content-Type: text/html; charset=ISO-8859-1");
 					</div>
 					<ul>
 						<li>
-							<b>April 2021</b> - The network funded by the recent NSF Grant, the GLOBAL TCN, launched a <a href="https://globaltcn.utk.edu/" target="_blank">new project website</a>, which includes a description of the project, digitization resources, and education and outreach material.
+							<b>April 2021</b> - The GLOBAL Bryophytes and Lichens Network, funded by the recent NSF Grant, launched a <a href="https://globaltcn.utk.edu/" target="_blank">new project website</a>, which includes a description of the project, digitization resources, and education and outreach material.
 						</li>
 						<li>
 							<b>January 2021</b> - Welcome our new portal manager Katie Pearson.
@@ -94,10 +94,6 @@ header("Content-Type: text/html; charset=ISO-8859-1");
 						</li>
 						<li>
 							<b>July 2019</b> - We now launched <a href="http://help-resources.lichenportal.org" target="_blank"><B> CNALH Help &amp; Resources</b></a>, a site with tutorials how to join and participate, and some useful programs that can be downloaded.
-						</li>
-						<li>
-							<b>February 2019</b> - The new design of the Consortium of North American Lichen Herbaria (CNALH) has just been
-							launched. If you manage your collection as a live data set, you can now upload the data directly into GBIF!
 						</li>
 						<li>
 							<b>August  2018</b> - ASU receives a  multimillion dollar grant from NSF to create the new
