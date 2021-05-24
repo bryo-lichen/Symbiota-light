@@ -99,6 +99,14 @@
 				permission of the landowner and, in the case of rare and endangered plants, 
 				additional permits may be required. It is best to coordinate such efforts with a 
 				regional institution that manages a publically accessible collection.
+			</div>
+			<h2>Disclaimer Regarding Offensive Language</h2> 
+		    <div style="margin:15px;">
+				<?php echo $DEFAULT_TITLE; ?> may contain specimens and
+			    	historical records that are culturally sensitive. The collections include specimens
+			    	dating back over 200 years collected from all around the world. Some records may also
+			    	include offensive language. These records do not reflect the CNABH’s current viewpoint
+			    	but rather the social attitudes and circumstances of the time period when specimens were collected or cataloged.
 			</div> 
 		</div>
 		<?php
