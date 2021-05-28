@@ -50,7 +50,7 @@
 				</div>
 				<div style="margin:10px;">
 					<?php 
-					echo 'Consorcio de Herbarios de Líquenes en América Latina [CHLAL]'. '.date('Y')'; 
+					echo 'Consortium of Latin American Lichen Herbaria [CHLAL]'. '.date('Y')'; 
 					echo 'http//:'.$_SERVER['HTTP_HOST'].$clientRoot.(substr($clientRoot,-1)=='/'?'':'/') . '.'; 
 					echo 'Accessed on '.date('F d').'. '; 
 					?>
@@ -62,7 +62,7 @@
 				<div style="margin:10px;">
 					Biodiversity occurrence data published by: &lt;List of Collections&gt; 
 					(Accessed through the CHLAL Data Portal, 
-					<?php echo 'http//:'.$_SERVER['HTTP_HOST'].$clientRoot.(substr($clientRoot,-1)=='/'?'':'/chlal/'); ?>, YYYY-MM-DD)<br/><br/>
+					<?php echo 'https://lichenportal.org/chlal/'; ?>, YYYY-MM-DD)<br/><br/>
 					<b>For example:</b><br/>
 					Biodiversity occurrence data published by: 
 					Field Museum of Natural History, Museum of Vertebrate Zoology, and New York Botanical Garden 
@@ -130,7 +130,6 @@
 			    	may also include offensive language. These records do not reflect CHLAL’s current viewpoint but rather the social 
 			    	attitudes and circumstances of the time period when specimens were collected or catalogued.
 			</div>
-			</div> 
 		</div>
 		<?php
 			} else {
@@ -141,15 +140,15 @@
 
 			<h2>Recomendaciones Para Citar</h2>
 			<div style="margin:10px">
-				Sugerimos usar el siguiente formato para citar los datos descargados desde del CHLAL:
+				Sugerimos usar el siguiente formato para citar los datos descargados desde del Consorcio de Herbarios de Líquenes en América Latina (CHLAL):
 				<div style="font-weight:bold;margin-top:10px;">
 					Citación General:
 				</div>
 				<div style="margin:10px;">
 					<?php 
-					echo 'CHLAL' . '.date('Y').'. '; 
-					echo 'http//:'.$_SERVER['HTTP_HOST'].$clientRoot.(substr($clientRoot,-1)=='/'?'':'/').'index.php. '; 
-					echo 'Accedido en '.date('d-m-Y').'. '; 
+					echo 'Consortium of Latin American Lichen Herbaria [CHLAL]'. '.date('Y')'; 
+					echo 'http//:'.$_SERVER['HTTP_HOST'].$clientRoot.(substr($clientRoot,-1)=='/'?'':'/') . '.'; 
+					echo 'Accessed on '.'date('F d').'. '; 
 					?>
 				</div>
 				
