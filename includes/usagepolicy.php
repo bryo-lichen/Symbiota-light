@@ -122,6 +122,15 @@
 				additional permits may be required. It is best to coordinate such efforts with a 
 				regional institution that manages a publically accessible collection.
 			</div> 
+
+			<h2>Disclaimer Regarding Offensive Language</h2> 
+		    <div style="margin:15px;">
+				<?php echo $defaultTitle; ?> may contain specimens and historical records that are culturally sensitive. 
+			    	The collections include specimens dating back over 200 years collected from all around the world. Some records 
+			    	may also include offensive language. These records do not reflect <?php echo $defaultTitle; ?>’s current viewpoint but rather the social 
+			    	attitudes and circumstances of the time period when specimens were collected or catalogued.
+			</div>
+			</div> 
 		</div>
 		<?php
 			} else {
@@ -220,6 +229,13 @@
 			    de biodiversidad, son compartidas asumiendo que todas las instituciones participantes en el Consorcio ya tienen todos los permisos 
 			    legales necesarios.
 			</div> 
+			<h2>Exoneración de Responsabilidad con respeto a Lenguaje Ofensiva</h2> 
+		    <div style="margin:15px;">
+				<?php echo $defaultTitle; ?> mantiene información sobre especímenes históricos de sensibilidad cultural. Algunas colecciones 
+			    tienen más de 200 años, y fueron recolectadas en todo el mundo. Algunos datos de estos especímenes pueden ser considerados de 
+			    lenguaje ofensivo. Esta información no refleja el actual punto de vista de <?php echo $defaultTitle; ?> sino la mentalidad cultural y situación social 
+			    durante la época cuando los especímenes fueron recolectados y catalogados.
+			</div>
 		</div>
 		<?php
 			}
