@@ -50,8 +50,8 @@
 				</div>
 				<div style="margin:10px;">
 					<?php 
-					echo 'Consorcio de Herbarios de Líquenes en América Latina [CHLAL]'. '.date('Y').'. '; 
-					echo 'http//:'.$_SERVER['HTTP_HOST'].$clientRoot.(substr($clientRoot,-1)=='/'?'':'/').'index.php. '; 
+					echo 'Consorcio de Herbarios de Líquenes en América Latina [CHLAL]'. '.date('Y')'; 
+					echo 'http//:'.$_SERVER['HTTP_HOST'].$clientRoot.(substr($clientRoot,-1)=='/'?'':'/') . '.'; 
 					echo 'Accessed on '.date('F d').'. '; 
 					?>
 				</div>
