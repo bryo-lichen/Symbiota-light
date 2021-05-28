@@ -44,13 +44,13 @@
 
 			<h2>Recommended Citation Formats</h2>
 			<div style="margin:10px">
-				Use one of the following formats to cite data retrieved from the <?php echo $defaultTitle; ?> network:
+				Use one of the following formats to cite data retrieved from CHLAL:
 				<div style="font-weight:bold;margin-top:10px;">
 					General Citation:
 				</div>
 				<div style="margin:10px;">
 					<?php 
-					echo $defaultTitle.'. '.date('Y').'. '; 
+					echo 'Consorcio de Herbarios de Líquenes en América Latina [CHLAL]'. '.date('Y').'. '; 
 					echo 'http//:'.$_SERVER['HTTP_HOST'].$clientRoot.(substr($clientRoot,-1)=='/'?'':'/').'index.php. '; 
 					echo 'Accessed on '.date('F d').'. '; 
 					?>
@@ -61,13 +61,13 @@
 				</div>
 				<div style="margin:10px;">
 					Biodiversity occurrence data published by: &lt;List of Collections&gt; 
-					(Accessed through <?php echo $defaultTitle; ?> Data Portal, 
-					<?php echo 'http//:'.$_SERVER['HTTP_HOST'].$clientRoot.(substr($clientRoot,-1)=='/'?'':'/').'index.php'; ?>, YYYY-MM-DD)<br/><br/>
+					(Accessed through the CHLAL Data Portal, 
+					<?php echo 'http//:'.$_SERVER['HTTP_HOST'].$clientRoot.(substr($clientRoot,-1)=='/'?'':'/chlal/'); ?>, YYYY-MM-DD)<br/><br/>
 					<b>For example:</b><br/>
 					Biodiversity occurrence data published by: 
 					Field Museum of Natural History, Museum of Vertebrate Zoology, and New York Botanical Garden 
-					(Accessed through <?php echo $defaultTitle; ?> Data Portal, 
-					<?php echo 'http//:'.$_SERVER['HTTP_HOST'].$clientRoot.(substr($clientRoot,-1)=='/'?'':'/').'index.php, '.date('Y-m-d').')'; ?>
+					(Accessed through the CHLAL Data Portal, 
+					<?php echo 'https://lichenportal.org/chlal/. ' . '.date('Y-m-d').')'; ?>
 				</div>
 			</div>
 			<div>
@@ -78,12 +78,12 @@
 		    <div style="margin:10px;">
 				<ul>
 					<li>
-						While <?php echo $defaultTitle; ?> will make every effort possible to control and document the quality 
+						While CHLAL will make every effort possible to control and document the quality 
 						of the data it publishes, the data are made available "as is". Any report of errors in the data should be 
 						directed to the appropriate curators and/or collections managers. 
 					</li>
 					<li>
-						<?php echo $defaultTitle; ?> cannot assume responsibility for damages resulting from mis-use or 
+						CHLAL cannot assume responsibility for damages resulting from mis-use or 
 						mis-interpretation of datasets or from errors or omissions that may exist in the data. 
 					</li>
 					<li>
@@ -92,7 +92,7 @@
 						contact the original investigator responsible for the data that they are accessing. 
 					</li>
 					<li>
-						<?php echo $defaultTitle; ?> asks that users not redistribute data obtained from this site without permission for data owners. 
+						CHLAL asks that users not redistribute data obtained from this site without permission for data owners. 
 						However, links or references to this site may be freely posted.
 					</li>
 				</ul>
@@ -125,9 +125,9 @@
 
 			<h2>Disclaimer Regarding Offensive Language</h2> 
 		    <div style="margin:15px;">
-				<?php echo $defaultTitle; ?> may contain specimens and historical records that are culturally sensitive. 
+				CHLAL may contain specimens and historical records that are culturally sensitive. 
 			    	The collections include specimens dating back over 200 years collected from all around the world. Some records 
-			    	may also include offensive language. These records do not reflect <?php echo $defaultTitle; ?>’s current viewpoint but rather the social 
+			    	may also include offensive language. These records do not reflect CHLAL’s current viewpoint but rather the social 
 			    	attitudes and circumstances of the time period when specimens were collected or catalogued.
 			</div>
 			</div> 
@@ -141,13 +141,13 @@
 
 			<h2>Recomendaciones Para Citar</h2>
 			<div style="margin:10px">
-				Sugerimos usar el siguiente formato para citar los datos descargados desde del <?php echo $defaultTitle; ?>:
+				Sugerimos usar el siguiente formato para citar los datos descargados desde del CHLAL:
 				<div style="font-weight:bold;margin-top:10px;">
 					Citación General:
 				</div>
 				<div style="margin:10px;">
 					<?php 
-					echo $defaultTitle.'. '.date('Y').'. '; 
+					echo 'CHLAL' . '.date('Y').'. '; 
 					echo 'http//:'.$_SERVER['HTTP_HOST'].$clientRoot.(substr($clientRoot,-1)=='/'?'':'/').'index.php. '; 
 					echo 'Accedido en '.date('d-m-Y').'. '; 
 					?>
@@ -158,10 +158,10 @@
 				</div>
 				<div style="margin:10px;">
 					<?php
-					echo $defaultTitle.'. '.date('Y').'. ';
+					echo 'CHLAL' . '.date('Y').'. ';
 					?>
-					Datos de biodiversidad de ocurrencias de especímenes publicado por [listado de colecciones] (obtenido de <?php echo $defaultTitle; ?>), 
-					<?php echo 'http//:'.$_SERVER['HTTP_HOST'].$clientRoot.(substr($clientRoot,-1)=='/'?'':'/').'index.php'; ?>, DD-MM-YYYY)<br/><br/>
+					Datos de biodiversidad de ocurrencias de especímenes publicado por [listado de colecciones] (obtenido de CHLAL), 
+					<?php echo 'http//:'.$_SERVER['HTTP_HOST'].$clientRoot.(substr($clientRoot,-1)=='/'?'':'/chlal/'); ?>, DD-MM-YYYY)<br/><br/>
 					<b>Por ejemplo:</b><br/>
 					CHLAL (2021) Datos de biodiversidad de ocurrencias de especímenes publicado por el Herbario de  
 					Líquenes de la Universidad de Talca, Chile (obtenido por https://lichenportal.org/chlal/. Fecha de  
@@ -176,14 +176,14 @@
 		   		<div style="margin:10px;">
 				<ul>
 					<li>
-						Aunque <?php echo $defaultTitle; ?> mantiene la infraestructura para compartir datos de biodiversidad, 
+						Aunque CHLAL mantiene la infraestructura para compartir datos de biodiversidad, 
 						no somos responsables de la calidad de estos datos. La información disponible aquí está disponible como “tal cual”. 
 						Quiere decir que, es responsabilidad de las instituciones individuales y no del Consorcio en general mantener una 
 						alta calidad de sus datos. Si usted encuentra errores es necesario comunicarse directamente con el dueño de los datos, 
 						es decir, el curador de la colección específica.
 					</li>
 					<li>
-						<?php echo $defaultTitle; ?> no asume responsabilidad alguna por el mal uso o mala interpretación de los datos, 
+						CHLAL <i>no</i> asume responsabilidad alguna por el mal uso o mala interpretación de los datos, 
 						tampoco somos responsables de información incompleta o inadecuada.
 					</li>
 					<li>
@@ -193,7 +193,7 @@
 					</li>
 					<li>
 						Solicitamos no redistribuir datos de nuestra plataforma sin permiso del dueño de esta información original. 
-						Sin embargo, usted puede publicar un enlace a nuestra página web y recomendamos citar el Consorcio como la fuente 
+						Sin embargo, usted puede publicar un enlace a nuestra página web y recomendamos citar CHLAL como la fuente 
 						de la información que usted utilice.
 					</li>
 				</ul>
@@ -231,9 +231,9 @@
 			</div> 
 			<h2>Exoneración de Responsabilidad con respeto a Lenguaje Ofensiva</h2> 
 		    <div style="margin:15px;">
-				<?php echo $defaultTitle; ?> mantiene información sobre especímenes históricos de sensibilidad cultural. Algunas colecciones 
+				CHLAL mantiene información sobre especímenes históricos de sensibilidad cultural. Algunas colecciones 
 			    tienen más de 200 años, y fueron recolectadas en todo el mundo. Algunos datos de estos especímenes pueden ser considerados de 
-			    lenguaje ofensivo. Esta información no refleja el actual punto de vista de <?php echo $defaultTitle; ?> sino la mentalidad cultural y situación social 
+			    lenguaje ofensivo. Esta información no refleja el actual punto de vista de CHLAL sino la mentalidad cultural y situación social 
 			    durante la época cuando los especímenes fueron recolectados y catalogados.
 			</div>
 		</div>
