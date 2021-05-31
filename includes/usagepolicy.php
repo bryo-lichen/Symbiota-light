@@ -39,19 +39,18 @@
 			if($LANG_TAG=='en'){
 		?>
 		<div id="innertext">
-			
 			<h1>Guidelines for Acceptable Use of Data</h1><br />
 
 			<h2>Recommended Citation Formats</h2>
 			<div style="margin:10px">
-				Use one of the following formats to cite data retrieved from CHLAL:
+				Use one of the following formats to cite data retrieved from the <?php echo $DEFAULT_TITLE; ?> network:
 				<div style="font-weight:bold;margin-top:10px;">
 					General Citation:
 				</div>
 				<div style="margin:10px;">
 					<?php 
-					echo 'Consortium of Latin American Lichen Herbaria [CHLAL]'. '.date('Y')'; 
-					echo 'http//:'.$_SERVER['HTTP_HOST'].$clientRoot.(substr($clientRoot,-1)=='/'?'':'/') . '.'; 
+					echo $DEFAULT_TITLE.'. '.date('Y').'. '; 
+					echo 'http//:'.$_SERVER['HTTP_HOST'].$CLIENT_ROOT.(substr($CLIENT_ROOT,-1)=='/'?'':'/').'index.php. '; 
 					echo 'Accessed on '.date('F d').'. '; 
 					?>
 				</div>
@@ -61,13 +60,13 @@
 				</div>
 				<div style="margin:10px;">
 					Biodiversity occurrence data published by: &lt;List of Collections&gt; 
-					(Accessed through the CHLAL Data Portal, 
-					<?php echo 'https://lichenportal.org/chlal/'; ?>, YYYY-MM-DD)<br/><br/>
+					(Accessed through <?php echo $DEFAULT_TITLE; ?> Data Portal, 
+					<?php echo 'http//:'.$_SERVER['HTTP_HOST'].$CLIENT_ROOT.(substr($CLIENT_ROOT,-1)=='/'?'':'/').'index.php'; ?>, YYYY-MM-DD)<br/><br/>
 					<b>For example:</b><br/>
 					Biodiversity occurrence data published by: 
 					Field Museum of Natural History, Museum of Vertebrate Zoology, and New York Botanical Garden 
-					(Accessed through the CHLAL Data Portal, 
-					<?php echo 'https://lichenportal.org/chlal/. ' . '.date('Y-m-d').')'; ?>
+					(Accessed through <?php echo $DEFAULT_TITLE; ?> Data Portal, 
+					<?php echo 'http//:'.$_SERVER['HTTP_HOST'].$CLIENT_ROOT.(substr($CLIENT_ROOT,-1)=='/'?'':'/').'index.php, '.date('Y-m-d').')'; ?>
 				</div>
 			</div>
 			<div>
@@ -78,12 +77,12 @@
 		    <div style="margin:10px;">
 				<ul>
 					<li>
-						While CHLAL will make every effort possible to control and document the quality 
+						While <?php echo $DEFAULT_TITLE; ?> will make every effort possible to control and document the quality 
 						of the data it publishes, the data are made available "as is". Any report of errors in the data should be 
 						directed to the appropriate curators and/or collections managers. 
 					</li>
 					<li>
-						CHLAL cannot assume responsibility for damages resulting from mis-use or 
+						<?php echo $DEFAULT_TITLE; ?> cannot assume responsibility for damages resulting from mis-use or 
 						mis-interpretation of datasets or from errors or omissions that may exist in the data. 
 					</li>
 					<li>
@@ -92,12 +91,11 @@
 						contact the original investigator responsible for the data that they are accessing. 
 					</li>
 					<li>
-						CHLAL asks that users not redistribute data obtained from this site without permission for data owners. 
+						<?php echo $DEFAULT_TITLE; ?> asks that users not redistribute data obtained from this site without permission for data owners. 
 						However, links or references to this site may be freely posted.
 					</li>
 				</ul>
 		    </div>
-		
 			<a name="images"></a>
 			<h2>Images</h2>
 		    <div style="margin:15px;">
@@ -121,15 +119,15 @@
 				permission of the landowner and, in the case of rare and endangered plants, 
 				additional permits may be required. It is best to coordinate such efforts with a 
 				regional institution that manages a publically accessible collection.
-			</div> 
-
+			</div>
 			<h2>Disclaimer Regarding Offensive Language</h2> 
 		    <div style="margin:15px;">
-				CHLAL may contain specimens and historical records that are culturally sensitive. 
-			    	The collections include specimens dating back over 200 years collected from all around the world. Some records 
-			    	may also include offensive language. These records do not reflect CHLAL’s current viewpoint but rather the social 
-			    	attitudes and circumstances of the time period when specimens were collected or catalogued.
-			</div>
+				<?php echo $DEFAULT_TITLE; ?> may contain specimens and
+			    	historical records that are culturally sensitive. The collections include specimens
+			    	dating back over 200 years collected from all around the world. Some records may also
+			    	include offensive language. These records do not reflect <?php echo $DEFAULT_TITLE; ?>’s current viewpoint
+			    	but rather the social attitudes and circumstances of the time period when specimens were collected or cataloged.
+			</div> 
 		</div>
 		<?php
 			} else {
@@ -146,6 +144,13 @@
 				</div>
 				<div style="font-weight:bold;margin-top:10px;">
 					Uso de datos de ocurrencia para instituciones específicas:
+				</div>
+				<div style="margin:10px;">
+					<?php 
+					echo 'Consortium of Latin American Lichen Herbaria [CHLAL]'. '.date('Y')'; 
+					echo 'http//:'.$_SERVER['HTTP_HOST'].$clientRoot.(substr($clientRoot,-1)=='/'?'':'/') . '.'; 
+					echo 'Accessed on '.'date('F d').'. '; 
+					?>
 				</div>
 				<div style="margin:10px;">
 					<?php
