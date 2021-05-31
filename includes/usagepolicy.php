@@ -144,14 +144,6 @@
 				<div style="font-weight:bold;margin-top:10px;">
 					Citación General:
 				</div>
-				<div style="margin:10px;">
-					<?php 
-					echo 'Consortium of Latin American Lichen Herbaria [CHLAL]'. '.date('Y')'; 
-					echo 'http//:'.$_SERVER['HTTP_HOST'].$clientRoot.(substr($clientRoot,-1)=='/'?'':'/') . '.'; 
-					echo 'Accessed on '.'date('F d').'. '; 
-					?>
-				</div>
-				
 				<div style="font-weight:bold;margin-top:10px;">
 					Uso de datos de ocurrencia para instituciones específicas:
 				</div>
