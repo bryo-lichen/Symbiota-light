@@ -193,42 +193,6 @@
 					</li>
 				</ul>
 		    </div>
-			<a name="images"></a>
-			<h2>Imágenes</h2>
-		    <div style="margin:15px;">
-			Las imágenes disponibles de nuestro sitio web fueron generosamente proporcionadas por sus dueños para promover la educación y la ciencia. 
-			Los autores mantienen todos sus derechos sobre ellas. Hay algunas fotos con copyright tradicional pero a menos que se indique lo contrario, 
-			    las imágenes están disponibles bajo licencia de Atribución-Compartir Igual, No portada (<a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>): 
-			    Eso quiere decir que usted es libre de compartir (copiar y redistribuir el material en cualquier medio o formato) y adaptar 
-			    (remezclar, transformar y construir a partir del material para cualquier propósito, incluso comercialmente). Atribución: 
-			    Usted debe dar crédito de manera adecuada, brindar un enlace a la licencia, e indicar si se han realizado cambios. 
-			    Puede hacerlo en cualquier forma razonable, pero no de forma tal que sugiera que usted o su uso tienen el apoyo de la licenciante. 
-			    CompartirIgual: Si remezcla, transforma o crea a partir del material, debe distribuir su contribución bajo la misma licencia del original. 
-			    No hay restricciones adicionales (no puede aplicar términos legales ni medidas tecnológicas que restrinjan legalmente a otros a hacer 
-			    cualquier uso permitido por la licencia).
-		    </div>
-
-			<h2>Información general sobre los datos de ocurrencias de especímenes y sus imágenes</h2> 
-		    <div style="margin:15px;">
-				Los especímenes científicos depositados en las colecciones del Consorcio fueron preparados con mucho cuidado para mantenerlos por unos 
-			    cientos de años para su investigación científica. Algunos herbarios del Consorcio mantienen especímenes colectados hace más de 100 años. 
-			    Muchas de las especies representadas por estos especímenes ya no se encuentran en su sitio de colecta original. Compartir estas muestras 
-			    en forma digital, como imagen por el Consorcio, puede ayudar en la preservación de estas muestras valiosas sin la necesidad de inadvertidamente 
-			    causar daño por su manipulación.<br></br>
-			Por favor, antes de recolectar muestras usted necesita averiguar si es necesario tener permiso del dueño de la tierra donde se hace la recolección. 
-			Para especies raras y/o amenazadas puede ser necesario obtener además un permiso adicional. En los diferentes países diferentes leyes aplican y 
-			obviamente es necesario seguir todos los trámites y reglamentos necesarios. Generalmente es muy buena práctica coordinar sus esfuerzos de colecta 
-			directamente con las instituciones locales, regionales y nacionales que manejan colecciones científicas. El Consorcio no es legalmente responsable 
-			por los datos compartidos. Todas las bases de datos disponibles en este portal de biodiversidad, son compartidas asumiendo que todas las instituciones 
-			participantes en el Consorcio ya tienen todos los permisos legales necesarios.
-			</div>
-			<h2>Exoneración de Responsabilidad con respeto a Lenguaje Ofensiva</h2> 
-		    <div style="margin:15px;">
-			El Consorcio de Herbarios de Líquenes en América Latina (CHLAL) mantiene información sobre especímenes históricos de sensibilidad cultural. 
-			    Algunas colecciones tienen más de 200 años, y fueron recolectadas en todo el mundo. Algunos datos de estos especímenes pueden ser considerados 
-			    de lenguaje ofensivo. Esta información no refleja el actual punto de vista de CHLAL sino la mentalidad cultural y situación social durante la 
-			    época cuando los especímenes fueron recolectados y catalogados.
-			</div> 
 		</div>
 		<?php
 			}
