@@ -146,9 +146,9 @@
 				</div>
 				<div style="margin:10px;">
 					<?php 
-					/*echo 'Consorcio de Herbarios de Líquenes en América Latina (CHLAL):'. '.date('Y').'. '; 
+					//echo 'Consorcio de Herbarios de Líquenes en América Latina (CHLAL):'. '.date('Y').'. '; 
 					echo 'http//:'.$_SERVER['HTTP_HOST'].$CLIENT_ROOT.(substr($CLIENT_ROOT,-1)=='/'?'':'/').'index.php. '; 
-					echo 'Fecha de acceso: '.date('d m Y').'. '; 
+					echo 'Fecha de acceso: '.date('d m Y').'. ';
 					?>
 				</div>
 				<div style="margin:10px;">
