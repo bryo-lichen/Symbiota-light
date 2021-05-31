@@ -141,9 +141,6 @@
 				<div style="font-weight:bold;margin-top:10px;">
 					Citación General:
 				</div>
-				<div style="font-weight:bold;margin-top:10px;">
-					Uso de datos de ocurrencia para instituciones específicas:
-				</div>
 				<div style="margin:10px;">
 					<?php 
 					echo 'Consorcio de Herbarios de Líquenes en América Latina (CHLAL)'; 
@@ -151,6 +148,9 @@
 					echo 'http//:'.$_SERVER['HTTP_HOST'].$CLIENT_ROOT.(substr($CLIENT_ROOT,-1)=='/'?'':'/').'index.php. '; 
 					echo 'Fecha de acceso: '.date('d m Y').'. ';
 					?>
+				</div>
+				<div style="font-weight:bold;margin-top:10px;">
+					Uso de datos de ocurrencia para instituciones específicas:
 				</div>
 				<div style="margin:10px;">
 					Datos de biodiversidad de ocurrencias de especímenes publicado por &lt;listado de colecciones&gt;
