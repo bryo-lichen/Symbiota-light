@@ -33,6 +33,7 @@ $LANG['H_CONTACTS'] = 'Contactos';
 $LANG['H_PARTNERS'] = 'Socios';
 $LANG['H_RESPONSIBLE'] = 'Responsables';
 $LANG['H_AYUDA'] = 'Ayuda y Recursos';
+$LANG['H_DATAUSE'] = 'Normas para uso de datos';
 
 $LANG['H_WELCOME'] = 'Bienvenido';
 $LANG['H_MY_PROFILE'] = 'Mi Perfil';
