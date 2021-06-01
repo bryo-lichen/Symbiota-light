@@ -50,8 +50,8 @@
 				<div style="margin:10px;">
 					<?php 
 					echo $DEFAULT_TITLE.'. '.date('Y').'. '; 
-					echo 'http//:'.$_SERVER['HTTP_HOST'].$CLIENT_ROOT.(substr($CLIENT_ROOT,-1)=='/'?'':'/').; 
-					echo 'Accessed'. '.date('Y-m-d').'. '; 
+					echo 'http//:'.$_SERVER['HTTP_HOST'].$CLIENT_ROOT.(substr($CLIENT_ROOT,-1)=='/'?'':'/').'index.php. '; 
+					echo 'Accessed on '.date('F d').'. '; 
 					?>
 				</div>
 				
@@ -59,17 +59,14 @@
 					Usage of occurrence data from specific institutions:
 				</div>
 				<div style="margin:10px;">
-					CNALH (YYYY) Biodiversity occurrence data published by: &lt;List of Collections&gt; 
+					Biodiversity occurrence data published by: &lt;List of Collections&gt; 
 					(Accessed through <?php echo $DEFAULT_TITLE; ?> Data Portal, 
 					<?php echo 'http//:'.$_SERVER['HTTP_HOST'].$CLIENT_ROOT.(substr($CLIENT_ROOT,-1)=='/'?'':'/').'index.php'; ?>, YYYY-MM-DD)<br/><br/>
 					<b>For example:</b><br/>
-					CNALH (
-					<?php echo '.date('Y').; ?>
-					). Biodiversity occurrence data published by: 
+					Biodiversity occurrence data published by: 
 					Field Museum of Natural History, Museum of Vertebrate Zoology, and New York Botanical Garden 
-					(Accessed through 
-					<?php echo $DEFAULT_TITLE; ?> Data Portal, https://lichenportal.org/chlal/
-					<?php echo '.date('Y-m-d').'.'; ?>
+					(Accessed through <?php echo $DEFAULT_TITLE; ?> Data Portal, 
+					<?php echo 'http//:'.$_SERVER['HTTP_HOST'].$CLIENT_ROOT.(substr($CLIENT_ROOT,-1)=='/'?'':'/').'index.php, '.date('Y-m-d').')'; ?>
 				</div>
 			</div>
 			<div>
