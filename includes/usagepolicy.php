@@ -64,11 +64,12 @@
 					<?php echo 'http//:'.$_SERVER['HTTP_HOST'].$CLIENT_ROOT.(substr($CLIENT_ROOT,-1)=='/'?'':'/').'index.php'; ?>, YYYY-MM-DD)<br/><br/>
 					<b>For example:</b><br/>
 					CNALH (
-					<?php echo '.date('Y').; ?.
+					<?php echo '.date('Y').; ?>
 					). Biodiversity occurrence data published by: 
 					Field Museum of Natural History, Museum of Vertebrate Zoology, and New York Botanical Garden 
-					(Accessed through <?php echo $DEFAULT_TITLE; ?> Data Portal, 
-					<?php echo 'http//:'.$_SERVER['HTTP_HOST'].$CLIENT_ROOT.(substr($CLIENT_ROOT,-1)=='/'?'':'/').date('Y-m-d').')'; ?>
+					(Accessed through 
+					<?php echo $DEFAULT_TITLE; ?> Data Portal, https://lichenportal.org/chlal/
+					<?php echo '.date('Y-m-d').'.'; ?>
 				</div>
 			</div>
 			<div>
