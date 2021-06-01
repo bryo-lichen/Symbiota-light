@@ -50,8 +50,8 @@
 				<div style="margin:10px;">
 					<?php 
 					echo $DEFAULT_TITLE.'. '.date('Y').'. '; 
-					echo 'http//:'.$_SERVER['HTTP_HOST'].$CLIENT_ROOT.(substr($CLIENT_ROOT,-1)=='/'?'':'/').'index.php. '; 
-					echo 'Accessed on '.date('F d').'. '; 
+					echo 'http//:'.$_SERVER['HTTP_HOST'].$CLIENT_ROOT.(substr($CLIENT_ROOT,-1)=='/'?'':'/').; 
+					echo 'Accessed '.date('Y-m-d').'. '; 
 					?>
 				</div>
 				
@@ -59,14 +59,16 @@
 					Usage of occurrence data from specific institutions:
 				</div>
 				<div style="margin:10px;">
-					Biodiversity occurrence data published by: &lt;List of Collections&gt; 
+					CNALH (YYYY) Biodiversity occurrence data published by: &lt;List of Collections&gt; 
 					(Accessed through <?php echo $DEFAULT_TITLE; ?> Data Portal, 
 					<?php echo 'http//:'.$_SERVER['HTTP_HOST'].$CLIENT_ROOT.(substr($CLIENT_ROOT,-1)=='/'?'':'/').'index.php'; ?>, YYYY-MM-DD)<br/><br/>
 					<b>For example:</b><br/>
-					Biodiversity occurrence data published by: 
+					CNALH (
+					<?php echo '.date('Y').; ?.
+					). Biodiversity occurrence data published by: 
 					Field Museum of Natural History, Museum of Vertebrate Zoology, and New York Botanical Garden 
 					(Accessed through <?php echo $DEFAULT_TITLE; ?> Data Portal, 
-					<?php echo 'http//:'.$_SERVER['HTTP_HOST'].$CLIENT_ROOT.(substr($CLIENT_ROOT,-1)=='/'?'':'/').'index.php, '.date('Y-m-d').')'; ?>
+					<?php echo 'http//:'.$_SERVER['HTTP_HOST'].$CLIENT_ROOT.(substr($CLIENT_ROOT,-1)=='/'?'':'/').date('Y-m-d').')'; ?>
 				</div>
 			</div>
 			<div>
@@ -82,16 +84,16 @@
 						directed to the appropriate curators and/or collections managers. 
 					</li>
 					<li>
-						<?php echo $DEFAULT_TITLE; ?> cannot assume responsibility for damages resulting from mis-use or 
-						mis-interpretation of datasets or from errors or omissions that may exist in the data. 
+						<?php echo $DEFAULT_TITLE; ?> cannot assume responsibility for damages resulting from misuse or 
+						misinterpretation of datasets or from errors or omissions that may exist in the data. 
 					</li>
 					<li>
 						It is considered a matter of professional ethics to cite and acknowledge the work of other scientists that 
-						has resulted in data used in subsequent research. We encourages users to 
+						has resulted in data used in subsequent research. We encourage users to 
 						contact the original investigator responsible for the data that they are accessing. 
 					</li>
 					<li>
-						<?php echo $DEFAULT_TITLE; ?> asks that users not redistribute data obtained from this site without permission for data owners. 
+						<?php echo $DEFAULT_TITLE; ?> asks that data are <i>not</i> redistributed from this site without written permission by the owners of these data sets. 
 						However, links or references to this site may be freely posted.
 					</li>
 				</ul>
@@ -99,26 +101,31 @@
 			<a name="images"></a>
 			<h2>Images</h2>
 		    <div style="margin:15px;">
-		    	Images within this website have been generously contributed by their owners to 
-		    	promote education and research. These contributors retain the full copyright for 
-		    	their images. Unless stated otherwise, images are made available under the Creative Commons
-		    	Attribution-ShareAlike (<a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA</a>) 
-				Users are allowed to copy, transmit, reuse, and/or adapt content, as long as attribution 
-				regarding the source of the content is made. If the content is altered, transformed, or enhanced, 
-				it may be re-distributed only under the same or similar license by which it was acquired. 
+			   	Images within this website have been generously contributed by their owners to promote education and research. 
+			    	Contributors retain full copyright for all of their images. However, unless specifically stated otherwise, authors 
+			    	have agreed to share their images under a Creative Commons Attribution-ShareAlike 3.0 Unported (<a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>)  license: 
+			   	Users are allowed to <b>share</b> (copy and redistribute the material in any medium or format) and <b>adapt</b> 
+			    	(remix, transform, and build upon the material for any purpose, even commercially). Attribution: You must give appropriate credit, 
+			    	provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that 
+			    	suggests the licensor endorses you or your use. ShareAlike: If you remix, transform, or build upon the material, you must distribute 
+			    	your contributions under the <b>same</b> license as the original. No additional restrictions (you may not apply legal terms or 
+			    	technological measures that legally restrict others from doing anything the license permits). 
 		    </div>
 
 			<h2>Notes on Specimen Records and Images</h2> 
 		    <div style="margin:15px;">
 				Specimens are used for scientific research and because of skilled preparation and 
 				careful use they may last for hundreds of years. Some collections have specimens 
-				that were collected over 100 years ago that are no longer occur within the area. 
+				that were collected over 100 years ago that may no longer be found within the original collection area. 
 				By making these specimens available on the web as images, their availability and 
-				value improves without an increase in inadvertent damage caused by use. Note that 
-				if you are considering making specimens, remember collecting normally requires 
-				permission of the landowner and, in the case of rare and endangered plants, 
-				additional permits may be required. It is best to coordinate such efforts with a 
-				regional institution that manages a publically accessible collection.
+				value improves without an increase in inadvertent damage caused by use. <br>
+			   	Please note that collecting specimens in most cases will require permission of the landowner. 
+			    	In the case of rare and endangered species, additional permits may also be required. In different countries, 
+			    	different laws may apply and it should be obvious that these regulations need to be adhered to. It is best to 
+			    	coordinate such efforts with a regional or national institution that manages publicly accessible collections. 
+			    	The Consortium is not legally responsible for any data being shared by any contributor. All data sets made 
+			    	available through this biodiversity data portal are shared here assuming that legal collection requirements 
+			    	have been adhered to by the different participating institutions that provide this information.
 			</div>
 			<h2>Disclaimer Regarding Offensive Language</h2> 
 		    <div style="margin:15px;">
