@@ -51,7 +51,7 @@
 					<?php 
 					echo $DEFAULT_TITLE.'. '.date('Y').'. '; 
 					echo 'http//:'.$_SERVER['HTTP_HOST'].$CLIENT_ROOT.(substr($CLIENT_ROOT,-1)=='/'?'':'/').; 
-					echo 'Accessed '.date('Y-m-d').'. '; 
+					echo 'Accessed'. '.date('Y-m-d').'. '; 
 					?>
 				</div>
 				
