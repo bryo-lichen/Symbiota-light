@@ -64,7 +64,7 @@
 					<?php echo 'http//:'.$_SERVER['HTTP_HOST'].$CLIENT_ROOT.(substr($CLIENT_ROOT,-1)=='/'?'':'/').'index.php'; ?>, YYYY-MM-DD)<br/><br/>
 					<b>For example:</b><br/>
 					Biodiversity occurrence data published by: 
-					Field Museum of Natural History, Museum of Vertebrate Zoology, and New York Botanical Garden 
+					Arizona State University, Field Museum of Natural History, and New York Botanical Garden 
 					(Accessed through <?php echo $DEFAULT_TITLE; ?> Data Portal, 
 					<?php echo 'http//:'.$_SERVER['HTTP_HOST'].$CLIENT_ROOT.(substr($CLIENT_ROOT,-1)=='/'?'':'/').'index.php, '.date('Y-m-d').')'; ?>
 				</div>
