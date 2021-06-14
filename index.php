@@ -132,7 +132,7 @@ header("Content-Type: text/html; charset=ISO-8859-1");
 					</div>
 					<ul>
 						<li>
-							<b>Abril 2021</b> - La Red Global de Briofitas y Líquenes recibi&oacute; un soporte financiero del NSF, lanzando un 
+							<b>Abril 2021</b> - La Red Global de Briofitas y L&iacute;quenes recibi&oacute; un soporte financiero del NSF, lanzando un 
 							<a href="https://globaltcn.utk.edu/" target="_blank">sitio web</a> para el nuevo proyecto, el que incluye descripci&oacute;n del 
 							proyecto, recursos digitales, educaci&oacute;n y material 
 							de alcance para todos.
