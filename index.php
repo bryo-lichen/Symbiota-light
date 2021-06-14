@@ -115,13 +115,13 @@ header("Content-Type: text/html; charset=ISO-8859-1");
 						el perfil de <a href="https://lichenportal.org/cnalh/taxa/index.php?taxon=Mobergia%20calculiformis&formsubmit=Search%20Terms" target ="_blank"><i>Mobergia calculiformis</i></a>.
 					</p>
 					<div style="">
-						El <b>Consorcio de Herbarios de L&iacute;quenes en Norteamérica</b> (CNALH) establece un puente de conexi&oacute;n de datos de diversidad de 
+						El <b>Consorcio de Herbarios de L&iacute;quenes en Norteam&eacute;rica</b> (CNALH) establece un puente de conexi&oacute;n de datos de diversidad de 
 						hongos liquenizados a trav&eacute;s de Norteam&eacute;rica. Provee acceso a diferentes fuentes de informaci&oacute;n: un registro de espec&iacute;menes, 
 						observaciones de la distribuci&oacute;n de especies, mecanismos para establecer listas de especies din&aacute;micas y est&aacute;ticas, im&aacute;genes, 
 						claves interactivas, y un tesauro taxon&oacute;mico.
 					</div>
 					<div style="margin-top:10px;">
-						Como visitante regular, te invitamos a unirte. ¡Crea tu propia cuenta hoy d&iacute;a! Si necesitas acceso a recursos específicos, 
+						Como visitante regular, te invitamos a unirte. &iexcl;Crea tu propia cuenta hoy d&iacute;a! Si necesitas acceso a recursos espec&iacute;ficos, 
 						deseas contribuir con im&aacute;genes o registros, reportar errores o simplemente aportar feedback, por favor no dudes en contactarnos 
 						a <a class="bodylink" href="mailto:CNALH.help@gmail.com">CNALH.help@gmail.com</a>.
 					</div>
@@ -142,7 +142,7 @@ header("Content-Type: text/html; charset=ISO-8859-1");
 						</li>
 						<li>
 							<b>Septiembre 2020</b> - La Universidad del Estado de Arizona, ASU, y sus colaboradores fueron galardonados 
-							con un nuevo soporte <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2001394" target="_blank">financiero´de NSF</a> para crear un <a href="https://www.idigbio.org/wiki/index.php/Building_a_global_consortium_of_bryophytes_and_lichens:_keystones_of_cryptobiotic_communities" target="_blank"><b>Consorcio Global de Briofitas y Líquenes</b></a>.
+							con un nuevo soporte <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2001394" target="_blank">financiero&acute;de NSF</a> para crear un <a href="https://www.idigbio.org/wiki/index.php/Building_a_global_consortium_of_bryophytes_and_lichens:_keystones_of_cryptobiotic_communities" target="_blank"><b>Consorcio Global de Briofitas y L&iacute;quenes</b></a>.
 						</li>
 						<li>
 							<b>Julio 2019</b> -  Hemos lanzado <a href="http://help-resources.lichenportal.org" target="_blank"><B> Ayuda y Recursos CNALH</b></a>, 
@@ -150,7 +150,7 @@ header("Content-Type: text/html; charset=ISO-8859-1");
 						</li>
 						<li>
 							<b>Agosto  2018</b> - ASU recibe un multi millonario aporte financiero de NSF para crear el nuevo 
-							<a href="https://biorepo.neonscience.org/"><b>NEON biorepositorio</b></a>; estos fondos fortalecerán sustancialmente 
+							<a href="https://biorepo.neonscience.org/"><b>NEON biorepositorio</b></a>; estos fondos fortalecer&aacute;n sustancialmente 
 							la plataforma del software de la Simbiota y a&ntilde;adir nueva funcionalidad donde la CNALH tambi&eacute;n se beneficiar&aacute;.
 						</li>
 					</ul>
