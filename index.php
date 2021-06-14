@@ -109,43 +109,45 @@ header("Content-Type: text/html; charset=ISO-8859-1");
 				?>
 				<div>
 					<p style="margin-bottom: 2rem">
-						<b>NEW:</b> In collaboration with the <a href="https://www.iucnredlist.org/" target ="_blank">IUCN</a>, the <span style="color:red;font-weight:bold">IUCN Global Red-List</span>
-						<a href="https://lichenportal.org/cnalh/checklists/checklist.php?clid=1430&pid=0" target ="_blank"> is now featured on CNALH</a>.
-						<br>For all species included in the global red-list, the taxon profiles now also include red-listing information, e.g., checkout the profile of <a href="https://lichenportal.org/cnalh/taxa/index.php?taxon=Mobergia%20calculiformis&formsubmit=Search%20Terms" target ="_blank"><i>Mobergia calculiformis</i></a>.
+						<b>Nuevo:</b> En colaboración con la <a href="https://www.iucnredlist.org/" target ="_blank">IUCN</a>, la <span style="color:red;font-weight:bold">Lista Roja</span>
+						<a href="https://lichenportal.org/cnalh/checklists/checklist.php?clid=1430&pid=0" target ="_blank"> ahora está disponible desde del CNLAH</a>.
+						<br>Para todas las especies incluidas en la Lista Roja Global, ahora también se incluyen sus características taxonómicas, aquí un ejemplo: el perfil de <a href="https://lichenportal.org/cnalh/taxa/index.php?taxon=Mobergia%20calculiformis&formsubmit=Search%20Terms" target ="_blank"><i>Mobergia calculiformis</i></a>.
 					</p>
 					<div style="">
-						The <b>Consortium of North American Lichen Herbaria</b> (CNALH) serves as a gateway to biodiversity data of lichenized fungi
-						throughout North America. It provides access to an array of different resources: specimen records, field observations,
-						dynamic and static checklists, images, interactive keys, and a taxonomic thesaurus.
+						El <b>Consorcio de Herbarios de Líquenes en Norteamérica</b> (CNALH) establece un puente de conexión de datos de diversidad de 
+						hongos liquenizados a través de Norteamérica. Provee acceso a diferentes fuentes de información: un registro de especímenes, 
+						observaciones de la distribución de especies, mecanismos para establecer listas de especies dinámicas y estáticas, imágenes, 
+						claves interactivas, y un tesauro taxonómico.
 					</div>
 					<div style="margin-top:10px;">
-						As a regular visitor, we invite you to join. Create your own <a href="profile/newprofile.php">account</a> today!
-						If you need access to specific resources, want to contribute occurrence records or images, report errors or simply provide
-						feedback please do not hesitate to contact us at
-						<a class="bodylink" href="mailto:CNALH.help@gmail.com">CNALH.help@gmail.com</a>
+						Como visitante regular, te invitamos a unirte. ¡Crea tu propia cuenta hoy día! Si necesitas acceso a recursos específicos, 
+						deseas contribuir con imágenes o registros, reportar errores o simplemente aportar feedback, por favor no dudes en contactarnos 
+						a <a class="bodylink" href="mailto:CNALH.help@gmail.com">CNALH.help@gmail.com</a>.
 					</div>
 				</div>
 				<div style="width:450px;margin-top:30px;">
 					<div style="font-weight:bold;font-size:110%;">
-						News and Events
+						NOTICIAS Y EVENTOS
 					</div>
 					<ul>
 						<li>
-							<b>April 2021</b> - The GLOBAL Bryophytes and Lichens Network, funded by the recent NSF Grant, launched a <a href="https://globaltcn.utk.edu/" target="_blank">new project website</a>, which includes a description of the project, digitization resources, and education and outreach material.
+							<b>Abril 2021</b> - La Red Global de Briofitas y Líquenes recibió un soporte financiero del NSF, lanzando un 
+							<a href="https://globaltcn.utk.edu/" target="_blank">sitio web</a> para el nuevo proyecto, el que incluye descripción del proyecto, recursos digitales, educación y material 
+							de alcance para todos.
 						</li>
 						<li>
-							<b>January 2021</b> - Welcome our new portal manager Katie Pearson.
+							<b>Enero 2021</b> - Le damos la bienvenida a nuestra gerente del nuevo portal Katie Pearson.
 						</li>
 						<li>
-							<b>September 2020</b> - ASU and collaborators were recently awarded a new <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2001394" target="_blank">NSF Grant</a> to Build a <a href="https://www.idigbio.org/wiki/index.php/Building_a_global_consortium_of_bryophytes_and_lichens:_keystones_of_cryptobiotic_communities" target="_blank"><b>Global Consortium of Bryophytes and Lichens</b></a>.
+							<b>Septiembre 2020</b> - La Universidad del Estado de Arizona, ASU, y sus colaboradores fueron galardonados 
+							con un nuevo soporte <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2001394" target="_blank">financiero´de NSF</a> para crear un <a href="https://www.idigbio.org/wiki/index.php/Building_a_global_consortium_of_bryophytes_and_lichens:_keystones_of_cryptobiotic_communities" target="_blank"><b>Consorcio Global de Briofitas y Líquenes</b></a>.
 						</li>
 						<li>
-							<b>July 2019</b> - We now launched <a href="http://help-resources.lichenportal.org" target="_blank"><B> CNALH Help &amp; Resources</b></a>, a site with tutorials how to join and participate, and some useful programs that can be downloaded.
-						</li>
+							<b>Julio 2019</b> -  Hemos lanzado <a href="http://help-resources.lichenportal.org" target="_blank"><B> Ayuda y Recursos CNALH</b></a>, un sitio con tutoriales donde se explica cómo unirse y participar, y cómo descargar programas útiles.						</li>
 						<li>
-							<b>August  2018</b> - ASU receives a  multimillion dollar grant from NSF to create the new
-							<a href="https://biorepo.neonscience.org/"><b>NEON biorepository</b></a>;
-							these funds will substantially strengthen the Symbiota software platform and add new functionality from which CNALH will benefit significantly as well.
+							<b>Agosto  2018</b> - ASU recibe un multi millonario aporte financiero de NSF para crear el nuevo 
+							<a href="https://biorepo.neonscience.org/"><b>NEON biorepositorio</b></a>; estos fondos fortalecerán sustancialmente 
+							la plataforma del software de la Simbiota y añadir nueva funcionalidad donde la CNALH también se beneficiará.
 						</li>
 					</ul>
 				</div>
