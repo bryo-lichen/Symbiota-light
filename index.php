@@ -110,11 +110,14 @@ header("Content-Type: text/html; charset=".$CHARSET);
 				?>
 				<div class="lang es" style="padding: 0px 10px;">
 					<p>
-						<b>Announcement</b>: ANUNCIO: Les invitamos participar en el taller virtual "<a href=https://doity.com.br/ial9/blog/workshops>Manejo de muestras y listas de especies 
-						de líquenes en el Consorcio de Herbarios de Líquenes en América Latina (CHLAL)</a>", en el congreso internacional del International Association for Lichenology (<a href=https://doity.com.br/ial9>IAL9</a>), 
-						August 7-9, from 12 noon - 7 pm (Brazilian time zone). El taller es en español.
+						<b>ANUNCIO</b>: Les invitamos participar en el taller virtual "<a href=https://doity.com.br/ial9/blog/workshops>Manejo de muestras y listas de especies 
+						de l&iacute;quenes en el Consorcio de Herbarios de L&iacute;quenes en Am&eacute;rica Latina (CHLAL)</a>", en el congreso internacional del International Association for Lichenology (<a href=https://doity.com.br/ial9>IAL9</a>), 
+						7 y 8 de Agosto (12 medio día – 7 pm, hora de Brazil). El taller es en espa&ntilde;ol.
 					</p>
-					<p style="margin-bottom: 2rem"><b>Buenas Noticias:</b><br> ASU y sus colaboradores recientemente ganaron un soporte financiero del <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2001394" target="_blank">NSF</a> para construir un <a href="https://www.idigbio.org/wiki/index.php/Building_a_global_consortium_of_bryophytes_and_lichens:_keystones_of_cryptobiotic_communities" target="_blank"><b>Consorcio Global de Briofitos y Líquenes</b></a>.</p>
+					<p style="margin-bottom: 2rem"><b>Buenas Noticias:</b><br> ASU y sus colaboradores recientemente ganaron un soporte financiero del 
+						<a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2001394" target="_blank">NSF</a> para construir un 
+						<a href="https://www.idigbio.org/wiki/index.php/Building_a_global_consortium_of_bryophytes_and_lichens:_keystones_of_cryptobiotic_communities" target="_blank">
+							<b>Consorcio Global de Briofitos y Líquenes</b></a>.</p>
 					<p>
 						El Consorcio de Herbarios de L&iacute;quenes en Am&eacute;rica Latina (CHLAL) es una iniciativa del Grupo de Liquen&oacute;logos en Am&eacute;rica Latina (GLAL)
 						para establecer un portal de informaci&oacute;n sobre la biodiversidad de l&iacute;quenes en Sudam&eacute;rica, Am&eacute;rica Central y la parte de
