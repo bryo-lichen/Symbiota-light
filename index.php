@@ -61,6 +61,12 @@ header("Content-Type: text/html; charset=ISO-8859-1");
 				//Text in this block is English
 				?>
 				<div>
+					<p>
+						<b>Announcement</b>: We would like to invite you to participate in our workshop "<a href=https://doity.com.br/ial9/blog/workshops>Manejo de muestras y listas de especies 
+						de líquenes en el Consorcio de Herbarios de Líquenes en América Latina (CHLAL)</a>", a virtual workshop to take place at this year's International Symbosium of the 
+						International Association for Lichenology (<a href=https://doity.com.br/ial9>IAL9</a>), August 7-9, from 12 noon - 7 pm (Brazilian time zone). The workshop is in Spanish 
+						(both tutors also speak English, but the focus is on an audience of participants from Latin America).
+					</p>
 					<p style="margin-bottom: 2rem">
 						<b>NEW:</b> In collaboration with the <a href="https://www.iucnredlist.org/" target ="_blank">IUCN</a>, the <span style="color:red;font-weight:bold">IUCN Global Red-List</span>
 						<a href="https://lichenportal.org/cnalh/checklists/checklist.php?clid=1430&pid=0" target ="_blank"> is now featured on CNALH</a>.
@@ -108,6 +114,11 @@ header("Content-Type: text/html; charset=ISO-8859-1");
 				//Text in this block is Spanish
 				?>
 				<div>
+					<p>
+						<b>ANUNCIO</b>: Les invitamos participar en el taller virtual "<a href=https://doity.com.br/ial9/blog/workshops>Manejo de muestras y listas de especies 
+						de l&iacute;quenes en el Consorcio de Herbarios de L&iacute;quenes en Am&eacute;rica Latina (CHLAL)</a>", en el congreso internacional del International Association for Lichenology (<a href=https://doity.com.br/ial9>IAL9</a>), 
+						7 y 8 de Agosto (12 medio día – 7 pm, hora de Brazil). El taller es en espa&ntilde;ol.
+					</p>
 					<p style="margin-bottom: 2rem">
 						<b>Nuevo:</b> En colaboraci&oacute;n con la <a href="https://www.iucnredlist.org/" target ="_blank">IUCN</a>, la <span style="color:red;font-weight:bold">Lista Roja</span>
 						<a href="https://lichenportal.org/cnalh/checklists/checklist.php?clid=1430&pid=0" target ="_blank"> ahora est&aacute; disponible desde del CNLAH</a>.
