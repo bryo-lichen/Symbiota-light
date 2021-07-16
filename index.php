@@ -63,7 +63,7 @@ header("Content-Type: text/html; charset=ISO-8859-1");
 				<div>
 					<p>
 						<b>Announcement</b>: We would like to invite you to participate in our workshop "<a href=https://doity.com.br/ial9/blog/workshops>Manejo de muestras y listas de especies 
-						de l&iacute;quenes en el Consorcio de Herbarios de L&iacute;quenes en América Latina (CHLAL)</a>", a virtual workshop to take place at this year's International Symbosium of the 
+						de l&iacute;quenes en el Consorcio de Herbarios de L&iacute;quenes en Am&eacute;rica Latina (CHLAL)</a>", a virtual workshop to take place at this year's International Symbosium of the 
 						International Association for Lichenology (<a href=https://doity.com.br/ial9>IAL9</a>), August 7-9, from 12 noon - 7 pm (Brazilian time zone). The workshop is in Spanish 
 						(both tutors also speak English, but the focus is on an audience of participants from Latin America).
 					</p>
