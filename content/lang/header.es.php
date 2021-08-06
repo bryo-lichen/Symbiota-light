@@ -23,6 +23,8 @@ $LANG['H_ECUADOR'] = 'Ecuador';
 $LANG['H_SUBPOLAR'] = 'RegiÃ³n Subpolar del Sur';
 
 $LANG['H_ASSOC_PROJECTS'] = 'Proyectos Asociados';
+$LANG['ARCTIC_PORTAL'] = 'L&iacute;quenes &Aacute;rticos';
+$LANG['BRYO_PORTAL'] = 'Portal de Bri&oacute;fito (CNABH)';
 
 $LANG['H_MORE_INFO'] = 'M&aacute;s Informaci&oacute;n';
 $LANG['H_SYMBIOTA'] = 'Symbiota';
