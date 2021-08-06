@@ -48,15 +48,9 @@ class OccurrenceLabel{
 			}
 			$dateTarget = $this->cleanInStr($postArr['datetarget']);
 			if($date1){
-				$dateField = 'o.dateentered';
-				if($date2){
-					$sqlWhere .= 'AND (DATE('.$dateTarget.') BETWEEN "'.$date1.'" AND "'.$date2.'") ';
-				}
-				else{
-					$sqlWhere .= 'AND (DATE('.$dateTarget.') = "'.$date1.'") ';
-				}
-
-				$sqlOrderBy .= ','.$dateTarget;
+				if($date2) $sqlWhere .= 'AND (DATE(o.'.$dateTarget.') BETWEEN "'.$date1.'" AND "'.$date2.'") ';
+				else $sqlWhere .= 'AND (DATE(o.'.$dateTarget.') = "'.$date1.'") ';
+				$sqlOrderBy .= ',o.'.$dateTarget;
 			}
 			if($postArr['recordnumber']){
 				$rnArr = explode(',',$this->cleanInStr($postArr['recordnumber']));
@@ -109,7 +103,6 @@ class OccurrenceLabel{
 						$term1 = trim(substr($v,0,$p));
 						$term2 = trim(substr($v,$p+3));
 						if(is_numeric($term1) && is_numeric($term2)){
-							$searchIsNum = true;
 							$iBetweenFrag[] = '(o.catalogNumber BETWEEN '.$term1.' AND '.$term2.')';
 						}
 						else{
@@ -191,7 +184,6 @@ class OccurrenceLabel{
 				}
 				$rs1->free();
 			}
-
 			//Get occurrence records
 			$this->setLabelFieldArr();
 			$sql2 = 'SELECT '.implode(',',$this->labelFieldArr).' FROM omoccurrences o LEFT JOIN taxa t ON o.tidinterpreted = t.tid '.$sqlWhere;
@@ -203,6 +195,33 @@ class OccurrenceLabel{
 					$retArr[$row2['occid']] = $row2;
 				}
 				$rs2->free();
+			}
+			//Append identifiers indexed within omoccurridentifier
+			if($retArr){
+				$sql = 'SELECT occid, identifiername, identifiervalue FROM omoccuridentifiers WHERE occid IN('.implode(',',array_keys($retArr)).')';
+				if($rs = $this->conn->query($sql)){
+					$otherCatArr = array();
+					$cnt = 0;
+					while($r = $rs->fetch_object()){
+						$otherCatArr[$r->occid][$cnt]['v'] = $r->identifiervalue;
+						$otherCatArr[$r->occid][$cnt]['n'] = $r->identifiername;
+						$cnt++;
+					}
+					$rs->free();
+					foreach($otherCatArr as $occid => $ocnArr){
+						$verbIdStr = $retArr[$occid]['othercatalognumbers'];
+						$ocnStr = '';
+						foreach($ocnArr as $idArr){
+							$ocnStr .= '; '.($idArr['n']?$idArr['n'].': ':'').$idArr['v'];
+							$verbIdStr = str_ireplace($idArr['n'],'',$verbIdStr);
+							$verbIdStr = str_ireplace($idArr['v'],'',$verbIdStr);
+						}
+						$ocnStr = trim($ocnStr,';,: ');
+						$verbIdStr = trim($verbIdStr,';,: ');
+						if($verbIdStr) $ocnStr = $ocnStr.'; '.$verbIdStr;
+						$retArr[$occid]['othercatalognumbers'] = $ocnStr;
+					}
+				}
 			}
 		}
 		return $retArr;
@@ -399,18 +418,18 @@ class OccurrenceLabel{
 			else $retArr['g'] = array('labelFormats'=>array());
 		}
 		//Add collection defined label formats
-		if($this->collid && $this->collArr['dynprops']){
-			if($collFormatArr = json_decode($this->collArr['dynprops'],true)){
-				if($annotated){
-					if(isset($collFormatArr['labelFormats'])){
-						foreach($collFormatArr['labelFormats'] as $k => $labelObj){
-							unset($labelObj['labelBlocks']);
-							$retArr['c'][$k] = $labelObj;
-						}
+		if($this->collid){
+			$collFormatArr = json_decode($this->collArr['dynprops'],true);
+			if($annotated){
+				if(isset($collFormatArr['labelFormats'])){
+					foreach($collFormatArr['labelFormats'] as $k => $labelObj){
+						unset($labelObj['labelBlocks']);
+						$retArr['c'][$k] = $labelObj;
 					}
 				}
-				else $retArr['c'] = $collFormatArr['labelFormats'];
 			}
+			elseif(isset($collFormatArr['labelFormats'])) $retArr['c'] = $collFormatArr['labelFormats'];
+			else $retArr['c'] = array();
 		}
 		//Add label formats associated with user profile
 		if($GLOBALS['SYMB_UID']){
@@ -432,7 +451,8 @@ class OccurrenceLabel{
 
 					}
 				}
-				else $retArr['u'] = $dynPropArr['labelFormats'];
+				elseif(isset($dynPropArr['labelFormats'])) $retArr['u'] = $dynPropArr['labelFormats'];
+				else $retArr['u'] = array();
 			}
 		}
 		return $retArr;
@@ -507,6 +527,67 @@ class OccurrenceLabel{
 		$labelArr['labelBlocks'] = json_decode($postArr['json'],true);
 		if(is_numeric($labelIndex)) $labelFormatArr['labelFormats'][$labelIndex] = $labelArr;
 		else $labelFormatArr['labelFormats'][] = $labelArr;
+	}
+
+	public function cloneLabelJson($postArr){
+		$status = true;
+		$cloneTarget = $postArr['cloneTarget'];
+		$group = $postArr['group'];
+		$labelIndex = '';
+		if(isset($postArr['index'])) $labelIndex = $postArr['index'];
+		if(is_numeric($labelIndex) && $cloneTarget){
+			//Grab source
+			$globalFormatArr = array();
+			$collFormatArr = array();
+			$dynPropArr = array();
+			$sourceLabelArr = array();
+			if($group == 'g' || $cloneTarget == 'g'){
+				if(file_exists($GLOBALS['SERVER_ROOT'].'/content/collections/reports/labeljson.php')){
+					include($GLOBALS['SERVER_ROOT'].'/content/collections/reports/labeljson.php');
+					if(isset($LABEL_FORMAT_JSON)) $globalFormatArr = json_decode($LABEL_FORMAT_JSON,true);
+					if($group == 'g') $sourceLabelArr = $globalFormatArr['labelFormats'][$labelIndex];
+				}
+			}
+			if($group == 'c' || $cloneTarget == 'c'){
+				if($this->collid){
+					if($this->collArr['dynprops']) $collFormatArr = json_decode($this->collArr['dynprops'],true);
+					if($group == 'c') $sourceLabelArr = $collFormatArr['labelFormats'][$labelIndex];
+				}
+				else{
+					$this->errorArr[] = 'ERROR cloning label format to omcollections table: collid not set';
+					$status = false;
+				}
+			}
+			if($group == 'u' || $cloneTarget == 'u'){
+				$sql = 'SELECT dynamicProperties FROM users WHERE uid = '.$GLOBALS['SYMB_UID'];
+				$rs = $this->conn->query($sql);
+				if($rs){
+					if($r = $rs->fetch_object()){
+						if($r->dynamicProperties) $dynPropArr = json_decode($r->dynamicProperties,true);
+						if($group == 'u') $sourceLabelArr = $dynPropArr['labelFormats'][$labelIndex];
+					}
+					$rs->free();
+				}
+			}
+			$sourceLabelArr['title'] = $sourceLabelArr['title'].' - CLONE';
+			//Save to target group
+			if($cloneTarget == 'g'){
+				$globalFormatArr['labelFormats'][] = $sourceLabelArr;
+				$status = $this->saveGlobalJson($globalFormatArr);
+
+			}
+			elseif($cloneTarget == 'c'){
+				$collFormatArr['labelFormats'][] = $sourceLabelArr;
+				$status = $this->updateCollectionJson($collFormatArr);
+
+			}
+			elseif($cloneTarget == 'u'){
+				$dynPropArr['labelFormats'][] = $sourceLabelArr;
+				$status = $this->updateUserJson($dynPropArr);
+
+			}
+		}
+		return $status;
 	}
 
 	public function deleteLabelFormat($group, $labelIndex){
