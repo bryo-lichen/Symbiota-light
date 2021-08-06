@@ -18,9 +18,9 @@ $LANG['H_IMAGE_BROWSER'] = 'Navegador de Im&aacute;genes';
 $LANG['H_IMAGE_SEARCH'] = 'B&uacute;squeda de Im&aacute;genes';
 
 $LANG['H_INVENTORIES'] = 'Biota de L&iacute;quenes';
-$LANG['H_CENTRAL_AMER'] = 'AmÃ©rica Central';
+$LANG['H_CENTRAL_AMER'] = 'Centroam&eacute;rica';
 $LANG['H_ECUADOR'] = 'Ecuador';
-$LANG['H_SUBPOLAR'] = 'RegiÃ³n Subpolar del Sur';
+$LANG['H_SUBPOLAR'] = 'Regi&oacute;n Subpolar del Sur';
 
 $LANG['H_ASSOC_PROJECTS'] = 'Proyectos Asociados';
 $LANG['ARCTIC_PORTAL'] = 'L&iacute;quenes &Aacute;rticos';
