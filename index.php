@@ -61,12 +61,6 @@ header("Content-Type: text/html; charset=ISO-8859-1");
 				//Text in this block is English
 				?>
 				<div>
-					<p>
-						<b>Announcement</b>: We would like to invite you to participate in our workshop "<a href=https://doity.com.br/ial9/blog/workshops>Manejo de muestras y listas de especies 
-						de l&iacute;quenes en el Consorcio de Herbarios de L&iacute;quenes en Am&eacute;rica Latina (CHLAL)</a>", a virtual workshop to take place at this year's International Symbosium of the 
-						International Association for Lichenology (<a href=https://doity.com.br/ial9>IAL9</a>), August 7-9, from 12 noon - 7 pm (Brazilian time zone). The workshop is in Spanish 
-						(both tutors also speak English, but the focus is on an audience of participants from Latin America).
-					</p>
 					<p style="margin-bottom: 2rem">
 						<b>NEW:</b> In collaboration with the <a href="https://www.iucnredlist.org/" target ="_blank">IUCN</a>, the <span style="color:red;font-weight:bold">IUCN Global Red-List</span>
 						<a href="https://lichenportal.org/cnalh/checklists/checklist.php?clid=1430&pid=0" target ="_blank"> is now featured on CNALH</a>.
@@ -89,6 +83,13 @@ header("Content-Type: text/html; charset=ISO-8859-1");
 						News and Events
 					</div>
 					<ul>
+						<li>
+							<b>August 2021</b> - As part of the <a href="https://doity.com.br/ial9" target="_blank">9th Symposium of the International Association for Lichenology</a> 
+							(IAL9) we held a Spanish workshop on how to manage data in the <a href="https://lichenportal.org/chlal/" target="_blank">Consortium of Latin American Lichen Herbaria</a> (CHLAL). 
+							The workshop was very well attended. You can download videos of <a href="https://lichenportal.org/imglib/docs/lichen/IAL9_Taller_dia_1.mp4" target="_blank"><b>Day 1</b></a> 
+							and <a href="https://lichenportal.org/imglib/docs/lichen/IAL9_Taller_dia_2.mp4" target="_blank"><b>Day 2</b></a> (please note: the videos are in Spanish and are large, 
+							ca. 2GB each; they will take a long time to download).
+						</li>
 						<li>
 							<b>April 2021</b> - The GLOBAL Bryophytes and Lichens Network, funded by the recent NSF Grant, launched a <a href="https://globaltcn.utk.edu/" target="_blank">new project website</a>, which includes a description of the project, digitization resources, and education and outreach material.
 						</li>
@@ -114,11 +115,6 @@ header("Content-Type: text/html; charset=ISO-8859-1");
 				//Text in this block is Spanish
 				?>
 				<div>
-					<p>
-						<b>ANUNCIO</b>: Les invitamos participar en el taller virtual "<a href=https://doity.com.br/ial9/blog/workshops>Manejo de muestras y listas de especies 
-						de l&iacute;quenes en el Consorcio de Herbarios de L&iacute;quenes en Am&eacute;rica Latina (CHLAL)</a>", en el congreso internacional del International Association for Lichenology (<a href=https://doity.com.br/ial9>IAL9</a>), 
-						7 y 8 de Agosto (12 medio día – 7 pm, hora de Brazil). El taller es en espa&ntilde;ol.
-					</p>
 					<p style="margin-bottom: 2rem">
 						<b>Nuevo:</b> En colaboraci&oacute;n con la <a href="https://www.iucnredlist.org/" target ="_blank">IUCN</a>, la <span style="color:red;font-weight:bold">Lista Roja</span>
 						<a href="https://lichenportal.org/cnalh/checklists/checklist.php?clid=1430&pid=0" target ="_blank"> ahora est&aacute; disponible desde del CNLAH</a>.
@@ -142,6 +138,13 @@ header("Content-Type: text/html; charset=ISO-8859-1");
 						NOTICIAS Y EVENTOS
 					</div>
 					<ul>
+						<li>
+							<b>Agosto 2021</b> - Como parte del <a href="https://doity.com.br/ial9" target="_blank">9th Symposium of the International Association for Lichenology (IAL9)</a>
+							organizábamos un taller como manejar sus datos en el <a href="https://lichenportal.org/chlal/" target="_blank">Consorcio de Herbarios de Líquenes en América Latina</a> (CHLAL).  
+							Teníamos un muy bien excito con mucha gente participando. Usted puede bajar los vídeos del <a href="https://lichenportal.org/imglib/docs/lichen/IAL9_Taller_dia_1.mp4" target="_blank"><b>dia 1</b></a> 
+							y <a href="https://lichenportal.org/imglib/docs/lichen/IAL9_Taller_dia_2.mp4" target="_blank"><b>dia 2</b></a> (atención: los vídeos son exclusivamente en español y bien grande, 
+							ca. 2GB cada uno; va tomar mucho tiempo bajarlos).
+						</li>
 						<li>
 							<b>Abril 2021</b> - La Red Global de Briofitas y L&iacute;quenes recibi&oacute; un soporte financiero del NSF, lanzando un 
 							<a href="https://globaltcn.utk.edu/" target="_blank">sitio web</a> para el nuevo proyecto, el que incluye descripci&oacute;n del 
