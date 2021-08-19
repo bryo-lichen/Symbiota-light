@@ -140,9 +140,9 @@ header("Content-Type: text/html; charset=ISO-8859-1");
 					<ul>
 						<li>
 							<b>Agosto 2021</b> - Como parte del <a href="https://doity.com.br/ial9" target="_blank">9th Symposium of the International Association for Lichenology (IAL9)</a>
-							organizábamos un taller como manejar sus datos en el <a href="https://lichenportal.org/chlal/" target="_blank">Consorcio de Herbarios de Líquenes en América Latina</a> (CHLAL).  
-							Teníamos un muy bien excito con mucha gente participando. Usted puede bajar los vídeos del <a href="https://lichenportal.org/imglib/docs/lichen/IAL9_Taller_dia_1.mp4" target="_blank"><b>dia 1</b></a> 
-							y <a href="https://lichenportal.org/imglib/docs/lichen/IAL9_Taller_dia_2.mp4" target="_blank"><b>dia 2</b></a> (atención: los vídeos son exclusivamente en español y bien grande, 
+							organiz&aacute;bamos un taller como manejar sus datos en el <a href="https://lichenportal.org/chlal/" target="_blank">Consorcio de Herbarios de L&iacute;quenes en Am&eacute;rica Latina</a> (CHLAL).  
+							Ten&iacute;amos un muy bien excito con mucha gente participando. Usted puede bajar los v&iacute;deos del <a href="https://lichenportal.org/imglib/docs/lichen/IAL9_Taller_dia_1.mp4" target="_blank"><b>dia 1</b></a> 
+							y <a href="https://lichenportal.org/imglib/docs/lichen/IAL9_Taller_dia_2.mp4" target="_blank"><b>dia 2</b></a> (atenci&oacute;n: los v&iacute;deos son exclusivamente en espa&ntilde;ol y bien grande, 
 							ca. 2GB cada uno; va tomar mucho tiempo bajarlos).
 						</li>
 						<li>
