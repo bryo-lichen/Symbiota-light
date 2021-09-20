@@ -279,8 +279,7 @@ $labelFormatArr = $labelManager->getLabelFormatArr(true);
 							-->
 							<?php
 							echo '<span style="margin-left:15px;"><input name="extendedsearch" type="checkbox" value="1" '.(array_key_exists('extendedsearch', $_POST)?'checked':'').' /></span> ';
-							if($isGeneralObservation)
-								echo 'Search outside user profile';
+							if($isGeneralObservation) echo 'Search outside user profile';
 							else echo 'Search within all collections';
 							?>
 						</div>
@@ -353,7 +352,7 @@ $labelFormatArr = $labelManager->getLabelFormatArr(true);
 										<div class="fieldDiv">
 											<div class="fieldLabel">Label Profiles:
 												<?php
-												if($IS_ADMIN) echo '<span title="Open label profile manager"><a href="labelprofile.php?collid='.$collid.'"><img src="../../images/edit.png" style="width:13px" /></a></span>';
+												echo '<span title="Open label profile manager"><a href="labelprofile.php?collid='.$collid.'"><img src="../../images/edit.png" style="width:13px" /></a></span>';
 												?>
 											</div>
 											<div class="fieldElement">
