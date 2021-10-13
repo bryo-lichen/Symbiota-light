@@ -112,8 +112,7 @@ include_once($SERVER_ROOT.'/content/lang/header.'.$LANG_TAG.'.php');
 						<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php" ><?php echo (isset($LANG['H_INVENTORIES'])?$LANG['H_INVENTORIES']:'Species Checklists'); ?></a>
 						<ul>
 							<li>
-                                				<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=519">Global Checklists></a>
- 							</li>
+                                				<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=519">Global Checklists ></a>
 								<ul>
 								<li>
 									<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=558">Global Checklists of Lichens & Lichenicolous Fungi</a>
@@ -122,6 +121,7 @@ include_once($SERVER_ROOT.'/content/lang/header.'.$LANG_TAG.'.php');
 									<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=556">Global Checklists IUCN Red-Lists</a>
 								</li>
 								</ul>
+							</li>
 							<li>
                                 				<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=519">North America</a>
  							</li>
