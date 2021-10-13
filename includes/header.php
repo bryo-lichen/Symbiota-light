@@ -112,9 +112,18 @@ include_once($SERVER_ROOT.'/content/lang/header.'.$LANG_TAG.'.php');
 						<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php" ><?php echo (isset($LANG['H_INVENTORIES'])?$LANG['H_INVENTORIES']:'Species Checklists'); ?></a>
 						<ul>
 							<li>
-                                <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=519">North America</a>
-                            </li>
-                            <li>
+                                				<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=519">Global Checklists</a>
+ 							</li>
+								<li>
+									a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=558">Global Checklists of Lichens & Lichenicolous Fungi</a>
+								</li>
+								<li>
+									a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=556">Global Checklists IUCN Red-Lists</a>
+								</li>
+							<li>
+                                				<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=519">North America</a>
+ 							</li>
+							<li>
 								<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=514">Canada</a>
 							</li>
 							<li>
@@ -126,9 +135,9 @@ include_once($SERVER_ROOT.'/content/lang/header.'.$LANG_TAG.'.php');
 									<li>
 										<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=100">Arizona</a>
 									</li>
-                		            <li>
-                                		<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=533">Arkansas</a>
-                                    </li>
+									<li>
+										<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=533">Arkansas</a>
+									</li>
 									<li>
 										<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=101">California</a>
 									</li>
