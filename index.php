@@ -63,7 +63,7 @@ header("Content-Type: text/html; charset=ISO-8859-1");
 				<div>
 					<p style="margin-bottom: 2rem">
 						<b>NEW:</b> In collaboration with the <a href="https://www.iucnredlist.org/" target ="_blank">IUCN</a>, the <span style="color:red;font-weight:bold">IUCN Global Red-List</span>
-						<a href="https://lichenportal.org/cnalh/checklists/checklist.php?clid=1430&pid=0" target ="_blank"> is now featured on CNALH</a>.
+						<a href="https://lichenportal.org/cnalh/projects/index.php?pid=556" target ="_blank"> is now featured on CNALH</a>.
 						<br>For all species included in the global red-list, the taxon profiles now also include red-listing information, e.g., checkout the profile of <a href="https://lichenportal.org/cnalh/taxa/index.php?taxon=Mobergia%20calculiformis&formsubmit=Search%20Terms" target ="_blank"><i>Mobergia calculiformis</i></a>.
 					</p>
 					<div style="">
@@ -117,7 +117,7 @@ header("Content-Type: text/html; charset=ISO-8859-1");
 				<div>
 					<p style="margin-bottom: 2rem">
 						<b>Nuevo:</b> En colaboraci&oacute;n con la <a href="https://www.iucnredlist.org/" target ="_blank">IUCN</a>, la <span style="color:red;font-weight:bold">Lista Roja</span>
-						<a href="https://lichenportal.org/cnalh/checklists/checklist.php?clid=1430&pid=0" target ="_blank"> ahora est&aacute; disponible desde del CNLAH</a>.
+						<a href="https://lichenportal.org/cnalh/projects/index.php?pid=556" target ="_blank"> ahora est&aacute; disponible desde del CNLAH</a>.
 						<br>Para todas las especies incluidas en la Lista Roja Global, ahora tambi&eacute;n se incluyen sus características taxon&oacute;micas, aqu&iacute; un ejemplo: 
 						el perfil de <a href="https://lichenportal.org/cnalh/taxa/index.php?taxon=Mobergia%20calculiformis&formsubmit=Search%20Terms" target ="_blank"><i>Mobergia calculiformis</i></a>.
 					</p>
