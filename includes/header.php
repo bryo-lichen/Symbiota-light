@@ -115,10 +115,10 @@ include_once($SERVER_ROOT.'/content/lang/header.'.$LANG_TAG.'.php');
                                 				<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=519">Global Checklists</a>
  							</li>
 								<li>
-									a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=558">Global Checklists of Lichens & Lichenicolous Fungi</a>
+									<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=558">Global Checklists of Lichens & Lichenicolous Fungi</a>
 								</li>
 								<li>
-									a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=556">Global Checklists IUCN Red-Lists</a>
+									<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=556">Global Checklists IUCN Red-Lists</a>
 								</li>
 							<li>
                                 				<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=519">North America</a>
