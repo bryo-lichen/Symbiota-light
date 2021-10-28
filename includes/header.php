@@ -235,7 +235,7 @@ include_once($SERVER_ROOT.'/content/lang/header.'.$LANG_TAG.'.php');
 								<a href="https://symbiota.org/docs/symbiota-introduction/symbiota-help-pages/">Symbiota Help</a>
 							</li>
 							<li>
-								<a href="http://lichenportal.org/help-resources">Lichen Consortium Help & Resources</a>
+								<a href="https://help.lichenportal.org/index.php/en/cnalh-help-resources/">Lichen Consortium Help & Resources</a>
 							</li>
 						</ul>
 					</li>
