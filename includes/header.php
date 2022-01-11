@@ -146,6 +146,9 @@ include_once($SERVER_ROOT.'/content/lang/header.'.$LANG_TAG.'.php');
 							          <li>
 							          <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=19">Washington</a>
 							          </li>
+								  <li>
+							          <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=27">Wyoming</a>
+							          </li>
 							    </ul>
                             </li>
 							<li>
