@@ -2,11 +2,6 @@
 include_once($SERVER_ROOT.'/content/lang/header.'.$LANG_TAG.'.php');
 ?>
 <link href="https://fonts.googleapis.com/css?family=EB+Garamond|Playfair+Display+SC" rel="stylesheet" />
-<style>
-	.header1 { font-family: 'EB Garamond', serif; font-size: 30px; font-style: italic; margin: 15px 10px 0px 70px; }
-	.header2 { font-family: 'Playfair Display SC', serif; font-size: 18px; margin: 0px 10px 3px 30px; }
-	.header3 { font-family: 'EB Garamond', serif; font-size: 15px; font-style: italic; margin: 0px 10px 10px 30px; }
-</style>
 <script type="text/javascript" src="/chlal/js/symb/base.js?ver=2"></script>
 <script type="text/javascript">
 	//Uncomment following line to support toggling of database content containing DIVs with lang classes in form of: <div class="lang en">Content in English</div><div class="lang es">Content in Spanish</div>
@@ -17,7 +12,7 @@ include_once($SERVER_ROOT.'/content/lang/header.'.$LANG_TAG.'.php');
 <table id="maintable" cellspacing="0">
 	<tr>
 		<td id="header" colspan="3">
-			<div style="background-color:black;height:110px;">
+			<div id="top_header">
 				<div style="float:right;">
 					<img src="<?php echo $CLIENT_ROOT; ?>/images/layout/header_right.jpg" />
 				</div>
