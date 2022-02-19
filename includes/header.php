@@ -17,9 +17,9 @@ include_once($SERVER_ROOT.'/content/lang/header.'.$LANG_TAG.'.php');
 					<img src="<?php echo $CLIENT_ROOT; ?>/images/layout/header_right.jpg" />
 				</div>
 				<div style="float:left;">
-					<div class="header1">Consortium of</div>
-					<div class="header2">North American Lichen Herbaria</div>
-					<div class="header3">- building a Global Consortium of Bryophytes and Lichens as keystones of cryptobiotic communities -</div>
+					<div id="header1">Consortium of</div>
+					<div id="header2">North American Lichen Herbaria</div>
+					<div id="header3">- building a Global Consortium of Bryophytes and Lichens as keystones of cryptobiotic communities -</div>
 				</div>
 			</div>
 			<div id="top_navbar">
