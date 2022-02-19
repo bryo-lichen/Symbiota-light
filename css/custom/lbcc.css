@@ -44,7 +44,8 @@ body{
 }
 
 #innertext a{
-
+    color: #4a55b9;
+    text-decoration: none;
 }
 #innertext a:hover{
 
