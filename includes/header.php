@@ -17,9 +17,9 @@ include_once($SERVER_ROOT.'/content/lang/header.'.$LANG_TAG.'.php');
 					<img src="<?php echo $CLIENT_ROOT; ?>/images/layout/header_graphics_3w.jpg" />
 				</div>
 				<div style="float:left;">
-					<div class="header1">Consorcio de</div>
-					<div class="header2">Herbarios de Líquenes en América Latina</div>
-					<div class="header3">- parte del Consorcio Global de Briofitas y L&iacute;quenes: organismos clave de comunidades criptobi&oacute;ticas -</div>
+					<div id="header1">Consorcio de</div>
+					<div id="header2">Herbarios de Líquenes en América Latina</div>
+					<div id="header3">- parte del Consorcio Global de Briofitas y L&iacute;quenes: organismos clave de comunidades criptobi&oacute;ticas -</div>
 				</div>
 			</div>
 			<div id="top_navbar">
