@@ -44,11 +44,11 @@ body{
 }
 
 #innertext a{
-    color: #4a55b9;
+    color: #222;
     text-decoration: none;
 }
 #innertext a:hover{
-
+    text-decoration: underline;
 }
 
 div.navpath {
