@@ -15,6 +15,6 @@
 <link href="<?php echo $CLIENT_ROOT; ?>/css/jquery-ui.css" type="text/css" rel="stylesheet">
 
 <link href="<?php echo $CLIENT_ROOT; ?>/css/base.css?ver=1" type="text/css" rel="stylesheet">
-<link href="<?php echo $CLIENT_ROOT; ?>/css/custom/lbcc.css?ver=1" type="text/css" rel="stylesheet">
-<link href="<?php echo $CLIENT_ROOT; ?>/css/custom/lbcc_header.css?ver=1" type="text/css" rel="stylesheet">
+<link href="<?php echo $CLIENT_ROOT; ?>/css/symb/custom/lbcc.css?ver=1" type="text/css" rel="stylesheet">
+<link href="<?php echo $CLIENT_ROOT; ?>/css/symb/custom/lbcc_header.css?ver=1" type="text/css" rel="stylesheet">
 
