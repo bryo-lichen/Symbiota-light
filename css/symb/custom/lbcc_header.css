@@ -1,8 +1,32 @@
 #header{
 	color:#FFFFFF;
-	background-color:#FFFFFF;
+	background-color:black; 
 	text-align:left;
 	padding:0px;
+}
+
+#top_header{
+	height:110px;
+} 
+
+#header1 { 
+	font-family: 'EB Garamond', serif; 
+	font-size: 30px; 
+	font-style: italic; 
+	margin: 15px 10px 0px 70px; 
+}
+
+#header2 { 
+	font-family: 'Playfair Display SC', serif; 
+	font-size: 18px; 
+	margin: 0px 10px 3px 30px; 
+}
+
+#header3 { 
+	font-family: 'EB Garamond', serif; 
+	font-size: 15px; 
+	font-style: italic; 
+	margin: 0px 10px 10px 30px; 
 }
 
 #top_navbar{
