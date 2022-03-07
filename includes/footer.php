@@ -14,7 +14,7 @@
 				<a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2001394" target="_blank">#2001394</a>
 			</div>
 			<div style="text-align:center;margin-bottom:15px">
-				Powered by <a href="https://symbiota.org/" target="_blank">Symbiota</a>
+				Powered by <a href="https://symbiota.org/" target="_blank">Symbiota</a>.
 			</div>
 		</td>
 	</tr>
