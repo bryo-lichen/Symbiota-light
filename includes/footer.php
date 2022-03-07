@@ -11,6 +11,9 @@
 				<a href="http://www.darwinfoundation.org/datazone/" target="_blank" title=""><img src="<?php echo $CLIENT_ROOT; ?>/images/layout/CDF-logo.jpg" style="width:80px" /></a>
 				 -->
 			</p>
+			<div style="text-align:center;margin-bottom:15px">
+				Powered by <a href="https://symbiota.org/" target="_blank">Symbiota</a>
+			</div>
 		</td>
 	</tr>
 </table>
