@@ -500,10 +500,10 @@ else{
         }
 
 	</script>
-	<script src="../../js/symb/collections.coordinateValidation.js?ver=1" type="text/javascript"></script>
-	<script src="../../js/symb/wktpolygontools.js?ver=1" type="text/javascript"></script>
+	<script src="../../js/symb/collections.coordinateValidation.js?ver=2" type="text/javascript"></script>
+	<script src="../../js/symb/wktpolygontools.js?ver=2" type="text/javascript"></script>
 	<script src="../../js/symb/collections.georef.js?ver=1" type="text/javascript"></script>
-	<script src="../../js/symb/collections.editor.main.js?ver=10" type="text/javascript"></script>
+	<script src="../../js/symb/collections.editor.main.js?ver=11" type="text/javascript"></script>
 	<script src="../../js/symb/collections.editor.tools.js?ver=3" type="text/javascript"></script>
 	<script src="../../js/symb/collections.editor.imgtools.js?ver=1" type="text/javascript"></script>
 	<script src="../../js/jquery.imagetool-1.7.js?ver=140310" type="text/javascript"></script>
@@ -749,10 +749,8 @@ else{
 														</div>
 														<div id="identifierBody" class="divTableBody">
 															<?php
-															$otherCatNumStr = array_key_exists('othercatalognumbers',$occArr)?$occArr['othercatalognumbers']:'';
-															$identifierArr = $occManager->getIdentifiers($otherCatNumStr);
-															if($identifierArr){
-																foreach($identifierArr as $idKey => $idArr){
+															if(isset($occArr['identifiers'])){
+																foreach($occArr['identifiers'] as $idKey => $idArr){
 																	?>
 																	<div id="idRow-<?php echo $idKey; ?>" class="divTableRow">
 																		<div class="divTableCell">
