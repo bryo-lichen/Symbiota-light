@@ -8,6 +8,7 @@
 				<a href="https://www.iucnredlist.org/" target="_blank" title="IUCN"><img src="<?php echo $CLIENT_ROOT; ?>/images/layout/1521112071-iucn.png" style="width:70px" /></a>
 				<a href="http://idigbio.org" target="_blank" title="iDigBio"><img src="<?php echo $CLIENT_ROOT; ?>/images/layout/logo_idig.png" style="width:150px" /></a>
 				<a href="https://www.nsf.gov" target="_blank"><img src="<?php echo $CLIENT_ROOT; ?>/images/layout/logo_nsf.gif" style="width:70px" /></a>
+				<a href="https://globaltcn.utk.edu/" targe="_blank"><img src="<?php echo $CLIENT_ROOT; ?>/images/layout/global_logo.png" style="width:150px" /></a>
 			</p>
 			<div style="text-align:center;margin-bottom:15px">
 				This project made possible by National Science Foundation Awards:
