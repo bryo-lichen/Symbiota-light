@@ -81,8 +81,8 @@ include_once($SERVER_ROOT.'/content/lang/header.'.$LANG_TAG.'.php');
 								<a href="<?php echo $CLIENT_ROOT; ?>/taxa/taxonomy/taxonomydynamicdisplay.php" >Taxonomic Explorer</a>
 							</li>
 						</ul>
-				     </li>
-				     <li>
+					 </li>
+					 <li>
 						<a href="#" >Images</a>
 						<ul>
 							<li>
@@ -97,95 +97,99 @@ include_once($SERVER_ROOT.'/content/lang/header.'.$LANG_TAG.'.php');
 						<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?" >Species Checklists</a>
 						<ul>
    							<li>
-							    <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=24">Canada</a>
+								<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=24">North America</a>
 							</li>
 							<li>
-							    <a href="#">US States></a>
-							    <ul>
-							          <li>
-							          <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=23">Arizona</a>
-							          </li>
-							          <li>
-							          <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=15">California</a>
-							          </li>
-							          <li>
-							          <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=4">Illinois</a>
-							          </li>
-							          <li>
-							          <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=13">Iowa</a>
-							          </li>
-							          <li>
-							          <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=8">Maine</a>
-							          </li>
-							          <li>
-							          <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=3">Missouri</a>
-							          </li>
-							          <li>
-							          <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=18">Montana</a>
-							          </li>
-							          <li>
-							          <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=22">New Mexico</a>
-							          </li>
-							          <li>
-							          <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=21">New York</a>
-							          </li>
-							          <li>
-							          <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=1">North Carolina</a>
-							          </li>
-							          <li>
-							          <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=20">Ohio</a>
-							          </li>
-							          <li>
-							          <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=6">Pennsylvania</a>
-							          </li>
-							          <li>
-							          <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=19">Washington</a>
-							          </li>
+								<a href="#">US States></a>
+								<ul>
+									  <li>
+									  <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=23">Arizona</a>
+									  </li>
+									  <li>
+									  <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=15">California</a>
+									  </li>
+									  <li>
+									  <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=4">Illinois</a>
+									  </li>
+									  <li>
+									  <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=13">Iowa</a>
+									  </li>
+									  <li>
+									  <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=8">Maine</a>
+									  </li>
+									  <li>
+									  <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=3">Missouri</a>
+									  </li>
+									  <li>
+									  <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=18">Montana</a>
+									  </li>
+									  <li>
+									  <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=22">New Mexico</a>
+									  </li>
+									  <li>
+									  <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=21">New York</a>
+									  </li>
+									  <li>
+									  <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=1">North Carolina</a>
+									  </li>
+									  <li>
+									  <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=20">Ohio</a>
+									  </li>
+									  <li>
+									  <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=6">Pennsylvania</a>
+									  </li>
+									  <li>
+									  <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=19">Washington</a>
+									  </li>
 								  <li>
-							          <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=27">Wyoming</a>
-							          </li>
-							    </ul>
-                            </li>
-							<li>
-							    <a href="#">Beyond North America></a>
-							    <ul>
-							          <li>
-							          <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=9">Chile</a>
-							          </li>
-							          <li>
-							          <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=11">Falkland Islands</a>
-							          </li>
-							          <li>
-							          <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=5">Fiji</a>
-							          </li>
-							          <li>
-							          <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=10">Guatemala</a>
-							          </li>
-							          <li>
-							          <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=16">Indonesia</a>
-							          </li>
-							          <li>
-							          <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=17">Malaysia</a>
-							          </li>
-							    </ul>
-                            </li>
-							<li>
-							    <a href="#">Species Groups></a>
-							    <ul>
-							          <li>
-							          <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=2">Frullania</a>
-							          </li>
-							          <li>
-							          <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=25">Sphagnum</a>
-							          </li>
-							    </ul>
+									  <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=27">Wyoming</a>
+									  </li>
+								</ul>
 							</li>
 							<li>
-							    <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=12">National Park Service</a>
+								<a href="#">Beyond North America></a>
+								<ul>
+									  <li>
+									  <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=9">Chile</a>
+									  </li>
+									  <li>
+									  <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=11">Falkland Islands</a>
+									  </li>
+									  <li>
+									  <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=5">Fiji</a>
+									  </li>
+									  <li>
+									  <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=10">Guatemala</a>
+									  </li>
+									  <li>
+									  <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=16">Indonesia</a>
+									  </li>
+									  <li>
+									  <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=17">Malaysia</a>
+									  </li>
+								</ul>
 							</li>
 							<li>
-							    <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=26">Teaching Checklists</a>
+								<a href="#">Species Groups></a>
+								<ul>
+									<li>
+										<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=2">Frullania</a>
+									</li>
+									<!--
+									<li>
+										<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=25">Sphagnum</a>
+									</li>
+									-->
+								</ul>
 							</li>
+							<li>
+								<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=12">National Park Service</a>
+							</li>
+							<!--
+							<li>
+								<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=26">Teaching Checklists</a>
+							</li>
+							-->
 						</ul>
 					</li>
 					<li>
@@ -241,5 +245,5 @@ include_once($SERVER_ROOT.'/content/lang/header.'.$LANG_TAG.'.php');
 			</div>
 		</td>
 	</tr>
-    <tr>
+	<tr>
 		<td id='middlecenter'  colspan="3">
