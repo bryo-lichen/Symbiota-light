@@ -117,6 +117,46 @@ ALTER TABLE `agentteams`
   ADD CONSTRAINT `FK_agentteams_memberAgentID`  FOREIGN KEY (`memberAgentID`)  REFERENCES `agents` (`agentID`)  ON DELETE NO ACTION  ON UPDATE CASCADE; 
 
 
+ALTER TABLE `fmchecklists` 
+  CHANGE COLUMN `CLID` `clid` INT(10) UNSIGNED NOT NULL ,
+  CHANGE COLUMN `Name` `name` VARCHAR(100) NOT NULL ,
+  CHANGE COLUMN `Title` `title` VARCHAR(150) NULL DEFAULT NULL ,
+  CHANGE COLUMN `Locality` `locality` VARCHAR(500) NULL DEFAULT NULL ,
+  CHANGE COLUMN `Publication` `publication` VARCHAR(500) NULL DEFAULT NULL ,
+  CHANGE COLUMN `Abstract` `abstract` TEXT NULL DEFAULT NULL ,
+  CHANGE COLUMN `Authors` `authors` VARCHAR(250) NULL DEFAULT NULL ,
+  CHANGE COLUMN `Type` `type` VARCHAR(50) NULL DEFAULT 'static' ,
+  CHANGE COLUMN `dynamicsql` `dynamicSql` VARCHAR(500) NULL DEFAULT NULL ,
+  CHANGE COLUMN `Parent` `parent` VARCHAR(50) NULL DEFAULT NULL ,
+  CHANGE COLUMN `parentclid` `parentClid` INT(10) UNSIGNED NULL DEFAULT NULL ,
+  CHANGE COLUMN `Notes` `notes` VARCHAR(500) NULL DEFAULT NULL ,
+  CHANGE COLUMN `LatCentroid` `latCentroid` DOUBLE(9,6) NULL DEFAULT NULL ,
+  CHANGE COLUMN `LongCentroid` `longCentroid` DOUBLE(9,6) NULL DEFAULT NULL ,
+  CHANGE COLUMN `pointradiusmeters` `pointRadiusMeters` INT(10) UNSIGNED NULL DEFAULT NULL ,
+  CHANGE COLUMN `footprintWKT` `footprintWkt` TEXT NULL DEFAULT NULL ,
+  CHANGE COLUMN `percenteffort` `percentEffort` INT(11) NULL DEFAULT NULL ,
+  CHANGE COLUMN `Access` `access` VARCHAR(45) NULL DEFAULT 'private' ,
+  CHANGE COLUMN `SortSequence` `sortSequence` INT(10) UNSIGNED NOT NULL DEFAULT 50 ,
+  CHANGE COLUMN `DateLastModified` `dateLastModified` DATETIME NULL DEFAULT NULL ,
+  CHANGE COLUMN `InitialTimeStamp` `initialTimestamp` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP() ;
+
+ALTER TABLE `fmchecklists`
+  ADD COLUMN `dynamicProperties` TEXT NULL AFTER `headerUrl`,
+  ADD COLUMN `guid` VARCHAR(45) NULL AFTER `expiration`,
+  ADD COLUMN `recordID` VARCHAR(45) NULL AFTER `guid`,
+  ADD COLUMN `modifiedUid` INT UNSIGNED NULL AFTER `recordID`;
+
+ALTER TABLE `fmchklstcoordinates`
+  ADD COLUMN `sourceName` VARCHAR(75) NULL AFTER `decimalLongitude`,
+  ADD COLUMN `sourceIdentifier` VARCHAR(45) NULL AFTER `sourceName`,
+  ADD COLUMN `referenceUrl` VARCHAR(250) NULL AFTER `sourceIdentifier`,
+  ADD COLUMN `dynamicProperties` TEXT NULL AFTER `notes`,
+  CHANGE COLUMN `chklstcoordid` `clCoordID` INT(11) NOT NULL AUTO_INCREMENT ,
+  CHANGE COLUMN `decimallatitude` `decimalLatitude` DOUBLE NOT NULL ,
+  CHANGE COLUMN `decimallongitude` `decimalLongitude` DOUBLE NOT NULL ,
+  CHANGE COLUMN `initialtimestamp` `initialTimestamp` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP() ;
+
+
 ALTER TABLE `ctcontrolvocab` 
   ADD COLUMN `collid` INT UNSIGNED NULL DEFAULT NULL AFTER `cvID`,
   ADD INDEX `FK_ctControlVocab_collid_idx` (`collid` ASC);
@@ -284,8 +324,25 @@ ALTER TABLE `omoccurdatasets`
   CHANGE COLUMN `initialtimestamp` `initialTimestamp` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP() ;
 
 ALTER TABLE `omoccuredits` 
+  CHANGE COLUMN `FieldName` `fieldName` VARCHAR(45) NOT NULL ,
+  CHANGE COLUMN `FieldValueNew` `fieldValueNew` TEXT NOT NULL ,
+  CHANGE COLUMN `FieldValueOld` `fieldValueOld` TEXT NOT NULL ,
+  CHANGE COLUMN `ReviewStatus` `reviewStatus` INT(1) NOT NULL DEFAULT 1 COMMENT '1=Open;2=Pending;3=Closed' ,
+  CHANGE COLUMN `AppliedStatus` `appliedStatus` INT(1) NOT NULL DEFAULT 0 COMMENT '0=Not Applied;1=Applied' ,
+  CHANGE COLUMN `initialtimestamp` `initialTimestamp` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP() ;
+
+ALTER TABLE `omoccuredits` 
   ADD COLUMN `isActive` INT(1) NULL DEFAULT NULL COMMENT '0 = not the value applied within the active field, 1 = valued applied within active field' AFTER `editType`,
   ADD COLUMN `reapply` INT(1) NULL COMMENT '0 = do not reapply edit; 1 = reapply edit when snapshot is refreshed, if edit isActive and snapshot value still matches old value ' AFTER `isActive`;
+
+ALTER TABLE `omoccuredits` 
+  DROP FOREIGN KEY `fk_omoccuredits_uid`;
+
+ALTER TABLE `omoccuredits` 
+  ADD CONSTRAINT `fk_omoccuredits_uid`  FOREIGN KEY (`uid`)  REFERENCES `users` (`uid`)  ON DELETE RESTRICT  ON UPDATE CASCADE;
+
+ALTER TABLE `omoccuredits` 
+  ADD INDEX `IX_omoccuredits_timestamp` (`initialtimestamp` ASC);
 
 
 UPDATE omoccuridentifiers SET identifiername = "" WHERE identifiername IS NULL;
@@ -393,7 +450,25 @@ ALTER TABLE `omoccurrences`
   ADD INDEX `IX_occurrences_lat` (`decimalLatitude` ASC),
   ADD INDEX `IX_occurrences_lng` (`decimalLongitude` ASC);
 
+ALTER TABLE `omoccurrences` 
+  DROP FOREIGN KEY `FK_omoccurrences_tid`,
+  DROP FOREIGN KEY `FK_omoccurrences_uid`;
 
+ALTER TABLE `omoccurrences` 
+  CHANGE COLUMN `tidinterpreted` `tidInterpreted` INT(10) UNSIGNED NULL DEFAULT NULL ,
+  CHANGE COLUMN `fieldnumber` `fieldNumber` VARCHAR(45) NULL DEFAULT NULL ,
+  CHANGE COLUMN `genericcolumn1` `genericColumn1` VARCHAR(100) NULL DEFAULT NULL ,
+  CHANGE COLUMN `genericcolumn2` `genericColumn2` VARCHAR(100) NULL DEFAULT NULL ,
+  CHANGE COLUMN `observeruid` `observerUid` INT(10) UNSIGNED NULL DEFAULT NULL ,
+  CHANGE COLUMN `processingstatus` `processingStatus` VARCHAR(45) NULL DEFAULT NULL ;
+
+ALTER TABLE `omoccurrences` 
+  ADD CONSTRAINT `FK_omoccurrences_tid`  FOREIGN KEY (`tidInterpreted`)  REFERENCES `taxa` (`tid`)  ON DELETE SET NULL  ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_omoccurrences_uid`  FOREIGN KEY (`observerUid`)  REFERENCES `users` (`uid`);
+
+
+DROP TABLE IF EXISTS `portaloccurrences`;
+DROP TABLE IF EXISTS `portalpublications`;
 DROP TABLE IF EXISTS `portalindex`;
 
 CREATE TABLE `portalindex` (
@@ -415,10 +490,8 @@ CREATE TABLE `portalindex` (
   UNIQUE KEY `UQ_portalIndex_guid` (`guid`)
 );
 
-DROP TABLE IF EXISTS `portalpublications`;
-
 CREATE TABLE `portalpublications` (
-  `pubid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pubid` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
   `pubTitle` varchar(45) NOT NULL,
   `description` varchar(250) DEFAULT NULL,
   `collid` int(10) unsigned NOT NULL,
@@ -441,18 +514,18 @@ CREATE TABLE `portalpublications` (
   CONSTRAINT `FK_portalpub_portalID` FOREIGN KEY (`portalID`) REFERENCES `portalindex` (`portalID`) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
-DROP TABLE IF EXISTS `portaloccurrences`;
-
 CREATE TABLE `portaloccurrences` (
+  `portalOccurrencesID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
   `occid` int(10) unsigned NOT NULL,
   `pubid` int(10) unsigned NOT NULL,
   `targetOccid` int(11) NOT NULL,
   `verification` int(11) NOT NULL DEFAULT 0,
-  `refreshtimestamp` datetime NOT NULL,
-  `initialtimestamp` timestamp NOT NULL DEFAULT current_timestamp(),
-  PRIMARY KEY (`occid`,`pubid`),
+  `refreshTimestamp` datetime NOT NULL,
+  `initialTimestamp` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`portalOccurrencesID`),
   KEY `FK_portalOccur_occid_idx` (`occid`),
   KEY `FK_portalOccur_pubID_idx` (`pubid`),
+  UNIQUE INDEX `UQ_portalOccur_occid_pubid` (`occid` ASC, `pubid` ASC),
   CONSTRAINT `FK_portalOccur_occid` FOREIGN KEY (`occid`) REFERENCES `omoccurrences` (`occid`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_portalOccur_pubid` FOREIGN KEY (`pubid`) REFERENCES `portalpublications` (`pubid`) ON DELETE CASCADE ON UPDATE CASCADE
 );
@@ -467,6 +540,21 @@ ALTER TABLE `specprocessorprojects`
   ADD CONSTRAINT `FK_specprocprojects_uid`  FOREIGN KEY (`createdByUid`)  REFERENCES `users` (`uid`)  ON DELETE SET NULL  ON UPDATE CASCADE;
 
 UPDATE IGNORE taxa SET author = "" WHERE author IS NULL;
+
+ALTER TABLE `taxa` 
+  CHANGE COLUMN `TID` `tid` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT ,
+  CHANGE COLUMN `RankId` `rankId` SMALLINT(5) UNSIGNED NULL DEFAULT NULL ,
+  CHANGE COLUMN `SciName` `sciName` VARCHAR(250) NOT NULL ,
+  CHANGE COLUMN `UnitInd1` `unitInd1` VARCHAR(1) NULL DEFAULT NULL ,
+  CHANGE COLUMN `UnitName1` `unitName1` VARCHAR(50) NOT NULL ,
+  CHANGE COLUMN `UnitInd2` `unitInd2` VARCHAR(1) NULL DEFAULT NULL ,
+  CHANGE COLUMN `UnitName2` `unitName2` VARCHAR(50) NULL DEFAULT 't' ,
+  CHANGE COLUMN `UnitName3` `unitName3` VARCHAR(35) NULL DEFAULT NULL ,
+  CHANGE COLUMN `PhyloSortSequence` `phyloSortSequence` TINYINT(3) UNSIGNED NULL DEFAULT NULL ,
+  CHANGE COLUMN `Source` `source` VARCHAR(250) NULL DEFAULT NULL ,
+  CHANGE COLUMN `Notes` `notes` VARCHAR(250) NULL DEFAULT NULL ,
+  CHANGE COLUMN `Hybrid` `hybrid` VARCHAR(50) NULL DEFAULT NULL ,
+  CHANGE COLUMN `SecurityStatus` `securityStatus` INT(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT '0 = no security; 1 = hidden locality' ;
 
 ALTER TABLE `taxa` 
   CHANGE COLUMN `Author` `author` VARCHAR(150) NOT NULL DEFAULT "";
@@ -486,7 +574,9 @@ ALTER TABLE `uploadspecparameters`
   DROP FOREIGN KEY `FK_uploadspecparameters_coll`;
 
 ALTER TABLE `uploadspecparameters` 
-  ADD COLUMN `internalQuery` VARCHAR(250) NULL AFTER `schemaName`,
+  ADD COLUMN `internalQuery` VARCHAR(250) NULL AFTER `schemaName`;
+
+ALTER TABLE `uploadspecparameters` 
   CHANGE COLUMN `CollID` `collid` INT(10) UNSIGNED NOT NULL ,
   CHANGE COLUMN `UploadType` `uploadType` INT(10) UNSIGNED NOT NULL DEFAULT 1 COMMENT '1 = Direct; 2 = DiGIR; 3 = File' ,
   CHANGE COLUMN `Platform` `platform` VARCHAR(45) NULL DEFAULT '1' COMMENT '1 = MySQL; 2 = MSSQL; 3 = ORACLE; 11 = MS Access; 12 = FileMaker' ,
@@ -515,15 +605,6 @@ ALTER TABLE `uploadspectemp`
 ALTER TABLE `uploadspectemp` 
   DROP COLUMN `materialSampleID`,
   ADD COLUMN `materialSampleJSON` TEXT NULL AFTER `paleoJSON`;
-
-ALTER TABLE `omoccuredits` 
-  DROP FOREIGN KEY `fk_omoccuredits_uid`;
-
-ALTER TABLE `omoccuredits` 
-  ADD CONSTRAINT `fk_omoccuredits_uid`  FOREIGN KEY (`uid`)  REFERENCES `users` (`uid`)  ON DELETE RESTRICT  ON UPDATE CASCADE;
-
-ALTER TABLE `omoccuredits` 
-  ADD INDEX `IX_omoccuredits_timestamp` (`initialtimestamp` ASC);
 
 #Material Sample schema developments
 CREATE TABLE `ommaterialsample` (
