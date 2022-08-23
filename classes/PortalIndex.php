@@ -20,7 +20,7 @@ class PortalIndex extends OmCollections{
 		$retArr = null;
 		$retArr['portalName'] = $GLOBALS['DEFAULT_TITLE'];
 		$retArr['guid'] = $GLOBALS['PORTAL_GUID'];
-		$retArr['urlRoot'] = $this->getDomainPath().$GLOBALS['CLIENT_ROOT'];
+		$retArr['urlRoot'] = $this->getDomain().$GLOBALS['CLIENT_ROOT'];
 		$retArr['managerEmail'] = $GLOBALS['ADMIN_EMAIL'];
 		$retArr['symbiotaVersion'] = $GLOBALS['CODE_VERSION'];
 		return $retArr;
@@ -110,14 +110,21 @@ class PortalIndex extends OmCollections{
 		if(is_numeric($collid)){
 			$sql = 'SELECT title, uspid, path, internalQuery, queryStr, cleanUpSP FROM uploadspecparameters WHERE uploadType = 13 AND collid = '.$collid;
 			$rs = $this->conn->query($sql);
-			while($r = $rs->fetch_object()){
-				$retArr[$r->uspid]['title'] = $r->title;
-				$retArr[$r->uspid]['path'] = $r->path;
-				$retArr[$r->uspid]['internalQuery'] = $r->internalQuery;
-				$retArr[$r->uspid]['queryStr'] = $r->queryStr;
-				$retArr[$r->uspid]['cleanUpSp'] = $r->cleanUpSP;
+			if(!rs){
+				//Temp code only needed until db_schema_patch-1.2 is pushed to production
+				$sql = 'SELECT title, uspid, path, queryStr, cleanUpSP FROM uploadspecparameters WHERE uploadType = 13 AND collid = '.$collid;
+				$rs = $this->conn->query($sql);
 			}
-			$rs->free();
+			if($rs){
+				while($r = $rs->fetch_object()){
+					$retArr[$r->uspid]['title'] = $r->title;
+					$retArr[$r->uspid]['path'] = $r->path;
+					if(isset($r->internalQuery)) $retArr[$r->uspid]['internalQuery'] = $r->internalQuery;
+					$retArr[$r->uspid]['queryStr'] = $r->queryStr;
+					$retArr[$r->uspid]['cleanUpSp'] = $r->cleanUpSP;
+				}
+				$rs->free();
+			}
 		}
 		return $retArr;
 	}
@@ -136,7 +143,7 @@ class PortalIndex extends OmCollections{
 			$pingUrl = $remotePath.'api/v2/installation/ping';
 			$remoteArr = $this->getAPIResponce($pingUrl);
 			if($remoteArr){
-				$handShakeUrl = $this->getDomainPath().$GLOBALS['CLIENT_ROOT'].'/api/v2/installation/'.$remoteArr['guid'].'/touch?endpoint='.$remoteArr['urlRoot'];
+				$handShakeUrl = $this->getDomain().$GLOBALS['CLIENT_ROOT'].'/api/v2/installation/'.$remoteArr['guid'].'/touch?endpoint='.$remoteArr['urlRoot'];
 				//echo '<div>Handshake URL: '.$handShakeUrl.'</div>';
 				$respArr = $this->getAPIResponce($handShakeUrl);
 			}
@@ -246,14 +253,11 @@ class PortalIndex extends OmCollections{
 		if($stmt = $this->conn->prepare($sql)) {
 			$stmt->bind_param('ssiissiiisii', $pubTitle, $description, $collid, $portalID, $direction, $criteriaJson, $includeDeterminations, $includeImages, $autoUpdate, $lastDateUpdate, $updateInterval, $createdUid);
 			$stmt->execute();
-			if($stmt->affected_rows){
-				$newPubIndex = $this->conn->insert_id;
-			}
-			else{
-				if($stmt->error) $this->warningArr[] = 'ERROR creating portalpublication profile: '.$this->conn->error;
-			}
+			if($stmt->affected_rows) $newPubIndex = $this->conn->insert_id;
+			elseif($stmt->error) $this->errorMessage = 'ERROR creating portalpublication profile: '.$this->conn->error;
 			$stmt->close();
 		}
+		else $this->errorMessage = 'ERROR creating portalpublication profile: '.$this->conn->error;
 		return $newPubIndex;
 	}
 
