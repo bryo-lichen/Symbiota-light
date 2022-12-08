@@ -175,7 +175,7 @@ $clArray = $vManager->getChecklistData();
 										<?php echo (isset($LANG['HABITAT'])?$LANG['HABITAT']:'Habitat'); ?>:
 									</div>
 									<div style="float:left;">
-										<input name='habitat' type='text' value="<?php echo $clArray["habitat"];?>" size='70' maxlength='300' />
+										<input name='habitat' type='text' value="<?php echo $clArray["habitat"];?>" size='70' maxlength='350' />
 									</div>
 								</div>
 								<div style='clear:both;margin:3px;'>
