@@ -4,7 +4,16 @@ header("Content-Type: text/html; charset=ISO-8859-1");
 ?>
 <html>
 <head>
-	<title>Consortium of North American Lichen Herbaria</title>
+	<title>
+	<?php if($LANG_TAG=='es'){
+	?>
+		Consorcio de Herbarios de Líquenes
+	<?php
+	}
+	else {
+	?>
+		Consortium of Lichen Herbaria	
+	</title>
 	<link href="css/quicksearch.css" type="text/css" rel="Stylesheet" />
 	<?php
 	$activateJQuery = true;
@@ -67,8 +76,8 @@ header("Content-Type: text/html; charset=ISO-8859-1");
 						<br>For all species included in the global red-list, the taxon profiles now also include red-listing information, e.g., checkout the profile of <a href="https://lichenportal.org/cnalh/taxa/index.php?taxon=Mobergia%20calculiformis&formsubmit=Search%20Terms" target ="_blank"><i>Mobergia calculiformis</i></a>.
 					</p>
 					<div style="">
-						The <b>Consortium of North American Lichen Herbaria</b> (CNALH) serves as a gateway to biodiversity data of lichenized fungi
-						throughout North America. It provides access to an array of different resources: specimen records, field observations,
+						The data portal of the <b>Consortium of Lichen Herbaria</b> serves as a gateway to biodiversity data of lichenized fungi across the globe. 
+						It provides access to an array of different resources: specimen records, field observations,
 						dynamic and static checklists, images, interactive keys, and a taxonomic thesaurus.
 					</div>
 					<div style="margin-top:10px;">
