@@ -21,7 +21,7 @@ include_once($SERVER_ROOT.'/content/lang/header.'.$LANG_TAG.'.php');
 				?>
 					<div id="header1">El Consorcio de</div>
 					<div id="header2">Herbarios de L&iacute;quenes</div>
-					<div id="header3">- construyendo un Consorcio Global de Briófitos y Líquenes como bases de las comunidades criptobióticas -</div>
+					<div id="header3">- construyendo un Consorcio Global de Bri&oacute;fitos y L&iacute;quenes como bases de las comunidades criptobi&oacute;ticas -</div>
 				<?php
 				}
 				else {
