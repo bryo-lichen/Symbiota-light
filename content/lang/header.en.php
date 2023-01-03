@@ -5,6 +5,10 @@ Language: English
 ------------------
 */
 
+$LANG['HEADER1'] = '';
+$LANG['HEADER2'] = 'The Consortium of Lichen Herbaria';
+$LANG['HEADER3'] = 'building a Global Consortium of Bryophytes and Lichens as keystones of cryptobiotic communities';
+
 $LANG['H_HOME'] = 'Home';
 
 $LANG['H_SEARCH'] = 'Search';
