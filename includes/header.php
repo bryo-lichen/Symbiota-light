@@ -17,19 +17,8 @@ include_once($SERVER_ROOT.'/content/lang/header.'.$LANG_TAG.'.php');
 					<img src="<?php echo $CLIENT_ROOT; ?>/images/layout/header_right.jpg" />
 				</div>
 				<div style="float:left;">
-				<?php if($LANG_TAG=='es'){
-				?>
-					<div id="header2" style="padding:30px 0px 0px 0px">El Consorcio de Herbarios de L&iacute;quenes</div>
-					<div id="header3">- construyendo un Consorcio Global de Bri&oacute;fitos y L&iacute;quenes como bases de las comunidades criptobi&oacute;ticas -</div>
-				<?php
-				}
-				else {
-				?>
-					<div id="header2" style="padding:30px 0px 0px 0px">The Consortium of Lichen Herbaria</div>
-					<div id="header3">- building a Global Consortium of Bryophytes and Lichens as keystones of cryptobiotic communities -</div>
-				<?php
-				}
-				?>
+					<div id="header2" style="padding:30px 0px 0px 0px"><?php echo $LANG['HEADER2']; ?></div>
+					<div id="header3">- <?php echo $LANG['HEADER3']; ?> -</div>
 				</div>
 			</div>
 			<div id="top_navbar">
