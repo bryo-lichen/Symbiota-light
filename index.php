@@ -7,7 +7,7 @@ header("Content-Type: text/html; charset=ISO-8859-1");
 	<title>
 	<?php if($LANG_TAG=='es'){
 	?>
-		Consorcio de Herbarios de Líquenes
+		Consorcio de Herbarios de L&iacute;quenes
 	<?php
 	}
 	else {
