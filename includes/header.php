@@ -19,7 +19,7 @@ include_once($SERVER_ROOT.'/content/lang/header.'.$LANG_TAG.'.php');
 				<div style="float:left;">
 				<?php if($LANG_TAG=='es'){
 				?>
-					<div id="header2">El Consorcio de Herbarios de L&iacute;quenes</div>
+					<div id="header2" style="padding:"20px 0px 0px 0px">El Consorcio de Herbarios de L&iacute;quenes</div>
 					<div id="header3">- construyendo un Consorcio Global de Bri&oacute;fitos y L&iacute;quenes como bases de las comunidades criptobi&oacute;ticas -</div>
 				<?php
 				}
