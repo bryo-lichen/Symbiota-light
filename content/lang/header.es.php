@@ -5,6 +5,10 @@ Language: Español (Spanish)
 ------------------
 */
 
+$LANG['HEADER1'] = '';
+$LANG['HEADER2'] = 'El Consorcio de Herbarios de L&iacute;quenes';
+$LANG['HEADER3'] = 'construyendo un Consorcio Global de Bri&oacute;fitos y L&iacute;quenes como bases de las comunidades criptobi&oacute;ticas';
+
 $LANG['H_HOME'] = 'Inicio';
 
 $LANG['H_SEARCH'] = 'B&uacute;squeda';
