@@ -57,7 +57,7 @@ header("Content-Type: text/html; charset=ISO-8859-1");
 				$width = 350;
 				$dayInterval = 7;
 				if($LANG_TAG=='es'){
-					$clid = 1279
+					$clid = 1279;
 				}
 				else{
 					$clid = 1251;
