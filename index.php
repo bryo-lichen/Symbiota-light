@@ -12,7 +12,10 @@ header("Content-Type: text/html; charset=ISO-8859-1");
 	}
 	else {
 	?>
-		Consortium of Lichen Herbaria	
+		Consortium of Lichen Herbaria
+	<?php
+	}
+	?>
 	</title>
 	<link href="css/quicksearch.css" type="text/css" rel="Stylesheet" />
 	<?php
