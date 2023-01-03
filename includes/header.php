@@ -17,9 +17,21 @@ include_once($SERVER_ROOT.'/content/lang/header.'.$LANG_TAG.'.php');
 					<img src="<?php echo $CLIENT_ROOT; ?>/images/layout/header_right.jpg" />
 				</div>
 				<div style="float:left;">
-					<div id="header1">Consortium of</div>
-					<div id="header2">North American Lichen Herbaria</div>
+				<?php if($LANG_TAG=='es'){
+				?>
+					<div id="header1">El Consorcio de</div>
+					<div id="header2">Herbarios de L&iacute;quenes</div>
+					<div id="header3">- construyendo un Consorcio Global de Briófitos y Líquenes como bases de las comunidades criptobióticas -</div>
+				<?php
+				}
+				else {
+				?>
+					<div id="header1">The Consortium of</div>
+					<div id="header2">Lichen Herbaria</div>
 					<div id="header3">- building a Global Consortium of Bryophytes and Lichens as keystones of cryptobiotic communities -</div>
+				<?php
+				}
+				?>
 				</div>
 			</div>
 			<div id="top_navbar">
