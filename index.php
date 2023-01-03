@@ -56,17 +56,12 @@ header("Content-Type: text/html; charset=ISO-8859-1");
 				$numSlides = 10;
 				$width = 350;
 				$dayInterval = 7;
-				<?php if($LANG_TAG=='es'){
-				?>
+				if($LANG_TAG=='es'){
 					$clid = 1279
-				<?php
 				}
 				else{
-				?>
 					$clid = 1251;
-				<?php
 				}
-				?>
 				$imageType = "both";
 				$numDays = 240;
 
