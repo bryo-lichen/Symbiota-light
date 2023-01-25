@@ -4,6 +4,7 @@
 /header.php
 /leftmenu.php
 /index.php
+content/lang/header.fr.php
 content/lang/header.en.php
 content/lang/header.es.php
 content/lang/header.fr.php
@@ -23,3 +24,4 @@ includes/citationportal.php
 .project
 .settings/org.eclipse.core.resources.prefs
 .settings/org.eclipse.php.ui.prefs
+
