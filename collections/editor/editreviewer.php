@@ -96,12 +96,12 @@ $navStr .= '</div>';
 <html>
 	<head>
 		<title><?php echo $LANG['EDIT_REVIEWER']; ?></title>
+		<link href="<?php echo $CSS_BASE_PATH; ?>/jquery-ui.css" type="text/css" rel="stylesheet">
 		<?php
 		include_once($SERVER_ROOT.'/includes/head.php');
 		?>
 		<script src="<?php echo $CLIENT_ROOT; ?>/js/jquery.js" type="text/javascript"></script>
 		<script src="<?php echo $CLIENT_ROOT; ?>/js/jquery-ui.js" type="text/javascript"></script>
-		<link href="<?php echo $CSS_BASE_PATH; ?>/jquery-ui.css" type="text/css" rel="stylesheet">
 		<script>
 			function validateFilterForm(f){
 				if(f.startdate.value > f.enddate.value){
@@ -308,6 +308,8 @@ $navStr .= '</div>';
 									<input name="frstatus" type="hidden" value="<?php echo $frStatus; ?>" />
 									<input name="ffieldname" type="hidden" value="<?php echo $filterFieldName; ?>" />
 									<input name="editor" type="hidden" value="<?php echo $editor; ?>" />
+									<input name="startdate" type="hidden" value="<?php echo $startDate; ?>" />
+									<input name="enddate" type="hidden" value="<?php echo $endDate; ?>" />
 									<input name="occid" type="hidden" value="<?php echo $queryOccid; ?>" />
 									<input name="pagenum" type="hidden" value="<?php echo $pageNum; ?>" />
 									<input name="limitcnt" type="hidden" value="<?php echo $limitCnt; ?>" />
