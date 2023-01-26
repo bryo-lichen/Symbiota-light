@@ -138,8 +138,8 @@ header("Content-Type: text/html; charset=ISO-8859-1");
 					</div>
 					<div style="margin-top:10px;">
 						Este sitio comparte los mismos recursos anteriormente ofrecidos a trav&eacute;s del <i>Consorcio de Herbarios de L&iacute;quenes 
-						de Am&eacute;rica del Norte</i> (CNALH), del <i>Consorcio de Herbarios de L&iacute;quenes en Am&eacute;rica Latina</i> (CHLAL) y del Arctic 
-						Lichen portal: registros de especimenes, observaciones de campo, listas de control din&aacute;micas y est&aacute;ticas, 
+						de Am&eacute;rica del Norte</i> (CNALH), del <i>Consorcio de Herbarios de L&iacute;quenes en Am&eacute;rica Latina</i> (CHLAL) y del <i>Arctic 
+						Lichen</i> portal: registros de especimenes, observaciones de campo, listas de control din&aacute;micas y est&aacute;ticas, 
 						im&aacute;genes, claves interactivas y un diccionario de sin&oacute;nimos taxon&oacute;mico.
 					</div>
 					<div style="margin-top:10px;">
