@@ -6,8 +6,8 @@ Language: Español (Spanish)
 */
 
 $LANG['HEADER1'] = '';
-$LANG['HEADER2'] = 'El Consorcio de Herbarios de L&iacute;quenes';
-$LANG['HEADER3'] = 'construyendo un Consorcio Global de Bri&oacute;fitos y L&iacute;quenes como bases de las comunidades criptobi&oacute;ticas';
+$LANG['HEADER2'] = 'Consorcio de Herbarios de L&iacute;quenes';
+$LANG['HEADER3'] = 'parte del Consorcio de Briofitas y L&iacute;quenes: organismos clave de comunidades criptobi&oacute;ticas';
 
 $LANG['H_HOME'] = 'Inicio';
 

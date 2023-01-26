@@ -79,52 +79,38 @@ header("Content-Type: text/html; charset=ISO-8859-1");
 				?>
 				<div>
 					<p style="margin-bottom: 2rem">
-						<b>NEW:</b> In collaboration with the <a href="https://www.iucnredlist.org/" target ="_blank">IUCN</a>, the <span style="color:red;font-weight:bold">IUCN Global Red-List</span>
-						<a href="https://lichenportal.org/cnalh/projects/index.php?pid=556" target ="_blank"> is now featured on CNALH</a>.
-						<br>For all species included in the global red-list, the taxon profiles now also include red-listing information, e.g., checkout the profile of <a href="https://lichenportal.org/cnalh/taxa/index.php?taxon=Mobergia%20calculiformis&formsubmit=Search%20Terms" target ="_blank"><i>Mobergia calculiformis</i></a>.
+						<b>Welcome:</b> The <i>Consortium of Lichen Herbaria</i> has just been launched!
 					</p>
 					<div style="">
-						The data portal of the <b>Consortium of Lichen Herbaria</b> serves as a gateway to biodiversity data of lichenized fungi across the globe. 
-						It provides access to an array of different resources: specimen records, field observations,
-						dynamic and static checklists, images, interactive keys, and a taxonomic thesaurus.
+						The <i>Consortium</i> serves as gateway to biodiversity data of lichenized fungi. 
+						It unites records not only from North America, but from Latin America, Europe, Asia, Oceania, 
+						as well as personal collections, research observations, and small personal collections.
 					</div>
 					<div style="margin-top:10px;">
-						As a regular visitor, we invite you to join. Create your own <a href="profile/newprofile.php">account</a> today!
-						If you need access to specific resources, want to contribute occurrence records or images, report errors or simply provide
-						feedback please do not hesitate to contact us at
-						<a class="bodylink" href="mailto:CNALH.help@gmail.com">CNALH.help@gmail.com</a>
+						Since its inauguration the <i>Consortium of North American Lichen Herbaria</i> (CNALH) has continuously grown, 
+						and the launch of the <i>Consorcio de Herbarios de L&iacute;quenes en Am&eacute;rica Latina</i> (CHLAL) has been such a success 
+						that we decided to merge existing biodiversity data platforms to better serve the community.
 					</div>
-				</div>
-				<div style="width:450px;margin-top:30px;">
-					<div style="font-weight:bold;font-size:110%;">
-						News and Events
+					<div style="margin-top:10px;">
+						Uniting these resources has many benefits: Less maintenance of a single platform means that we can focus more 
+						on development and improving functionality. We currently serve the data through two language interfaces: English 
+						and Spanish. A French user interface is in development.
 					</div>
-					<ul>
-						<li>
-							<b>August 2021</b> - As part of the <a href="https://doity.com.br/ial9" target="_blank">9th Symposium of the International Association for Lichenology</a> 
-							(IAL9) we held a Spanish workshop on how to manage data in the <a href="https://lichenportal.org/chlal/" target="_blank">Consortium of Latin American Lichen Herbaria</a> (CHLAL). 
-							The workshop was very well attended. You can download videos of <a href="https://lichenportal.org/imglib/docs/lichen/IAL9_Taller_dia_1.mp4" target="_blank"><b>Day 1</b></a> 
-							and <a href="https://lichenportal.org/imglib/docs/lichen/IAL9_Taller_dia_2.mp4" target="_blank"><b>Day 2</b></a> (please note: the videos are in Spanish and are large, 
-							ca. 2GB each; they will take a long time to download).
-						</li>
-						<li>
-							<b>April 2021</b> - The GLOBAL Bryophytes and Lichens Network, funded by the recent NSF Grant, launched a <a href="https://globaltcn.utk.edu/" target="_blank">new project website</a>, which includes a description of the project, digitization resources, and education and outreach material.
-						</li>
-						<li>
-							<b>January 2021</b> - Welcome our new portal manager Katie Pearson.
-						</li>
-						<li>
-							<b>September 2020</b> - ASU and collaborators were recently awarded a new <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2001394" target="_blank">NSF Grant</a> to Build a <a href="https://www.idigbio.org/wiki/index.php/Building_a_global_consortium_of_bryophytes_and_lichens:_keystones_of_cryptobiotic_communities" target="_blank"><b>Global Consortium of Bryophytes and Lichens</b></a>.
-						</li>
-						<li>
-							<b>July 2019</b> - We now launched <a href="http://help-resources.lichenportal.org" target="_blank"><B> CNALH Help &amp; Resources</b></a>, a site with tutorials how to join and participate, and some useful programs that can be downloaded.
-						</li>
-						<li>
-							<b>August  2018</b> - ASU receives a  multimillion dollar grant from NSF to create the new
-							<a href="https://biorepo.neonscience.org/"><b>NEON biorepository</b></a>;
-							these funds will substantially strengthen the Symbiota software platform and add new functionality from which CNALH will benefit significantly as well.
-						</li>
-					</ul>
+					<div style="margin-top:10px;">
+						The website unites all resources previously offered through the <i>Consortium of North American Lichen Herbaria</i> (CNALH), 
+						the <i>Consorcio de Herbarios de L&iacute;quenes en Am&eacute;rica Latina</i> (CHLAL), and the <i>Arctic Lichen</i> portal: specimen records, 
+						field observations, dynamic and static checklists, images, interactive keys, and a taxonomic thesaurus.
+					</div>
+					<div style="margin-top:10px;">
+						Our initiative is supported by the <i>Biodiversity Knowledge Integration Center</i> (BioKIC) of <i>Arizona State University</i>, 
+						the <i>ASU Lichen Herbarium</i>, the <i>International Union for the Conservation of Nature</i> (IUCN), the <i>Grupo Latinoamericano 
+						de Liquen&oacute;logos</i> (GLAL), the <i>Grupo Ecuatoriano de Liquenolog&iacute;a</i> (GEL), <i>iDigBio</i>, the <i>National Science Foundation</i> 
+						(NSF), and the <i>GLOBAL Bryophytes and Lichens Network</i>.
+					</div>
+					<div style="margin-top:10px;">
+						If you are new to the site, please <a href="<?php $CLIENT_ROOT.'/profile/newprofile.php'; ?>">create an account</a>. 
+						Contact us if you are interested in contributing, either as individual user or as collection manager of an institution that would like to join: 
+					</div>
 				</div>
 				<?php
 			}
@@ -133,58 +119,35 @@ header("Content-Type: text/html; charset=ISO-8859-1");
 				?>
 				<div>
 					<p style="margin-bottom: 2rem">
-						<b>Nuevo:</b> En colaboraci&oacute;n con la <a href="https://www.iucnredlist.org/" target ="_blank">IUCN</a>, la <span style="color:red;font-weight:bold">Lista Roja</span>
-						<a href="https://lichenportal.org/cnalh/projects/index.php?pid=556" target ="_blank"> ahora est&aacute; disponible desde del CNLAH</a>.
-						<br>Para todas las especies incluidas en la Lista Roja Global, ahora tambi&eacute;n se incluyen sus características taxon&oacute;micas, aqu&iacute; un ejemplo: 
-						el perfil de <a href="https://lichenportal.org/cnalh/taxa/index.php?taxon=Mobergia%20calculiformis&formsubmit=Search%20Terms" target ="_blank"><i>Mobergia calculiformis</i></a>.
+						<b>&iexcl;Bienvenido al Consorcio de Herbarios de L&iacute;quenes!</b>
 					</p>
 					<div style="">
-						El <b>Consorcio de Herbarios de L&iacute;quenes en Norteam&eacute;rica</b> (CNALH) establece un puente de conexi&oacute;n de datos de diversidad de 
-						hongos liquenizados a trav&eacute;s de Norteam&eacute;rica. Provee acceso a diferentes fuentes de informaci&oacute;n: un registro de espec&iacute;menes, 
-						observaciones de la distribuci&oacute;n de especies, mecanismos para establecer listas de especies din&aacute;micas y est&aacute;ticas, im&aacute;genes, 
-						claves interactivas, y un tesauro taxon&oacute;mico.
+						El <i>Consorcio</i> sirve como punto focal de la biodiversidad de hongos liquenizados no solamente en Norteam&eacute;rica, 
+						sino tambi&eacute;n en Am&eacute;rica Latina, Europa, Asia, Ocean&iacute;a, as&iacute; como colecciones personales, 
+						observaciones de investigaci&oacute;n y peque&ntilde;as colecciones personales.
 					</div>
 					<div style="margin-top:10px;">
-						Como visitante regular, te invitamos a unirte. &iexcl;Crea tu propia cuenta hoy d&iacute;a! Si necesitas acceso a recursos espec&iacute;ficos, 
-						deseas contribuir con im&aacute;genes o registros, reportar errores o simplemente aportar feedback, por favor no dudes en contactarnos 
-						a <a class="bodylink" href="mailto:CNALH.help@gmail.com">CNALH.help@gmail.com</a>.
+						Desde de su inauguraci&oacute;n el <i>Consortium of North American Lichen Herbaria</i> (CHALH) ha crecido continuamente, 
+						y el lanzamiento del <i>Consorcio de Herbarios de L&iacute;quenes en Am&eacute;rica Latina</i> (CHLAL) ha sido tan exitoso que 
+						decidimos fusionar las plataformas para brindar mejor servicio a la comunidad.
 					</div>
-				</div>
-				<div style="width:450px;margin-top:30px;">
-					<div style="font-weight:bold;font-size:110%;">
-						NOTICIAS Y EVENTOS
+					<div style="margin-top:10px;">
+						Unir los recursos tiene muchos beneficios: mantenimiento de un solo sitio es m&aacute;s eficiente y significa 
+						que podemos centrarnos en el desarrollo para mejorar la funcionalidad de la plataforma. Actualmente 
+						compartimos los datos a trav&eacute;s de dos idiomas: ingl&eacute;s y espa&ntilde;ol. Estamos desarrollando el interfaz en franc&eacute;s.
 					</div>
-					<ul>
-						<li>
-							<b>Agosto 2021</b> - Como parte del <a href="https://doity.com.br/ial9" target="_blank">9th Symposium of the International Association for Lichenology (IAL9)</a>
-							organiz&aacute;bamos un taller como manejar sus datos en el <a href="https://lichenportal.org/chlal/" target="_blank">Consorcio de Herbarios de L&iacute;quenes en Am&eacute;rica Latina</a> (CHLAL).  
-							Ten&iacute;amos un muy bien excito con mucha gente participando. Usted puede bajar los v&iacute;deos del <a href="https://lichenportal.org/imglib/docs/lichen/IAL9_Taller_dia_1.mp4" target="_blank"><b>dia 1</b></a> 
-							y <a href="https://lichenportal.org/imglib/docs/lichen/IAL9_Taller_dia_2.mp4" target="_blank"><b>dia 2</b></a> (atenci&oacute;n: los v&iacute;deos son exclusivamente en espa&ntilde;ol y bien grande, 
-							ca. 2GB cada uno; va tomar mucho tiempo bajarlos).
-						</li>
-						<li>
-							<b>Abril 2021</b> - La Red Global de Briofitas y L&iacute;quenes recibi&oacute; un soporte financiero del NSF, lanzando un 
-							<a href="https://globaltcn.utk.edu/" target="_blank">sitio web</a> para el nuevo proyecto, el que incluye descripci&oacute;n del 
-							proyecto, recursos digitales, educaci&oacute;n y material 
-							de alcance para todos.
-						</li>
-						<li>
-							<b>Enero 2021</b> - Le damos la bienvenida a nuestra gerente del nuevo portal Katie Pearson.
-						</li>
-						<li>
-							<b>Septiembre 2020</b> - La Universidad del Estado de Arizona, ASU, y sus colaboradores fueron galardonados 
-							con un nuevo soporte <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2001394" target="_blank">financiero&acute;de NSF</a> para crear un <a href="https://www.idigbio.org/wiki/index.php/Building_a_global_consortium_of_bryophytes_and_lichens:_keystones_of_cryptobiotic_communities" target="_blank"><b>Consorcio Global de Briofitas y L&iacute;quenes</b></a>.
-						</li>
-						<li>
-							<b>Julio 2019</b> -  Hemos lanzado <a href="http://help-resources.lichenportal.org" target="_blank"><B> Ayuda y Recursos CNALH</b></a>, 
-							un sitio con tutoriales donde se explica c&oacute;mo unirse y participar, y c&oacute;mo descargar programas &uacute;tiles.
-						</li>
-						<li>
-							<b>Agosto  2018</b> - ASU recibe un multi millonario aporte financiero de NSF para crear el nuevo 
-							<a href="https://biorepo.neonscience.org/"><b>NEON biorepositorio</b></a>; estos fondos fortalecer&aacute;n sustancialmente 
-							la plataforma del software de la Simbiota y a&ntilde;adir nueva funcionalidad donde la CNALH tambi&eacute;n se beneficiar&aacute;.
-						</li>
-					</ul>
+					<div style="margin-top:10px;">
+						Este sitio comparte los mismos recursos anteriormente ofrecidos a trav&eacute;s del <i>Consorcio de Herbarios de L&iacute;quenes 
+						de Am&eacute;rica del Norte</i> (CNALH), del <i>Consorcio de Herbarios de L&iacute;quenes en Am&eacute;rica Latina</i> (CHLAL) y del Arctic 
+						Lichen portal: registros de especimenes, observaciones de campo, listas de control din&aacute;micas y est&aacute;ticas, 
+						im&aacute;genes, claves interactivas y un diccionario de sin&oacute;nimos taxon&oacute;mico.
+					</div>
+					<div style="margin-top:10px;">
+						Nuestra iniciativa cuenta con el apoyo del <i>Biodiversity Knowledge Integration Center</i> (BioKIC) de <i>Arizona State 
+						University</i>, el <i>ASU Lichen Herbarium</i>, la <i>Uni&oacute;n Internacional para la Conservaci&oacute;n de la Naturaleza</i> (UICN), 
+						el <i>Grupo Latinoamericano de Liquen&oacute;logos</i> (GLAL) y el <i>Grupo Ecuatoriano de Liquenolog&iacute;a</i> ( GEL), <i>iDigBio</i>, 
+						la <i>National Science Foundation</i> (NSF) y con el <i>GLOBAL Bryophytes and Lichens Network</i>.
+					</div>
 				</div>
 				<?php
 			}
