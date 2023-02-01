@@ -12,7 +12,6 @@ $LANG['HEADER3'] = 'building a Global Consortium of Bryophytes and Lichens as ke
 $LANG['H_HOME'] = 'Home';
 
 $LANG['H_SEARCH'] = 'Search';
-$LANG['H_COLLECTIONS'] = 'Specimen Search';
 $LANG['H_MAP'] = 'Map Search';
 $LANG['H_DYN_LISTS'] = 'Dynamic Species List';
 $LANG['H_DYN_KEY'] = 'Dynamic Identification Key';

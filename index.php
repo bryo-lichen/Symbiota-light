@@ -109,7 +109,8 @@ header("Content-Type: text/html; charset=ISO-8859-1");
 					</div>
 					<div style="margin-top:10px;">
 						If you are new to the site, please <a href="<?php $CLIENT_ROOT.'/profile/newprofile.php'; ?>">create an account</a>. 
-						Contact us if you are interested in contributing, either as individual user or as collection manager of an institution that would like to join: 
+						Contact us if you are interested in contributing, either as individual user or as collection manager of an institution that would like to join: ????@gmail.com.
+						Previously-created accounts in CNALH and CHLAL will continue to function.
 					</div>
 				</div>
 				<?php
@@ -132,21 +133,27 @@ header("Content-Type: text/html; charset=ISO-8859-1");
 						decidimos fusionar las plataformas para brindar mejor servicio a la comunidad.
 					</div>
 					<div style="margin-top:10px;">
-						Unir los recursos tiene muchos beneficios: mantenimiento de un solo sitio es m&aacute;s eficiente y significa 
-						que podemos centrarnos en el desarrollo para mejorar la funcionalidad de la plataforma. Actualmente 
-						compartimos los datos a trav&eacute;s de dos idiomas: ingl&eacute;s y espa&ntilde;ol. Estamos desarrollando el interfaz en franc&eacute;s.
+						Unir los recursos tiene muchos beneficios: el mantenimiento de un solo sitio es m&aacute;s eficiente y significa 
+						que podemos centrarnos en el desarrollo y mejoramiento de para mejorar la funcionalidad de la plataforma. Actualmente 
+						compartimos los datos a trav&eacute;s de dos idiomas: ingl&eacute;s y espa&ntilde;ol. Estamos desarrollando la interface en franc&eacute;s.
 					</div>
 					<div style="margin-top:10px;">
-						Este sitio comparte los mismos recursos anteriormente ofrecidos a trav&eacute;s del <i>Consorcio de Herbarios de L&iacute;quenes 
-						de Am&eacute;rica del Norte</i> (CNALH), del <i>Consorcio de Herbarios de L&iacute;quenes en Am&eacute;rica Latina</i> (CHLAL) y del <i>Arctic 
-						Lichen</i> portal: registros de especimenes, observaciones de campo, listas de control din&aacute;micas y est&aacute;ticas, 
-						im&aacute;genes, claves interactivas y un diccionario de sin&oacute;nimos taxon&oacute;mico.
+						Este sitio unifica todos los recursos anteriormente ofrecidos a trav&acute;s del <i>Consorcio de Herbarios de L&iacute;quenes 
+						de Am&eacute;rica del Norte</i> (CNALH), del <i>Consorcio de Herbarios de L&iacute;quenes en Am&eacute;rica Latina</i> (CHLAL) y del portal <i>Arctic 
+						Lichen</i>: registros de especimenes, observaciones de campo, listas din&aacute;micas y est&aacute;ticas, 
+						im&aacute;genes, claves interactivas y un diccionario taxon&acute;mico de sin&oacute;nimos.
 					</div>
 					<div style="margin-top:10px;">
 						Nuestra iniciativa cuenta con el apoyo del <i>Biodiversity Knowledge Integration Center</i> (BioKIC) de <i>Arizona State 
 						University</i>, el <i>ASU Lichen Herbarium</i>, la <i>Uni&oacute;n Internacional para la Conservaci&oacute;n de la Naturaleza</i> (UICN), 
 						el <i>Grupo Latinoamericano de Liquen&oacute;logos</i> (GLAL) y el <i>Grupo Ecuatoriano de Liquenolog&iacute;a</i> ( GEL), <i>iDigBio</i>, 
 						la <i>National Science Foundation</i> (NSF) y con el <i>GLOBAL Bryophytes and Lichens Network</i>.
+					</div>
+					<div style="margin-top:10px;">
+						Si usted visita este sitio por la primera vez le sugerimos crear una cuenta. Si est&aacute; interesado en 
+						contribuir y necesita ayuda como usuario individual o administrador de una instituci&oacute;n, estamos 
+						disponibles en el correo: en: ????@gmail.com. Las cuentas de usuarios de plataformas anteriores siguen 
+						funcionando.
 					</div>
 				</div>
 				<?php
