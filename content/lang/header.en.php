@@ -38,7 +38,9 @@ $LANG['H_LINKS'] = 'Links';
 $LANG['H_DATA_POLICY'] = 'Data Usage Policy';
 
 $LANG['H_ASSOC_PROJECTS'] = 'Associated Projects';
+$LANG['BRYO_PORTAL'] = 'Consortium of Bryophyte Herbaria';
 $LANG['H_AYUDA_RECURSOS'] = 'Help & Resources';
+$LANG['CONSORTIUM_RESOURCES'] = 'Consortium Resources';
 
 $LANG['H_WELCOME'] = 'Welcome';
 $LANG['H_MY_PROFILE'] = 'My Profile';

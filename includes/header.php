@@ -532,13 +532,7 @@ else include_once($SERVER_ROOT.'/content/lang/header.en.php');
 		<a href="#"><?php echo (isset($LANG['H_ASSOC_PROJECTS'])?$LANG['H_ASSOC_PROJECTS']:'Associated Projects'); ?></a>
 			<ul>
 				<li>
-					<a href="/arctic" target="_blank"><?php echo (isset($LANG['ARCTIC_PORTAL'])?$LANG['ARCTIC_PORTAL']:'Arctic Lichens'); ?></a>
-				</li>
-				<li>
-					<a href="http://bryophyteportal.org" target="_blank"><?php echo (isset($LANG['BYRO_PORTAL'])?$LANG['BRYO_PORTAL']:'Bryophyte Portal (CNABH)'); ?></a>
-				</li>
-				<li>
-					<a href="/chlal" target="_blank">L&iacute;quenes en Am&eacute;rica Latina (CHLAL)</a>
+					<a href="http://bryophyteportal.org" target="_blank"><?php echo (isset($LANG['BYRO_PORTAL'])?$LANG['BRYO_PORTAL']:'Bryophyte Portal'); ?></a>
 				</li>
 				<li>
 					<a href="https://globaltcn.utk.edu/">GLOBAL Bryophytes and Lichens Network</a>
@@ -551,9 +545,6 @@ else include_once($SERVER_ROOT.'/content/lang/header.en.php');
 					<li>
 					<a href="#" ><?php echo (isset($LANG['H_MORE_INFO'])?$LANG['H_MORE_INFO']:'More Information'); ?></a>
 						<ul>
-							<li>
-								<a href="http://symbiota.org/docs/symbiota-introduction/symbiota-help-pages/" target="_blank" ><?php echo (isset($LANG['H_HELP'])?$LANG['H_HELP']:'Symbiota Help'); ?></a>
-							</li>
 							<li>
 								<a href="<?php echo $CLIENT_ROOT; ?>/collections/misc/collprofiles.php" ><?php echo (isset($LANG['H_PARTNERS'])?$LANG['H_PARTNERS']:'Partners'); ?></a>
 							</li>
@@ -568,10 +559,17 @@ else include_once($SERVER_ROOT.'/content/lang/header.en.php');
 					<li>
 						<a href="<?php echo $CLIENT_ROOT; ?>/sitemap.php"><?php echo (isset($LANG['H_SITEMAP'])?$LANG['H_SITEMAP']:'Sitemap') ?></a>
 					</li>
-                                        <li>
-                                                <a href="https://help.lichenportal.org/index.php/en/cnalh-help-resources/"><?php echo (isset($LANG['H_AYUDA_RECURSOS'])?$LANG['H_AYUDA_RECURSOS']:'Help & Resources'); ?></a>
-                                        </li>
-				</ul>
+					<li>
+						<a href="#" ><?php echo (isset($LANG['H_AYUDA_RECURSOS'])?$LANG['H_AYUDA_RECURSOS']:'Help & Resources'); ?></a>
+						<ul>
+							<li>
+								<a href="https://help.lichenportal.org/index.php/en/cnalh-help-resources/"><?php echo (isset($LANG['CONSORTIUM_RESOURCES'])?$LANG['CONSORTIUM_RESOURCES']:'Consortium Resources'); ?></a>
+							</li>
+							<li>
+								<a href="http://symbiota.org/docs/" target="_blank" ><?php echo (isset($LANG['H_HELP'])?$LANG['H_HELP']:'Symbiota Help'); ?></a>
+							</li>
+						</ul>
+					</li>
 			</div>
 		</td>
 	</tr>
