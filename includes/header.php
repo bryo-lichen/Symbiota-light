@@ -566,7 +566,17 @@ else include_once($SERVER_ROOT.'/content/lang/header.en.php');
 								<a href="https://help.lichenportal.org/index.php/en/cnalh-help-resources/"><?php echo (isset($LANG['CONSORTIUM_RESOURCES'])?$LANG['CONSORTIUM_RESOURCES']:'Consortium Resources'); ?></a>
 							</li>
 							<li>
-								<a href="http://symbiota.org/docs/" target="_blank" ><?php echo (isset($LANG['H_HELP'])?$LANG['H_HELP']:'Symbiota Help'); ?></a>
+								<?php
+								if($LANG_TAG=='es'){
+								?>
+									<a href="https://biokic.github.io/symbiota-docs/es/" target="_blank" ><?php echo (isset($LANG['H_HELP'])?$LANG['H_HELP']:'Symbiota Help'); ?></a>
+								<?php
+								} else {
+								?>
+									<a href="http://symbiota.org/docs/" target="_blank" ><?php echo (isset($LANG['H_HELP'])?$LANG['H_HELP']:'Symbiota Help'); ?></a>
+								<?php
+								}
+								?>
 							</li>
 						</ul>
 					</li>

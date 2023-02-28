@@ -83,8 +83,9 @@ header("Content-Type: text/html; charset=ISO-8859-1");
 					</p>
 					<div style="">
 						The <i>Consortium</i> serves as gateway to biodiversity data of lichenized fungi. 
-						It unites records not only from North America, but from Latin America, Europe, Asia, Oceania, 
-						as well as personal collections, research observations, and small personal collections.
+						It unites records not only from lichen herbaria in North America, but also from 
+						herbaria in Latin America, Europe, Asia, Oceania, as well as personal collections 
+						and research observations.
 					</div>
 					<div style="margin-top:10px;">
 						Since its inauguration the <i>Consortium of North American Lichen Herbaria</i> (CNALH) has continuously grown, 
@@ -124,8 +125,8 @@ header("Content-Type: text/html; charset=ISO-8859-1");
 					</p>
 					<div style="">
 						El <i>Consorcio</i> sirve como punto focal de la biodiversidad de hongos liquenizados no solamente en Norteam&eacute;rica, 
-						sino tambi&eacute;n en Am&eacute;rica Latina, Europa, Asia, Ocean&iacute;a, as&iacute; como colecciones personales, 
-						observaciones de investigaci&oacute;n y peque&ntilde;as colecciones personales.
+						sino tambi&eacute;n en Am&eacute;rica Latina, Europa, Asia, Ocean&iacute;a, as&iacute; como colecciones personales y  
+						observaciones de investigaci&oacute;n.
 					</div>
 					<div style="margin-top:10px;">
 						Desde de su inauguraci&oacute;n el <i>Consortium of North American Lichen Herbaria</i> (CHALH) ha crecido continuamente, 
