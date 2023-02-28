@@ -110,7 +110,7 @@ header("Content-Type: text/html; charset=ISO-8859-1");
 					</div>
 					<div style="margin-top:10px;">
 						If you are new to the site, please <a href="<?php $CLIENT_ROOT.'/profile/newprofile.php'; ?>">create an account</a>. 
-						Contact us if you are interested in contributing, either as individual user or as collection manager of an institution that would like to join: ????@gmail.com.
+						Contact us if you are interested in contributing, either as individual user or as collection manager of an institution that would like to join: LichenConsortium@gmail.com.
 						Previously-created accounts in CNALH and CHLAL will continue to function.
 					</div>
 				</div>
@@ -153,7 +153,7 @@ header("Content-Type: text/html; charset=ISO-8859-1");
 					<div style="margin-top:10px;">
 						Si usted visita este sitio por la primera vez le sugerimos crear una cuenta. Si est&aacute; interesado en 
 						contribuir y necesita ayuda como usuario individual o administrador de una instituci&oacute;n, estamos 
-						disponibles en el correo: en: ????@gmail.com. Las cuentas de usuarios de plataformas anteriores siguen 
+						disponibles en el correo: en: LichenConsortium@gmail.com. Las cuentas de usuarios de plataformas anteriores siguen 
 						funcionando.
 					</div>
 				</div>
