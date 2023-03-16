@@ -551,9 +551,6 @@ else include_once($SERVER_ROOT.'/content/lang/header.en.php');
 							<li>
 								<a href="<?php echo $CLIENT_ROOT; ?>/includes/usagepolicy.php"><?php echo (isset($LANG['H_DATA_POLICY'])?$LANG['H_DATA_POLICY']:'Data Usage Policy'); ?></a>
 							</li>
-                            <li>
-                                    <a href="<?php echo $CLIENT_ROOT; ?>/misc/links.php"><?php echo (isset($LANG['H_LINKS'])?$LANG['H_LINKS']:'Links'); ?></a>
-                            </li>
 						</ul>
 					</li>
 					<li>
