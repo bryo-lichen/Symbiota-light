@@ -73,7 +73,7 @@ header("Content-Type: text/html; charset=<?php echo $CHARSET; ?>");
 				colecciones institucionales y personales. Nuestro objetivo es compartir estos registros p&uacute;blicamente 
 				con usuarios en todo el mundo. Originalmente el Consorcio empez&oacute; con la digitalizaci&oacute;n de herbarios en 
 				Am&eacute;rica del Norte, pero ahora invitamos a todos los colecciones del mundo a unirse al Consorcio para 
-				compartir sus registros m&aacute;s ampliamente con la comunidad de científica internacional. Actualmente 
+				compartir sus registros m&aacute;s ampliamente con la comunidad de cient&iacute;fica internacional. Actualmente 
 				ofrecemos estos datos a trav&eacute;s de una interfaz en ingl&eacute;s y espa&ntilde;ol; una versi&oacute;n 
 				en franc&eacute;s est&acute; en desarrollo.
 			</div>
