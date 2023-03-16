@@ -66,7 +66,7 @@ else include_once($SERVER_ROOT.'/content/lang/header.en.php');
 				</div>
 				<ul id="hor_dropdown">
 					<li>
-						<a href="<?php echo $CLIENT_ROOT; ?>/index.php" >Home</a>
+						<a href="<?php echo $CLIENT_ROOT; ?>/index.php" ><?php echo (isset($LANG['H_HOME'])?$LANG['H_HOME']:'Home'); ?></a>
 					</li>
 					<li>
 						<a href="#" ><?php echo (isset($LANG['H_SEARCH'])?$LANG['H_SEARCH']:'Search'); ?></a>

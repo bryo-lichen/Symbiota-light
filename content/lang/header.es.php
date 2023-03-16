@@ -6,7 +6,7 @@ Language: Español (Spanish)
 */
 
 $LANG['HEADER2'] = 'Consorcio de Herbarios de Bri&oacute;fitas';
-$LANG['HEADER3'] = '- construyendo un Consorcio de Briofitas y L&aacute;quenes: organismos clave de las comunidades criotobi&oacute;ticas.';
+$LANG['HEADER3'] = '- construyendo un Consorcio de Bri&oacute;fitas y L&iacute;quenes: organismos clave de las comunidades criotobi&oacute;ticas.';
 
 $LANG['H_HOME'] = 'Inicio';
 
@@ -53,10 +53,10 @@ $LANG['H_US_NPS'] = 'Parques Nacionales de los EE.UU';
 $LANG['CROWDSOURCE'] = 'Crowdsourcing';
 $LANG['H_ASSOC_PROJECTS'] = 'Proyectos Asociados';
 $LANG['H_CON_LICHENS'] = 'Consorcio de Herbarios de L&iacute;quenes';
-$LANG['H_GLOBAL'] = 'GLOBAL Red de Bri&oacutefitos y L&iacute;quenes';
+$LANG['H_GLOBAL'] = 'GLOBAL Red de Bri&oacute;fitos y L&iacute;quenes';
 
 $LANG['H_MORE_INFO'] = 'M&aacute;s Informaci&oacute;n';
-$LANG['H_DATA_POLICY'] = 'Política de Uso de Datos';
+$LANG['H_DATA_POLICY'] = 'Pol&iacute;tica de Uso de Datos';
 $LANG['H_PARTNERS'] = 'Socios';
 $LANG['H_SITEMAP'] = 'Mapa del Sitio';
 $LANG['H_HELP'] = 'Ayuda';
