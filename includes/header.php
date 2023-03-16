@@ -532,7 +532,7 @@ else include_once($SERVER_ROOT.'/content/lang/header.en.php');
 		<a href="#"><?php echo (isset($LANG['H_ASSOC_PROJECTS'])?$LANG['H_ASSOC_PROJECTS']:'Associated Projects'); ?></a>
 			<ul>
 				<li>
-					<a href="http://bryophyteportal.org" target="_blank"><?php echo (isset($LANG['BYRO_PORTAL'])?$LANG['BRYO_PORTAL']:'Bryophyte Portal'); ?></a>
+					<a href="http://bryophyteportal.org" target="_blank"><?php echo (isset($LANG['BRYO_PORTAL'])?$LANG['BRYO_PORTAL']:'Consortium of Bryophyte Herbaria'); ?></a>
 				</li>
 				<li>
 					<a href="https://globaltcn.utk.edu/">GLOBAL Bryophytes and Lichens Network</a>
