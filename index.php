@@ -5,7 +5,19 @@ header("Content-Type: text/html; charset=<?php echo $CHARSET; ?>");
 ?>
 <html>
 <head>
-	<title><?php echo $DEFAULT_TITLE; ?> Home</title>
+	<title>
+		<?php if($LANG_TAG=='es'){
+		?>
+			Consorcio de Herbarios de Bri&oacute;fitas
+		<?php
+		}
+		else {
+		?>
+			Consortium of Bryophyte Herbaria
+		<?php
+		}
+		?>
+	</title>
 	<?php
 	$activateJQuery = true;
 	include_once($SERVER_ROOT.'/includes/head.php');
@@ -17,7 +29,7 @@ header("Content-Type: text/html; charset=<?php echo $CHARSET; ?>");
 	<script src="js/symb/api.taxonomy.taxasuggest.js" type="text/javascript"></script>
 	<script src="js/jquery.slides.js"></script>
 	<script type="text/javascript">
-		<?php include_once('/includes/googleanalytics.php'); ?>
+		<?php include_once($SERVER_ROOT.'/includes/googleanalytics.php'); ?>
 	</script>
 </head>
 <body>
@@ -51,40 +63,55 @@ header("Content-Type: text/html; charset=<?php echo $CHARSET; ?>");
 				?>
 			</div>
 		</div>
+		<?php
+		if($LANG_TAG=='es'){
+		?>
 		<div style="margin:30px;font-size:130%">
-			<div style="">
-				The <b>Consortium of North American Bryophyte Herbaria</b> (CNABH) was created to serve as a gateway to distributed data resources
-				of interest to the taxonomic and environmental research community in North America. Through a common web interface, we offer tools
-				to locate, access and work with a variety of data, starting with searching databased herbarium records.
+			<div style = "">
+				El <b>Consorcio de Herbarios de Bri&oacute;fitas</b> sirve como una puerta de entrada a la biodiversidad de musgos, 
+				hep&aacute;ticas y antocerotes en el mundo. El Consorcio incluye registros de espec&iacute;menes de bri&oacute;fitas en 
+				colecciones institucionales y personales. Nuestro objetivo es compartir estos registros p&uacute;blicamente 
+				con usuarios en todo el mundo. Originalmente el Consorcio empez&oacute; con la digitalizaci&oacute;n de herbarios en 
+				Am&eacute;rica del Norte, pero ahora invitamos a todos los colecciones del mundo a unirse al Consorcio para 
+				compartir sus registros m&aacute;s ampliamente con la comunidad de científica internacional. Actualmente 
+				ofrecemos estos datos a trav&eacute;s de una interfaz en ingl&eacute;s y espa&ntilde;ol; una versi&oacute;n 
+				en franc&eacute;s est&acute; en desarrollo.
 			</div>
 			<div style="margin-top:10px;">
-				As a regular visitor, we invite you to join. Create your own <a href="profile/newprofile.php">account</a> today!
-				If you need access to specific resources, want to contribute occurrence records or images, report errors or simply provide
-				feedback please do not hesitate to contact us at
-				<a class="bodylink" href="mailto:CNABH.help@gmail.com">CNABH.help@gmail.com</a>
-			</div>
-			<div style="width:450px;margin-top:30px;">
-				<div style="font-weight:bold;font-size:110%;">
-					News and Events
-				</div>
-				<ul style="">
-					<li>
-						<b>April 2021</b> - The GLOBAL Bryophytes and Lichens Network, funded by the recent NSF Grant, launched a <a href="https://globaltcn.utk.edu/" target="_blank">new project website</a>, which includes a description of the project, digitization resources, and education and outreach material.
-					</li>
-					<li>
-						<b>January 2021</b> - Welcome our new portal manager Katie Pearson.
-					</li>
-					<li>
-						<b>September 2020</b> - ASU and collaborators were recently awarded a new <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2001394" target="_blank">NSF Grant</a> to Build a <a href="https://www.idigbio.org/wiki/index.php/Building_a_global_consortium_of_bryophytes_and_lichens:_keystones_of_cryptobiotic_communities" target="_blank"><b>Global Consortium of Bryophytes and Lichens</b></a>.
-					</li>
-					<li>
-						<b>August  2018</b> - ASU receives a  multimillion dollar grant from NSF to create the new
-						<a href="https://biorepo.neonscience.org/"><b>NEON biorepository</b></a>;
-						these funds will substantially strengthen the Symbiota software platform and add new functionality from which CNALH will benefit significantly as well.
-					</li>
-				</ul>
+				Ofrecemos herramientas para ubicar, acceder y trabajar con una variedad de datos, especialmente registros 
+				de espec&iacute;menes, observaciones de campo, listas de especies est&aacute;ticas y din&aacute;micas, im&aacute;genes, claves 
+				interactivas y un tesauro taxon&oacute;mico. Si usted visita este sitio por la primera vez le sugerimos <a href="profile/newprofile.php">crear 
+				una cuenta</a>. Si est&aacute; interesado en contribuir y necesita ayuda como usuario individual o administrador 
+				de una instituci&oacute;n, estamos disponibles en el correo: 
+				<a class="bodylink" href="BryophyteConsortium@gmail.com">BryophyteConsortium@gmail.com</a>. Las cuentas creadas 
+				previamente en el Consorcio de Norte Am&eacute;rica seguir&aacute;n funcionando.
 			</div>
 		</div>
+		<?php
+		} else {
+		?>
+		<div style="margin:30px;font-size:130%">
+			<div style="">
+				The <b>Consortium of Bryophyte Herbaria</b> serves as gateway to plant biodiversity data for mosses, 
+				liverworts, and hornworts. The aim of the Consortium is to unite bryophyte specimen records from 
+				around the world, including personal collections and research observations, and serve as a gateway 
+				to distribute these resources to the public. The Consortium began with a focus on North American herbaria. 
+				It now welcomes all herbaria to join the Consortium to share specimen records with the international 
+				research community via this platform. We currently serve the data through an English and Spanish language 
+				interface; a French version is in development.
+			</div>
+			<div style="margin-top:10px;">
+				We offer tools to locate, access and work with a variety of data, including specimen records, field observations, 
+				dynamic and static checklists, images, interactive keys, and a taxonomic thesaurus. If you are new to the site, 
+				please <a href="profile/newprofile.php">create an account</a>. Contact us if you are interested in contributing, 
+				either as individual user or as a collection manager of an institution that would like to join: 
+				<a class="bodylink" href="BryophyteConsortium@gmail.com">BryophyteConsortium@gmail.com</a>. 
+				Previously-created accounts in CNABH will continue to function.
+			</div>
+		</div>
+		<?php
+		}
+		?>
 	</div>
 	<?php
 	include($SERVER_ROOT.'/includes/footer.php');
