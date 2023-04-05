@@ -1,23 +1,24 @@
 <?php
 include_once('config/symbini.php');
 include_once('content/lang/index.'.$LANG_TAG.'.php');
-header("Content-Type: text/html; charset=".$CHARSET);
+header('Content-Type: text/html; charset='.$CHARSET);
 ?>
 <html>
 <head>
 	<title><?php echo $DEFAULT_TITLE; ?> Home</title>
-	<link href="css/quicksearch.css" type="text/css" rel="Stylesheet" />
 	<?php
-	$activateJQuery = true;
 	include_once($SERVER_ROOT.'/includes/head.php');
 	?>
-	<script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
-	<script src="js/jquery-ui-1.12.1/jquery-ui.js" type="text/javascript"></script>
-	<script src="js/symb/api.taxonomy.taxasuggest.js" type="text/javascript"></script>
-	<script src="js/jquery.slides.js"></script>
+	<script src="<?php echo $CLIENT_ROOT; ?>/js/jquery-3.2.1.min.js" type="text/javascript"></script>
+	<script src="<?php echo $CLIENT_ROOT; ?>/js/jquery-ui-1.12.1/jquery-ui.js" type="text/javascript"></script>
+	<link href="<?php echo $CSS_BASE_PATH; ?>/jquery-ui.css" type="text/css" rel="stylesheet">
+	<link href="<?php echo $CLIENT_ROOT; ?>/css/quicksearch.css" type="text/css" rel="Stylesheet" />
 	<script type="text/javascript">
-		<?php include_once($SERVER_ROOT.'/includes/googleanalytics.php'); ?>
+		var clientRoot = "<?php echo $CLIENT_ROOT; ?>";
 	</script>
+	<script src="<?php echo $CLIENT_ROOT; ?>/js/symb/api.taxonomy.taxasuggest.js" type="text/javascript"></script>
+	<script src="<?php echo $CLIENT_ROOT; ?>/js/jquery.slides.js"></script>
+	<?php include_once($SERVER_ROOT.'/includes/googleanalytics.php'); ?>
 </head>
 <body>
 	<?php
@@ -107,8 +108,8 @@ header("Content-Type: text/html; charset=".$CHARSET);
 			else{
 				?>
 				<div class="lang es" style="padding: 0px 10px;">
-					<p style="margin-bottom: 2rem"><b>Buenas Noticias:</b><br> ASU y sus colaboradores recientemente ganaron un soporte financiero del 
-						<a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2001394" target="_blank">NSF</a> para construir un 
+					<p style="margin-bottom: 2rem"><b>Buenas Noticias:</b><br> ASU y sus colaboradores recientemente ganaron un soporte financiero del
+						<a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2001394" target="_blank">NSF</a> para construir un
 						<a href="https://www.idigbio.org/wiki/index.php/Building_a_global_consortium_of_bryophytes_and_lichens:_keystones_of_cryptobiotic_communities" target="_blank">
 							<b>Consorcio Global de Briofitos y Líquenes</b></a>.</p>
 					<p>
