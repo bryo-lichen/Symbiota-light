@@ -1,20 +1,20 @@
 <?php
-//error_reporting(E_ALL);
-include_once("config/symbini.php");
-header("Content-Type: text/html; charset=<?php echo $CHARSET; ?>");
+include_once('config/symbini.php');
+header('Content-Type: text/html; charset='.$CHARSET);
 ?>
 <html>
 <head>
 	<title>
-		<?php if($LANG_TAG=='es'){
-		?>
-			Consorcio de Herbarios de Bri&oacute;fitas
 		<?php
+		if($LANG_TAG=='es'){
+			?>
+			Consorcio de Herbarios de Bri&oacute;fitas
+			<?php
 		}
 		else {
-		?>
+			?>
 			Consortium of Bryophyte Herbaria
-		<?php
+			<?php
 		}
 		?>
 	</title>
@@ -22,11 +22,15 @@ header("Content-Type: text/html; charset=<?php echo $CHARSET; ?>");
 	include_once($SERVER_ROOT.'/includes/head.php');
 	?>
 	<meta name='keywords' content='' />
-	<link href="css/quicksearch.css" type="text/css" rel="Stylesheet" />
-	<script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
-	<script src="js/jquery-ui-1.12.1/jquery-ui.min.js" type="text/javascript"></script>
-	<script src="js/symb/api.taxonomy.taxasuggest.js" type="text/javascript"></script>
-	<script src="js/jquery.slides.js"></script>
+	<link href="<?php echo $CSS_BASE_PATH; ?>/jquery-ui.css" type="text/css" rel="stylesheet">
+	<link href="<?php echo $CLIENT_ROOT; ?>/css/quicksearch.css" type="text/css" rel="Stylesheet" />
+	<script src="<?php echo $CLIENT_ROOT; ?>/js/jquery-3.2.1.min.js" type="text/javascript"></script>
+	<script src="<?php echo $CLIENT_ROOT; ?>/js/jquery-ui-1.12.1/jquery-ui.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		var clientRoot = "<?php echo $CLIENT_ROOT; ?>";
+	</script>
+	<script src="<?php echo $CLIENT_ROOT; ?>/js/symb/api.taxonomy.taxasuggest.js" type="text/javascript"></script>
+	<script src="<?php echo $CLIENT_ROOT; ?>/js/jquery.slides.js"></script>
 	<?php include_once($SERVER_ROOT.'/includes/googleanalytics.php'); ?>
 </head>
 <body>
@@ -65,22 +69,22 @@ header("Content-Type: text/html; charset=<?php echo $CHARSET; ?>");
 		?>
 		<div style="margin:30px;font-size:130%">
 			<div style = "">
-				El <b>Consorcio de Herbarios de Bri&oacute;fitas</b> sirve como una puerta de entrada a la biodiversidad de musgos, 
-				hep&aacute;ticas y antocerotes en el mundo. El Consorcio incluye registros de espec&iacute;menes de bri&oacute;fitas en 
-				colecciones institucionales y personales. Nuestro objetivo es compartir estos registros p&uacute;blicamente 
-				con usuarios en todo el mundo. Originalmente el Consorcio empez&oacute; con la digitalizaci&oacute;n de herbarios en 
-				Am&eacute;rica del Norte, pero ahora invitamos a todos los colecciones del mundo a unirse al Consorcio para 
-				compartir sus registros m&aacute;s ampliamente con la comunidad de cient&iacute;fica internacional. Actualmente 
-				ofrecemos estos datos a trav&eacute;s de una interfaz en ingl&eacute;s y espa&ntilde;ol; una versi&oacute;n 
+				El <b>Consorcio de Herbarios de Bri&oacute;fitas</b> sirve como una puerta de entrada a la biodiversidad de musgos,
+				hep&aacute;ticas y antocerotes en el mundo. El Consorcio incluye registros de espec&iacute;menes de bri&oacute;fitas en
+				colecciones institucionales y personales. Nuestro objetivo es compartir estos registros p&uacute;blicamente
+				con usuarios en todo el mundo. Originalmente el Consorcio empez&oacute; con la digitalizaci&oacute;n de herbarios en
+				Am&eacute;rica del Norte, pero ahora invitamos a todos los colecciones del mundo a unirse al Consorcio para
+				compartir sus registros m&aacute;s ampliamente con la comunidad de cient&iacute;fica internacional. Actualmente
+				ofrecemos estos datos a trav&eacute;s de una interfaz en ingl&eacute;s y espa&ntilde;ol; una versi&oacute;n
 				en franc&eacute;s est&acute; en desarrollo.
 			</div>
 			<div style="margin-top:10px;">
-				Ofrecemos herramientas para ubicar, acceder y trabajar con una variedad de datos, especialmente registros 
-				de espec&iacute;menes, observaciones de campo, listas de especies est&aacute;ticas y din&aacute;micas, im&aacute;genes, claves 
-				interactivas y un tesauro taxon&oacute;mico. Si usted visita este sitio por la primera vez le sugerimos <a href="profile/newprofile.php">crear 
-				una cuenta</a>. Si est&aacute; interesado en contribuir y necesita ayuda como usuario individual o administrador 
-				de una instituci&oacute;n, estamos disponibles en el correo: 
-				<a class="bodylink" href="BryophyteConsortium@gmail.com">BryophyteConsortium@gmail.com</a>. Las cuentas creadas 
+				Ofrecemos herramientas para ubicar, acceder y trabajar con una variedad de datos, especialmente registros
+				de espec&iacute;menes, observaciones de campo, listas de especies est&aacute;ticas y din&aacute;micas, im&aacute;genes, claves
+				interactivas y un tesauro taxon&oacute;mico. Si usted visita este sitio por la primera vez le sugerimos <a href="profile/newprofile.php">crear
+				una cuenta</a>. Si est&aacute; interesado en contribuir y necesita ayuda como usuario individual o administrador
+				de una instituci&oacute;n, estamos disponibles en el correo:
+				<a class="bodylink" href="BryophyteConsortium@gmail.com">BryophyteConsortium@gmail.com</a>. Las cuentas creadas
 				previamente en el Consorcio de Norte Am&eacute;rica seguir&aacute;n funcionando.
 			</div>
 		</div>
@@ -89,20 +93,20 @@ header("Content-Type: text/html; charset=<?php echo $CHARSET; ?>");
 		?>
 		<div style="margin:30px;font-size:130%">
 			<div style="">
-				The <b>Consortium of Bryophyte Herbaria</b> serves as gateway to plant biodiversity data for mosses, 
-				liverworts, and hornworts. The aim of the Consortium is to unite bryophyte specimen records from 
-				around the world, including personal collections and research observations, and serve as a gateway 
-				to distribute these resources to the public. The Consortium began with a focus on North American herbaria. 
-				It now welcomes all herbaria to join the Consortium to share specimen records with the international 
-				research community via this platform. We currently serve the data through an English and Spanish language 
+				The <b>Consortium of Bryophyte Herbaria</b> serves as gateway to plant biodiversity data for mosses,
+				liverworts, and hornworts. The aim of the Consortium is to unite bryophyte specimen records from
+				around the world, including personal collections and research observations, and serve as a gateway
+				to distribute these resources to the public. The Consortium began with a focus on North American herbaria.
+				It now welcomes all herbaria to join the Consortium to share specimen records with the international
+				research community via this platform. We currently serve the data through an English and Spanish language
 				interface; a French version is in development.
 			</div>
 			<div style="margin-top:10px;">
-				We offer tools to locate, access and work with a variety of data, including specimen records, field observations, 
-				dynamic and static checklists, images, interactive keys, and a taxonomic thesaurus. If you are new to the site, 
-				please <a href="profile/newprofile.php">create an account</a>. Contact us if you are interested in contributing, 
-				either as individual user or as a collection manager of an institution that would like to join: 
-				<a class="bodylink" href="BryophyteConsortium@gmail.com">BryophyteConsortium@gmail.com</a>. 
+				We offer tools to locate, access and work with a variety of data, including specimen records, field observations,
+				dynamic and static checklists, images, interactive keys, and a taxonomic thesaurus. If you are new to the site,
+				please <a href="profile/newprofile.php">create an account</a>. Contact us if you are interested in contributing,
+				either as individual user or as a collection manager of an institution that would like to join:
+				<a class="bodylink" href="BryophyteConsortium@gmail.com">BryophyteConsortium@gmail.com</a>.
 				Previously-created accounts in CNABH will continue to function.
 			</div>
 		</div>
