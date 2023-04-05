@@ -31,9 +31,7 @@ header('Content-Type: text/html; charset=' . $CHARSET);
 	<script src="<?php echo $CLIENT_ROOT; ?>/js/symb/api.taxonomy.taxasuggest.js" type="text/javascript"></script>
 	<script src="<?php echo $CLIENT_ROOT; ?>/js/jquery.slides.js"></script>
 	<meta name='keywords' content='lichens,natural history collections,flora,checklists,species lists' />
-	<script type="text/javascript">
-		<?php include_once($SERVER_ROOT.'/includes/googleanalytics.php'); ?>
-	</script>
+	<?php include_once($SERVER_ROOT.'/includes/googleanalytics.php'); ?>
 </head>
 <body>
 	<?php
