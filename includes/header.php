@@ -3,13 +3,6 @@ if($LANG_TAG != 'en' && file_exists($SERVER_ROOT.'/content/lang/header.'.$LANG_T
 else include_once($SERVER_ROOT.'/content/lang/header.en.php');
 ?>
 <link href="https://fonts.googleapis.com/css?family=EB+Garamond|Playfair+Display+SC" rel="stylesheet" />
-<script type="text/javascript" src="/chlal/js/symb/base.js?ver=2"></script>
-<script type="text/javascript">
-	//Uncomment following line to support toggling of database content containing DIVs with lang classes in form of: <div class="lang en">Content in English</div><div class="lang es">Content in Spanish</div>
-	$(document).ready(function() {
-		setLanguageDiv();
-	});
-</script>
 <table id="maintable" cellspacing="0">
 	<tr>
 		<td id="header" colspan="3">
@@ -78,7 +71,7 @@ else include_once($SERVER_ROOT.'/content/lang/header.en.php');
 						?>
 					</span>
 				</div>
-				
+
 				<ul id="hor_dropdown">
 					<li>
 						<a href="<?php echo $CLIENT_ROOT; ?>/index.php" ><?php echo (isset($LANG['H_HOME'])?$LANG['H_HOME']:'Home'); ?></a>
@@ -524,7 +517,7 @@ else include_once($SERVER_ROOT.'/content/lang/header.en.php');
 					</li>
 					<?php
 					}
-					?> 
+					?>
 					<li>
 						<a href="https://lichenportal.org/cnalh/collections/specprocessor/crowdsource/index.php"><?php echo (isset($LANG['H_CROWDSOURCING'])?$LANG['H_CROWDSOURCING']:'Crowdsourcing'); ?></a>
 					</li>
