@@ -19,7 +19,6 @@ header("Content-Type: text/html; charset=<?php echo $CHARSET; ?>");
 		?>
 	</title>
 	<?php
-	$activateJQuery = true;
 	include_once($SERVER_ROOT.'/includes/head.php');
 	?>
 	<meta name='keywords' content='' />
@@ -28,9 +27,7 @@ header("Content-Type: text/html; charset=<?php echo $CHARSET; ?>");
 	<script src="js/jquery-ui-1.12.1/jquery-ui.min.js" type="text/javascript"></script>
 	<script src="js/symb/api.taxonomy.taxasuggest.js" type="text/javascript"></script>
 	<script src="js/jquery.slides.js"></script>
-	<script type="text/javascript">
-		<?php include_once($SERVER_ROOT.'/includes/googleanalytics.php'); ?>
-	</script>
+	<?php include_once($SERVER_ROOT.'/includes/googleanalytics.php'); ?>
 </head>
 <body>
 	<?php
