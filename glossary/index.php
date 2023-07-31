@@ -159,8 +159,8 @@ $taxonName = ($tid?$taxaArr[$tid]:'');
 			echo '<div id="glossaryDescriptionDiv">'.$GLOSSARY_DESCRIPTION.'</div><div style="clear:both;"></div>';
 		}
 		?>
-		<div style="float:right;width:360px;position:relative;">
-			<div style="float:right;position:relative">
+		<div style="float:right;width:360px;">
+			<div style="float:right;">
 				<?php
 				if($isEditor){
 					?>
@@ -177,13 +177,8 @@ $taxonName = ($tid?$taxaArr[$tid]:'');
 					<?php
 				}
 				?>
-				<div>
-					<a href="#" title="Show download options" onclick="toggle('downloadoptionsdiv');return false;">
-						<?php echo (isset($LANG['DOWN_OP'])?$LANG['DOWN_OP']:'Download Options'); ?>
-					</a>
-				</div>
 			</div>
-			<div id="downloadoptionsdiv" style="display:none;clear:both;position:absolute;right:0px;margin-top:45px;background-color:white;">
+			<div id="downloadoptionsdiv" style="clear:both;float:right;margin-top:15px;background-color:white;">
 				<form name="downloadform" action="glossdocexport.php" method="post" onsubmit="return verifyDownloadForm(this);">
 					<fieldset style="padding:8px">
 						<legend><b><?php echo (isset($LANG['DOWN_OP'])?$LANG['DOWN_OP']:'Download Options'); ?></b></legend>
