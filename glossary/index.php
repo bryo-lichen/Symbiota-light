@@ -3,7 +3,7 @@ include_once('../config/symbini.php');
 include_once($SERVER_ROOT.'/classes/GlossaryManager.php');
 if($LANG_TAG == 'en' || !file_exists($SERVER_ROOT.'/content/lang/glossary/index.'.$LANG_TAG.'.php')) include_once($SERVER_ROOT.'/content/lang/glossary/index.en.php');
 else include_once($SERVER_ROOT.'/content/lang/glossary/index.'.$LANG_TAG.'.php');
-header("Content-Type: text/html; charset=".$CHARSET);
+header('Content-Type: text/html; charset=' . $CHARSET);
 
 $glossId = array_key_exists('glossid',$_REQUEST)?$_REQUEST['glossid']:0;
 $language = array_key_exists('searchlanguage',$_REQUEST)?$_REQUEST['searchlanguage']:'';
@@ -15,8 +15,8 @@ $formSubmit = array_key_exists('formsubmit',$_POST)?$_POST['formsubmit']:'';
 //Sanitation
 if(!is_numeric($glossId)) $glossId = 0;
 if(!is_numeric($tid)) $tid = 0;
-$language = filter_var($language,FILTER_SANITIZE_STRING);
-$searchTerm = filter_var($searchTerm,FILTER_SANITIZE_STRING);
+$language = htmlspecialchars($language, HTML_SPECIAL_CHARS_FLAGS);
+$searchTerm = htmlspecialchars($searchTerm, HTML_SPECIAL_CHARS_FLAGS);
 if(!is_numeric($deepSearch)) $relatedLanguage = 0;
 
 if(!$language) $language = $DEFAULT_LANG;
@@ -83,26 +83,12 @@ $taxonName = ($tid?$taxaArr[$tid]:'');
 			}
 		}
 
-		function verifySearchForm(f){
-			if(!f.searchlanguage.value){
-				alert("<?php echo (isset($LANG['PLEASE_REFINE'])?$LANG['PLEASE_REFINE']:'Please select a language and taxonomic group to see term list.'); ?>");
-				return false;
-			}
-			return true;
-		}
-
 		function verifyDownloadForm(f){
 			var searchForm = document.searchform;
 			f.searchlanguage.value = searchForm.searchlanguage.value;
 			f.searchtaxa.value = searchForm.searchtaxa.value;
 			f.searchterm.value = searchForm.searchterm.value;
 			f.deepsearch.value = searchForm.deepsearch.value;
-			var language = f.searchlanguage.value;
-			var taxon = f.searchtaxa.value;
-			if(!language || !taxon){
-				alert("<?php echo (isset($LANG['PLEASE_TO_DWNLD'])?$LANG['PLEASE_TO_DWNLD']:'Please select a primary language and taxonomic group to download.'); ?>");
-				return false;
-			}
 
 			var downloadtype = f.exporttype.value;
 			if(downloadtype == 'translation'){
@@ -145,28 +131,13 @@ $taxonName = ($tid?$taxaArr[$tid]:'');
 </head>
 <body>
 	<?php
-	$displayLeftMenu = (isset($glossary_indexMenu)?$glossary_indexMenu:false);
+	$displayLeftMenu = false;
 	include($SERVER_ROOT.'/includes/header.php');
-	if(isset($glossary_indexCrumbs)){
-		if($glossary_indexCrumbs){
-			?>
-			<div class='navpath'>
-				<a href='../index.php'><?php echo (isset($LANG['HOME'])?$LANG['HOME']:'Home'); ?></a> &gt;&gt;
-				<?php echo $glossary_indexCrumbs; ?>
-				<a href='index.php'> <b><?php echo (isset($LANG['GLOSSARY'])?$LANG['GLOSSARY']:'Glossary'); ?></b></a>
-			</div>
-			<?php
-		}
-	}
-	else{
-		?>
-		<div class='navpath'>
-			<a href='../index.php'><?php echo (isset($LANG['HOME'])?$LANG['HOME']:'Home'); ?></a> &gt;&gt;
-			<a href='index.php'> <b><?php echo (isset($LANG['GLOSSARY'])?$LANG['GLOSSARY']:'Glossary'); ?></b></a>
-		</div>
-		<?php
-	}
 	?>
+	<div class='navpath'>
+		<a href='../index.php'><?php echo (isset($LANG['HOME'])?$LANG['HOME']:'Home'); ?></a> &gt;&gt;
+		<a href='index.php'> <b><?php echo (isset($LANG['GLOSSARY'])?$LANG['GLOSSARY']:'Glossary'); ?></b></a>
+	</div>
 	<!-- This is inner text! -->
 	<div id="innertext">
 		<?php
@@ -188,8 +159,8 @@ $taxonName = ($tid?$taxaArr[$tid]:'');
 			echo '<div id="glossaryDescriptionDiv">'.$GLOSSARY_DESCRIPTION.'</div><div style="clear:both;"></div>';
 		}
 		?>
-		<div style="float:right;width:360px;position:relative;">
-			<div style="float:right;position:relative">
+		<div style="float:right;width:360px;">
+			<div style="float:right;">
 				<?php
 				if($isEditor){
 					?>
@@ -206,13 +177,8 @@ $taxonName = ($tid?$taxaArr[$tid]:'');
 					<?php
 				}
 				?>
-				<div>
-					<a href="#" title="Show download options" onclick="toggle('downloadoptionsdiv');return false;">
-						<?php echo (isset($LANG['DOWN_OP'])?$LANG['DOWN_OP']:'Download Options'); ?>
-					</a>
-				</div>
 			</div>
-			<div id="downloadoptionsdiv" style="display:none;clear:both;position:absolute;right:0px;margin-top:45px;background-color:white;">
+			<div id="downloadoptionsdiv" style="clear:both;float:right;margin-top:15px;background-color:white;">
 				<form name="downloadform" action="glossdocexport.php" method="post" onsubmit="return verifyDownloadForm(this);">
 					<fieldset style="padding:8px">
 						<legend><b><?php echo (isset($LANG['DOWN_OP'])?$LANG['DOWN_OP']:'Download Options'); ?></b></legend>
@@ -253,99 +219,76 @@ $taxonName = ($tid?$taxaArr[$tid]:'');
 						else{
 							?>
 							<div style="margin-left:5px;">
-								<input name="exporttype" type="hidden" value="singlelanguage" />
+								<input name="exporttype" type="hidden" value="0" />
 								<input name="images" type="checkbox" value="images" /> <?php echo (isset($LANG['INCL_IMG'])?$LANG['INCL_IMG']:'Include Images'); ?>
 							</div>
 							<?php
 						}
 						?>
 						<div style="clear:both;padding:15px">
-							<input name="searchlanguage" type="hidden" value="" />
-							<input name="searchtaxa" type="hidden" value="" />
-							<input name="searchterm" type="hidden" value="" />
-							<input name="deepsearch" type="hidden" value="" />
+							<input name="searchlanguage" type="hidden" value="<?php echo $language; ?>" />
+							<input name="searchtaxa" type="hidden" value="<?php echo $tid; ?>" />
+							<input name="searchterm" type="hidden" value="<?php echo $searchTerm; ?>" />
+							<input name="deepsearch" type="hidden" value="<?php echo $deepSearch; ?>" />
 							<button name="formsubmit" type="submit" value="Download"><?php echo (isset($LANG['DOWNLOAD'])?$LANG['DOWNLOAD']:'Download'); ?></button>
 						</div>
 					</fieldset>
 				</form>
 			</div>
 		</div>
-		<?php
-		if($langArr){
-			?>
-			<h2><?php echo (isset($LANG['SEARCH_GL'])?$LANG['SEARCH_GL']:'Search/Browse Glossary'); ?></h2>
-			<div style="float:left;">
-				<form id="searchform" name="searchform" action="index.php" method="post" onsubmit="return verifySearchForm(this);">
-					<div style="height:25px;">
-						<?php
-						if(count($taxaArr) > 1){
-							?>
-							<div style="float:left;">
-								<b><?php echo (isset($LANG['TAX_GROUP'])?$LANG['TAX_GROUP']:'Taxonomic Group'); ?>:</b>
-								<select id="searchtaxa" name="searchtaxa" style="margin-top:2px;width:300px;" onchange="resetLanguageSelect(this.form)">
-									<option value=""><?php echo (isset($LANG['ALL_GROUPS'])?$LANG['ALL_GROUPS']:'Show terms for all groups'); ?></option>
-									<?php
-									foreach($taxaArr as $k => $v){
-										echo '<option value="'.$k.'" '.($k==$tid?'SELECTED':'').'>'.$v.'</option>';
-									}
-									?>
-								</select>
-							</div>
-							<?php
-						}
-						else{
-							echo '<input name="searchtaxa" type="hidden" value="'.key($taxaArr).'" />';
-						}
-						if(count($langArr) > 1){
-							?>
-							<div style="float:left;margin-left:10px;">
-								<b><?php echo (isset($LANG['LANG'])?$LANG['LANG']:'Language'); ?>:</b>
-								<select id="searchlanguage" name="searchlanguage" style="margin-top:2px;" onchange="">
-									<?php
-									foreach($langArr as $k => $v){
-										echo '<option value="'.$v.'" '.($v==$language||$k==$language?'SELECTED':'').'>'.$v.'</option>';
-									}
-									?>
-								</select>
-							</div>
-							<?php
-						}
-						else{
-							echo '<input name="searchlanguage" type="hidden" value="'.reset($langArr).'" />';
-						}
+		<h2><?php echo (isset($LANG['SEARCH_GL'])?$LANG['SEARCH_GL']:'Search/Browse Glossary'); ?></h2>
+		<div style="float:left;">
+			<form id="searchform" name="searchform" action="index.php" method="post" onsubmit="return verifySearchForm(this);">
+				<div style="height:25px;">
+					<?php
+					if($taxaArr){
 						?>
-					</div>
-					<div style="clear:both;">
-						<b><?php echo (isset($LANG['SEARCH_TERM'])?$LANG['SEARCH_TERM']:'Search Term'); ?>:</b>
-						<input type="text" autocomplete="off" name="searchterm" size="25" value="<?php echo $searchTerm; ?>" />
-					</div>
-					<div style="margin-left:40px">
-						<input name="deepsearch" type="checkbox" value="1" <?php echo $deepSearch?'checked':''; ?> />
-						<b><?php echo (isset($LANG['SEARCH_DEF'])?$LANG['SEARCH_DEF']:'Search within definitions'); ?></b>
-					</div>
-					<div style="margin:20px">
-						<button name="formsubmit" type="submit" value="Search Terms"><?php echo (isset($LANG['SEARCH_TERMS'])?$LANG['SEARCH_TERMS']:'Search/Browse Terms'); ?></button>
-					</div>
-				</form>
-			</div>
-			<?php
-		}
-		else{
-			echo '<div style="40px 20px"><h2>'.(isset($LANG['NO_GLOSS'])?$LANG['NO_GLOSS']:'A glossary has not yet been established for this portal').'</h2></div>';
-		}
-		?>
+						<div style="float:left;">
+							<b><?php echo (isset($LANG['TAX_GROUP'])?$LANG['TAX_GROUP']:'Taxonomic Group'); ?>:</b>
+							<select id="searchtaxa" name="searchtaxa" style="margin-top:2px;width:300px;" onchange="resetLanguageSelect(this.form)">
+								<option value=""><?php echo (isset($LANG['ALL_GROUPS'])?$LANG['ALL_GROUPS']:'Show terms for all groups'); ?></option>
+								<?php
+								foreach($taxaArr as $k => $v){
+									echo '<option value="'.$k.'" '.($k==$tid?'SELECTED':'').'>'.$v.'</option>';
+								}
+								?>
+							</select>
+						</div>
+						<?php
+					}
+					if(count($langArr) > 1){
+						?>
+						<div style="float:left;margin-left:10px;">
+							<b><?php echo (isset($LANG['LANG'])?$LANG['LANG']:'Language'); ?>:</b>
+							<select id="searchlanguage" name="searchlanguage" style="margin-top:2px;" onchange="">
+								<?php
+								foreach($langArr as $k => $v){
+									echo '<option value="'.$v.'" '.($v==$language||$k==$language?'SELECTED':'').'>'.$v.'</option>';
+								}
+								?>
+							</select>
+						</div>
+						<?php
+					}
+					?>
+				</div>
+				<div style="clear:both;">
+					<b><?php echo (isset($LANG['SEARCH_TERM'])?$LANG['SEARCH_TERM']:'Search Term'); ?>:</b>
+					<input type="text" autocomplete="off" name="searchterm" size="25" value="<?php echo $searchTerm; ?>" />
+				</div>
+				<div style="margin-left:40px">
+					<input name="deepsearch" type="checkbox" value="1" <?php echo $deepSearch?'checked':''; ?> />
+					<b><?php echo (isset($LANG['SEARCH_DEF'])?$LANG['SEARCH_DEF']:'Search within definitions'); ?></b>
+				</div>
+				<div style="margin:20px">
+					<button name="formsubmit" type="submit" value="Search Terms"><?php echo (isset($LANG['SEARCH_TERMS'])?$LANG['SEARCH_TERMS']:'Search/Browse Terms'); ?></button>
+				</div>
+			</form>
+		</div>
 		<div>
 			<div style="min-height:200px;clear:both">
 				<?php
-				if(!$formSubmit){
-					reset($taxaArr);
-					if(!$tid){
-						$tid = key($taxaArr);
-						$taxonName = $taxaArr[$tid];
-					}
-					if(!$language) $language = reset($langArr);
-				}
-				$termList = $glosManager->getTermSearch($searchTerm,$language,$tid,$deepSearch);
+				$termList = $glosManager->getTermSearch($searchTerm, $language, $tid, $deepSearch);
 				if($termList){
 					$title = ($taxonName?$taxonName.' terms ':'Terms ').($language?' in '.$language:'');
 					if($searchTerm) $title .= ' and with a keyword of '.$searchTerm;
