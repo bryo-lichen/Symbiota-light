@@ -49,7 +49,7 @@ $taxonName = ($tid?$taxaArr[$tid]:'');
 ?>
 <html>
 <head>
-	<title><?php echo $DEFAULT_TITLE.' '.(isset($LANG['GLOSSARY'])?$LANG['GLOSSARY']:'Glossary'); ?></title>
+	<title><?php echo $DEFAULT_TITLE.' '.$LANG['GLOSSARY']; ?></title>
 	<link href="<?php echo $CSS_BASE_PATH; ?>/jquery-ui.css" type="text/css" rel="stylesheet">
 	<?php
 	include_once($SERVER_ROOT.'/includes/head.php');
@@ -88,7 +88,7 @@ $taxonName = ($tid?$taxaArr[$tid]:'');
 			f.searchlanguage.value = searchForm.searchlanguage.value;
 			f.searchtaxa.value = searchForm.searchtaxa.value;
 			f.searchterm.value = searchForm.searchterm.value;
-			f.deepsearch.value = searchForm.deepsearch.value;
+			if(searchForm.deepsearch.checked) f.deepsearch.value = 1;
 
 			var downloadtype = f.exporttype.value;
 			if(downloadtype == 'translation'){
@@ -102,11 +102,11 @@ $taxonName = ($tid?$taxaArr[$tid]:'');
 					}
 				}
 				if(numTranslations > 3){
-					alert("<?php echo (isset($LANG['PLEASE_TRANSL'])?$LANG['PLEASE_TRANSL']:'Please select a maximum of three translations for the Translation Table. Please be sure to not select the primary language.'); ?>");
+					alert("<?php echo $LANG['PLEASE_TRANSL']; ?>");
 					return false;
 				}
 				if(numTranslations === 0){
-					alert("<?php echo (isset($LANG['PLEASE_ONE'])?$LANG['PLEASE_ONE']:'Please select at least one translation for the Translation Table. Please be sure to not select the primary language.'); ?>");
+					alert("<?php echo $LANG['PLEASE_ONE']; ?>");
 					return false;
 				}
 			}
@@ -166,7 +166,7 @@ $taxonName = ($tid?$taxaArr[$tid]:'');
 					?>
 					<div>
 						<a href="#" onclick="openNewTermPopup();">
-							<?php echo (isset($LANG['ADD_TERM'])?$LANG['ADD_TERM']:'Add New Term'); ?>
+							<?php echo $LANG['ADD_TERM']; ?>
 						</a>
 					</div>
 					<div>
@@ -177,8 +177,13 @@ $taxonName = ($tid?$taxaArr[$tid]:'');
 					<?php
 				}
 				?>
+				<div>
+					<a href="#" title="Show download options" onclick="toggle('downloadoptionsdiv');return false;">
+						<?php echo (isset($LANG['DOWN_OP'])?$LANG['DOWN_OP']:'Download Options'); ?>
+					</a>
+				</div>
 			</div>
-			<div id="downloadoptionsdiv" style="clear:both;float:right;margin-top:15px;background-color:white;">
+			<div id="downloadoptionsdiv" style="display:none;clear:both;float:right;margin-top:15px;background-color:white;">
 				<form name="downloadform" action="glossdocexport.php" method="post" onsubmit="return verifyDownloadForm(this);">
 					<fieldset style="padding:8px">
 						<legend><b><?php echo (isset($LANG['DOWN_OP'])?$LANG['DOWN_OP']:'Download Options'); ?></b></legend>
@@ -286,15 +291,17 @@ $taxonName = ($tid?$taxaArr[$tid]:'');
 			</form>
 		</div>
 		<div>
-			<div style="min-height:200px;clear:both">
+			<div style="min-height:200px;clear:left">
 				<?php
 				$termList = $glosManager->getTermSearch($searchTerm, $language, $tid, $deepSearch);
 				if($termList){
-					$title = ($taxonName?$taxonName.' terms ':'Terms ').($language?' in '.$language:'');
-					if($searchTerm) $title .= ' and with a keyword of '.$searchTerm;
 					?>
 					<div>
 						<?php
+						$title = $LANG['TERMS'];
+						if($taxonName) $title .= ' '.$LANG['FOR'].' '.$taxonName;
+						if($language) $title .= ' '.$LANG['IN'].' '.$language;
+						if($searchTerm) $title .= ' '.$LANG['KEYWORD'].' &quot;'.$searchTerm.'&quot;';
 						echo '<div style="float:left;font-weight:bold;font-size:120%;">'.$title.'</div>';
 						$sourceArrFull = $glosManager->getTaxonSources($tid);
 						$sourceArr = current($sourceArrFull);
@@ -302,7 +309,7 @@ $taxonName = ($tid?$taxaArr[$tid]:'');
 							?>
 							<div style="float:left;margin-left:5px;">
 								<div style="" onclick="toggle('sourcesdiv');return false;">
-									<a href="#"><?php echo (isset($LANG['DISP_SRC'])?$LANG['DISP_SRC']:'(Display Sources)'); ?></a>
+									(<a href="#"><?php echo (isset($LANG['DISP_SRC'])?$LANG['DISP_SRC']:'Display Sources'); ?></a>)
 								</div>
 							</div>
 							<?php
@@ -311,7 +318,7 @@ $taxonName = ($tid?$taxaArr[$tid]:'');
 							if($isEditor){
 								?>
 								<div style="float:left;margin-left:5px;">
-									<a href="sources.php?emode=1&tid=<?php echo $tid.'&searchterm='.$searchTerm.'&language='.$language.'&taxa='.$tid; ?>"><?php echo (isset($LANG['ADD_SRC'])?$LANG['ADD_SRC']:'(Add Sources)'); ?></a>
+									(<a href="sources.php?emode=1&tid=<?php echo $tid.'&searchterm='.$searchTerm.'&language='.$language.'&taxa='.$tid; ?>"><?php echo (isset($LANG['ADD_SRC'])?$LANG['ADD_SRC']:'Add Sources'); ?></a>)
 								</div>
 								<?php
 							}
@@ -321,7 +328,7 @@ $taxonName = ($tid?$taxaArr[$tid]:'');
 					<?php
 					if($sourceArr){
 						?>
-						<div id="sourcesdiv" style="clear:both;display:none;padding:5px">
+						<div id="sourcesdiv" style="display:none;padding:5px">
 							<fieldset style="margin:15px;padding:20px;">
 								<legend><b><?php echo (isset($LANG['TAX_CONTR'])?$LANG['TAX_CONTR']:'Contributors for Taxonomic Group'); ?></b></legend>
 								<?php
@@ -365,7 +372,7 @@ $taxonName = ($tid?$taxaArr[$tid]:'');
 						</div>
 						<?php
 					}
-					echo '<div style="clear:both;padding:10px;"><ul>';
+					echo '<div style="padding:10px;"><ul>';
 					foreach($termList as $glossId => $termName){
 						echo '<li>';
 						echo '<a href="#" onclick="openTermPopup('.$glossId.'); return false;"><b>'.$termName.'</b></a>';
@@ -374,7 +381,7 @@ $taxonName = ($tid?$taxaArr[$tid]:'');
 					echo '</ul></div>';
 				}
 				elseif($formSubmit){
-					echo '<div style="margin-top:10px;font-weight:bold;font-size:120%;">'.(isset($LANG['NO_TERMS'])?$LANG['NO_TERMS']:'There are no terms matching your criteria').'</div>';
+					echo '<div style="margin-top:10px;font-weight:bold;font-size:120%;">'.$LANG['NO_TERMS'].'</div>';
 				}
 				?>
 			</div>

@@ -64,7 +64,7 @@ class GlossaryManager extends Manager {
 		}
 		if($language) $sqlWhere .= 'AND (g.language = "'.$this->cleanInStr($language).'") ';
 		if($tid) $sqlWhere .= 'AND (t.tid = '.$tid.' OR t2.tid = '.$tid.') ';
-		$sql = 'SELECT DISTINCT g.glossid, g.term FROM glossary g LEFT JOIN glossarytermlink tl ON g.glossid = tl.glossid ';
+		$sql = 'SELECT DISTINCT g.glossid, g.term FROM glossary g INNER JOIN glossarytermlink tl ON g.glossid = tl.glossid ';
 		if($tid) $sql .= 'INNER JOIN glossarytaxalink t ON tl.glossgrpid = t.glossid INNER JOIN glossarytaxalink t2 ON g.glossid = t2.glossid ';
 		if($sqlWhere) $sql .= 'WHERE '.substr($sqlWhere, 3);
 		$sql .= 'ORDER BY g.term ';
@@ -1001,8 +1001,9 @@ class GlossaryManager extends Manager {
 		$contributorsArr = array();
 		$groupMap = array();
 		$sql = 'SELECT DISTINCT g2.glossid, g2.term, g2.definition, g2.language, g2.source, g2.translator, g2.author, g.term as searchterm, gt.glossgrpid
-			FROM glossary g INNER JOIN glossarytermlink gt ON g.glossid = gt.glossgrpid
-			INNER JOIN glossary g2 ON gt.glossid = g2.glossid ';
+			FROM glossary g INNER JOIN glossarytermlink gt ON g.glossid = gt.glossid
+			INNER JOIN glossarytermlink gt2 ON gt.glossgrpid = gt2.glossgrpid
+			INNER JOIN glossary g2 ON gt2.glossid = g2.glossid ';
 		$sqlWhere = '';
 		if($keyword){
 			$sqlWhere .= '(g.term LIKE "%'.$this->cleanInStr($keyword).'%"';
@@ -1013,9 +1014,9 @@ class GlossaryManager extends Manager {
 			$sql .= 'LEFT JOIN glossarytaxalink gx ON gt.glossgrpid = gx.glossid LEFT JOIN glossarytaxalink gx2 ON g.glossid = gx2.glossid ';
 			$sqlWhere .= '(gx.tid = '.$tid.' OR gx2.tid = '.$tid.') ';
 		}
-		if($language) $sqlWhere .= ($sqlWhere?'AND ':'').'(g.language = "'.$this->cleanInStr($language).'") ';
+		if($language) $sqlWhere .= ($sqlWhere?'AND ':'').'(g.language = "'.$this->cleanInStr($language).'" and g2.language = "'.$this->cleanInStr($language).'") ';
 		if($sqlWhere) $sql .= 'WHERE '.$sqlWhere;
-		$sql .= 'ORDER BY g.term ';
+		$sql .= 'ORDER BY g2.term ';
 		$rs = $this->conn->query($sql);
 		while($r = $rs->fetch_object()){
 			if($r->source && !in_array($r->source, $referencesArr)) $referencesArr[] = $r->source;
