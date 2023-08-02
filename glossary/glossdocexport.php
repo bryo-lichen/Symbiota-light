@@ -51,6 +51,9 @@ $imageCellStyle = array('valign'=>'top','width'=>2520,'borderSize'=>0,'borderCol
 
 $section = $phpWord->addSection(array('pageSizeW'=>12240,'pageSizeH'=>15840,'marginLeft'=>1080,'marginRight'=>1080,'marginTop'=>1080,'marginBottom'=>1080,'headerHeight'=>100,'footerHeight'=>0));
 $glosManager = new GlossaryManager();
+$subTitle = '';
+if($language) $subTitle .= 'language: '.$language;
+if($searchTerm) $subTitle .= '; search term: '.$searchTerm;
 if($exportType == 'translation'){
 	$exportArr = $glosManager->getExportArr($language, $taxon, $searchTerm, $deepSearch, 0, $translations, $definitions);
 	if(in_array($language,$translations)){
@@ -63,16 +66,24 @@ if($exportType == 'translation'){
 		unset($exportArr['meta']);
 
 		//ksort($exportArr, SORT_STRING | SORT_FLAG_CASE);
-		$fileName = $metaArr['sciname'].'_TranslationTable';
+		$fileName = 'GlossaryTranslation';
+		$sciname = '';
+		if(isset($metaArr['sciname'])){
+			$sciname = $metaArr['sciname'];
+			$fileName .= '_'.$sciname;
+		}
 
 		$header = $section->addHeader();
-		$header->addPreserveText($metaArr['sciname'].' - p.{PAGE} '.date("Y-m-d"),null,array('align'=>'right'));
+		$header->addPreserveText($sciname.' - p.{PAGE} '.date("Y-m-d"),null,array('align'=>'right'));
 		$textrun = $section->addTextRun('titlePara');
 		if(isset($GLOSSARY_BANNER) && $GLOSSARY_BANNER){
 			$textrun->addImage($glosManager->getDomain() . $CLIENT_ROOT . '/images/layout/' . $GLOSSARY_BANNER, array('width'=>500, 'align'=>'center'));
 			$textrun->addTextBreak(1);
 		}
-		$textrun->addText(htmlspecialchars('Translation Table for '.$metaArr['sciname']),'titleFont');
+		$titleStr = 'Translation Table';
+		if($sciname) $titleStr .= ' for '.$sciname;
+		$textrun->addText(htmlspecialchars($titleStr),'titleFont');
+		if($subTitle) $textrun->addText(' ('.trim($subTitle).')', 'transDefTextFont');
 		$textrun->addTextBreak(1);
 		if($definitions == 'nodef'){
 			$table = $section->addTable('exportTable');
@@ -108,6 +119,7 @@ if($exportType == 'translation'){
 			foreach($exportArr as $glossId => $glossArr){
 				$textrun = $section->addTextRun('transTermPara');
 				$textrun->addText(htmlspecialchars($glossArr['term']),'transMainTermDefFont');
+				$translationStr = '';
 				foreach($translations as $trans){
 					$termStr = '[No Translation]';
 					if(array_key_exists('trans', $glossArr)){
@@ -115,8 +127,9 @@ if($exportType == 'translation'){
 							$termStr = $glossArr['trans'][$trans]['term'];
 						}
 					}
-					$textrun->addText(htmlspecialchars(' ('.$trans.': '.$termStr.')'),'transTransTermNodefFont');
+					$translationStr .= $trans.': '.$termStr.', ';
 				}
+				if($translationStr) $textrun->addText(htmlspecialchars(' ('.trim($translationStr,', ').')'), 'transTransTermNodefFont');
 				if($definitions == 'onedef'){
 					if($glossArr['definition']){
 						$textrun = $section->addTextRun('transDefPara');
@@ -125,15 +138,15 @@ if($exportType == 'translation'){
 					}
 				}
 				elseif($definitions == 'alldef'){
-					$listItemRun = $section->addListItemRun(0,null,'transDefList');
+					$listItemRun = $section->addListItemRun(0, null, 'transDefList');
 					if($glossArr['definition']){
-						$listItemRun->addText(htmlspecialchars($glossArr['definition']),'transDefTextFont');
+						$listItemRun->addText(htmlspecialchars($glossArr['definition']), 'transDefTextFont');
 					}
 					else{
-						$listItemRun->addText(htmlspecialchars('[No Definition]'),'transDefTextFont');
+						$listItemRun->addText(htmlspecialchars('[No Definition]'), 'transDefTextFont');
 					}
 					foreach($translations as $trans){
-						$listItemRun = $section->addListItemRun(0,null,'transDefList');
+						$listItemRun = $section->addListItemRun(0, null, 'transDefList');
 
 						if(array_key_exists('trans', $glossArr)){
 							if(array_key_exists($trans,$glossArr['trans'])){
@@ -194,9 +207,12 @@ else{
 		$metaArr = $exportArr['meta'];
 		unset($exportArr['meta']);
 		//ksort($exportArr, SORT_STRING | SORT_FLAG_CASE);
+		$fileName = 'Glossary';
 		$sciname = '';
-		if(isset($metaArr['sciname'])) $sciname = $metaArr['sciname'];
-		$fileName = 'Glossary_'.$sciname;
+		if(isset($metaArr['sciname'])){
+			$sciname = $metaArr['sciname'];
+			$fileName .= '_'.$sciname;
+		}
 
 		$header = $section->addHeader();
 		$header->addPreserveText($sciname.' - p.{PAGE} '.date("Y-m-d"),null,array('align'=>'right'));
@@ -208,11 +224,7 @@ else{
 		$titleStr = 'Glossary';
 		if($sciname) $titleStr .= 'for '.$sciname;
 		$textrun->addText(htmlspecialchars($titleStr),'titleFont');
-		$subTitle = '';
-		if($language) $subTitle .= 'language: '.$language;
-		if($searchTerm) $subTitle .= '; search term: '.$searchTerm;
-		if($subTitle) $subTitle = ' ('.trim($subTitle).')';
-		$textrun->addText($subTitle, 'transDefTextFont');
+		if($subTitle) $textrun->addText(' ('.trim($subTitle).')', 'transDefTextFont');
 		$textrun->addTextBreak(1);
 		foreach($exportArr as $singleEx => $singleExArr){
 			$textrun = $section->addTextRun('transTermPara');
