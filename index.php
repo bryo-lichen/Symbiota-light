@@ -81,7 +81,7 @@ header('Content-Type: text/html; charset=' . $CHARSET);
 				?>
 				<div>
 					<p style="margin-bottom: 2rem">
-						<b>Welcome:</b> The <i>Consortium of Lichen Herbaria</i> has just been launched!
+						<b>Welcome to The Consortium of Lichen Herbaria!</b>
 					</p>
 					<div style="">
 						The <i>Consortium</i> serves as gateway to biodiversity data of lichenized fungi.
