@@ -60,10 +60,11 @@ div.navpath {
 #innertext{
 }
 
-#innertext a{
-    color: #222;
-    text-decoration: none;
+#innertext a {
+  color: #337ab7;
 }
-#innertext a:hover{
-    text-decoration: underline;
+  
+#innertext a:hover {
+  color: #309bba;
+  text-decoration: underline
 }
