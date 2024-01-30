@@ -66,6 +66,7 @@ if($glossId){
 <body style="overflow-x:hidden;overflow-y:auto;width:800px;min-width:800px">
 	<?php
 	if($termArr){
+		$glosManager->remapDescriptionCrossLinks($termArr);
 		?>
 		<!-- This is inner text! -->
 		<div style="width:100%;margin-left:auto;margin-right:auto">
