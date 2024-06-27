@@ -5,6 +5,9 @@ Language: English
 ------------------
 */
 
+$LANG['HEADER1'] = '';
+$LANG['HEADER2'] = 'Consortium of Lichen Herbaria';
+$LANG['HEADER3'] = 'building a Global Consortium of Bryophytes and Lichens as keystones of cryptobiotic communities';
 $LANG['H_HOME'] = 'Home';
 
 $LANG['H_SEARCH'] = 'Search';
@@ -18,6 +21,9 @@ $LANG['H_IMAGE_BROWSER'] = 'Image Browser';
 $LANG['H_IMAGE_SEARCH'] = 'Image Search';
 
 $LANG['H_INVENTORIES'] = 'Species Checklists';
+$LANG['H_CENTRAL_AMER'] = 'Central America';
+$LANG['H_ECUADOR'] = 'Ecuador';
+$LANG['H_SUBPOLAR'] = 'Subpolar Regions';
 $LANG['H_PROJECT_1'] = 'Checklist Project 1';
 $LANG['H_PROJECT_2'] = 'Checklist Project 2';
 

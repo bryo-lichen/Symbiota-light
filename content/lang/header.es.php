@@ -5,6 +5,9 @@ Language: Español (Spanish)
 ------------------
 */
 
+$LANG['HEADER1'] = '';
+$LANG['HEADER2'] = 'Consorcio de Herbarios de L&iacute;quenes';
+$LANG['HEADER3'] = 'construyendo un Consorcio de Briofitas y L&iacute;quenes: organismos clave de las comunidades criotobi&oacute;ticas';
 $LANG['H_HOME'] = 'Inicio';
 
 $LANG['H_SEARCH'] = 'Buscar';
@@ -17,7 +20,10 @@ $LANG['H_IMAGES'] = 'Im&aacute;genes';
 $LANG['H_IMAGE_BROWSER'] = 'Navegador de Imágenes';
 $LANG['H_IMAGE_SEARCH'] = 'Buscar Imágenes';
 
-$LANG['H_INVENTORIES'] = 'Lista de Especies';
+$LANG['H_INVENTORIES'] = 'Biota de L&iacute;quenes';
+$LANG['H_CENTRAL_AMER'] = 'América Central';
+$LANG['H_ECUADOR'] = 'Ecuador';
+$LANG['H_SUBPOLAR'] = 'Región Subpolar del Sur';
 $LANG['H_PROJECT_1'] = 'Proyecto 1';
 $LANG['H_PROJECT_2'] = 'Proyecto 2';
 
