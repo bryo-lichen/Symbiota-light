@@ -57,6 +57,27 @@ header('Content-Type: text/html; charset=' . $CHARSET);
 				</div>
 			</div>
 		</div>
+		<div style="float:right;clear:right;width:400px;">
+			<?php
+			$ssId = 1;
+			$numSlides = 10;
+			$width = 350;
+			$dayInterval = 7;
+			if($LANG_TAG=='es'){
+				$clid = 1279;
+			}
+			else{
+				$clid = 1251;
+			}
+			$imageType = "both";
+			$numDays = 240;
+
+			ini_set('max_execution_time', 120); //300 seconds = 5 minutes
+			include_once('classes/PluginsManager.php');
+			$pluginManager = new PluginsManager();
+			echo $pluginManager->createSlideShow($ssId,$numSlides,$width,$numDays,$imageType,$clid,$dayInterval);
+			?>
+		</div>
 		
 		<?php
 		if($LANG_TAG=='en'){
@@ -143,27 +164,6 @@ header('Content-Type: text/html; charset=' . $CHARSET);
 		<?php
 		}
 		?>
-		<div style="width:400px;">
-			<?php
-			$ssId = 1;
-			$numSlides = 10;
-			$width = 350;
-			$dayInterval = 7;
-			if($LANG_TAG=='es'){
-				$clid = 1279;
-			}
-			else{
-				$clid = 1251;
-			}
-			$imageType = "both";
-			$numDays = 240;
-
-			ini_set('max_execution_time', 120); //300 seconds = 5 minutes
-			include_once('classes/PluginsManager.php');
-			$pluginManager = new PluginsManager();
-			echo $pluginManager->createSlideShow($ssId,$numSlides,$width,$numDays,$imageType,$clid,$dayInterval);
-			?>
-		</div>
 	</main>
 	<?php
 	include($SERVER_ROOT . '/includes/footer.php');

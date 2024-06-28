@@ -45,6 +45,11 @@ $LANG['H_HELP'] = 'Symbiota Help';
 $LANG['H_SITEMAP'] = 'Sitemap';
 $LANG['H_DATA_USAGE'] = 'Data Use';
 
+$LANG['H_ASSOC_PROJECTS'] = 'Associated Projects';
+$LANG['BRYO_PORTAL'] = 'Consortium of Bryophyte Herbaria';
+$LANG['H_AYUDA_RECURSOS'] = 'Help & Resources';
+$LANG['CONSORTIUM_RESOURCES'] = 'Consortium Resources';
+
 $LANG['H_WELCOME'] = 'Welcome';
 $LANG['H_MY_PROFILE'] = 'My Profile';
 $LANG['H_LOGOUT'] = 'Sign Out';

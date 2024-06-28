@@ -10,8 +10,8 @@ $LANG['HEADER2'] = 'Consorcio de Herbarios de L&iacute;quenes';
 $LANG['HEADER3'] = 'construyendo un Consorcio de Briofitas y L&iacute;quenes: organismos clave de las comunidades criotobi&oacute;ticas';
 $LANG['H_HOME'] = 'Inicio';
 
-$LANG['H_SEARCH'] = 'Buscar';
-$LANG['H_COLLECTIONS'] = 'Buscar Colecciones';
+$LANG['H_SEARCH'] = 'B&uacute;squeda';
+$LANG['H_COLLECTIONS'] = 'Colecciones';
 $LANG['H_MAP'] = 'Mapa';
 $LANG['H_MAP_SEARCH'] = 'Buscar Mapa';
 $LANG['H_TAXONOMIC_EXPLORER'] = 'Explorador Taxon&oacute;mico';
@@ -44,6 +44,11 @@ $LANG['H_CONTACTS'] = 'Contactos';
 $LANG['H_HELP'] = 'Ayuda de Symbiota';
 $LANG['H_SITEMAP'] = 'Mapa del Sitio';
 $LANG['H_DATA_USAGE'] = 'Uso de Datos';
+
+$LANG['H_ASSOC_PROJECTS'] = 'Proyectos Asociados';
+$LANG['BRYO_PORTAL'] = 'Consorcio de Herbarios de Briofitas';
+$LANG['H_AYUDA_RECURSOS'] = 'Ayuda y Recursos';
+$LANG['CONSORTIUM_RESOURCES'] = 'Recursos del Consorcio';
 
 $LANG['H_WELCOME'] = 'Bienvenido';
 $LANG['H_MY_PROFILE'] = 'Mi Perfil';

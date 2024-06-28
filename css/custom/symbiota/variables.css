@@ -11,19 +11,19 @@
    ========================================================================== */
 :root {
   --header-bg-image: url("../../../images/layout/lichen_background_wide.jpg");
-  --header-bg-color: #2f6e5378; /** Transparent color if adding header bg-image **/
+  --header-bg-color: #2e2e2e93; /** Transparent color if adding header bg-image **/
   --header-font-color: #fff;
   --brand-font-size: 2rem;
   --title-font-family: "Averia Serif Libre", serif;
   --logo-width: 120px;
-  --menu-top-bg-color: #1b3d2f;
-  --body-bg-color: #ffffff;
+  --menu-top-bg-color: #000000;
+  --body-bg-color: #f2f2f2;
   --body-text-color: #000000;
   --body-font-size: 1.2rem;
   --body-font-family: "Arial", sans-serif;
   --footer-bg-color: #ffffff;
   --heading-font-family: "Roboto", sans-serif;
-  --link-color: #126c00;
+  --link-color: #3b3b3b;
   --darkest-color: #1b3d2f;
   --medium-color: #5a5a53;
   --light-color: #f2f0e9;

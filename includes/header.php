@@ -70,10 +70,10 @@ $collectionSearchPage = $SHOULD_USE_HARVESTPARAMS ? '/collections/index.php' : '
 						</a>
 					</li>
 					<li>
-						<a href="#" ><?php echo (isset($LANG['H_SEARCH'])?$LANG['H_SEARCH']:'Search'); ?></a>
+						<a href="#"><?php echo (isset($LANG['H_SEARCH'])?$LANG['H_SEARCH']:'Search'); ?></a>
 						<ul>
 							<li>
-								<a href="<?= $CLIENT_ROOT . $collectionSearchPage ?>" ><?php echo (isset($LANG['H_COLLECTIONS'])?$LANG['H_COLLECTIONS']:'Specimen Search'); ?></a>
+								<a href="<?= $CLIENT_ROOT . $collectionSearchPage ?>"><?php echo (isset($LANG['H_COLLECTIONS'])?$LANG['H_COLLECTIONS']:'Specimen Search'); ?></a>
 							</li>
 							<li>
 								<a href="<?php echo $CLIENT_ROOT; ?>/collections/map/mapinterface.php" target="_blank"><?php echo (isset($LANG['H_MAP'])?$LANG['H_MAP']:'Map Search'); ?></a>
@@ -88,18 +88,18 @@ $collectionSearchPage = $SHOULD_USE_HARVESTPARAMS ? '/collections/index.php' : '
 								<a href="<?php echo $CLIENT_ROOT; ?>/checklists/dynamicmap.php?interface=key"><?php echo (isset($LANG['H_DYN_KEY'])?$LANG['H_DYN_KEY']:'Dynamic Identification Key'); ?></a>
 							</li>
 							<li>
-								<a href="<?php echo $CLIENT_ROOT; ?>/taxa/taxonomy/taxonomydynamicdisplay.php" ><?php echo (isset($LANG['H_TAXONOMIC_EXPLORER'])?$LANG['H_TAXONOMIC_EXPLORER']:'Taxonomic Explorer'); ?></a>
+								<a href="<?php echo $CLIENT_ROOT; ?>/taxa/taxonomy/taxonomydynamicdisplay.php"><?php echo (isset($LANG['H_TAXONOMIC_EXPLORER'])?$LANG['H_TAXONOMIC_EXPLORER']:'Taxonomic Explorer'); ?></a>
 							</li>
 						</ul>
 					</li>
 					<li>
-						<a href="#" ><?php echo (isset($LANG['H_IMAGES'])?$LANG['H_IMAGES']:'Images'); ?></a>
+						<a href="#"><?php echo (isset($LANG['H_IMAGES'])?$LANG['H_IMAGES']:'Images'); ?></a>
 						<ul>
 							<li>
-								<a href="<?php echo $CLIENT_ROOT; ?>/imagelib/index.php?target=genus" ><?php echo (isset($LANG['H_IMAGE_BROWSER'])?$LANG['H_IMAGE_BROWSER']:'Image Browser'); ?></a>
+								<a href="<?php echo $CLIENT_ROOT; ?>/imagelib/index.php?target=genus"><?php echo (isset($LANG['H_IMAGE_BROWSER'])?$LANG['H_IMAGE_BROWSER']:'Image Browser'); ?></a>
 							</li>
 							<li>
-								<a href="<?php echo $CLIENT_ROOT; ?>/imagelib/search.php" ><?php echo (isset($LANG['H_IMAGE_SEARCH'])?$LANG['H_IMAGE_SEARCH']:'Image Search'); ?></a>
+								<a href="<?php echo $CLIENT_ROOT; ?>/imagelib/search.php"><?php echo (isset($LANG['H_IMAGE_SEARCH'])?$LANG['H_IMAGE_SEARCH']:'Image Search'); ?></a>
 							</li>
 						</ul>
 					</li>
@@ -107,17 +107,23 @@ $collectionSearchPage = $SHOULD_USE_HARVESTPARAMS ? '/collections/index.php' : '
 						if($LANG_TAG=='es'){
 					?>
 					<li>
-						<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php" ><?php echo (isset($LANG['H_INVENTORIES'])?$LANG['H_INVENTORIES']:'Species Checklists'); ?></a>
+						<a href="#"><?php echo (isset($LANG['H_INVENTORIES'])?$LANG['H_INVENTORIES']:'Biota de Líquenes'); ?></a>
 						<ul>
 							<li>
-                                <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=519"> Listas Mundiales de Especies ></a>
+								<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php"><?php echo (isset($LANG['INVPROJ']) ? $LANG['INVPROJ'] : 'Proyectos de Inventario'); ?></a>
+							</li>
+							<li>
+                                <a href="#"> Listas Mundiales de Especies</a>
 								<ul>
-								<li>
-									<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=558">Listas Globales de L&iacute;quenes y Hongos Liquen&iacute;colas</a>
-								</li>
-								<li>
-									<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=556">Listas Rojas Globales de la UICN</a>
-								</li>
+									<li>
+										<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=519">América del norte</a>
+									</li>
+									<li>
+										<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=558">Listas Globales de L&iacute;quenes y Hongos Liquen&iacute;colas</a>
+									</li>
+									<li>
+										<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=556">Listas Rojas Globales de la UICN</a>
+									</li>
 								</ul>
 							</li>
 							<li>
@@ -149,7 +155,7 @@ $collectionSearchPage = $SHOULD_USE_HARVESTPARAMS ? '/collections/index.php' : '
 								<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=555">M&eacute;xico</a>
 							</li>
 							<li>
-								<a href="#">Estados Unidos: A-I ></a>
+								<a href="#">Estados Unidos: A-I</a>
 								<ul>
 									<li>
 										<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=513">Alaska</a>
@@ -202,7 +208,7 @@ $collectionSearchPage = $SHOULD_USE_HARVESTPARAMS ? '/collections/index.php' : '
 								</ul>
 							</li>
                             <li>
-                               <a href="#">Estados Unidos: K-N ></a>
+                               <a href="#">Estados Unidos: K-N</a>
                                <ul>
 							   		<li>
                                 	    <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=553">Kansas</a>
@@ -253,7 +259,7 @@ $collectionSearchPage = $SHOULD_USE_HARVESTPARAMS ? '/collections/index.php' : '
                                </ul>
                              </li>
                              <li>
-                               <a href="#">Estados Unidos: O-Z ></a>
+                               <a href="#">Estados Unidos: O-Z</a>
                                <ul>
 							   		<li>
         	                            <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=541">Ohio</a>
@@ -308,17 +314,23 @@ $collectionSearchPage = $SHOULD_USE_HARVESTPARAMS ? '/collections/index.php' : '
 					} else {
 					?>
 					<li>
-						<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php" ><?php echo (isset($LANG['H_INVENTORIES']) ? $LANG['H_INVENTORIES'] : 'Species Checklists'); ?></a>
+						<a href="#"><?php echo (isset($LANG['H_INVENTORIES']) ? $LANG['H_INVENTORIES'] : 'Species Checklists'); ?></a>
 						<ul>
 							<li>
-                                				<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=519">Global Checklists ></a>
+							<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php"><?php echo (isset($LANG['INVPROJ']) ? $LANG['INVPROJ'] : 'Inventory Projects'); ?></a>
+							</i>
+							<li>
+                                <a href="#">Global Checklists</a>
 								<ul>
-								<li>
-									<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=558">Global Checklists of Lichens & Lichenicolous Fungi</a>
-								</li>
-								<li>
-									<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=556">Global IUCN Red-Lists</a>
-								</li>
+									<li>
+										<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=519">North America</a>
+									</li>
+									<li>
+										<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=558">Global Checklists of Lichens & Lichenicolous Fungi</a>
+									</li>
+									<li>
+										<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=556">Global IUCN Red-Lists</a>
+									</li>
 								</ul>
 							</li>
 							<li>
@@ -334,7 +346,7 @@ $collectionSearchPage = $SHOULD_USE_HARVESTPARAMS ? '/collections/index.php' : '
 									<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=555">Mexico</a>
 							</li>
 							<li>
-								<a href="#">US States: A-L ></a>
+								<a href="#">US States: A-L</a>
 								<ul>
 									<li>
 										<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=513">Alaska</a>
@@ -381,7 +393,7 @@ $collectionSearchPage = $SHOULD_USE_HARVESTPARAMS ? '/collections/index.php' : '
 								</ul>
 							</li>
                             <li>
-                               <a href="#">US States: M-N ></a>
+                               <a href="#">US States: M-N</a>
                                <ul>
 		                            <li>
         		                       <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=528">Maine</a>
@@ -432,7 +444,7 @@ $collectionSearchPage = $SHOULD_USE_HARVESTPARAMS ? '/collections/index.php' : '
                                </ul>
                              </li>
                              <li>
-                               <a href="#">US States: O-Z ></a>
+                               <a href="#">US States: O-Z</a>
                                <ul>
 							   		<li>
         	                            <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=541">Ohio</a>
@@ -534,10 +546,10 @@ $collectionSearchPage = $SHOULD_USE_HARVESTPARAMS ? '/collections/index.php' : '
 						</a>
 					</li>
 					<li>
-					<a href="#" ><?php echo (isset($LANG['H_MORE_INFO'])?$LANG['H_MORE_INFO']:'More Information'); ?></a>
+					<a href="#"><?php echo (isset($LANG['H_MORE_INFO'])?$LANG['H_MORE_INFO']:'More Information'); ?></a>
 						<ul>
 							<li>
-								<a href="<?php echo $CLIENT_ROOT; ?>/collections/misc/collprofiles.php" ><?php echo (isset($LANG['H_PARTNERS'])?$LANG['H_PARTNERS']:'Partners'); ?></a>
+								<a href="<?php echo $CLIENT_ROOT; ?>/collections/misc/collprofiles.php"><?php echo (isset($LANG['H_PARTNERS'])?$LANG['H_PARTNERS']:'Partners'); ?></a>
 							</li>
 							<li>
 								<a href="<?php echo $CLIENT_ROOT; ?>/includes/usagepolicy.php"><?php echo (isset($LANG['H_DATA_POLICY'])?$LANG['H_DATA_POLICY']:'Data Usage Policy'); ?></a>
@@ -550,7 +562,7 @@ $collectionSearchPage = $SHOULD_USE_HARVESTPARAMS ? '/collections/index.php' : '
 						</a>
 					</li>
 					<li>
-						<a href="#" ><?php echo (isset($LANG['H_AYUDA_RECURSOS'])?$LANG['H_AYUDA_RECURSOS']:'Help & Resources'); ?></a>
+						<a href="#"><?php echo (isset($LANG['H_AYUDA_RECURSOS'])?$LANG['H_AYUDA_RECURSOS']:'Help & Resources'); ?></a>
 						<ul>
 							<li>
 								<a href="https://help.lichenportal.org/index.php/en/cnalh-help-resources/"><?php echo (isset($LANG['CONSORTIUM_RESOURCES'])?$LANG['CONSORTIUM_RESOURCES']:'Consortium Resources'); ?></a>
@@ -559,11 +571,11 @@ $collectionSearchPage = $SHOULD_USE_HARVESTPARAMS ? '/collections/index.php' : '
 								<?php
 								if($LANG_TAG=='es'){
 								?>
-									<a href="https://biokic.github.io/symbiota-docs/es/" target="_blank" ><?php echo (isset($LANG['H_HELP'])?$LANG['H_HELP']:'Symbiota Help'); ?></a>
+									<a href="https://biokic.github.io/symbiota-docs/es/" target="_blank"><?php echo (isset($LANG['H_HELP'])?$LANG['H_HELP']:'Symbiota Help'); ?></a>
 								<?php
 								} else {
 								?>
-									<a href="http://symbiota.org/docs/" target="_blank" ><?php echo (isset($LANG['H_HELP'])?$LANG['H_HELP']:'Symbiota Help'); ?></a>
+									<a href="http://symbiota.org/docs/" target="_blank"><?php echo (isset($LANG['H_HELP'])?$LANG['H_HELP']:'Symbiota Help'); ?></a>
 								<?php
 								}
 								?>
