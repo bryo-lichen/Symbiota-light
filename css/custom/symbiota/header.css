@@ -246,6 +246,7 @@ ul.menu > ul li{
   nav.top-menu > ul ul > li:focus-within > ul {
     display: block;
     position:absolute;
+    left: 30%;
     background-color: var(--menu-top-bg-color);
     box-shadow: 3px 3px 3px #000;
     width: max-content;
