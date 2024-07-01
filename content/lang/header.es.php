@@ -11,8 +11,9 @@ $LANG['HEADER3'] = 'construyendo un Consorcio de Briofitas y L&iacute;quenes: or
 $LANG['H_HOME'] = 'Inicio';
 
 $LANG['H_SEARCH'] = 'B&uacute;squeda';
-$LANG['H_COLLECTIONS'] = 'Colecciones';
-$LANG['H_MAP'] = 'Mapa';
+$LANG['H_COLLECTIONS'] = 'Buscar Colecciones';
+$LANG['H_CLASSIC_SEARCH'] = 'B&uacute;squeda Cl&aacute;sica';
+$LANG['H_MAP'] = 'Buscar Mapa';
 $LANG['H_MAP_SEARCH'] = 'Buscar Mapa';
 $LANG['H_TAXONOMIC_EXPLORER'] = 'Explorador Taxon&oacute;mico';
 
