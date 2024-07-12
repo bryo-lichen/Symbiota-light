@@ -4,6 +4,10 @@ else include_once($SERVER_ROOT.'/content/lang/header.en.php');
 ?>
 <link href="https://fonts.googleapis.com/css?family=EB+Garamond|Playfair+Display+SC" rel="stylesheet" />
 <table id="maintable" cellspacing="0">
+<tr>
+<td colspan="3">
+</td>
+</tr>
 	<tr>
 		<td id="header" colspan="3">
 			<div id="top_header">
