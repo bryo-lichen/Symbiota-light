@@ -1,7 +1,7 @@
 <?php
 include_once($SERVER_ROOT.'/classes/ChecklistVoucherAdmin.php');
 
-class ChecklistVoucherManager extends  ChecklistVoucherAdmin{
+class ChecklistVoucherManager extends ChecklistVoucherAdmin{
 
 	private $tid;
 	private $taxonName;
@@ -58,13 +58,15 @@ class ChecklistVoucherManager extends  ChecklistVoucherAdmin{
 		$statusStr = false;
 		if(is_numeric($targetTid)){
 			$clTaxaID = $this->getClTaxaID($this->tid);
-			$sql = 'UPDATE fmchklsttaxalink SET TID = '.$targetTid.' WHERE (clTaxaID = '.$clTaxaID.')';
+			//First transfer taxa that
+			$sql = 'UPDATE IGNORE fmchklsttaxalink SET TID = '.$targetTid.' WHERE (clTaxaID = '.$clTaxaID.')';
 			if($this->conn->query($sql)){
 				$this->tid = $targetTid;
 				$this->taxonName = '';
 				$statusStr = true;
 			}
-			else{
+			if(!$this->conn->affected_rows){
+				//Transferred failed due to target name already exiting within checklist
 				$sqlTarget = 'SELECT clTaxaID, Habitat, Abundance, Notes, internalnotes, source, Nativity FROM fmchklsttaxalink WHERE (tid = '.$targetTid.') AND (clid = '.$this->clid.')';
 				$rsTarget = $this->conn->query($sqlTarget);
 				if($row = $rsTarget->fetch_object()){
@@ -93,12 +95,12 @@ class ChecklistVoucherManager extends  ChecklistVoucherAdmin{
 					$sqlSourceCl = 'SELECT Habitat, Abundance, Notes, internalnotes, source, Nativity FROM fmchklsttaxalink WHERE (clTaxaID = '.$clTaxaID.')';
 					$rsSourceCl =  $this->conn->query($sqlSourceCl);
 					if($row = $rsSourceCl->fetch_object()){
-						$habitatSource = $this->cleanInStr($row->Habitat);
-						$abundSource = $this->cleanInStr($row->Abundance);
-						$notesSource = $this->cleanInStr($row->Notes);
-						$internalNotesSource = $this->cleanInStr($row->internalnotes);
-						$sourceSource = $this->cleanInStr($row->source);
-						$nativeSource = $this->cleanInStr($row->Nativity);
+						$habitatSource = $row->Habitat;
+						$abundSource = $row->Abundance;
+						$notesSource = $row->Notes;
+						$internalNotesSource = $row->internalnotes;
+						$sourceSource = $row->source;
+						$nativeSource = $row->Nativity;
 					}
 					$rsSourceCl->free();
 					//Transfer source chklsttaxalink data to target record
@@ -162,15 +164,18 @@ class ChecklistVoucherManager extends  ChecklistVoucherAdmin{
 		$rs = $this->conn->query($sql);
 		if($r = $rs->fetch_object()){
 			if($r->securitystatus == 0){
-				//Set occurrence
-				$sqlRare = 'UPDATE omoccurrences o INNER JOIN taxstatus ts1 ON o.tidinterpreted = ts1.tid '.
-					'INNER JOIN taxstatus ts2 ON ts1.tidaccepted = ts2.tidaccepted '.
-					'SET o.localitysecurity = NULL '.
-					'WHERE (o.localitysecurity = 1) AND (o.localitySecurityReason IS NULL) AND (ts1.taxauthid = 1) AND (ts2.taxauthid = 1) '.
-					'AND o.stateprovince = "'.$rareLocality.'" AND ts2.tid = '.$this->tid;
-				//echo $sqlRare; exit;
-				if(!$this->conn->query($sqlRare)){
-					$this->errorMessage = "ERROR resetting locality security during taxon delete: ".$this->conn->error;
+				$sqlRare = 'UPDATE omoccurrences o INNER JOIN taxstatus ts1 ON o.tidinterpreted = ts1.tid
+					INNER JOIN taxstatus ts2 ON ts1.tidaccepted = ts2.tidaccepted
+					SET o.localitysecurity = 0
+					WHERE (o.localitysecurity = 1) AND (o.localitySecurityReason IS NULL) AND (ts1.taxauthid = 1) AND (ts2.taxauthid = 1)
+					AND o.stateprovince = ? AND ts2.tid = ?';
+				if($stmt = $this->conn->prepare($sqlRare)){
+					$stmt->bind_param('si', $rareLocality, $this->tid);
+					$stmt->execute();
+					if($stmt->error){
+						$this->errorMessage = 'ERROR resetting locality security during taxon delete: '.$stmt->error;
+					}
+					$stmt->close();
 				}
 			}
 		}

@@ -1,10 +1,11 @@
-function copyUrl(){
+function copyUrl(host){
+   if(!host) host = window.location.host;
 	var $temp = $("<input>");
 	$("body").append($temp);
-	var activeLink = window.location.href;
-	if(activeLink.substring(activeLink.length - 3) == "php"){
+	var activeLink = host + window.location.pathname;
+	if(sessionStorage.querystr){
 		activeLink = activeLink + "?" + encodedQueryStr(sessionStorage.querystr);
-	}
+   }
 	$temp.val(activeLink).select();
 	document.execCommand("copy");
 	$temp.remove();
@@ -54,9 +55,9 @@ function openIndPU(occId,clid){
 	return false;
 }
 
-function openMapPU(){
-	var url = 'map/googlemap.php?' + encodedQueryStr(sessionStorage.querystr);
-	window.open(url,'gmap','toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=1,resizable=1,width=1150,height=900,left=20,top=20');
+function openMapPU() {
+	let url = 'map/index.php?'+encodedQueryStr(sessionStorage.querystr)+'&gridSizeSetting=60&minClusterSetting=10&clusterSwitch=y&menuClosed';
+	window.open(url,'Map Search','toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=1,resizable=1,width=1150,height=900,left=20,top=20');
 }
 
 function encodedQueryStr(querystr){
