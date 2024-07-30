@@ -50,6 +50,7 @@ $LANG['H_ASSOC_PROJECTS'] = 'Associated Projects';
 $LANG['BRYO_PORTAL'] = 'Consortium of Bryophyte Herbaria';
 $LANG['H_AYUDA_RECURSOS'] = 'Help & Resources';
 $LANG['CONSORTIUM_RESOURCES'] = 'Consortium Resources';
+$LANG['GLOSSARY'] = 'Glossary';
 
 $LANG['H_WELCOME'] = 'Welcome';
 $LANG['H_MY_PROFILE'] = 'My Profile';
