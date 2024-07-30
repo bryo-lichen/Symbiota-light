@@ -571,6 +571,11 @@ $collectionSearchPage = $SHOULD_USE_HARVESTPARAMS ? '/collections/index.php' : '
 								<a href="https://help.lichenportal.org/index.php/en/cnalh-help-resources/"><?php echo (isset($LANG['CONSORTIUM_RESOURCES'])?$LANG['CONSORTIUM_RESOURCES']:'Consortium Resources'); ?></a>
 							</li>
 							<li>
+								<a href='<?= $CLIENT_ROOT ?>/glossary/index.php'>
+									<?= (isset($LANG['GLOSSARY'])?$LANG['GLOSSARY']:'Glossary') ?>
+								</a>
+							</li>
+							<li>
 								<?php
 								if($LANG_TAG=='es'){
 								?>
