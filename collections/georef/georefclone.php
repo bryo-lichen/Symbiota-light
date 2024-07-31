@@ -34,7 +34,7 @@ $clones = $geoManager->getGeorefClones($locality, $country, $state, $county, $se
 
 $latCen = 41.0;
 $lngCen = -95.0;
-$coorArr = explode(";",$mappingBoundaries);
+$coorArr = explode(';', $MAPPING_BOUNDARIES);
 if($coorArr && count($coorArr) == 4){
 	$latCen = ($coorArr[0] + $coorArr[2])/2;
 	$lngCen = ($coorArr[1] + $coorArr[3])/2;
@@ -190,7 +190,7 @@ alert("<?php echo isset($LANG['LOCALITY_INVALID_ERROR'])? $LANG['LOCALITY_INVALI
 	</head>
 	<body style="background-color:#ffffff;" onload="initialize()">
 		<?php
-			if($shouldUseMinimalMapHeader) include_once($SERVER_ROOT . '/includes/minimal_header_template.php');
+			if($shouldUseMinimalMapHeader) include_once($SERVER_ROOT . '/includes/minimalheader.php');
 		?>
 		<!-- Data Container for Passing to Js -->
 		<div id="service-container"
