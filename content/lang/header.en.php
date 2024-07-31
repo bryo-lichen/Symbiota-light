@@ -13,6 +13,7 @@ $LANG['H_HOME'] = 'Home';
 $LANG['H_SEARCH'] = 'Search';
 $LANG['H_COLLECTIONS'] = 'Search Collections';
 $LANG['H_CLASSIC_SEARCH'] = 'Classic Search';
+$LANG['H_ADVANCED_SEARCH'] = 'Advanced Search';
 $LANG['H_MAP'] = 'Map Search';
 $LANG['H_MAP_SEARCH'] = 'Map Search';
 $LANG['H_TAXONOMIC_EXPLORER'] = 'Taxonomic Explorer';
