@@ -25,7 +25,7 @@ $serverHost = UtilityFunctions::getDomain();
 		<b>Data Usage Guidelines</b>
 	</div>
 	<!-- This is inner text! -->
-	<div role="main" id="innertext">
+	<main id="innertext">
 
 		<?php
 		if($LANG_TAG=='es'){
@@ -222,6 +222,7 @@ $serverHost = UtilityFunctions::getDomain();
 		<?php
 		}
 		?>
+	</main>
 	<?php
 	include($SERVER_ROOT . '/includes/footer.php');
 	?>

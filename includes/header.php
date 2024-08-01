@@ -541,11 +541,6 @@ $collectionSearchPage = $SHOULD_USE_HARVESTPARAMS ? '/collections/index.php' : '
 						</ul>
 					</li>
 					<li>
-						<a href="<?= $CLIENT_ROOT ?>/includes/usagepolicy.php">
-							<?= (isset($LANG['H_DATA_USAGE'])?$LANG['H_DATA_USAGE']:'Data Use') ?>
-						</a>
-					</li>
-					<li>
 					<a href="#"><?php echo (isset($LANG['H_MORE_INFO'])?$LANG['H_MORE_INFO']:'More Information'); ?></a>
 						<ul>
 							<li>
