@@ -1,11 +1,6 @@
 <?php
-if($LANG_TAG == 'en' || !file_exists($SERVER_ROOT.'/content/lang/header.' . $LANG_TAG . '.php')) include_once($SERVER_ROOT . '/content/lang/header.en.php');
-else include_once($SERVER_ROOT . '/content/lang/header.' . $LANG_TAG . '.php');
-include_once($SERVER_ROOT . '/includes/head.php');
-
-include_once($SERVER_ROOT . '/classes/ProfileManager.php');
-$pHandler = new ProfileManager();
-$isAccessiblePreferred = $pHandler->getAccessibilityPreference($SYMB_UID);
+if($LANG_TAG != 'en' && file_exists($SERVER_ROOT.'/content/lang/header.' . $LANG_TAG . '.php')) include_once($SERVER_ROOT . '/content/lang/header.' . $LANG_TAG . '.php');
+else include_once($SERVER_ROOT . '/content/lang/header.en.php');
 $SHOULD_USE_HARVESTPARAMS = $SHOULD_USE_HARVESTPARAMS ?? false;
 $collectionSearchPage = $SHOULD_USE_HARVESTPARAMS ? '/collections/index.php' : '/collections/search/index.php';
 ?>
@@ -20,11 +15,11 @@ $collectionSearchPage = $SHOULD_USE_HARVESTPARAMS ? '/collections/index.php' : '
 					<div class="welcome-text bottom-breathing-room-rel">
 						<?= (isset($LANG['H_WELCOME'])?$LANG['H_WELCOME']:'Welcome') . ' ' . $USER_DISPLAY_NAME ?>!
 					</div>
-					<span style="white-space: nowrap; padding: 0.8rem;" class="button button-tertiary bottom-breathing-room-rel">
-						<a style="font-size: 1.1em;" href="<?= $CLIENT_ROOT ?>/profile/viewprofile.php"><?= (isset($LANG['H_MY_PROFILE'])?$LANG['H_MY_PROFILE']:'My Profile') ?></a>
+					<span style="white-space: nowrap;" class="button button-tertiary bottom-breathing-room-rel">
+						<a href="<?= $CLIENT_ROOT ?>/profile/viewprofile.php"><?= $LANG['H_MY_PROFILE'] ?></a>
 					</span>
-					<span style="white-space: nowrap; padding: 0.8rem;" class="button button-secondary bottom-breathing-room-rel">
-						<a style="font-size: 1.1em;" href="<?= $CLIENT_ROOT ?>/profile/index.php?submit=logout"><?= (isset($LANG['H_LOGOUT'])?$LANG['H_LOGOUT']:'Sign Out') ?></a>
+					<span style="white-space: nowrap;" class="button button-secondary bottom-breathing-room-rel">
+						<a href="<?= $CLIENT_ROOT ?>/profile/index.php?submit=logout"><?= $LANG['H_LOGOUT'] ?></a>
 					</span>
 					<?php
 				} else {
@@ -36,7 +31,7 @@ $collectionSearchPage = $SHOULD_USE_HARVESTPARAMS ? '/collections/index.php' : '
 					</span>
 					<span class="button button-secondary">
 						<a href="<?= $CLIENT_ROOT . "/profile/index.php?refurl=" . htmlspecialchars($_SERVER['SCRIPT_NAME'], ENT_COMPAT | ENT_HTML401 | ENT_SUBSTITUTE) . "?" . htmlspecialchars($_SERVER['QUERY_STRING'], ENT_QUOTES); ?>">
-							<?= (isset($LANG['H_LOGIN'])?$LANG['H_LOGIN']:'Login') ?>
+							<?= $LANG['H_LOGIN'] ?>
 						</a>
 					</span>
 					<?php
@@ -52,8 +47,8 @@ $collectionSearchPage = $SHOULD_USE_HARVESTPARAMS ? '/collections/index.php' : '
 					</div>
 				</a>
 				<div class="brand-name">
-					<h1><?php echo $LANG['HEADER2']; ?></h1>
-					<h2><?php echo $LANG['HEADER3']; ?></h2>
+					<h1><?= $LANG['HEADER2'] ?></h1>
+					<h2><?= $LANG['HEADER3'] ?></h2>
 				</div>
 			</div>
 		</div>
@@ -66,11 +61,13 @@ $collectionSearchPage = $SHOULD_USE_HARVESTPARAMS ? '/collections/index.php' : '
 				<ul class="menu">
 					<li>
 						<a href="<?= $CLIENT_ROOT ?>/index.php">
-							<?= (isset($LANG['H_HOME'])?$LANG['H_HOME']:'Home') ?>
+							<?= $LANG['H_HOME'] ?>
 						</a>
 					</li>
 					<li>
-						<a href="#"><?php echo (isset($LANG['H_SEARCH'])?$LANG['H_SEARCH']:'Search'); ?></a>
+						<a href="#">
+							<?= $LANG['H_SEARCH'] ?>
+						</a>
 						<ul>
 							<li>
 								<a href="<?= $CLIENT_ROOT; ?>/collections/index.php"><?php echo (isset($LANG['H_CLASSIC_SEARCH'])?$LANG['H_CLASSIC_SEARCH']:'Classic Search'); ?></a>
@@ -590,11 +587,11 @@ $collectionSearchPage = $SHOULD_USE_HARVESTPARAMS ? '/collections/index.php' : '
 							</li>
 						</ul>
 					</li>
-					<li>
+					<li id="lang-select-li">
 						<label for="language-selection"><?= $LANG['SELECT_LANGUAGE'] ?>: </label>
 						<select oninput="setLanguage(this)" id="language-selection" name="language-selection">
 							<option value="en">English</option>
-							<option value="es" <?= ($LANG_TAG=='es'?'SELECTED':'') ?>>Espa&ntilde;ol</option>
+							<option value="es" <?= ($LANG_TAG == 'es' ? 'SELECTED' : '') ?>>Espa&ntilde;ol</option>
 						</select>
 					</li>
 				</ul>

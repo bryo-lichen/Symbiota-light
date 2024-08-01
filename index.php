@@ -5,7 +5,7 @@ else include_once($SERVER_ROOT.'/content/lang/index.'.$LANG_TAG.'.php');
 header('Content-Type: text/html; charset=' . $CHARSET);
 ?>
 <!DOCTYPE html>
-<html lang="<?php echo $LANG_TAG ?>">
+<html lang="<?= $LANG_TAG ?>">
 <head>
 	<title>
 	<?php
@@ -25,15 +25,15 @@ header('Content-Type: text/html; charset=' . $CHARSET);
 	include_once($SERVER_ROOT . '/includes/head.php');
 	include_once($SERVER_ROOT . '/includes/googleanalytics.php');
 	?>
-	<link href="<?php echo $CSS_BASE_PATH; ?>/jquery-ui.css" type="text/css" rel="stylesheet">
-	<link href="<?php echo $CSS_BASE_PATH; ?>/quicksearch.css" type="text/css" rel="Stylesheet" />
-	<script src="<?php echo $CLIENT_ROOT; ?>/js/jquery-3.7.1.min.js" type="text/javascript"></script>
-	<script src="<?php echo $CLIENT_ROOT; ?>/js/jquery-ui.min.js" type="text/javascript"></script>
+	<link href="<?= $CSS_BASE_PATH ?>/jquery-ui.css" type="text/css" rel="stylesheet">
+	<link href="<?= $CSS_BASE_PATH ?>/quicksearch.css" type="text/css" rel="Stylesheet" />
+	<script src="<?= $CLIENT_ROOT ?>/js/jquery-3.7.1.min.js" type="text/javascript"></script>
+	<script src="<?= $CLIENT_ROOT ?>/js/jquery-ui.min.js" type="text/javascript"></script>
 	<script type="text/javascript">
-		var clientRoot = "<?php echo $CLIENT_ROOT; ?>";
+		var clientRoot = "<?= $CLIENT_ROOT ?>";
 	</script>
-	<script src="<?php echo $CLIENT_ROOT; ?>/js/symb/api.taxonomy.taxasuggest.js" type="text/javascript"></script>
-	<script src="<?php echo $CLIENT_ROOT; ?>/js/jquery.slides.js"></script>
+	<script src="<?= $CLIENT_ROOT ?>/js/symb/api.taxonomy.taxasuggest.js" type="text/javascript"></script>
+	<script src="<?= $CLIENT_ROOT ?>/js/jquery.slides.js"></script>
 	<meta name='keywords' content='lichens,natural history collections,flora,checklists,species lists' />
 </head>
 <body>
@@ -47,11 +47,11 @@ header('Content-Type: text/html; charset=' . $CHARSET);
 			<div id="quicksearchdiv" style="width:400px;border:#000000 solid 0px;">
 				<div style="margin-left:auto;margin-right:auto;width:360px">
 					<!-- -------------------------QUICK SEARCH SETTINGS--------------------------------------- -->
-					<form name="quicksearch" id="quicksearch" action="<?php echo $CLIENT_ROOT; ?>/taxa/index.php" method="get" onsubmit="return verifyQuickSearch(this);">
-						<div id="quicksearchtext" ><?php echo (isset($LANG['QSEARCH_SEARCH'])?$LANG['QSEARCH_SEARCH']:'Search Taxon'); ?></div>
+					<form name="quicksearch" id="quicksearch" action="<?= $CLIENT_ROOT ?>/taxa/index.php" method="get" onsubmit="return verifyQuickSearch(this);">
+						<div id="quicksearchtext" ><?= $LANG['QSEARCH_SEARCH'] ?></div>
 						<input id="taxa" type="text" name="taxon" style="width:275px" />
 						<button name="formsubmit"  id="quicksearchbutton" type="submit" value="Search Terms">
-							<?php echo (isset($LANG['QSEARCH_SEARCH_BUTTON'])?$LANG['QSEARCH_SEARCH_BUTTON']:'Search'); ?>
+							<?= $LANG['QSEARCH_SEARCH_BUTTON'] ?>
 						</button>
 					</form>
 				</div>
@@ -114,7 +114,7 @@ header('Content-Type: text/html; charset=' . $CHARSET);
 			(NSF), and the <i>GLOBAL Bryophytes and Lichens Network</i>.
 			</p>
 			<p>
-			If you are new to the site, please <a href="<?php $CLIENT_ROOT.'/profile/newprofile.php'; ?>">create an account</a>.
+			If you are new to the site, please <a href="<?= $CLIENT_ROOT . '/profile/newprofile.php' ?>">create an account</a>.
 			Contact us if you are interested in contributing, either as individual user or as collection manager of an institution that would like to join:
 			<a href="mailto:LichenConsortium@gmail.com">LichenConsortium@gmail.com</a>.
 			Previously-created accounts in CNALH and CHLAL will continue to function.

@@ -2,4 +2,56 @@
 Place your CSS customizations here.
 This stylesheet is defined last and will override all previously loaded sheets. You may reference variables defined in variables.css 
  */
+
+ /* Universal Overides */
+
+ html {
+  font-size: 12px;
+}
  
+/* Header */
+
+.top-wrapper {
+  min-height: 120px;
+}
+
+/* Footer */
+
+footer p {
+  font-size: 1.1rem;
+}
+
+/* quicksearch */
+
+#quicksearchdiv{
+  float: right;	
+}
+
+#quicksearch input{
+  width: 225px;
+  margin-right: 10px;
+}
+
+  /* Media queries
+========================================================================== */
+/* Medium screens and up */
+@media (min-width: 768px) {
+
+/* Header */
+
+  /* second+ level drop-down menu */
+  nav.top-menu > ul ul > li > a:hover > ul,
+  nav.top-menu > ul ul > li > a:focus > ul,
+  nav.top-menu > ul ul > li:hover > ul,
+  nav.top-menu > ul ul > li:focus-within > ul {
+    left: 30%;
+  }
+
+  /* Change this in order to change the Dropdown symbol */
+  nav.top-menu li > a:after { content:  '⌄'; }
+
+  #slideshowcontainer {
+  margin: 0.5rem  
+  }
+
+}
