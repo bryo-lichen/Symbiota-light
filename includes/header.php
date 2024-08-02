@@ -48,15 +48,7 @@ $collectionSearchPage = $SHOULD_USE_HARVESTPARAMS ? '/collections/index.php' : '
 					<h1>Symbiota Brand New Portal</h1>
 					<h2>Redesigned by the Symbiota Support Hub</h2>
 				</div>
-			</div>
-		</div>
-		<div class="menu-wrapper">
-			<!-- Hamburger icon -->
-			<input class="side-menu" type="checkbox" id="side-menu" name="side-menu" />
-			<label class="hamb hamb-line hamb-label" for="side-menu" tabindex="0">☰</label>
-			<!-- Menu -->
-			<nav class="top-menu" aria-label="hamburger-nav">
-				<ul class="menu">
+				<ul id="hor_dropdown">
 					<li>
 						<a href="<?= $CLIENT_ROOT ?>/index.php">
 							<?= $LANG['H_HOME'] ?>
@@ -98,13 +90,80 @@ $collectionSearchPage = $SHOULD_USE_HARVESTPARAMS ? '/collections/index.php' : '
 						</a>
 					</li>
 					<li>
-						<a href="#">Example Dropdown</a>
+						<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?" ><?php echo (isset($LANG['H_INVENTORIES'])?$LANG['H_INVENTORIES']:'Species Checklists'); ?></a>
 						<ul>
-							<li>
-								<a href="#">Link 1</a>
+   							<li>
+								<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=24"><?php echo (isset($LANG['H_NORTH_AMERICA'])?$LANG['H_NORTH_AMERICA']:'North America'); ?></a>
 							</li>
 							<li>
-								<a href="#">Link 2</a>
+								<a href="#"><?php echo (isset($LANG['H_US'])?$LANG['H_US']:'United States'); ?>></a>
+								<ul>
+									<li>
+										<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=23"><?php echo (isset($LANG['H_AZ'])?$LANG['H_AZ']:'Arizona'); ?></a>
+									</li>
+									<li>
+										<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=15"><?php echo (isset($LANG['H_CA'])?$LANG['H_CA']:'California'); ?></a>
+									</li>
+									<li>
+										<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=4"><?php echo (isset($LANG['H_IL'])?$LANG['H_IL']:'Illinois'); ?></a>
+									</li>
+									<li>
+										<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=13"><?php echo (isset($LANG['H_IO'])?$LANG['H_IO']:'Iowa'); ?></a>
+									</li>
+									<li>
+										<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=8"><?php echo (isset($LANG['H_ME'])?$LANG['H_ME']:'Maine'); ?></a>
+									</li>
+									<li>
+										<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=3"><?php echo (isset($LANG['H_MO'])?$LANG['H_MO']:'Missouri'); ?></a>
+									</li>
+									<li>
+										<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=18"><?php echo (isset($LANG['H_MT'])?$LANG['H_MT']:'Montana'); ?></a>
+									</li>
+									<li>
+										<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=22"><?php echo (isset($LANG['H_NM'])?$LANG['H_NM']:'New Mexico'); ?></a>
+									</li>
+									<li>
+										<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=21"><?php echo (isset($LANG['H_NY'])?$LANG['H_NY']:'New York'); ?></a>
+									</li>
+									<li>
+										<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=1"><?php echo (isset($LANG['H_NC'])?$LANG['H_NC']:'North Carolina'); ?></a>
+									</li>
+									<li>
+										<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=20"><?php echo (isset($LANG['H_OH'])?$LANG['H_OH']:'Ohio'); ?></a>
+									</li>
+									<li>
+										<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=6"><?php echo (isset($LANG['H_PE'])?$LANG['H_PE']:'Pennsylvania'); ?></a>
+									</li>
+									<li>
+										<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=19"><?php echo (isset($LANG['H_WA'])?$LANG['H_WA']:'Washington'); ?></a>
+									</li>
+									<li>
+										<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=27"><?php echo (isset($LANG['H_WY'])?$LANG['H_WY']:'Wyoming'); ?></a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="#"><?php echo (isset($LANG['H_BEYOND_NA'])?$LANG['H_BEYOND_NA']:'Beyond North America'); ?>></a>
+								<ul>
+									<li>
+										<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=9"><?php echo (isset($LANG['H_CHILE'])?$LANG['H_CHILE']:'Chile'); ?></a>
+									</li>
+									<li>
+										<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=11"><?php echo (isset($LANG['H_FALKLAND_ISL'])?$LANG['H_FALKLAND_ISL']:'Falkland Islands'); ?></a>
+									</li>
+									<li>
+										<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=5"><?php echo (isset($LANG['H_FIJI'])?$LANG['H_FIJI']:'Fiji'); ?></a>
+									</li>
+									<li>
+										<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=10"><?php echo (isset($LANG['H_GUATEMALA'])?$LANG['H_GUATEMALA']:'Guatemala'); ?></a>
+									</li>
+									<li>
+										<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=16"><?php echo (isset($LANG['H_INDONESIA'])?$LANG['H_INDONESIA']:'Indonesia'); ?></a>
+									</li>
+									<li>
+										<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?proj=17"><?php echo (isset($LANG['H_MALAYSIA'])?$LANG['H_MALAYSIA']:'Malaysia'); ?></a>
+									</li>
+								</ul>
 							</li>
 							<li>
 								<a href="#">Sub Menu</a>
@@ -122,6 +181,22 @@ $collectionSearchPage = $SHOULD_USE_HARVESTPARAMS ? '/collections/index.php' : '
 							<option value="en">English</option>
 							<option value="es" <?= ($LANG_TAG == 'es' ? 'SELECTED' : '') ?>>Espa&ntilde;ol</option>
 							<option value="fr" <?= ($LANG_TAG == 'fr' ? 'SELECTED' : '') ?>>Français</option>
+						</select>
+					</li>
+					<li id="lang-select-li">
+						<label for="language-selection"><?= $LANG['SELECT_LANGUAGE'] ?>: </label>
+						<select oninput="setLanguage(this)" id="language-selection" name="language-selection">
+							<option value="en">English</option>
+							<option value="es" <?= ($LANG_TAG=='es'?'SELECTED':'') ?>>Espa&ntilde;ol</option>
+							<option value="fr" <?= ($LANG_TAG=='fr'?'SELECTED':'') ?>>Français</option>
+						</select>
+					</li>
+					<li id="lang-select-li">
+						<label for="language-selection"><?= $LANG['SELECT_LANGUAGE'] ?>: </label>
+						<select oninput="setLanguage(this)" id="language-selection" name="language-selection">
+							<option value="en">English</option>
+							<option value="es" <?= ($LANG_TAG=='es'?'SELECTED':'') ?>>Espa&ntilde;ol</option>
+							<option value="fr" <?= ($LANG_TAG=='fr'?'SELECTED':'') ?>>Français</option>
 						</select>
 					</li>
 				</ul>
