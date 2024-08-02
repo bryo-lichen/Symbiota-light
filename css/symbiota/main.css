@@ -371,11 +371,6 @@ button.icon-button:hover {
   background: var(--medium-color);
 }
 
-button.inverse-color {
-    background-color: var(--light-color);
-    color: var(--darkest-color);
-}
-
 .button {
   border: none;
   border-radius: 5px;

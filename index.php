@@ -6,8 +6,6 @@ header('Content-Type: text/html; charset=' . $CHARSET);
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo $LANG_TAG ?>">
-<!DOCTYPE html>
-<html lang="<?php echo $LANG_TAG ?>">
 <head>
 	<title><?php echo $DEFAULT_TITLE; ?> Home</title>
 	<?php

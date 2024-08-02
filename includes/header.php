@@ -48,7 +48,15 @@ $collectionSearchPage = $SHOULD_USE_HARVESTPARAMS ? '/collections/index.php' : '
 					<h1>Symbiota Brand New Portal</h1>
 					<h2>Redesigned by the Symbiota Support Hub</h2>
 				</div>
-				<ul id="hor_dropdown">
+			</div>
+		</div>
+		<div class="menu-wrapper">
+			<!-- Hamburger icon -->
+			<input class="side-menu" type="checkbox" id="side-menu" name="side-menu" />
+			<label class="hamb hamb-line hamb-label" for="side-menu" tabindex="0">☰</label>
+			<!-- Menu -->
+			<nav class="top-menu" aria-label="hamburger-nav">
+				<ul class="menu">
 					<li>
 						<a href="<?= $CLIENT_ROOT ?>/index.php">
 							<?= $LANG['H_HOME'] ?>
@@ -181,22 +189,6 @@ $collectionSearchPage = $SHOULD_USE_HARVESTPARAMS ? '/collections/index.php' : '
 							<option value="en">English</option>
 							<option value="es" <?= ($LANG_TAG == 'es' ? 'SELECTED' : '') ?>>Espa&ntilde;ol</option>
 							<option value="fr" <?= ($LANG_TAG == 'fr' ? 'SELECTED' : '') ?>>Français</option>
-						</select>
-					</li>
-					<li id="lang-select-li">
-						<label for="language-selection"><?= $LANG['SELECT_LANGUAGE'] ?>: </label>
-						<select oninput="setLanguage(this)" id="language-selection" name="language-selection">
-							<option value="en">English</option>
-							<option value="es" <?= ($LANG_TAG=='es'?'SELECTED':'') ?>>Espa&ntilde;ol</option>
-							<option value="fr" <?= ($LANG_TAG=='fr'?'SELECTED':'') ?>>Français</option>
-						</select>
-					</li>
-					<li id="lang-select-li">
-						<label for="language-selection"><?= $LANG['SELECT_LANGUAGE'] ?>: </label>
-						<select oninput="setLanguage(this)" id="language-selection" name="language-selection">
-							<option value="en">English</option>
-							<option value="es" <?= ($LANG_TAG=='es'?'SELECTED':'') ?>>Espa&ntilde;ol</option>
-							<option value="fr" <?= ($LANG_TAG=='fr'?'SELECTED':'') ?>>Français</option>
 						</select>
 					</li>
 				</ul>
