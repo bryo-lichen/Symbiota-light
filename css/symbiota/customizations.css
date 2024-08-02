@@ -3,6 +3,10 @@ Place your CSS customizations here.
 This stylesheet is defined last and will override all previously loaded sheets. You may reference variables defined in variables.css 
  */
 
+ /* Import fonts */
+
+ @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
+ 
  /* Universal Overides */
 
  html {
@@ -13,6 +17,27 @@ This stylesheet is defined last and will override all previously loaded sheets. 
 
 .top-wrapper {
   min-height: 120px;
+}
+
+div.brand-name h1{
+	font-family: "Playfair Display SC", serif;
+	font-weight: bold;
+  font-size: 1.8em;
+  text-shadow: 1px 1px 5px black, -1px -1px 5px black, 0 0 25px black, 0 0 5px black;;
+}
+div.brand-name h2{
+	font-family: "EB Garamond", serif;
+	font-weight: normal;
+  text-shadow: 1px 1px 5px black, -1px -1px 5px black, 0 0 25px black, 0 0 5px black;
+  font-size: 1.2em
+}
+
+nav.top-login > .button-tertiary{
+  text-shadow: 1px 1px 5px black, -1px -1px 5px black, 0 0 25px black, 0 0 5px black;
+}
+
+.welcome-text{
+  text-shadow: 1px 1px 5px black, -1px -1px 5px black, 0 0 25px black, 0 0 5px black;
 }
 
 /* Footer */

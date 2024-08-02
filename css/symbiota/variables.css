@@ -1,11 +1,11 @@
 /* Variables
 ========================================================================== */
 :root {
-  --header-bg-image: url("../../images/layout/lichen_background_wide.jpg");
-  --header-bg-color: #2e2e2e93; /** Transparent color if adding header bg-image **/
+  --header-bg-image: url("../../images/layout/lichen_background_2024.jpg");
+  --header-bg-color: #00000026; /** Transparent color if adding header bg-image **/
   --header-font-color: #fff;
   --brand-font-size: 1.6rem;
-  --title-font-family: "Averia Serif Libre", serif;
+  --title-font-family: "Roboto", sans-serif;
   --logo-width: 120px;
   --menu-top-bg-color: #000000;
   --menu-font-size: 1.2rem;
