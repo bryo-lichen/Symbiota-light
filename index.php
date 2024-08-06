@@ -31,8 +31,27 @@ header('Content-Type: text/html; charset=' . $CHARSET);
 	<script src="<?= $CLIENT_ROOT ?>/js/jquery-ui.min.js" type="text/javascript"></script>
 	<script type="text/javascript">
 		var clientRoot = "<?= $CLIENT_ROOT ?>";
+		$(document).ready(function() {
+			$("#qstaxa").autocomplete({
+				source: function( request, response ) {
+					$.getJSON( "checklists/rpc/speciessuggest.php", { term: request.term }, response );
+				},
+				minLength: 3,
+				autoFocus: true,
+				select: function( event, ui ) {
+					if(ui.item){
+						$( "#qstaxa" ).val(ui.item.value);
+						$( "#qstid" ).val(ui.item.id);
+					}
+				},
+				change: function( event, ui ) {
+					if(ui.item === null) {
+						$( "#qstid" ).val("");
+					}
+				}
+			});
+		});
 	</script>
-	<script src="<?= $CLIENT_ROOT ?>/js/symb/api.taxonomy.taxasuggest.js" type="text/javascript"></script>
 	<script src="<?= $CLIENT_ROOT ?>/js/jquery.slides.js"></script>
 	<meta name='keywords' content='lichens,natural history collections,flora,checklists,species lists' />
 </head>
@@ -49,7 +68,8 @@ header('Content-Type: text/html; charset=' . $CHARSET);
 					<!-- -------------------------QUICK SEARCH SETTINGS--------------------------------------- -->
 					<form name="quicksearch" id="quicksearch" action="<?= $CLIENT_ROOT ?>/taxa/index.php" method="get" onsubmit="return verifyQuickSearch(this);">
 						<div id="quicksearchtext" ><?= $LANG['QSEARCH_SEARCH'] ?></div>
-						<input id="taxa" type="text" name="taxon" style="width:275px" />
+						<input id="qstaxa" type="text" name="taxon" style="width:275px">
+						<input id="qstid" type="hidden" name="tid">
 						<button name="formsubmit"  id="quicksearchbutton" type="submit" value="Search Terms">
 							<?= $LANG['QSEARCH_SEARCH_BUTTON'] ?>
 						</button>
@@ -78,14 +98,14 @@ header('Content-Type: text/html; charset=' . $CHARSET);
 			echo $pluginManager->createSlideShow($ssId,$numSlides,$width,$numDays,$imageType,$clid,$dayInterval);
 			?>
 		</div>
-		
+
 		<?php
 		if($LANG_TAG=='en'){
 			//Text in this block is English
 		?>
 		<div>
 			<h1>Welcome to The Consortium of Lichen Herbaria!</h1>
-			
+
 			<p>
 			The <i>Consortium</i> serves as gateway to biodiversity data of lichenized fungi.
 			It unites records not only from lichen herbaria in North America, but also from
