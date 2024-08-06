@@ -184,7 +184,7 @@ $clArray = $vManager->getChecklistData();
 										<?php echo $LANG['HABITAT']; ?>:
 									</div>
 									<div style="float:left;">
-										<input name='habitat' type='text' value="<?php echo $clArray["habitat"];?>" size='70' maxlength='250' aria-label="<?php echo $LANG['HABITAT']; ?>" />
+										<input name='habitat' type='text' value="<?php echo $clArray["habitat"];?>" size='70' maxlength='500' aria-label="<?php echo $LANG['HABITAT']; ?>" />
 									</div>
 								</div>
 								<div style='clear:both;margin:3px;'>
@@ -216,7 +216,7 @@ $clArray = $vManager->getChecklistData();
 										<?php echo $LANG['SOURCE']; ?>:
 									</div>
 									<div style="float:left;">
-										<input name='source' type='text' value="<?php echo $clArray["source"];?>" size='65' maxlength='250' aria-label="<?php echo $LANG['SOURCE']; ?>" />
+										<input name='source' type='text' value="<?php echo $clArray["source"];?>" size='65' maxlength='1100' aria-label="<?php echo $LANG['SOURCE']; ?>" />
 									</div>
 								</div>
 								<div style='clear:both;margin:3px;'>
