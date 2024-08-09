@@ -1,19 +1,20 @@
 <?php
-if($LANG_TAG != 'en' && file_exists($SERVER_ROOT.'/content/lang/header.' . $LANG_TAG . '.php')) include_once($SERVER_ROOT . '/content/lang/header.' . $LANG_TAG . '.php');
-else include_once($SERVER_ROOT . '/content/lang/header.en.php');
+if($LANG_TAG == 'en' || !file_exists($SERVER_ROOT.'/content/lang/templates/header.' . $LANG_TAG . '.php'))
+include_once($SERVER_ROOT . '/content/lang/templates/header.en.php');
+else include_once($SERVER_ROOT . '/content/lang/templates/header.' . $LANG_TAG . '.php');
 $SHOULD_USE_HARVESTPARAMS = $SHOULD_USE_HARVESTPARAMS ?? false;
 $collectionSearchPage = $SHOULD_USE_HARVESTPARAMS ? '/collections/index.php' : '/collections/search/index.php';
 ?>
 <div class="header-wrapper">
 	<header>
 		<div class="top-wrapper">
-			<a class="screen-reader-only" href="#end-nav"><?= $LANG['SKIP_NAV'] ?></a>
+			<a class="screen-reader-only" href="#end-nav"><?= $LANG['H_SKIP_NAV'] ?></a>
 			<nav class="top-login" aria-label="horizontal-nav">
 				<?php
 				if ($USER_DISPLAY_NAME) {
 					?>
 					<div class="welcome-text bottom-breathing-room-rel">
-						<?= (isset($LANG['H_WELCOME'])?$LANG['H_WELCOME']:'Welcome') . ' ' . $USER_DISPLAY_NAME ?>!
+					<?= $LANG['H_WELCOME'] . ' ' . $USER_DISPLAY_NAME ?>!
 					</div>
 					<span style="white-space: nowrap;" class="button button-tertiary bottom-breathing-room-rel">
 						<a href="<?= $CLIENT_ROOT ?>/profile/viewprofile.php"><?= $LANG['H_MY_PROFILE'] ?></a>
@@ -26,7 +27,7 @@ $collectionSearchPage = $SHOULD_USE_HARVESTPARAMS ? '/collections/index.php' : '
 					?>
 					<span class="button button-tertiary">
 						<a onclick="window.location.href='#'">
-							<?= $LANG['CONTACT_US'] ?>
+							<?= $LANG['H_CONTACT_US'] ?>
 						</a>
 					</span>
 					<span class="button button-secondary">
@@ -76,19 +77,19 @@ $collectionSearchPage = $SHOULD_USE_HARVESTPARAMS ? '/collections/index.php' : '
 								<a href="<?= $CLIENT_ROOT . $collectionSearchPage ?>"><?php echo (isset($LANG['H_ADVANCED_SEARCH'])?$LANG['H_ADVANCED_SEARCH']:'Advanced Search'); ?></a>
 							</li>
 							<li>
-								<a href="<?php echo $CLIENT_ROOT; ?>/collections/map/mapinterface.php" target="_blank"><?php echo (isset($LANG['H_MAP'])?$LANG['H_MAP']:'Map Search'); ?></a>
+								<a href="<?= $CLIENT_ROOT; ?>/collections/map/mapinterface.php" target="_blank"><?php echo (isset($LANG['H_MAP'])?$LANG['H_MAP']:'Map Search'); ?></a>
 							</li>
 							<li>
-								<a href="<?php echo $CLIENT_ROOT; ?>/collections/exsiccati/index.php"><?php echo (isset($LANG['H_EXSICCATAE'])?$LANG['H_EXSICCATAE']:'Exsiccatae'); ?></a>
+								<a href="<?= $CLIENT_ROOT; ?>/collections/exsiccati/index.php"><?php echo (isset($LANG['H_EXSICCATAE'])?$LANG['H_EXSICCATAE']:'Exsiccatae'); ?></a>
 							</li>
 							<li>
-								<a href="<?php echo $CLIENT_ROOT; ?>/checklists/dynamicmap.php?interface=checklist"><?php echo (isset($LANG['H_DYN_LISTS'])?$LANG['H_DYN_LISTS']:'Dynamic Species List'); ?></a>
+								<a href="<?= $CLIENT_ROOT; ?>/checklists/dynamicmap.php?interface=checklist"><?php echo (isset($LANG['H_DYN_LISTS'])?$LANG['H_DYN_LISTS']:'Dynamic Species List'); ?></a>
 							</li>
 							<li>
-								<a href="<?php echo $CLIENT_ROOT; ?>/checklists/dynamicmap.php?interface=key"><?php echo (isset($LANG['H_DYN_KEY'])?$LANG['H_DYN_KEY']:'Dynamic Identification Key'); ?></a>
+								<a href="<?= $CLIENT_ROOT; ?>/checklists/dynamicmap.php?interface=key"><?php echo (isset($LANG['H_DYN_KEY'])?$LANG['H_DYN_KEY']:'Dynamic Identification Key'); ?></a>
 							</li>
 							<li>
-								<a href="<?php echo $CLIENT_ROOT; ?>/taxa/taxonomy/taxonomydynamicdisplay.php"><?php echo (isset($LANG['H_TAXONOMIC_EXPLORER'])?$LANG['H_TAXONOMIC_EXPLORER']:'Taxonomic Explorer'); ?></a>
+								<a href="<?= $CLIENT_ROOT; ?>/taxa/taxonomy/taxonomydynamicdisplay.php"><?php echo (isset($LANG['H_TAXONOMIC_EXPLORER'])?$LANG['H_TAXONOMIC_EXPLORER']:'Taxonomic Explorer'); ?></a>
 							</li>
 						</ul>
 					</li>
@@ -96,10 +97,10 @@ $collectionSearchPage = $SHOULD_USE_HARVESTPARAMS ? '/collections/index.php' : '
 						<a href="#"><?php echo (isset($LANG['H_IMAGES'])?$LANG['H_IMAGES']:'Images'); ?></a>
 						<ul>
 							<li>
-								<a href="<?php echo $CLIENT_ROOT; ?>/imagelib/index.php?target=genus"><?php echo (isset($LANG['H_IMAGE_BROWSER'])?$LANG['H_IMAGE_BROWSER']:'Image Browser'); ?></a>
+								<a href="<?= $CLIENT_ROOT; ?>/imagelib/index.php?target=genus"><?php echo (isset($LANG['H_IMAGE_BROWSER'])?$LANG['H_IMAGE_BROWSER']:'Image Browser'); ?></a>
 							</li>
 							<li>
-								<a href="<?php echo $CLIENT_ROOT; ?>/imagelib/search.php"><?php echo (isset($LANG['H_IMAGE_SEARCH'])?$LANG['H_IMAGE_SEARCH']:'Image Search'); ?></a>
+								<a href="<?= $CLIENT_ROOT; ?>/imagelib/search.php"><?php echo (isset($LANG['H_IMAGE_SEARCH'])?$LANG['H_IMAGE_SEARCH']:'Image Search'); ?></a>
 							</li>
 						</ul>
 					</li>
@@ -110,100 +111,100 @@ $collectionSearchPage = $SHOULD_USE_HARVESTPARAMS ? '/collections/index.php' : '
 						<a href="#"><?php echo (isset($LANG['H_INVENTORIES'])?$LANG['H_INVENTORIES']:'Biota de Líquenes'); ?></a>
 						<ul>
 							<li>
-								<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php"><?php echo (isset($LANG['INVPROJ']) ? $LANG['INVPROJ'] : 'Proyectos de Inventario'); ?></a>
+								<a href="<?= $CLIENT_ROOT; ?>/projects/index.php"><?php echo (isset($LANG['INVPROJ']) ? $LANG['INVPROJ'] : 'Proyectos de Inventario'); ?></a>
 							</li>
 							<li>
                                 <a href="#"> Listas Mundiales de Especies</a>
 								<ul>
 									<li>
-										<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=519">América del norte</a>
+										<a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=519">América del norte</a>
 									</li>
 									<li>
-										<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=558">Listas Globales de L&iacute;quenes y Hongos Liquen&iacute;colas</a>
+										<a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=558">Listas Globales de L&iacute;quenes y Hongos Liquen&iacute;colas</a>
 									</li>
 									<li>
-										<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=556">Listas Rojas Globales de la UICN</a>
+										<a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=556">Listas Rojas Globales de la UICN</a>
 									</li>
 								</ul>
 							</li>
 							<li>
-                                <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=51">Centroam&eacute;rica</a>
+                                <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=51">Centroam&eacute;rica</a>
 								<ul>
 								<li>
-									<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=516">Panam&aacute;</a>
+									<a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=516">Panam&aacute;</a>
 								</li>
 								</ul>
  							</li>
 							 <li>
-                                <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=575">Sudam&eacute;rica</a>
+                                <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=575">Sudam&eacute;rica</a>
 								<ul>
 								<li>
-									<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=517">Ecuador</a>
+									<a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=517">Ecuador</a>
 								</li>
 								</ul>
  							</li>
 							<li>
-                                <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=519">Norteam&eacute;rica</a>
+                                <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=519">Norteam&eacute;rica</a>
  							</li>
 							 <li>
-                               <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=512">&Aacute;rtico</a>
+                               <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=512">&Aacute;rtico</a>
 	                          </li>
 							<li>
-								<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=514">Canad&aacute;</a>
+								<a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=514">Canad&aacute;</a>
 							</li>
 							<li>
-								<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=555">M&eacute;xico</a>
+								<a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=555">M&eacute;xico</a>
 							</li>
 							<li>
 								<a href="#">Estados Unidos: A-I</a>
 								<ul>
 									<li>
-										<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=513">Alaska</a>
+										<a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=513">Alaska</a>
 									</li>
 									<li>
-										<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=100">Arizona</a>
+										<a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=100">Arizona</a>
 									</li>
 									<li>
-										<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=533">Arkansas</a>
+										<a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=533">Arkansas</a>
 									</li>
 									<li>
-										<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=101">California</a>
+										<a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=101">California</a>
 									</li>
 									<li>
-										<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=103">Carolina del Norte</a>
+										<a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=103">Carolina del Norte</a>
 								   </li>
 								   <li>
-        	                            <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=537">Carolina del Sur</a>
+        	                            <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=537">Carolina del Sur</a>
 									</li>
 									<li>
-										<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=510">Colorado</a>
+										<a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=510">Colorado</a>
 									</li>
 									<li>
-                	                    <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=544">Dakota del Norte</a>
+                	                    <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=544">Dakota del Norte</a>
                         	       </li>
 								   <li>
-                                  		<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=532">Dakota del Sur</a>
+                                  		<a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=532">Dakota del Sur</a>
 		                            </li>
                 		            <li>
-                                		<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=509">Florida</a>
+                                		<a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=509">Florida</a>
                                     </li>
 		                            <li>
-                		                <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=530">Georgia</a>
+                		                <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=530">Georgia</a>
                                 	</li>
                                     <li>
-		                                <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=550">Hawai'i</a>
+		                                <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=550">Hawai'i</a>
                 		            </li>
                                 	<li>
-                                        <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=540">Idaho</a>
+                                        <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=540">Idaho</a>
 		                            </li>
                 		            <li>
-                                	    <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=554">Illinois</a>
+                                	    <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=554">Illinois</a>
                                     </li>
 		                            <li>
-                		                <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=552">Indiana</a>
+                		                <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=552">Indiana</a>
                                 	</li>
                                     <li>
-                                    	<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=518">Iowa</a>
+                                    	<a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=518">Iowa</a>
 		                            </li>
 								</ul>
 							</li>
@@ -211,49 +212,49 @@ $collectionSearchPage = $SHOULD_USE_HARVESTPARAMS ? '/collections/index.php' : '
                                <a href="#">Estados Unidos: K-N</a>
                                <ul>
 							   		<li>
-                                	    <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=553">Kansas</a>
+                                	    <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=553">Kansas</a>
                                     </li>
                 		            <li>
-		                                <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=534">Kentucky</a>
+		                                <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=534">Kentucky</a>
                                 	</li>
 		                            <li>
-        		                       <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=528">Maine</a>
+        		                       <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=528">Maine</a>
                 		           </li>
                         		    <li>
-                                       <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=531">Maryland</a>
+                                       <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=531">Maryland</a>
                                    </li>
                                    <li>
-                                       <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=511">Massachusetts</a>
+                                       <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=511">Massachusetts</a>
 	                               </li>
 	        	                    <li>
-        	        	               <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=551">Michigan</a>
+        	        	               <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=551">Michigan</a>
                 	        	   </li>
 	                	           <li>
-        	                	        <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=546">Minnesota</a>
+        	                	        <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=546">Minnesota</a>
                 	               </li>
                         	       <li>
-                                       <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=547">Misisipi</a>
+                                       <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=547">Misisipi</a>
                                    </li>
 								   <li>
-                                       <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=539">Misuri</a>
+                                       <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=539">Misuri</a>
                                    </li>
 								   <li>
-	                                   <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=545">Montana</a>
+	                                   <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=545">Montana</a>
         	                       </li>
 	                               <li>
-        	                           <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=529">Nebraska</a>
+        	                           <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=529">Nebraska</a>
                 	               </li>
 	                        	    <li>
-        	                           <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=521">Nevada</a>
+        	                           <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=521">Nevada</a>
                 	               </li>
                         	       <li>
-                                       <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=542">Nueva Jersey</a>
+                                       <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=542">Nueva Jersey</a>
 	                               </li>
         	                       <li>
-                	                   <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=527">Nueva M&eacute;xico</a>
+                	                   <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=527">Nueva M&eacute;xico</a>
                         	       </li>
 	                               <li>
-        	                           <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=543">Nueva York</a>
+        	                           <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=543">Nueva York</a>
                 	               </li>
 								   </li>
                                </ul>
@@ -262,51 +263,51 @@ $collectionSearchPage = $SHOULD_USE_HARVESTPARAMS ? '/collections/index.php' : '
                                <a href="#">Estados Unidos: O-Z</a>
                                <ul>
 							   		<li>
-        	                            <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=541">Ohio</a>
+        	                            <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=541">Ohio</a>
                 	               </li>
                         	       <li>
-                                		<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=538">Oklahoma</a>
+                                		<a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=538">Oklahoma</a>
 	                               </li>
         	                       <li>
-                	                    <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=525">Oreg&oacute;n</a>
+                	                    <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=525">Oreg&oacute;n</a>
                         	       </li>
 	                               <li>
-        	                            <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=535">Pensilvania</a>
+        	                            <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=535">Pensilvania</a>
                 	               </li>
                 		            <li>
-                               	        <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=515">Tennessee</a>
+                               	        <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=515">Tennessee</a>
                                     </li>
 		                            <li>
-                		                <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=526">Texas</a>
+                		                <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=526">Texas</a>
                                 	</li>
                                     <li>
-		                                <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=524">Utah</a>
+		                                <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=524">Utah</a>
                 		            </li>
                                 	<li>
-                                        <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=523">Virginia</a>
+                                        <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=523">Virginia</a>
 		                            </li>
 									<li>
-                                  		<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=536">Virginia Occidental</a>
+                                  		<a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=536">Virginia Occidental</a>
 		                            </li>
                 		            <li>
-                              	        <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=548">Washington, D.C.</a>
+                              	        <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=548">Washington, D.C.</a>
                                     </li>
 		                            <li>
-                		                <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=549">Washington</a>
+                		                <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=549">Washington</a>
                                 	</li>
                 		            <li>
-                              	        <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=102">Wisconsin</a>
+                              	        <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=102">Wisconsin</a>
                                     </li>
 		                            <li>
-                		                <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=522">Wyoming</a>
+                		                <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=522">Wyoming</a>
                                 	</li>
 								</ul>
                               </li>
                               <li>
-                               <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=500">Parques Nacionales de los Estados Unidos</a>
+                               <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=500">Parques Nacionales de los Estados Unidos</a>
 	                          </li>
                	              <li>
-                               <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=505">Regi&oacute;n Subpolar del Sur</a>
+                               <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=505">Regi&oacute;n Subpolar del Sur</a>
                               </li>
 						</ul>
 						</li>
@@ -317,78 +318,78 @@ $collectionSearchPage = $SHOULD_USE_HARVESTPARAMS ? '/collections/index.php' : '
 						<a href="#"><?php echo (isset($LANG['H_INVENTORIES']) ? $LANG['H_INVENTORIES'] : 'Species Checklists'); ?></a>
 						<ul>
 							<li>
-							<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php"><?php echo (isset($LANG['INVPROJ']) ? $LANG['INVPROJ'] : 'Inventory Projects'); ?></a>
+							<a href="<?= $CLIENT_ROOT; ?>/projects/index.php"><?php echo (isset($LANG['INVPROJ']) ? $LANG['INVPROJ'] : 'Inventory Projects'); ?></a>
 							</i>
 							<li>
                                 <a href="#">Global Checklists</a>
 								<ul>
 									<li>
-										<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=519">North America</a>
+										<a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=519">North America</a>
 									</li>
 									<li>
-										<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=558">Global Checklists of Lichens & Lichenicolous Fungi</a>
+										<a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=558">Global Checklists of Lichens & Lichenicolous Fungi</a>
 									</li>
 									<li>
-										<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=556">Global IUCN Red-Lists</a>
+										<a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=556">Global IUCN Red-Lists</a>
 									</li>
 								</ul>
 							</li>
 							<li>
-                               <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=512">Arctic</a>
+                               <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=512">Arctic</a>
 							</li>
 							<li>
-                                <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=519">North America</a>
+                                <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=519">North America</a>
  							</li>
 							<li>
-								<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=514">Canada</a>
+								<a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=514">Canada</a>
 							</li>
 							<li>
-									<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=555">Mexico</a>
+									<a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=555">Mexico</a>
 							</li>
 							<li>
 								<a href="#">US States: A-L</a>
 								<ul>
 									<li>
-										<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=513">Alaska</a>
+										<a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=513">Alaska</a>
 									</li>
 									<li>
-										<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=100">Arizona</a>
+										<a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=100">Arizona</a>
 									</li>
 									<li>
-										<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=533">Arkansas</a>
+										<a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=533">Arkansas</a>
 									</li>
 									<li>
-										<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=101">California</a>
+										<a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=101">California</a>
 									</li>
 									<li>
-										<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=510">Colorado</a>
+										<a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=510">Colorado</a>
 									</li>
                 		            <li>
-                                		<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=509">Florida</a>
+                                		<a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=509">Florida</a>
                                     </li>
 		                            <li>
-                		                <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=530">Georgia</a>
+                		                <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=530">Georgia</a>
                                 	</li>
                                     <li>
-		                                <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=550">Hawai'i</a>
+		                                <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=550">Hawai'i</a>
                 		            </li>
                                 	<li>
-                                        <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=540">Idaho</a>
+                                        <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=540">Idaho</a>
 		                            </li>
                 		            <li>
-                                	    <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=554">Illinois</a>
+                                	    <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=554">Illinois</a>
                                     </li>
 		                            <li>
-                		                <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=552">Indiana</a>
+                		                <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=552">Indiana</a>
                                 	</li>
                                     <li>
-                                    	<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=518">Iowa</a>
+                                    	<a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=518">Iowa</a>
 		                            </li>
                 		            <li>
-                                	    <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=553">Kansas</a>
+                                	    <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=553">Kansas</a>
                                     </li>
                 		            <li>
-		                                <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=534">Kentucky</a>
+		                                <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=534">Kentucky</a>
                                 	</li>
 								</ul>
 							</li>
@@ -396,49 +397,49 @@ $collectionSearchPage = $SHOULD_USE_HARVESTPARAMS ? '/collections/index.php' : '
                                <a href="#">US States: M-N</a>
                                <ul>
 		                            <li>
-        		                       <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=528">Maine</a>
+        		                       <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=528">Maine</a>
                 		           </li>
                         		    <li>
-                                       <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=531">Maryland</a>
+                                       <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=531">Maryland</a>
                                    </li>
                                    <li>
-                                       <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=511">Massachusetts</a>
+                                       <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=511">Massachusetts</a>
 	                               </li>
 	        	                    <li>
-        	        	               <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=551">Michigan</a>
+        	        	               <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=551">Michigan</a>
                 	        	   </li>
                         	       <li>
-                                       <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=539">Missouri</a>
+                                       <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=539">Missouri</a>
                                    </li>
 								   <li>
-        	                	        <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=546">Minnesota</a>
+        	                	        <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=546">Minnesota</a>
                 	               </li>
                         	       <li>
-                                       <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=547">Mississippi</a>
+                                       <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=547">Mississippi</a>
                                    </li>
                                    <li>
-	                                   <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=545">Montana</a>
+	                                   <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=545">Montana</a>
         	                       </li>
 	                               <li>
-        	                           <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=529">Nebraska</a>
+        	                           <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=529">Nebraska</a>
                 	               </li>
 	                        	    <li>
-        	                           <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=521">Nevada</a>
+        	                           <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=521">Nevada</a>
                 	               </li>
                         	       <li>
-                                       <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=542">New Jersey</a>
+                                       <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=542">New Jersey</a>
 	                               </li>
         	                       <li>
-                	                   <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=527">New Mexico</a>
+                	                   <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=527">New Mexico</a>
                         	       </li>
 	                               <li>
-        	                           <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=543">New York</a>
+        	                           <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=543">New York</a>
                 	               </li>
 								   <li>
-										<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=103">North Carolina</a>
+										<a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=103">North Carolina</a>
 								   </li>
         	                       <li>
-                	                    <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=544">North Dakota</a>
+                	                    <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=544">North Dakota</a>
                         	       </li>
 								   </li>
                                </ul>
@@ -447,76 +448,76 @@ $collectionSearchPage = $SHOULD_USE_HARVESTPARAMS ? '/collections/index.php' : '
                                <a href="#">US States: O-Z</a>
                                <ul>
 							   		<li>
-        	                            <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=541">Ohio</a>
+        	                            <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=541">Ohio</a>
                 	               </li>
                         	       <li>
-                                		<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=538">Oklahoma</a>
+                                		<a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=538">Oklahoma</a>
 	                               </li>
         	                       <li>
-                	                    <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=525">Oregon</a>
+                	                    <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=525">Oregon</a>
                         	       </li>
 	                               <li>
-        	                            <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=535">Pennsylvania</a>
+        	                            <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=535">Pennsylvania</a>
                 	               </li>
 									<li>
-        	                            <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=537">South Carolina</a>
+        	                            <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=537">South Carolina</a>
 									</li>
                                     <li>
-                                  		<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=532">South Dakota</a>
+                                  		<a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=532">South Dakota</a>
 		                            </li>
                 		            <li>
-                               	        <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=515">Tennessee</a>
+                               	        <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=515">Tennessee</a>
                                     </li>
 		                            <li>
-                		                <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=526">Texas</a>
+                		                <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=526">Texas</a>
                                 	</li>
                                     <li>
-		                                <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=524">Utah</a>
+		                                <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=524">Utah</a>
                 		            </li>
                                 	<li>
-                                        <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=523">Virginia</a>
+                                        <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=523">Virginia</a>
 		                            </li>
                 		            <li>
-                              	        <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=548">Washington, D.C.</a>
+                              	        <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=548">Washington, D.C.</a>
                                     </li>
 		                            <li>
-                		                <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=549">Washington</a>
+                		                <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=549">Washington</a>
                                 	</li>
                                     <li>
-                                  		<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=536">West Virginia</a>
+                                  		<a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=536">West Virginia</a>
 		                            </li>
                 		            <li>
-                              	        <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=102">Wisconsin</a>
+                              	        <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=102">Wisconsin</a>
                                     </li>
 		                            <li>
-                		                <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=522">Wyoming</a>
+                		                <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=522">Wyoming</a>
                                 	</li>
 								</ul>
                               </li>
                               <li>
-                               <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=500">US National Parks</a>
+                               <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=500">US National Parks</a>
 	                          </li>
 							  <li>
-                                <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=51">Central America</a>
+                                <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=51">Central America</a>
 								<ul>
 								<li>
-									<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=516">Panama</a>
+									<a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=516">Panama</a>
 								</li>
 								</ul>
  							</li>
 							 <li>
-                                <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=575">South America</a>
+                                <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=575">South America</a>
 								<ul>
 								<li>
-									<a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=517">Ecuador</a>
+									<a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=517">Ecuador</a>
 								</li>
 								</ul>
  							</li>
 							 <li>
-                               <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=500">US National Parks</a>
+                               <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=500">US National Parks</a>
 	                          </li>
                	              <li>
-                               <a href="<?php echo $CLIENT_ROOT; ?>/projects/index.php?pid=505">Southern Subpolar Region</a>
+                               <a href="<?= $CLIENT_ROOT; ?>/projects/index.php?pid=505">Southern Subpolar Region</a>
                               </li>
 						</ul>
 					</li>
@@ -524,7 +525,7 @@ $collectionSearchPage = $SHOULD_USE_HARVESTPARAMS ? '/collections/index.php' : '
 					}
 					?>
 					<li>
-						<a href="<?php echo $CLIENT_ROOT; ?>/collections/specprocessor/crowdsource/index.php"><?php echo (isset($LANG['H_CROWDSOURCING'])?$LANG['H_CROWDSOURCING']:'Crowdsourcing'); ?></a>
+						<a href="<?= $CLIENT_ROOT; ?>/collections/specprocessor/crowdsource/index.php"><?php echo (isset($LANG['H_CROWDSOURCING'])?$LANG['H_CROWDSOURCING']:'Crowdsourcing'); ?></a>
 					</li>
 					<li>
 						<a href="#"><?php echo (isset($LANG['H_ASSOC_PROJECTS'])?$LANG['H_ASSOC_PROJECTS']:'Associated Projects'); ?></a>
@@ -544,10 +545,10 @@ $collectionSearchPage = $SHOULD_USE_HARVESTPARAMS ? '/collections/index.php' : '
 					<a href="#"><?php echo (isset($LANG['H_MORE_INFO'])?$LANG['H_MORE_INFO']:'More Information'); ?></a>
 						<ul>
 							<li>
-								<a href="<?php echo $CLIENT_ROOT; ?>/collections/misc/collprofiles.php"><?php echo (isset($LANG['H_PARTNERS'])?$LANG['H_PARTNERS']:'Partners'); ?></a>
+								<a href="<?= $CLIENT_ROOT; ?>/collections/misc/collprofiles.php"><?php echo (isset($LANG['H_PARTNERS'])?$LANG['H_PARTNERS']:'Partners'); ?></a>
 							</li>
 							<li>
-								<a href="<?php echo $CLIENT_ROOT; ?>/includes/usagepolicy.php"><?php echo (isset($LANG['H_DATA_POLICY'])?$LANG['H_DATA_POLICY']:'Data Usage Policy'); ?></a>
+								<a href="<?= $CLIENT_ROOT; ?>/includes/usagepolicy.php"><?php echo (isset($LANG['H_DATA_POLICY'])?$LANG['H_DATA_POLICY']:'Data Usage Policy'); ?></a>
 							</li>
 						</ul>
 					</li>
@@ -583,10 +584,10 @@ $collectionSearchPage = $SHOULD_USE_HARVESTPARAMS ? '/collections/index.php' : '
 						</ul>
 					</li>
 					<li id="lang-select-li">
-						<label for="language-selection"><?= $LANG['SELECT_LANGUAGE'] ?>: </label>
+						<label for="language-selection"><?= $LANG['H_SELECT_LANGUAGE'] ?>: </label>
 						<select oninput="setLanguage(this)" id="language-selection" name="language-selection">
 							<option value="en">English</option>
-							<option value="es" <?= ($LANG_TAG == 'es' ? 'SELECTED' : '') ?>>Espa&ntilde;ol</option>
+							<option value="es" <?= ($LANG_TAG=='es'?'SELECTED':'') ?>>Español</option>
 						</select>
 					</li>
 				</ul>
