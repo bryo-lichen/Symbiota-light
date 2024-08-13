@@ -1,34 +1,16 @@
 <footer>
-	<dialog id="accessibility-modal" class="accessibility-dialog" aria-label="<?= $LANG['ACCESSIBILITY_OPTIONS']; ?>">
-		<h1><?= $LANG['ACCESSIBILITY_OPTIONS']; ?></h1>
-		<p class="bottom-breathing-room-rel"><?= $LANG['ACCESSIBILITY_OPTIONS_DESCRIPTION']; ?></p>
-		<button type="button" class="btn btn-primary bottom-breathing-room-rel" onclick="toggleAccessibilityStyles('<?php echo $CLIENT_ROOT . '/includes' . '/' ?>', '<?php echo $CSS_BASE_PATH ?>', '<?php echo $LANG['TOGGLE_508_OFF'] ?>', '<?php echo $LANG['TOGGLE_508_ON'] ?>')" id="accessibility-button" data-accessibility="accessibility-button">
-			<?php echo (isset($LANG['TOGGLE_508_ON'])?$LANG['TOGGLE_508_ON']:'Switch Form Layout'); ?>
-		</button>
-		<form method="dialog">
-			<button type="submit" class="btn btn-primary"><?= $LANG['CLOSE']; ?></button>
-		</form>
-	</dialog>
 	<div class="logo-gallery">
-		<!--
-		<button id="accessibility-options-button" type="button" class="btn btn-primary  accessibility-option-button">
-			<span class="button__item-container">
-				<?= $LANG['ACCESSIBILITY_OPTIONS']; ?>
-				<span>
-					<img alt="accessibility icon of a person" src="<?php echo $CLIENT_ROOT ?>/images/accessibility_FILL0_wght400_GRAD0_opsz24.svg" />
-				</span>
-                	</span>
-		</button>
-		-->
-
-		<a href="https://biokic.asu.edu" target="_blank" title="Biodiversity Knowledge Integration Center">
-			<img src="<?php echo $CLIENT_ROOT; ?>/images/layout/logo-asu-biokic.png" style="width:180px" />
+	<?php
+		//include($SERVER_ROOT . '/accessibility/module.php');
+		?>
+		<a href="https://biokic.asu.edu" target="_blank" title="<?= $LANG['F_BIOKIC'] ?>" aria-label="Visit BioKIC website">
+			<img src="<?= $CLIENT_ROOT; ?>/images/layout/logo-asu-biokic.png"  alt="<?= $LANG['F_BIOKIC_LOGO'] ?>" />
 		</a>
-		<a href="http://idigbio.org" target="_blank" title="iDigBio">
-			<img src="<?php echo $CLIENT_ROOT; ?>/images/layout/logo_idig.png" style="width:150px" />
+		<a href="http://idigbio.org" target="_blank" title="iDigBio" aria-label="<?= $LANG['F_VISIT_IDIGBIO'] ?>">
+			<img src="<?= $CLIENT_ROOT; ?>/images/layout/logo_idig.png" alt="<?= $LANG['F_IDIGBIO_LOGO'] ?>" />
 		</a>
-		<a href="https://www.nsf.gov" target="_blank">
-			<img src="<?php echo $CLIENT_ROOT; ?>/images/layout/logo_nsf.gif" style="width:70px" />
+		<a href="https://www.nsf.gov" target="_blank" aria-label="<?= $LANG['F_VISIT_NSF'] ?>">
+			<img src="<?= $CLIENT_ROOT; ?>/images/layout/logo_nsf.gif" alt="<?= $LANG['F_NSF_LOGO'] ?>" />
 		</a>
 		<a href="https://globaltcn.utk.edu/" targe="_blank">
 			<img src="<?php echo $CLIENT_ROOT; ?>/images/layout/global_logo.png" style="width:150px" />
@@ -41,13 +23,6 @@
 		<a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2001394" target="_blank">#2001394</a>
 	</p>
 	<p>
-		Powered by <a href="https://symbiota.org/" target="_blank">Symbiota</a>.
+	<?= $LANG['F_POWERED_BY'] ?> <a href="https://symbiota.org/" target="_blank">Symbiota</a>.
 	</p>
-	<!--
-	<script>
-		let toggleOff508 = "<?= $LANG['TOGGLE_508_OFF'] ?>";
-		let toggleOn508 = "<?= $LANG['TOGGLE_508_ON'] ?>";
-	</script>
-	<script src="<?= $CLIENT_ROOT; ?>/js/symb/accessibility.footer.js?ver=1" type="text/javascript"></script>
--->
 </footer>

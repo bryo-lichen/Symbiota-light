@@ -9,7 +9,8 @@ header('Content-Type: text/html; charset=' . $CHARSET);
 <head>
 	<title><?php echo $DEFAULT_TITLE; ?> Home</title>
 	<?php
-	include_once($SERVER_ROOT.'/includes/head.php');
+	include_once($SERVER_ROOT . '/includes/head.php');
+	include_once($SERVER_ROOT . '/includes/googleanalytics.php');
 	?>
 	<meta name='keywords' content='' />
 	<link href="<?php echo $CSS_BASE_PATH; ?>/jquery-ui.css" type="text/css" rel="stylesheet">
@@ -21,15 +22,14 @@ header('Content-Type: text/html; charset=' . $CHARSET);
 	</script>
 	<script src="<?php echo $CLIENT_ROOT; ?>/js/symb/api.taxonomy.taxasuggest.js" type="text/javascript"></script>
 	<script src="<?php echo $CLIENT_ROOT; ?>/js/jquery.slides.js"></script>
-	<?php include_once($SERVER_ROOT.'/includes/googleanalytics.php'); ?>
 </head>
 <body>
 	<?php
 	include($SERVER_ROOT . '/includes/header.php');
 	?>
 	<div class="navpath"></div>
-	<!-- This is inner text! -->
 	<main id="innertext">
+		<h1 class="page-heading"><?php echo $DEFAULT_TITLE; ?> Home</h1>
 		<div style="float:right;margin: 15px 20px;width:400px;">
 			<div id="quicksearchdiv" style="width:400px;border: 1px solid #000000;padding-bottom:1rem;">
 				<!-- -------------------------QUICK SEARCH SETTINGS--------------------------------------- -->
