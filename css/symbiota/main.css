@@ -1,6 +1,7 @@
 /* Style and Font imports
   ========================================================================== */
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import "normalize.slim.css";
 @import "variables.css";
 
 
@@ -329,7 +330,7 @@ button {
   padding-block: 1px;
   padding-inline: 6px;
   color: #fff;
-  font-family: var(--heading-font-family);
+  font-family: var(--body-font-family);
   font-weight: 600;
   letter-spacing: 1px;
   word-spacing: normal;
@@ -375,7 +376,7 @@ button.icon-button:hover {
   border: none;
   border-radius: 5px;
   padding: 0.5rem 1rem;
-  font-family: var(--heading-font-family);
+  font-family: var(--body-font-family);
   letter-spacing: 1px;
   text-align: center;
   cursor: pointer;
@@ -417,11 +418,12 @@ button.icon-button:hover {
 
 .button-primary:hover > a,
 .button-secondary:hover > a {
-  color: var(--light-color);
+  color: #fff;
 }
 
 .button-primary > a {
-  color: var(--light-color);
+  color: #fff;
+  font-family: var(--body-font-family);
 }
 
 .button-secondary {
