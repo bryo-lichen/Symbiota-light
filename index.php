@@ -29,7 +29,6 @@ header('Content-Type: text/html; charset=' . $CHARSET);
 	?>
 	<div class="navpath"></div>
 	<main id="innertext">
-		<h1 class="page-heading"><?php echo $DEFAULT_TITLE; ?> Home</h1>
 		<div style="float:right;margin: 15px 20px;width:400px;">
 			<div id="quicksearchdiv" style="width:400px;border: 1px solid #000000;padding-bottom:1rem;">
 				<!-- -------------------------QUICK SEARCH SETTINGS--------------------------------------- -->

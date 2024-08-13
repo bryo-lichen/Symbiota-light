@@ -2,4 +2,41 @@
 Place your CSS customizations here.
 This stylesheet is defined last and will override all previously loaded sheets. You may reference variables defined in variables.css 
  */
+
+ /* Fonts */
  
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
+
+ /* Header */
+
+
+div.brand-name h1 {
+    font-family: "Playfair Display SC", serif;
+    font-weight: bold;
+    font-size: 1.8em;
+}
+
+div.brand-name h2 {
+    font-family: "Playfair Display SC", serif;
+    font-weight: normal;
+    font-size: 1.2em;
+}
+
+@media (min-width: 768px) {
+    .top-wrapper {
+        min-height: 120px;        
+    }
+
+    .welcome-text {
+        text-shadow: 1px 1px 5px black, -1px -1px 5px black, 0 0 25px black, 0 0 5px black;
+    }
+
+    nav.top-login > .button-tertiary {
+        text-shadow: 1px 1px 5px black, -1px -1px 5px black, 0 0 25px black, 0 0 5px black;
+    }
+
+    div.brand-name h1, div.brand-name h2 {
+        text-shadow: 1px 1px 5px black, -1px -1px 5px black, 0 0 25px black, 0 0 5px black;
+    }
+
+}
