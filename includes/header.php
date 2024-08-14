@@ -64,22 +64,25 @@ $collectionSearchPage = $SHOULD_USE_HARVESTPARAMS ? '/collections/index.php' : '
 						</a>
 						<ul>
 							<li>
-							<a href="<?= $CLIENT_ROOT . $collectionSearchPage ?>">Search Collections</a>
+								<a href="<?= $CLIENT_ROOT . $collectionSearchPage ?>">Search Collections</a>
 							</li>
 							<li>
-								<a href="<?= $CLIENT_ROOT ?>/collections/map/index.php" target="_blank">Map Search</a>
+								<a href="<?= $CLIENT_ROOT ?>/collections/index.php">Classic Search</a>
+							</li>
+							<li>
+								<a href="<?= $CLIENT_ROOT ?>/collections/map/index.php" target="_blank"><?= $LANG['H_MAP_SEARCH'] ?></a>
 							</li>
 							<li>
 								<a href="<?= $CLIENT_ROOT ?>/collections/exsiccati/index.php" >Exsiccatae</a>
 							</li>
 							<li>
-								<a href="<?= $CLIENT_ROOT ?>/checklists/dynamicmap.php?interface=checklist" >Dynamic Species List</a>
+								<a href="<?= $CLIENT_ROOT ?>/checklists/dynamicmap.php?interface=checklist" ><?= $LANG['H_DYN_LISTS'] ?></a>
 							</li>
 							<li>
-								<a href="<?= $CLIENT_ROOT ?>/checklists/dynamicmap.php?interface=key" >Dynamic Identification Key</a>
+								<a href="<?= $CLIENT_ROOT ?>/checklists/dynamicmap.php?interface=key" ><?= $LANG['H_DYN_KEYS'] ?></a>
 							</li>
 							<li>
-								<a href="<?= $CLIENT_ROOT ?>/taxa/taxonomy/taxonomydynamicdisplay.php" >Taxonomic Explorer</a>
+								<a href="<?= $CLIENT_ROOT ?>/taxa/taxonomy/taxonomydynamicdisplay.php" ><?= $LANG['H_TAXONOMIC_EXPLORER'] ?></a>
 							</li>
 						</ul>
 					</li>
@@ -87,15 +90,15 @@ $collectionSearchPage = $SHOULD_USE_HARVESTPARAMS ? '/collections/index.php' : '
 						<a href="#" >Images</a>
 						<ul>
 							<li>
-								<a href="<?= $CLIENT_ROOT ?>/imagelib/index.php" >Image Browser</a>
+								<a href="<?= $CLIENT_ROOT ?>/imagelib/index.php" ><?= $LANG['H_IMAGE_BROWSER'] ?></a>
 							</li>
 							<li>
-								<a href="<?= $CLIENT_ROOT ?>/imagelib/search.php" >Image Search</a>
+								<a href="<?= $CLIENT_ROOT ?>/imagelib/search.php" ><?= $LANG['H_IMAGES'] ?></a>
 							</li>
 						</ul>
 					</li>
 					<li>
-						<a href="<?= $CLIENT_ROOT ?>/projects/index.php?" >Species Checklists</a>
+						<a href="<?= $CLIENT_ROOT ?>/projects/index.php?" ><?= $LANG['H_INVENTORIES'] ?></a>
 						<ul>
    							<li>
 								<a href="<?= $CLIENT_ROOT ?>/projects/index.php?proj=24">North America</a>
@@ -217,13 +220,13 @@ $collectionSearchPage = $SHOULD_USE_HARVESTPARAMS ? '/collections/index.php' : '
 						</ul>
 					</li>
 					<li>
-						<a href="#" >More Information</a>
+						<a href="#" ><?= $LANG['H_MORE_INFO'] ?></a>
 						<ul>
 							<li>
-								<a href="<?= $CLIENT_ROOT ?>/includes/usagepolicy.php">Data Usage Policy</a>
+								<a href="<?= $CLIENT_ROOT ?>/includes/usagepolicy.php"><?= $LANG['H_DATA_USAGE'] ?></a>
 							</li>
 							<li>
-								<a href="<?= $CLIENT_ROOT ?>/collections/misc/collprofiles.php/">Partners</a>
+								<a href="<?= $CLIENT_ROOT ?>/collections/misc/collprofiles.php/"><?= $LANG['H_PARTNERS'] ?></a>
 							</li>
 
 						</ul>
