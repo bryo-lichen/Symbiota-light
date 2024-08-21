@@ -51,13 +51,13 @@ $LANG['H_CONTACT_US'] = 'Contáctenos';
 $LANG['H_SKIP_NAV'] = 'Saltar Navegación';
 
 //Footer variables
-$LANG['F_VISIT_NSF'] = 'Visita el sitio web de la National Science Foundation';
-$LANG['F_NSF_LOGO'] = 'Logo de la National Science Foundation';
+$LANG['F_VISIT_NSF'] = 'Visita el sitio web de la U.S. National Science Foundation';
+$LANG['F_NSF_LOGO'] = 'Logo de la U.S. National Science Foundation';
 $LANG['F_VISIT_IDIGBIO'] = 'Visita el sitio web de iDigBio';
 $LANG['F_IDIGBIO_LOGO'] = 'Logo de iDigBio, or, Integrated Digitized Biocollections';
 $LANG['F_BIOKIC'] = 'Biodiversity Knowledge Integration Center';
 $LANG['F_BIOKIC_LOGO'] = 'Logo del Biodiversity Knowledge Integration Center';
-$LANG['F_NSF_AWARDS'] = 'Este proyecto fue posible gracias a los premios de la National Science Foundation';
+$LANG['F_NSF_AWARDS'] = 'Este proyecto fue posible gracias a los premios de la U.S. National Science Foundation';
 $LANG['F_MORE_INFO'] = 'Para más información sobre Simbiota';
 $LANG['F_READ_DOCS'] = 'lee los documentos';
 $LANG['F_CONTACT'] = 'o contacta el';
