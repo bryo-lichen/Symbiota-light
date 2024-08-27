@@ -560,8 +560,18 @@ $collectionSearchPage = $SHOULD_USE_HARVESTPARAMS ? '/collections/index.php' : '
 					<li>
 						<a href="#"><?php echo (isset($LANG['H_HELP_RESOURCES'])?$LANG['H_HELP_RESOURCES']:'Help & Resources'); ?></a>
 						<ul>
-							<li>
+						<li>
+							<?php
+								if($LANG_TAG=='es'){
+							?>
+								<a href="https://help.lichenportal.org/index.php/es/chlal-ayuda-y-recursos/"><?php echo (isset($LANG['CONSORTIUM_RESOURCES'])?$LANG['CONSORTIUM_RESOURCES']:'Consortium Resources'); ?></a>
+							<?php
+								} else {
+							?>
 								<a href="https://help.lichenportal.org/index.php/en/cnalh-help-resources/"><?php echo (isset($LANG['CONSORTIUM_RESOURCES'])?$LANG['CONSORTIUM_RESOURCES']:'Consortium Resources'); ?></a>
+							<?php
+								}
+							?>
 							</li>
 							<li>
 								<a href='<?= $CLIENT_ROOT ?>/glossary/index.php'>
