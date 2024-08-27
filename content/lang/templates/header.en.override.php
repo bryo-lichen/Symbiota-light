@@ -11,5 +11,14 @@
 
 $LANG['HEADER2'] = 'Consortium of Lichen Herbaria';
 $LANG['HEADER3'] = 'building a Global Consortium of Bryophytes and Lichens as keystones of cryptobiotic communities';
+$LANG['H_ASSOC_PROJECTS'] = 'Associated Projects';
+$LANG['H_CLASSIC_SEARCH'] = 'Classic Search';
+$LANG['H_ADVANCED_SEARCH'] = 'Advanced Search';
+$LANG['H_DYN_KEY'] = 'Dynamic Identification Key';
+$LANG['BRYO_PORTAL'] = 'Consortium of Bryophyte Herbaria';
+$LANG['GLOBAL_NETWORK'] = 'GLOBAL Bryophytes and Lichens Network';
+$LANG['H_HELP_RESOURCES'] = 'Help & Resources';
+$LANG['CONSORTIUM_RESOURCES'] = 'Consortium Resources';
+$LANG['GLOSSARY'] = 'Glossary';
 
 ?>

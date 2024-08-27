@@ -534,7 +534,7 @@ $collectionSearchPage = $SHOULD_USE_HARVESTPARAMS ? '/collections/index.php' : '
 								<a href="http://bryophyteportal.org" target="_blank"><?php echo (isset($LANG['BRYO_PORTAL'])?$LANG['BRYO_PORTAL']:'Consortium of Bryophyte Herbaria'); ?></a>
 							</li>
 							<li>
-								<a href="https://globaltcn.utk.edu/">GLOBAL Bryophytes and Lichens Network</a>
+								<a href="https://globaltcn.utk.edu/"><?php echo (isset($LANG['GLOBAL_NETWORK'])?$LANG['GLOBAL_NETWORK']:'GLOBAL Bryophytes and Lichens Network'); ?></a>
 							</li>
 							<li>
 								<a href="http://mycoportal.org" target="_blank">MyCoPortal</a>
@@ -548,7 +548,7 @@ $collectionSearchPage = $SHOULD_USE_HARVESTPARAMS ? '/collections/index.php' : '
 								<a href="<?= $CLIENT_ROOT; ?>/collections/misc/collprofiles.php"><?php echo (isset($LANG['H_PARTNERS'])?$LANG['H_PARTNERS']:'Partners'); ?></a>
 							</li>
 							<li>
-								<a href="<?= $CLIENT_ROOT; ?>/includes/usagepolicy.php"><?php echo (isset($LANG['H_DATA_POLICY'])?$LANG['H_DATA_POLICY']:'Data Usage Policy'); ?></a>
+								<a href="<?= $CLIENT_ROOT; ?>/includes/usagepolicy.php"><?php echo (isset($LANG['H_DATA_USAGE'])?$LANG['H_DATA_USAGE']:'Data Use'); ?></a>
 							</li>
 						</ul>
 					</li>
@@ -558,7 +558,7 @@ $collectionSearchPage = $SHOULD_USE_HARVESTPARAMS ? '/collections/index.php' : '
 						</a>
 					</li>
 					<li>
-						<a href="#"><?php echo (isset($LANG['H_AYUDA_RECURSOS'])?$LANG['H_AYUDA_RECURSOS']:'Help & Resources'); ?></a>
+						<a href="#"><?php echo (isset($LANG['H_HELP_RESOURCES'])?$LANG['H_HELP_RESOURCES']:'Help & Resources'); ?></a>
 						<ul>
 							<li>
 								<a href="https://help.lichenportal.org/index.php/en/cnalh-help-resources/"><?php echo (isset($LANG['CONSORTIUM_RESOURCES'])?$LANG['CONSORTIUM_RESOURCES']:'Consortium Resources'); ?></a>

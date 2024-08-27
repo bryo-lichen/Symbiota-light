@@ -11,5 +11,14 @@
 
 $LANG['HEADER2'] = 'Consorcio de Herbarios de Líquenes';
 $LANG['HEADER3'] = 'construyendo un Consorcio de Briofitas y Líquenes: organismos clave de las comunidades criotobióticas';
+$LANG['H_ASSOC_PROJECTS'] = 'Proyectos Asociados';
+$LANG['H_CLASSIC_SEARCH'] = 'Búsqueda Clásica';
+$LANG['H_ADVANCED_SEARCH'] = 'Búsqueda Avanzada';
+$LANG['H_DYN_KEY'] = 'Clave de Identificación Dinámica';
+$LANG['BRYO_PORTAL'] = 'Consorcio de Herbarios de Briofitas';
+$LANG['GLOBAL_NETWORK'] = 'Red GLOBAL de Briofitas y Líquenes';
+$LANG['H_HELP_RESOURCES'] = 'Ayuda y Recursos';
+$LANG['CONSORTIUM_RESOURCES'] = 'Recursos del Consorcio';
+$LANG['GLOSSARY'] = 'Glosario';
 
 ?>
