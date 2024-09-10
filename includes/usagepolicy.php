@@ -8,7 +8,7 @@ $serverHost = UtilityFunctions::getDomain();
 <html lang="<?= $LANG_TAG ?>">
 
 <head>
-	<title><?= $DEFAULT_TITLE . ($LANG_TAG=='es') ? ' Política de Uso de Datos' : ' Data Usage Guidelines' ?></title>
+	<title><?= $DEFAULT_TITLE . ($LANG_TAG=='es' ? ' Política de Uso de Datos' : ' Data Usage Guidelines') ?></title>
 	<?php
 
 	include_once($SERVER_ROOT . '/includes/head.php');
@@ -57,6 +57,25 @@ $serverHost = UtilityFunctions::getDomain();
 				publicado por el Herbario de Líquenes de la Universidad de Talca, Chile
 				(obtenido de <?php echo $DEFAULT_TITLE; ?>, 
 				<?php echo 'http//:'.$_SERVER['HTTP_HOST'].$CLIENT_ROOT.(substr($CLIENT_ROOT,-1)=='/'?'':'/').'index.php, '.date('Y-m-d').')'; ?>
+			</div>
+			<div style="font-weight:bold;margin-top:10px;">
+				Citar el Tesauro Taxonómico Central:
+			</div>
+			<div style="margin:10px;">
+				<?= 'Bungartz, F. & Perlmutter, G. (' . date('Y') . ') Tesauro taxonómico central de nombres aceptados y sus sinónimos, 
+				mantenido por el Consorcio de Herbarios de Líquenes(con contribuciones de P. Kirk, K. Bensch, U. Søchting, A. Fryday, 
+				R. Lücking y otros). ' . 'https//:' . $_SERVER['HTTP_HOST'] . $CLIENT_ROOT . 
+				(substr($CLIENT_ROOT,-1)=='/' ? '' : '/') . '/taxa/taxonomy/taxonomydisplay.php. Consultado ' . date('Y-m-d') . '.' ?>
+			</div>
+			<div style="font-weight:bold;margin-top:10px;">
+				Citar el Glosario:
+			</div>
+			<div style="margin:10px">
+				<?= 'Bungartz, F. (' . date('Y') . ') Glosario de terminología de líquenes del Consorcio de Herbarios de Líquenes 
+				(basado en definiciones originalmente publicadas en la Lichen Flora of the Greater Sonoran Desert Region y el LIAS 
+				Glossary, con imágenes compartidas por B. McCune, S. Yang y F. Schumm, y cromatogramas y datos de la química 
+				secundaria por J.A. Elix y F. Schumm). https//:' . $_SERVER['HTTP_HOST'] . $CLIENT_ROOT . 
+				(substr($CLIENT_ROOT,-1)=='/' ? '' : '/') . '/glossary/index.php. Consultado ' . date('Y-m-d') . '.' ?>
 			</div>
 		</div>
 		<a name="occurrences"></a>
@@ -153,7 +172,26 @@ $serverHost = UtilityFunctions::getDomain();
 				Biodiversity occurrence data published by: 
 				Arizona State University, Field Museum of Natural History, and New York Botanical Garden 
 				(Accessed through <?php echo $DEFAULT_TITLE; ?> Data Portal, 
-				<?php echo 'http//:'.$_SERVER['HTTP_HOST'].$CLIENT_ROOT.(substr($CLIENT_ROOT,-1)=='/'?'':'/').'index.php, '.date('Y-m-d').')'; ?>
+				<?php echo 'https//:'.$_SERVER['HTTP_HOST'].$CLIENT_ROOT.(substr($CLIENT_ROOT,-1)=='/'?'':'/').'index.php, '.date('Y-m-d').')'; ?>
+			</div>
+			<div style="font-weight:bold;margin-top:10px;">
+				Citing the Central Taxonomic Thesaurus:
+			</div>
+			<div style="margin:10px;">
+				<?= 'Bungartz, F. & Perlmutter, G. (' . date('Y') . ') Central taxonomic thesaurus of accepted names and their 
+				synonyms, maintained by the Consortium of Lichen Herbaria (with contributions by P. Kirk, K. Bensch, U. Søchting, A. 
+				Fryday, R. Lücking, and others). ' . 'https//:' . $_SERVER['HTTP_HOST'] . $CLIENT_ROOT . 
+				(substr($CLIENT_ROOT,-1)=='/' ? '' : '/') . '/taxa/taxonomy/taxonomydisplay.php. Accessed on ' . date('F j') . '.' ?>
+			</div>
+			<div style="font-weight:bold;margin-top:10px;">
+				Citing the Glossary:
+			</div>
+			<div style="margin:10px">
+				<?= 'Bungartz, F. (' . date('Y') . ') Glossary of lichen terminology provided by the Consortium of Lichen Herbaria 
+				(based on definitions originally published in the Lichen Flora of the Greater Sonoran Desert Region and the LIAS 
+				glossary, with image resources provided by B. McCune, S. Yang, and F. Schumm, and secondary chemistry data and 
+				chormatograms by J.A. Elix, F. Schumm). https//:' . $_SERVER['HTTP_HOST'] . $CLIENT_ROOT . 
+				(substr($CLIENT_ROOT,-1)=='/' ? '' : '/') . '/glossary/index.php. Accessed on ' . date('F j') . '.' ?>
 			</div>
 		</div>
 		<a name="occurrences"></a>
