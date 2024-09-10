@@ -1,9 +1,11 @@
 <?php
+namespace App\Helpers;
+
 /**
  *  Base static fucntions that are regularly used across all code.
  */
 
-class UtilityFunctions {
+class Helper {
 
 	public static function getDomain(){
 		$domain = 'http://';
