@@ -22,6 +22,12 @@ div.brand-name h2 {
     font-size: 1.2em;
 }
 
+/* Page headers */
+
+.page-heading {
+  font-size: 2rem;
+}
+
 @media (min-width: 768px) {
     .top-wrapper {
         min-height: 120px;        
