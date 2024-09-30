@@ -12,6 +12,12 @@ This stylesheet is defined last and will override all previously loaded sheets. 
  html {
   font-size: 12px;
 }
+
+/* Page headers */
+
+.page-heading {
+  font-size: 2rem;
+}
  
 /* Header */
 
