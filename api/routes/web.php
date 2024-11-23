@@ -64,4 +64,7 @@ $router->group(['prefix' => 'v2'], function () use ($router) {
 	$router->get('taxonomy/{id}', ['uses' => 'TaxonomyController@showOneTaxon']);
 	//$router->get('taxonomy/{id}/description',  ['uses' => 'TaxonomyController@showAllDescriptions']);
 	//$router->get('taxonomy/{id}/description/{id}',  ['uses' => 'TaxonomyDescriptionController@showOneDescription']);
+
+	$router->get('metabolite',  ['uses' => 'MetaboliteController@showAllMetabolites']);
+	$router->get('metabolite/{id}',  ['uses' => 'MetaboliteController@showOneMetabolites']);
 });
