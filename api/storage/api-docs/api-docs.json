@@ -823,12 +823,12 @@
                 }
             }
         },
-        "/api/v2/metabolites": {
+        "/api/v2/metabolite": {
             "get": {
                 "tags": [
                     ""
                 ],
-                "operationId": "/api/v2/metabolites",
+                "operationId": "/api/v2/metabolite",
                 "parameters": [
                     {
                         "name": "limit",
@@ -866,12 +866,12 @@
                 }
             }
         },
-        "/api/v2/metabolites/{identifier}": {
+        "/api/v2/metabolite/{identifier}": {
             "get": {
                 "tags": [
                     ""
                 ],
-                "operationId": "/api/v2/metabolites/identifier",
+                "operationId": "/api/v2/metabolite/identifier",
                 "parameters": [
                     {
                         "name": "identifier",

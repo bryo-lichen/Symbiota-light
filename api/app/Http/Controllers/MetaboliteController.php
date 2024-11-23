@@ -15,8 +15,8 @@ class MetaboliteController extends Controller{
 
 	/**
 	 * @OA\Get(
-	 *	 path="/api/v2/metabolites",
-	 *	 operationId="/api/v2/metabolites",
+	 *	 path="/api/v2/metabolite",
+	 *	 operationId="/api/v2/metabolite",
 	 *	 tags={""},
 	 *	 @OA\Parameter(
 	 *		 name="limit",
@@ -68,8 +68,8 @@ class MetaboliteController extends Controller{
 
 	/**
 	 * @OA\Get(
-	 *	 path="/api/v2/metabolites/{identifier}",
-	 *	 operationId="/api/v2/metabolites/identifier",
+	 *	 path="/api/v2/metabolite/{identifier}",
+	 *	 operationId="/api/v2/metabolite/identifier",
 	 *	 tags={""},
 	 *	 @OA\Parameter(
 	 *		 name="identifier",
