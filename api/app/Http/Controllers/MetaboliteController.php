@@ -91,7 +91,9 @@ class MetaboliteController extends Controller{
 	 */
 	public function showOneMetabolites($id, Request $request){
 		$metabolitesObj = Metabolites::find($id);
-		if(!$metabolitesObj->count()) $metabolitesObj = ['status' =>false, 'error' => 'Unable to locate metabolite based on identifier'];
+		if(!$metabolitesObj){
+			$metabolitesObj = ['status' =>false, 'error' => 'Unable to locate metabolite based on input identifier'];
+		}
 		return response()->json($metabolitesObj);
 	}
 }
