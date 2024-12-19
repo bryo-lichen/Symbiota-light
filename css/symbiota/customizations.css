@@ -38,11 +38,14 @@ div.brand-name h2{
   font-size: 1.2em
 }
 
-nav.top-login > .button-tertiary{
+.welcome-text{
   text-shadow: 1px 1px 5px black, -1px -1px 5px black, 0 0 25px black, 0 0 5px black;
 }
 
-.welcome-text{
+.button-tertiary {
+  background-color: transparent;
+  border: 1px solid var(--bright-color);
+  padding: 0.5rem 0.9rem;
   text-shadow: 1px 1px 5px black, -1px -1px 5px black, 0 0 25px black, 0 0 5px black;
 }
 
