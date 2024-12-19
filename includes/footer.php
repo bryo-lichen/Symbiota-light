@@ -7,7 +7,7 @@
 			<img src="<?= $CLIENT_ROOT; ?>/images/layout/logo-asu-biokic.png"  alt="<?= $LANG['F_BIOKIC_LOGO'] ?>" />
 		</a>
 		<a href="https://biodiversity.ku.edu/" target="_blank" aria-label="Visit KU BI website">
-			<img src="<?= $CLIENT_ROOT; ?>/images/layout/KU_BI.PNG" alt="KU BI logo" />
+			<img src="<?= $CLIENT_ROOT; ?>/images/layout/KU_BI.png" alt="KU BI logo" />
 		</a>
 		<a href="http://idigbio.org" target="_blank" title="iDigBio" aria-label="<?= $LANG['F_VISIT_IDIGBIO'] ?>">
 			<img src="<?= $CLIENT_ROOT; ?>/images/layout/logo_idig.png" alt="<?= $LANG['F_IDIGBIO_LOGO'] ?>" />
