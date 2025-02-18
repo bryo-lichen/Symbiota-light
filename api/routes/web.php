@@ -19,7 +19,7 @@
 */
 
 $router->get('/', function () use ($router) {
-    return $router->app->version();
+	return $router->app->version();
 });
 
 $router->get('/v2', function () use ($router) {
@@ -66,9 +66,9 @@ $router->group(['prefix' => 'v2'], function () use ($router) {
 	$router->get('taxonomy', ['uses' => 'TaxonomyController@showAllTaxa']);
 	$router->get('taxonomy/search', ['uses' => 'TaxonomyController@showAllTaxaSearch']);
 	$router->get('taxonomy/{id}', ['uses' => 'TaxonomyController@showOneTaxon']);
-	//$router->get('taxonomy/{id}/description',  ['uses' => 'TaxonomyController@showAllDescriptions']);
-	//$router->get('taxonomy/{id}/description/{id}',  ['uses' => 'TaxonomyDescriptionController@showOneDescription']);
-
+	// $router->get('taxonomy/{id}/description',  ['uses' => 'TaxonomyController@showAllDescriptions']);
+	// $router->get('taxonomy/{id}/description/{id}',  ['uses' => 'TaxonomyDescriptionController@showOneDescription']);
+	$router->get('exsiccata', ['uses' => 'ExsiccataController@showAllExsiccata']);
 	$router->get('metabolite',  ['uses' => 'MetaboliteController@showAllMetabolites']);
 	$router->get('metabolite/{id}',  ['uses' => 'MetaboliteController@showOneMetabolites']);
 });
