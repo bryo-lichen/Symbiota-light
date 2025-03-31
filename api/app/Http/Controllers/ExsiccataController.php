@@ -3,14 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Exsiccata;
-use App\Models\Exsiccati;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class ExsiccataController extends Controller {
 
     /**
-     * Exsiccati controller instance.
+     * Exsiccata controller instance.
      *
      * @return void
      */
