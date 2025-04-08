@@ -166,7 +166,7 @@ class TaxonomyController extends Controller {
 	 *		 in="path",
 	 *		 description="Identifier (PK = tid) associated with taxonomic target",
 	 *		 required=true,
-	 *		 @OA\Schema(type="string")
+	 *		 @OA\Schema(type="integer")
 	 *	 ),
 	 *	 @OA\Response(
 	 *		 response="200",

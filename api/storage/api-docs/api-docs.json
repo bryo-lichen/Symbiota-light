@@ -1847,7 +1847,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Returns list of taxonomic descriptions for a given taxon",
+                        "description": "Returns taxonomic record of matching ID",
                         "content": {
                             "application/json": {
                                 "schema": {}
@@ -1855,7 +1855,7 @@
                         }
                     },
                     "400": {
-                        "description": "Error: Bad request. "
+                        "description": "Error: Bad request. Taxonomy identifier is required."
                     }
                 }
             }
