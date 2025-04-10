@@ -20,5 +20,6 @@ $LANG['GLOBAL_NETWORK'] = 'GLOBAL Bryophytes and Lichens Network';
 $LANG['H_HELP_RESOURCES'] = 'Help & Resources';
 $LANG['CONSORTIUM_RESOURCES'] = 'Consortium Resources';
 $LANG['GLOSSARY'] = 'Glossary';
+$LANG['MAP'] = 'Map Search';
 
 ?>
