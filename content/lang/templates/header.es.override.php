@@ -20,5 +20,7 @@ $LANG['GLOBAL_NETWORK'] = 'Red GLOBAL de Briofitas y Líquenes';
 $LANG['H_HELP_RESOURCES'] = 'Ayuda y Recursos';
 $LANG['CONSORTIUM_RESOURCES'] = 'Recursos del Consorcio';
 $LANG['GLOSSARY'] = 'Glosario';
+$LANG['Map'] = 'Búsqueda de Mapas';
+
 
 ?>
