@@ -21,6 +21,15 @@ $LANG['H_HELP_RESOURCES'] = 'Ayuda y Recursos';
 $LANG['CONSORTIUM_RESOURCES'] = 'Recursos del Consorcio';
 $LANG['GLOSSARY'] = 'Glosario';
 $LANG['H_MAP'] = 'Búsqueda de Mapas';
+$LANG['H_EXSICCATAE'] = "Exsiccatae";
+$LANG['INVPROJ'] = "Proyectos de Inventario";
 
+$LANG['GLOBAL_CHECKLISTS'] = 'Listas Globales';
+$LANG['NORTH_AMERICA'] = 'Norteamérica';
+$LANG['GLOBAL_CHECKLISTS_LICHENS'] = 'Listas Globales de líquenes y hongos liquenícolas';
+$LANG['GLOBAL_IUCN_LISTS'] = 'Listas Rojas Globales de la UICN';
+$LANG['ARCTIC'] = 'Ártico';
+$LANG['CANADA'] = 'Canadá';
+$LANG['MEXICO'] = 'México';
 
 ?>
