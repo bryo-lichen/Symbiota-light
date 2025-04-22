@@ -14,7 +14,7 @@ This stylesheet is defined last and will override all previously loaded sheets. 
 }
 
 .ui-widget {
-    font-size: 1.1em;
+    font-size: 1em;
 }
 
 /* Page headers */
