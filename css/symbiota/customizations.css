@@ -13,6 +13,10 @@ This stylesheet is defined last and will override all previously loaded sheets. 
   font-size: 12px;
 }
 
+.ui-widget {
+    font-size: 1em;
+}
+
 /* Page headers */
 
 .page-heading {
