@@ -1,5 +1,8 @@
 <?php
 include_once('../config/symbini.php');
+if($LANG_TAG == 'en' || !file_exists($SERVER_ROOT.'/content/lang/templates/usagepolicy.' . $LANG_TAG . '.php'))
+	include_once($SERVER_ROOT . '/content/lang/templates/usagepolicy.en.php');
+else include_once($SERVER_ROOT . '/content/lang/templates/usagepolicy.' . $LANG_TAG . '.php');
 include_once ($SERVER_ROOT . '/classes/utilities/GeneralUtil.php');
 header("Content-Type: text/html; charset=" . $CHARSET);
 $serverHost = GeneralUtil::getDomain();
@@ -8,7 +11,7 @@ $serverHost = GeneralUtil::getDomain();
 <html lang="<?= $LANG_TAG ?>">
 
 <head>
-	<title><?= $DEFAULT_TITLE . ($LANG_TAG=='es' ? ' Política de Uso de Datos' : ' Data Usage Guidelines') ?></title>
+	<title><?= $DEFAULT_TITLE . ($LANG_TAG=='es' ? ' Política de Uso de Datos' : ($LANG_TAG=='fr' ? " Directives d'utilisation des données" : ' Data Usage Guidelines')) ?></title>
 	<?php
 
 	include_once($SERVER_ROOT . '/includes/head.php');
@@ -21,8 +24,8 @@ $serverHost = GeneralUtil::getDomain();
 	include($SERVER_ROOT . '/includes/header.php');
 	?>
 	<div class="navpath">
-		<a href="<?php echo htmlspecialchars($CLIENT_ROOT, ENT_COMPAT | ENT_HTML401 | ENT_SUBSTITUTE); ?>/index.php">Home</a> &gt;&gt;
-		<b>Data Usage Guidelines</b>
+		<a href="<?php echo htmlspecialchars($CLIENT_ROOT, ENT_COMPAT | ENT_HTML401 | ENT_SUBSTITUTE); ?>/index.php"><?= $LANG['HOME'] ?></a> &gt;&gt;
+		<b><?= $LANG['DATA_USAGE_GUIDELINES'] ?></b>
 	</div>
 	<!-- This is inner text! -->
 	<main id="innertext">
@@ -34,9 +37,8 @@ $serverHost = GeneralUtil::getDomain();
 		<h2>Recomendaciones Para Citar</h2>
 		<div style="margin:10px">
 			Sugerimos usar el siguiente formato para citar los datos descargados desde del Consorcio de Herbarios de Líquenes:
-			<div style="font-weight:bold;margin-top:10px;">
-				Citación General:
 			</div>
+			<h3>Citación General:</h3>
 			<div style="margin:10px;">
 				<?php 
 				echo 'Consorcio de Herbarios de Líquenes'; 
@@ -45,9 +47,7 @@ $serverHost = GeneralUtil::getDomain();
 				echo 'Fecha de acceso: '.date('d m Y').'. ';
 				?>
 			</div>
-			<div style="font-weight:bold;margin-top:10px;">
-				Uso de datos de ocurrencia para instituciones específicas:
-			</div>
+			<h3>Uso de datos de ocurrencia para instituciones específicas:</h3>
 			<div style="margin:10px;">
 				Datos de biodiversidad de ocurrencias de especímenes publicado por &lt;listado de colecciones&gt;
 				(obtenido de <?php echo $DEFAULT_TITLE; ?>, 
@@ -58,18 +58,14 @@ $serverHost = GeneralUtil::getDomain();
 				(obtenido de <?php echo $DEFAULT_TITLE; ?>, 
 				<?php echo 'http//:'.$_SERVER['HTTP_HOST'].$CLIENT_ROOT.(substr($CLIENT_ROOT,-1)=='/'?'':'/').'index.php, '.date('Y-m-d').')'; ?>
 			</div>
-			<div style="font-weight:bold;margin-top:10px;">
-				Citar el Tesauro Taxonómico Central:
-			</div>
+			<h3>Citar el Tesauro Taxonómico Central:</h3>
 			<div style="margin:10px;">
 				<?= 'Bungartz, F. & Perlmutter, G. (' . date('Y') . ') Tesauro taxonómico central de nombres aceptados y sus sinónimos, 
 				mantenido por el Consorcio de Herbarios de Líquenes(con contribuciones de P. Kirk, K. Bensch, U. Søchting, A. Fryday, 
 				R. Lücking y otros). ' . 'https//:' . $_SERVER['HTTP_HOST'] . $CLIENT_ROOT . 
 				(substr($CLIENT_ROOT,-1)=='/' ? '' : '/') . '/taxa/taxonomy/taxonomydisplay.php. Consultado ' . date('Y-m-d') . '.' ?>
 			</div>
-			<div style="font-weight:bold;margin-top:10px;">
-				Citar el Glosario:
-			</div>
+			<h3>Citar el Glosario:</h3>
 			<div style="margin:10px">
 				<?= 'Bungartz, F. (' . date('Y') . ') Glosario de terminología de líquenes del Consorcio de Herbarios de Líquenes 
 				(basado en definiciones originalmente publicadas en la Lichen Flora of the Greater Sonoran Desert Region y el LIAS 
@@ -145,15 +141,115 @@ $serverHost = GeneralUtil::getDomain();
 			época cuando los especímenes fueron recolectados y catalogados.
 		</div>
 		<?php
+		} else if($LANG_TAG=='fr'){
+		?>
+		<h1 class="page-heading">Lignes directrices pour une utilisation acceptable des données</h1><br />
+		<h2>Formats de citation recommandés</h2>
+		<div style="margin:10px">
+		Utilisez l'un des formats suivants pour citer les données extraites du réseau du Consortium des herbiers à lichens:
+			</div>
+			<h3>Citation Générale:</h3>
+			<div style="margin:10px;">
+				<?php 
+				echo 'Consortium des herbiers à lichens'; 
+				echo ' ('.date('Y').') '; 
+				echo 'https//:'.$_SERVER['HTTP_HOST'].$CLIENT_ROOT.(substr($CLIENT_ROOT,-1)=='/'?'':'/').'index.php. '; 
+				echo 'Consulté le: '.date('d m Y').'. ';
+				?>
+			</div>
+			<h3>Utilisation des données d'occurrence provenant d'institutions spécifiques:</h3>
+			<div style="margin:10px;">
+				Données d'occurrence sur la biodiversité publiées par: <Liste des collections> (Consulté via le portail de données du Consortium des herbiers à lichens, <a href="http://lichenportal.org/portal/index.php">http://lichenportal.org/portal/index.php</a>, AAAA-MM-JJ)</br>
+				<br><b>Par exemple:</b><br/>
+				Données sur la biodiversité provenant d'occurrences de spécimens publiées par l'Herbier de lichens de l'Université de Talca, Chili
+				(extraites du <?php echo $DEFAULT_TITLE; ?>, 
+				<?php echo 'https//:'.$_SERVER['HTTP_HOST'].$CLIENT_ROOT.(substr($CLIENT_ROOT,-1)=='/'?'':'/').'index.php, '.date('Y-m-d').')'; ?>
+			</div>
+			<h3>Citation du Thésaurus taxonomique central:</h3>
+			<div style="margin:10px;">
+				<?= "Bungartz, F. & Perlmutter, G. (" . date('Y') . ") Thésaurus taxonomique central des noms acceptés et de leurs synonymes, 
+				géré par le Consortium des Herbiers de Lichens (avec les contributions de P. Kirk, K. Bensch, U. Søchting, A. Fryday, R. Lücking et d'autres). "
+				. 'https//:' . $_SERVER['HTTP_HOST'] . $CLIENT_ROOT . 
+				(substr($CLIENT_ROOT,-1)=='/' ? '' : '/') . '/taxa/taxonomy/taxonomydisplay.php. Consulté ' . date('Y-m-d') . '.' ?>
+			</div>
+			<h3>Citation du glossaire:</h3>
+			<div style="margin:10px">
+				<?= 'Bungartz, F. (' . date('Y') . ') Glossaire de la terminologie des lichens fourni par le Consortium des Herbiers de Lichens 
+				(basé sur les définitions initialement publiées dans Lichen Flora of the Greater Sonoran Desert Region et le glossaire du LIAS, 
+				avec des images fournies par B. McCune, S. Yang, A.A. Spielmann et F. Schumm, et des données de chimie secondaire et des 
+				chromatogrammes par J.A. Elix et F. Schumm). https//:' . $_SERVER['HTTP_HOST'] . $CLIENT_ROOT . 
+				(substr($CLIENT_ROOT,-1)=='/' ? '' : '/') . '/glossary/index.php. Consulté ' . date('Y-m-d') . '.' ?>
+			</div>
+		</div>
+		<a name="occurrences"></a>
+		<h2>Politique d'utilisation des données d'occurrence</h2>
+		<div style="margin:10px;">
+			<ul>
+				<li>
+					Bien que le Consortium des Herbiers de Lichens mette tout en œuvre pour contrôler et documenter la qualité des 
+					données qu'il publie, celles-ci sont mises à disposition « en l'état ». Tout signalement d'erreur dans les données 
+					doit être adressé aux conservateurs et/ou gestionnaires de collections concernés.
+				</li>
+				<li>
+					Le Consortium des Herbiers de Lichens décline toute responsabilité pour les dommages résultant d'une mauvaise utilisation 
+					ou interprétation des données, ou d'erreurs ou omissions pouvant y figurer.
+				</li>
+				<li>
+					Il est considéré comme une question d'éthique professionnelle de citer et de reconnaître les travaux d'autres scientifiques 
+					ayant donné lieu à des données utilisées dans des recherches ultérieures. Nous encourageons les utilisateurs à contacter le 
+					chercheur initial responsable des données auxquelles ils accèdent.
+				</li>
+				<li>
+					Le Consortium des Herbiers de Lichens demande que les données de ce site ne soient pas redistribuées sans l'autorisation 
+					écrite des propriétaires de ces données. Cependant, les liens ou références vers ce site peuvent être publiés librement.
+				</li>
+				<li>
+					Chaque collection participant au Consortium des Herbiers de Lichens conserve l'entière propriété des données partagées ici.
+				</li>
+			</ul>
+		</div>
+		<a name="images"></a>
+		<h2>Images</h2>
+		<div style="margin:15px;">
+			Les images de ce site web ont été généreusement mises à disposition par leurs propriétaires afin de promouvoir l'éducation et la recherche. 
+			Les contributeurs conservent l'intégralité des droits d'auteur sur toutes leurs images. Cependant, sauf mention contraire, les auteurs ont accepté 
+			de partager leurs images sous une licence Creative Commons Attribution-ShareAlike 3.0 Unported (<a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>). Les utilisateurs sont autorisés à partager 
+			(copier et redistribuer le contenu sur tout support et dans tout format) et à l'adapter (remixer, transformer et développer le contenu à toutes fins, 
+			même commerciales). Attribution: Vous devez mentionner la source, fournir un lien vers la licence et indiquer si des modifications ont été apportées. 
+			Vous pouvez le faire de toute manière raisonnable, mais pas d'une façon qui suggérerait que le concédant vous soutient ou soutient votre utilisation. 
+			Partage dans les mêmes conditions: Si vous remixez, transformez ou développez le contenu, vous devez distribuer vos contributions sous la même 
+			licence que l'original. Aucune restriction supplémentaire n'est autorisée (vous ne pouvez pas appliquer de clauses légales ou de mesures techniques 
+			empêchant légalement d'autres personnes d'effectuer les actions autorisées par la licence).
+		</div>
+		<h2>Notes sur les enregistrements et les images des spécimens</h2> 
+		<div style="margin:15px;">
+			Les spécimens sont utilisés pour la recherche scientifique et, grâce à une préparation soignée et à une utilisation rigoureuse, 
+			ils peuvent durer des centaines d'années. Certaines collections contiennent des spécimens collectés il y a plus de 100 ans, qui 
+			pourraient ne plus être retrouvés dans leur zone de collecte d'origine. La mise à disposition de ces spécimens sur le web sous forme d'images 
+			améliore leur disponibilité et leur valeur sans augmenter les dommages accidentels causés par leur utilisation.
+			Veuillez noter que la collecte de spécimens nécessite généralement l'autorisation du propriétaire foncier. Pour les espèces rares et menacées, 
+			des permis supplémentaires peuvent également être requis. La législation peut varier selon les pays et le respect de ces réglementations est essentiel. 
+			Il est préférable de coordonner ces efforts avec une institution régionale ou nationale qui gère des collections accessibles au public. Le Consortium 
+			n'est pas légalement responsable des données partagées par les contributeurs. Tous les ensembles de données mis à disposition via ce portail de 
+			données sur la biodiversité sont partagés ici sous réserve que les exigences légales de collecte soient respectées par les différentes institutions 
+			participantes qui fournissent ces informations.
+		</div>
+		<h2>Avis de non-responsabilité concernant le langage offensant</h2> 
+		<div style="margin:15px;">
+			Le Consortium des Herbiers de Lichens peut contenir des spécimens et des documents historiques culturellement sensibles. Les collections 
+			comprennent des spécimens datant de plus de 200 ans, collectés dans le monde entier. Certains documents peuvent également contenir des propos 
+			offensants. Ces documents ne reflètent pas le point de vue actuel du Consortium des Herbiers de Lichens, mais plutôt les mentalités et les 
+			circonstances sociales de l'époque où les spécimens ont été collectés ou catalogués.
+		</div>
+		<?php
 		} else {
 		?>
 		<h1 class="page-heading">Guidelines for Acceptable Use of Data</h1><br />
 		<h2>Recommended Citation Formats</h2>
 		<div style="margin:10px">
 			Use one of the following formats to cite data retrieved from the <?php echo $DEFAULT_TITLE; ?> network:
-			<div style="font-weight:bold;margin-top:10px;">
-				General Citation:
 			</div>
+			<h3>General Citation:</h3>
 			<div style="margin:10px;">
 				<?php 
 				echo $DEFAULT_TITLE.' ('.date('Y').') '; 
@@ -161,8 +257,7 @@ $serverHost = GeneralUtil::getDomain();
 				echo 'Accessed on '.date('F d').'. '; 
 				?>
 			</div>
-			<div style="font-weight:bold;margin-top:10px;">
-				Usage of occurrence data from specific institutions:
+			<h3>Usage of occurrence data from specific institutions:</h3>
 			</div>
 			<div style="margin:10px;">
 				Biodiversity occurrence data published by: &lt;List of Collections&gt; 
@@ -174,8 +269,7 @@ $serverHost = GeneralUtil::getDomain();
 				(Accessed through <?php echo $DEFAULT_TITLE; ?> Data Portal, 
 				<?php echo 'https//:'.$_SERVER['HTTP_HOST'].$CLIENT_ROOT.(substr($CLIENT_ROOT,-1)=='/'?'':'/').'index.php, '.date('Y-m-d').')'; ?>
 			</div>
-			<div style="font-weight:bold;margin-top:10px;">
-				Citing the Central Taxonomic Thesaurus:
+			<h3>Citing the Central Taxonomic Thesaurus:</h3>
 			</div>
 			<div style="margin:10px;">
 				<?= 'Bungartz, F. & Perlmutter, G. (' . date('Y') . ') Central taxonomic thesaurus of accepted names and their 
@@ -183,9 +277,7 @@ $serverHost = GeneralUtil::getDomain();
 				Fryday, R. Lücking, and others). ' . 'https//:' . $_SERVER['HTTP_HOST'] . $CLIENT_ROOT . 
 				(substr($CLIENT_ROOT,-1)=='/' ? '' : '/') . '/taxa/taxonomy/taxonomydisplay.php. Accessed on ' . date('F j') . '.' ?>
 			</div>
-			<div style="font-weight:bold;margin-top:10px;">
-				Citing the Glossary:
-			</div>
+			<h3>Citing the Glossary:</h3>
 			<div style="margin:10px">
 				<?= 'Bungartz, F. (' . date('Y') . ') Glossary of lichen terminology provided by the Consortium of Lichen Herbaria 
 				(based on definitions originally published in the Lichen Flora of the Greater Sonoran Desert Region and the LIAS 
