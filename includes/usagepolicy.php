@@ -69,7 +69,7 @@ $serverHost = GeneralUtil::getDomain();
 			<div style="margin:10px">
 				<?= 'Bungartz, F. (' . date('Y') . ') Glosario de terminología de líquenes del Consorcio de Herbarios de Líquenes 
 				(basado en definiciones originalmente publicadas en la Lichen Flora of the Greater Sonoran Desert Region y el LIAS 
-				Glossary, con imágenes compartidas por B. McCune, S. Yang y F. Schumm, y cromatogramas y datos de la química 
+				Glossary, con imágenes compartidas por B. McCune, S. Yang, A.A. Spielmann,  y F. Schumm, y cromatogramas y datos de la química 
 				secundaria por J.A. Elix y F. Schumm). https//:' . $_SERVER['HTTP_HOST'] . $CLIENT_ROOT . 
 				(substr($CLIENT_ROOT,-1)=='/' ? '' : '/') . '/glossary/index.php. Consultado ' . date('Y-m-d') . '.' ?>
 			</div>
@@ -281,7 +281,7 @@ $serverHost = GeneralUtil::getDomain();
 			<div style="margin:10px">
 				<?= 'Bungartz, F. (' . date('Y') . ') Glossary of lichen terminology provided by the Consortium of Lichen Herbaria 
 				(based on definitions originally published in the Lichen Flora of the Greater Sonoran Desert Region and the LIAS 
-				glossary, with image resources provided by B. McCune, S. Yang, and F. Schumm, and secondary chemistry data and 
+				glossary, with image resources provided by B. McCune, S. Yang, A.A. Spielmann, and F. Schumm, and secondary chemistry data and 
 				chormatograms by J.A. Elix, F. Schumm). https//:' . $_SERVER['HTTP_HOST'] . $CLIENT_ROOT . 
 				(substr($CLIENT_ROOT,-1)=='/' ? '' : '/') . '/glossary/index.php. Accessed on ' . date('F j') . '.' ?>
 			</div>
