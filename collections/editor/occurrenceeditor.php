@@ -593,9 +593,10 @@ else{
 		#labelProcFieldset{
 			padding:15px;
 		}
+s
 		.ui-widget {
 			font-size: 1em;
-		} 
+		}
 	</style>
 </head>
 <body>
