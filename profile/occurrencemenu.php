@@ -23,7 +23,7 @@ foreach($collArr as $id => $collectionArr){
 <!DOCTYPE html>
 <html lang="<?php echo $LANG_TAG ?>">
 	<head>
-		<title><?php echo $DEFAULT_TITLE . ' ' . $LANG['OCCURRENCE_MENU'];?></title>	
+		<title><?php echo $DEFAULT_TITLE . ' ' . $LANG['OCCURRENCE_MENU'];?></title>
 		<style>
          .screen-reader-only{ 
             position: absolute;
