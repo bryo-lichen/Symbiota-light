@@ -68,7 +68,7 @@ header('Content-Type: text/html; charset=' . $CHARSET);
 					<!-- -------------------------QUICK SEARCH SETTINGS--------------------------------------- -->
 					<form name="quicksearch" id="quicksearch" action="<?= $CLIENT_ROOT ?>/taxa/index.php" method="get" onsubmit="return verifyQuickSearch(this);">
 						<div id="quicksearchtext" ><?= $LANG['QSEARCH_SEARCH'] ?></div>
-						<input id="qstaxa" type="text" name="taxon" style="width:275px">
+						<input id="qstaxa" type="text" name="taxon" style="width:350px">
 						<input id="qstid" type="hidden" name="tid">
 						<button name="formsubmit"  id="quicksearchbutton" type="submit" value="Search Terms">
 							<?= $LANG['QSEARCH_SEARCH_BUTTON'] ?>
