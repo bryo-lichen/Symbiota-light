@@ -791,11 +791,11 @@ $collectionSearchPage = $SHOULD_USE_HARVESTPARAMS ? '/collections/index.php' : '
 								<?php
 								if($LANG_TAG=='es'){
 								?>
-									<a href="https://biokic.github.io/symbiota-docs/es/" target="_blank"><?= $LANG['H_HELP']; ?></a>
+									<a href="https://docs.symbiota.org/es/docs/about/" target="_blank"><?= $LANG['H_HELP']; ?></a>
 								<?php
 								} else {
 								?>
-									<a href="http://symbiota.org/docs/" target="_blank"><?= $LANG['H_HELP']; ?></a>
+									<a href="https://docs.symbiota.org/docs/about/" target="_blank"><?= $LANG['H_HELP']; ?></a>
 								<?php
 								}
 								?>
