@@ -2,7 +2,7 @@
 header('X-Frame-Options: DENY');
 header('Cache-control: private'); // IE 6 FIX
 date_default_timezone_set('America/Phoenix');
-$CODE_VERSION = '3.2.4';
+$CODE_VERSION = '3.3.5';
 
 set_include_path(get_include_path() . PATH_SEPARATOR . $SERVER_ROOT . PATH_SEPARATOR . $SERVER_ROOT.'/config/' . PATH_SEPARATOR . $SERVER_ROOT.'/classes/');
 
@@ -54,6 +54,19 @@ $USERNAME = (array_key_exists('un',$PARAMS_ARR)?$PARAMS_ARR['un']:0);
 $SYMB_UID = (array_key_exists('uid',$PARAMS_ARR)?$PARAMS_ARR['uid']:0);
 $IS_ADMIN = (array_key_exists('SuperAdmin',$USER_RIGHTS)?1:0);
 
+
+$PORTAL_PRIVATE = $PRIVATE_VIEWING_ONLY ?? false;
+if (!$SYMB_UID && $PORTAL_PRIVATE){
+	$PRIVATE_VIEWING_OVERRIDES = $PRIVATE_VIEWING_OVERRIDES ?? [];
+	$public_pages = [...$PRIVATE_VIEWING_OVERRIDES, ...['/profile/newprofile.php', '/profile/index.php']];
+	$requested_url = explode($CLIENT_ROOT, $_SERVER['PHP_SELF'])[1];
+	if (!in_array($requested_url, $public_pages)){
+		$referringUrl =  $_SERVER['PHP_SELF'] . (!empty($_SERVER['QUERY_STRING']) ? urlencode( '?' . $_SERVER['QUERY_STRING']) : '');
+		header('Location: ' . $CLIENT_ROOT . '/profile/index.php?refurl=' . $referringUrl);
+	}
+}
+
+
 function alias(&$new, &$old) {
 	if(!isset($new) && isset($old)) {
 		$new = $old;
@@ -100,8 +113,17 @@ $CSS_VERSION = '16';
 
 // Used for what media is allowed to be uploaded. Does not restrict external links
 $ALLOWED_MEDIA_MIME_TYPES = [
-	"image/jpeg", "image/png",
+	"image/jpeg", "image/png", "image/gif",
 	"audio/mpeg", "audio/wav", "audio/ogg"
 ];
+
+$MIME_FALL_BACK = 'image/jpeg';
+
+if(!empty($GEO_JSON_LAYERS)) {
+	/* Load GeoJSON Paths */
+	for($i = 0; $i < count($GEO_JSON_LAYERS); $i++) {
+		$GEO_JSON_LAYERS[$i]['filepath'] = $CLIENT_ROOT . '/content/geoJSON/' . $GEO_JSON_LAYERS[$i]['filename'];
+	}
+}
 
 ?>
