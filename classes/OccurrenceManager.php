@@ -664,11 +664,6 @@ class OccurrenceManager extends OccurrenceTaxaManager {
 			if($v) $retStr .= '&'. $this->cleanOutStr($k) . '=' . $this->cleanOutStr($v);
 		}
 		if(isset($this->taxaArr['search'])){
-			if (
-				isset($this->taxaArr['taxontype']) && $this->taxaArr['taxontype'] == 1 &&
-				preg_match('/^[^:]+:\s*(.+)$/', $this->taxaArr['search'], $matches)
-			)
-				$this->taxaArr['search'] = $matches[1];
 			$patternTaxonChars = '/^[a-zA-Z0-9\s\-\,\.×†]*$/';
 			if (preg_match($patternTaxonChars, $this->getTaxaSearchTerm())==1) {
 				$retStr .= '&taxa=' . $this->getTaxaSearchTerm();
@@ -755,6 +750,8 @@ class OccurrenceManager extends OccurrenceTaxaManager {
 		if(array_key_exists('targetclid',$_REQUEST) && is_numeric($_REQUEST['targetclid'])){
 			$this->searchTermArr['targetclid'] = $_REQUEST['targetclid'];
 			$this->setChecklistVariables($_REQUEST['targetclid']);
+			if ($this->voucherManager)
+				$voucherVariableArr = $this->voucherManager->getQueryVariableArr() ?? [];
 		}
 		elseif(array_key_exists('clid',$_REQUEST)){
 			//Limit by checklist voucher links
@@ -793,6 +790,8 @@ class OccurrenceManager extends OccurrenceTaxaManager {
 			$country = $this->cleanInputStr($_REQUEST['country']);
 		elseif (!empty($parsedArr['country']))
 			$country = $this->cleanInputStr($parsedArr['country']);
+		elseif (isset($voucherVariableArr) && !empty($voucherVariableArr["country"]))
+			$country = $voucherVariableArr["country"];
 		if($country){
 			$str = str_replace(',', ';', $country);
 			$countryRaw = '';					//Terms that were not found within geo thesaurus
