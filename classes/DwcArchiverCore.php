@@ -2119,7 +2119,7 @@ class DwcArchiverCore extends Manager{
 		$citationParamsArr = array();
 
 		// Data has to be stored in the session to be available for the citation formats
-		session_start();
+		if(session_id() == "") session_start();
 		if (array_key_exists('citationvar', $_SESSION)) {
 			$citationVarArr = parse_url(urldecode($_SESSION['citationvar']));
 			parse_str($citationVarArr['path'], $citationParamsArr);
