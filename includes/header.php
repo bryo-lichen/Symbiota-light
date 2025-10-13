@@ -773,11 +773,11 @@ $collectionSearchPage = $SHOULD_USE_HARVESTPARAMS ? '/collections/index.php' : '
 							<?php
 								if($LANG_TAG=='es'){
 							?>
-								<a href="https://help.lichenportal.org/index.php/es/chlal-ayuda-y-recursos/"><?= $LANG['CONSORTIUM_RESOURCES']; ?></a>
+								<a href="https://help.lichenportal.org/index.php/es/chlal-ayuda-y-recursos/" target="_blank"><?= $LANG['CONSORTIUM_RESOURCES']; ?></a>
 							<?php
 								} else {
 							?>
-								<a href="https://help.lichenportal.org/index.php/en/cnalh-help-resources/"><?= $LANG['CONSORTIUM_RESOURCES']; ?></a>
+								<a href="https://help.lichenportal.org/index.php/en/cnalh-help-resources/" target="_blank"><?= $LANG['CONSORTIUM_RESOURCES']; ?></a>
 							<?php
 								}
 							?>
