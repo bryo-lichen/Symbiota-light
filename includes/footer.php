@@ -29,9 +29,9 @@
 	</div>
 	<p>
 		<?= $LANG['F_NSF_AWARDS'] ?>
-		<a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1115116" target="_blank">#1115116</a>,
-		<a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2001500" target="_blank">#2001500</a>,
-		<a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2001394" target="_blank">#2001394</a>
+		<a href="https://www.nsf.gov/awardsearch/show-award/?AWD_ID=1115116" target="_blank">#1115116</a>,
+		<a href="https://www.nsf.gov/awardsearch/show-award/?AWD_ID=2001500" target="_blank">#2001500</a>,
+		<a href="https://www.nsf.gov/awardsearch/show-award/?AWD_ID=2001394" target="_blank">#2001394</a>
 		.
 	</p>
 	<p>
