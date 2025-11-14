@@ -9,6 +9,7 @@
  e.g. override: $LANG['H_COLLECTIONS'] = 'Search Lichen Collections';
 */
 
-
+$LANG['F_ABLS'] = 'Sociedad Americana de Briología y Liquenología (ABLS)';
+$LANG['F_ABLS_LOGO'] = 'Logotipo de ABLS';
 
 ?>
