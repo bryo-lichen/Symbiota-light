@@ -15,11 +15,16 @@
 		<a href="https://globaltcn.utk.edu/" target="_blank">
 			<img src="<?php echo $CLIENT_ROOT; ?>/images/layout/global_logo.png" />
 		</a>
-	</div>
-	<a href="https://www.nsf.gov" target="_blank" aria-label="<?= $LANG['F_VISIT_NSF']?>">
+		<a href="https://www.abls.org/" target="_blank" title="<?= $LANG['F_ABLS'] ?>" aria-label="<?= $LANG['F_ABLS'] ?>">
+			<img src="<?= $CLIENT_ROOT; ?>/images/layout/abls.png"  alt="<?= $LANG['F_ABLS_LOGO'] ?>" />
+		</a>
+		<a href="https://symbiota.org/" target="_blank" title="<?= $LANG['F_SSH'] ?>" aria-label="<?= $LANG['F_SSH'] ?>">
+			<img src="<?= $CLIENT_ROOT; ?>/images/layout/SSH.png"  alt="<?= $LANG['F_SSH_LOGO'] ?>" />
+		</a>
+		<a href="https://www.nsf.gov" target="_blank" aria-label="<?= $LANG['F_VISIT_NSF']?>">
 			<img src="<?= $CLIENT_ROOT; ?>/images/layout/logo_nsf.gif" alt="<?= $LANG['F_NSF_LOGO'] ?>" />
-	</a>
-	<br></br>
+		</a>
+	</div>
 	<p>
 		This project made possible by U.S. National Science Foundation Awards:
 		<a href="https://www.nsf.gov/awardsearch/show-award/?AWD_ID=1115116" target="_blank">#1115116</a>,
