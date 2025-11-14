@@ -42,14 +42,14 @@ $collectionSearchPage = $SHOULD_USE_HARVESTPARAMS ? '/collections/index.php' : '
 			<div class="top-brand">
 				<a href="https://symbiota.org">
 					<div class="image-container">
-						<?php 
-						// <img src="<?= $CLIENT_ROOT \?\>/images/layout/logo_symbiota.png" alt="Symbiota logo"> 
+						<?php
+						// <img src="<?= $CLIENT_ROOT \?\>/images/layout/logo_symbiota.png" alt="Symbiota logo">
 						?>
 					</div>
 				</a>
 				<div class="brand-name">
-					<h1>Lichen Development Portal<?= //$LANG['HEADER2'] ?></h1>
-					<h2>For code testing only<?= //$LANG['HEADER3'] ?></h2>
+					<h1>Lichen Development Portal<!-- <?= $LANG['HEADER2'] ?> --></h1>
+					<h2>For code testing only<!-- <?= $LANG['HEADER3'] ?> --></h2>
 				</div>
 			</div>
 		</div>
