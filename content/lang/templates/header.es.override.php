@@ -32,4 +32,7 @@ $LANG['ARCTIC'] = 'Ártico';
 $LANG['CANADA'] = 'Canadá';
 $LANG['MEXICO'] = 'México';
 
+$LANG['F_ABLS'] = 'Sociedad Americana de Briología y Liquenología (ABLS)';
+$LANG['F_ABLS_LOGO'] = 'Logotipo de ABLS';
+
 ?>

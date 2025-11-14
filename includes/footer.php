@@ -25,7 +25,19 @@
 		<a href="#">
 			<img src="<?= $CLIENT_ROOT; ?>/images/layout/GEL-logo.jpg" style="width:115px" title="Grupo Ecuatoriano de Liquenolog&iacute;a (GEL)" />
 		</a>
-		
+		<a href="https://www.abls.org/" target="_blank" title="<?= $LANG['F_ABLS'] ?>" aria-label="<?= $LANG['F_ABLS'] ?>">
+			<img src="<?= $CLIENT_ROOT; ?>/images/layout/abls.png"  alt="<?= $LANG['F_ABLS_LOGO'] ?>" />
+		</a>
+		<img></img>
+		<img></img>
+		<img></img>
+		<img></img>
+		<a href="https://symbiota.org/" target="_blank" title="<?= $LANG['F_SSH'] ?>" aria-label="<?= $LANG['F_SSH'] ?>">
+			<img src="<?= $CLIENT_ROOT; ?>/images/layout/SSH.png"  alt="<?= $LANG['F_SSH_LOGO'] ?>" />
+		</a>
+		<a href="https://biodiversity.ku.edu/" target="_blank" aria-label="Visit KU BI website">
+			<img src="<?= $CLIENT_ROOT; ?>/images/layout/ku-bi_logo.png" alt="KU BI logo" />
+		</a>
 	</div>
 	<p>
 		<?= $LANG['F_NSF_AWARDS'] ?>

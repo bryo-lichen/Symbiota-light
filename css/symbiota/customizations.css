@@ -93,3 +93,21 @@ footer p {
   }
 
 }
+
+.logo-gallery {
+  display: grid;
+  gap: 1rem 0;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  column-gap: 1rem;
+  align-items: center;
+  margin: 0 auto;
+  padding: 1rem 0;
+  max-width: var(--max-innertext-width);
+}
+
+.logo-gallery img {
+  max-width: 100px;
+  height: auto;
+  max-height: 80px;
+  object-fit: contain;
+}
