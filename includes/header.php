@@ -226,7 +226,10 @@ $collectionSearchPage = $SHOULD_USE_HARVESTPARAMS ? '/collections/index.php' : '
 								<a href="<?= $CLIENT_ROOT ?>/includes/usagepolicy.php"><?= $LANG['H_DATA_USAGE'] ?></a>
 							</li>
 							<li>
-								<a href="<?= $CLIENT_ROOT ?>/collections/misc/collprofiles.php/"><?= $LANG['H_PARTNERS'] ?></a>
+								<a href="<?= $CLIENT_ROOT ?>/collections/misc/collprofiles.php"><?= $LANG['H_PARTNERS'] ?></a>
+							</li>
+							<li>
+								<a href="<?= $CLIENT_ROOT ?>/misc/endorsements.php"><?= $LANG['H_ENDORSEMENTS'] ?></a>
 							</li>
 
 						</ul>
